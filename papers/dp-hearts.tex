@@ -37,35 +37,25 @@
 \title{非可換del Pezzo曲面の反標準heartと根圏\\
 \large 幾何学的認識・Euler選択・アフィン有限商}
 \author{}
-\date{2026年11月17日\qquad 公表準備稿 hearts-v28}
-\hypersetup{pdftitle={非可換del Pezzo曲面の反標準heartと根圏},pdfsubject={導来比較、HRS tilt、共鳴、反標準corner}}
+\date{2026年11月17日\qquad 公表準備稿 hearts-v29}
+\hypersetup{pdftitle={非可換del Pezzo曲面の反標準heartと根圏},pdfsubject={反標準比較、ADE根圏、最大共鳴、弱楕円gluingの収縮}}
 \begin{document}
 \maketitle
 \begin{abstract}
-非可換del Pezzo曲面のVdB，Rains，反標準，Artin--Schelterという四つのheartを，
-構造対象と自然な比較関手を指定して比較する．genuineな滑らかな楕円gluingでは
-反標準導来切断が導来同値を与え，heartの差は境界非交叉部分のHRS tiltに集中する．
-VdBの右加群規約で初期平面twistを運ぶと，Rainsの辞書は$L=L_1$，$q=L_0L_1^{-1}$となる．
-規格化したmutation列から得る楕円decupleについて，全27関係係数をtheta関数で表示し，
-構造頂点を除いたcornerが$L_0$に依存せず，$L_1$による元の六点の可換cornerに一致することを示す．
-これにより，係数比の十一条件を元の六点の共線・conic条件へ引き戻す．
-さらにampleな構造対象を含むvery strong helixからnoetherianなorbit代数を再構成する．
-その結果，規格化した共通領域ではAS heartと反標準heartが一致し，
-noetherian性と十一因子の非消滅は独立の追加条件でなく結論となる．
-一方，順序付きRains heartは実在単純根のEuler標数で選ばれ，
-整数倍点族では整列による単純tiltで同じ反標準heartへ移る．
-次数1--6では全根の同時共鳴点がZariski稠密であり，指定heartの一致点と不一致点は
-同じ楕円chartでともに稠密となるため，一致条件は構成可能でない．
-標数0・非torsionの範囲では，実在するADE根の拡大閉包と標的の有限次元heartを
-それぞれDynkin preprojective加群圏と同定する．標的単純のEuler次元を$m_i$とすると，
-元のアフィン代数の全有限次元表現は
-$\End_{\Pi(\Gamma)}(\bigoplus_iP_i^{m_i})$という一つの有限次元商を経由する．
-この商は非被約基底上の古典的な表現族も支配し，そのFrobenius性は$m_i$のNakayama不変性で決まる．
-AS比較には指定されたfull very strong helixとrolled-up環の同定を入力とする．
-零指数根壁については古典的な反標準収縮を記載し，標準弱楕円gluingでは
-全反標準orbitに直交するdg部分圏が古典的収縮の核に一致し，gluingパラメータに依存しないことを示す．
-この核を除くdg商はorbit環を保存する．coherent反標準模型との商圏比較，
-壁上のheart・局所特異点・相対収縮は，証明した核の同定から分離した課題として残す．
+非可換del Pezzo曲面の構造対象と反Serre作用を固定し，Rains・Van den Bergh・
+Artin--Schelter・反標準環から得られるheartを自然関手に沿って比較する．
+genuineな滑らかな楕円gluingでは反標準導来切断が導来同値を与える．
+非torsionの場合，heartの差は境界外の有限ADE根圏に集中し，
+実在単純根のEuler標数が反標準heartと有限次元アフィン表現の普遍商を決める．
+三次曲面では規格化したtheta係数から入力六点を復元し，
+指定されたvery strong AS実現のもとで標準heartの一致を示す．
+最大共鳴点は次数1--6の各楕円chartで稠密であり，
+指定heartの一致・不一致はともに稠密で非構成可能となる．
+一方，零指数壁を含む標準弱楕円gluingでも，次数付きExtの有限生成性と有界性を示し，
+coherent反標準導来切断を構成する．その全核は古典的反標準収縮の核に一致する．
+この核を除いたdg商を，古典的特異モデル上の楕円gluingとして同定する．
+一般の非自明gluingパラメータで，この特異gluingと反標準$qgr$の有界導来圏が
+同値となるかは別の問題として残る．
 \end{abstract}
 \tableofcontents
 
@@ -78,6 +68,7 @@ AS比較には指定されたfull very strong helixとrolled-up環の同定を�
 \input{papers/sections/four_hearts_canonical_comparison.tex}
 \input{papers/sections/four_hearts_maximal_density.tex}
 \input{papers/sections/four_hearts_zero_walls.tex}
+\input{papers/sections/four_hearts_coherent_contraction.tex}
 \input{papers/sections/four_hearts_examples.tex}
 
 \begin{thebibliography}{99}
@@ -91,24 +82,21 @@ Lemma 11.1.1，Definition 11.1.2，Theorems 11.1.3, 11.2.1，Lemma 11.2.4，Rema
 E.~M.~Rains, \emph{The birational geometry of noncommutative surfaces},
 \href{https://arxiv.org/abs/1907.11301}{arXiv:1907.11301v1} (2019).
 使用箇所：Lemma 4.9，Theorem 4.10，Propositions 4.13, 4.17，Theorem 4.30，
-\S5，\S7，Theorem 9.10，Corollaries 10.12, 10.16，Proposition 10.13，\S11（特にp.~141，Proposition 11.23の直前の有効単純根の存在についての記述）．
+\S5，\S7，Theorem 9.10，Corollaries 10.12, 10.16，Proposition 10.13，\S11（p.~141，Proposition 11.23直前）．
 \bibitem{Filtered}
 E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
 \href{https://arxiv.org/abs/2107.13540}{arXiv:2107.13540v2} (2022).
-使用箇所：Corollary 3.8とtraceの証明，\S4（(4.4)--(4.7)の一般の有理曲面のgluingと境界，
-特にpp.~34--35の単純根の有効性・存在），Proposition 5.1．
+使用箇所：Corollary 3.8とtraceの証明，\S4 (4.4)--(4.7)，pp.~34--35，Proposition 5.1と(5.3)．
 \bibitem{RainsBook}
 E.~M.~Rains, \emph{The (noncommutative) geometry of difference equations},
-\href{https://arxiv.org/abs/2504.16187}{arXiv:2504.16187} (2025).
-v1のLemma 11.10，Proposition 11.19，Theorem 11.31，Theorem 16.10，
-Corollary 17.17，およびProposition 18.27直前の有効単純根の存在記述を参照．
-旧稿の対応番号は序論に示す．
+\href{https://arxiv.org/abs/2504.16187}{arXiv:2504.16187v1} (2025).
+使用箇所：Lemma 11.10，Proposition 11.19，Theorem 11.31，Theorem 16.10，
+Corollary 17.17，Proposition 18.27直前．旧稿の対応番号は序論に示す．
 \bibitem{AOU}
-T.~Abdelgadir, S.~Okawa, K.~Ueda,
-\emph{Compact moduli of marked noncommutative cubic surfaces},
+T.~Abdelgadir, S.~Okawa, K.~Ueda, \emph{Compact moduli of marked noncommutative cubic surfaces},
 \href{https://arxiv.org/abs/2404.00175}{arXiv:2404.00175v1} (2024).
-使用箇所：\S3--4，(4.1)，\S9，Lemma 9.2，Theorem 9.4，(9.2)--(9.3)，(9.25)，(9.28)--(9.57)，Definition 7.1，Proposition 9.3．
-これらの境界表示の同時使用に関する検査は第\ref{subsec:boundaryaudit}節を参照．
+使用箇所：\S\S3--4, 7, 9，(4.1)，Lemma 9.2，Theorem 9.4，(9.2)--(9.3)，(9.25)，(9.28)--(9.57)，Definition 7.1，Proposition 9.3．
+境界規約は第\ref{subsec:boundaryaudit}節で検査する．
 \bibitem{OU}
 S.~Okawa, K.~Ueda, \emph{Marked Artin--Schelter surfaces of del Pezzo types},
 \href{https://arxiv.org/abs/2508.04986}{arXiv:2508.04986v1} (2025).
@@ -125,10 +113,9 @@ Adv. Math. \textbf{109} (1994), 228--287.
 X.-W.~Chen, Z.~Han, Y.~Zhou, \emph{Derived equivalences via HRS-tilting},
 Adv. Math. \textbf{354} (2019), 106749;
 \href{https://arxiv.org/abs/1804.05629}{arXiv:1804.05629v2}.
-使用箇所：Theorems A, B，\S2--3．
+使用箇所：Theorems A, B，\S\S2--3．
 \bibitem{RSS}
-D.~Rogalski, S.~J.~Sierra, J.~T.~Stafford,
-\emph{Noncommutative Blowups of Elliptic Algebras},
+D.~Rogalski, S.~J.~Sierra, J.~T.~Stafford, \emph{Noncommutative Blowups of Elliptic Algebras},
 \href{https://arxiv.org/abs/1308.2216}{arXiv:1308.2216v2} (2015).
 使用箇所：Proposition 2.4（正次数，無限位数の境界自己同型）．
 \bibitem{YZ}
@@ -144,75 +131,80 @@ D.~Orlov, \emph{Smooth and proper noncommutative schemes and gluing of DG catego
 T.~Bridgeland, \emph{Stability conditions and Kleinian singularities},
 Int. Math. Res. Not. \textbf{2009} (2009), no.~21, 4142--4157;
 \href{https://arxiv.org/abs/math/0508257}{arXiv:math/0508257v3}.
-使用箇所：\S2（ambient圏と内在的導来圏の区別），Lemma 3.5と\S3（単純tiltとWeyl反射）．
+使用箇所：\S2，Lemma 3.5と\S3．
 \bibitem{BCPW}
 N.~Broomhead, R.~Coelho Sim\~oes, D.~Pauksztello, J.~Woolf,
 \emph{Simple tilts of length hearts and simple-minded mutation},
 Adv. Math. \textbf{503} (2026), Part B, 111197;
 \href{https://arxiv.org/abs/2401.02947}{arXiv:2401.02947v3}.
-使用箇所：Theorem 2.7およびRemark 2.8（left/right tiltの有限長性）．
+使用箇所：Theorem 2.7およびRemark 2.8．
 \bibitem{EllipticCauchy}
 V.~Prokofev, A.~Zabrodin, \emph{Elliptic Cauchy matrices},
 \href{https://arxiv.org/abs/2305.02837}{arXiv:2305.02837v1} (2023).
-使用箇所：(1.7)，(2.1)（elliptic Cauchy行列と既知のFrobenius determinant）．
+使用箇所：(1.7)，(2.1)．
 \bibitem{PolishchukProj}
 A.~Polishchuk, \emph{Noncommutative Proj and coherent algebras},
 \href{https://arxiv.org/abs/math/0212182}{arXiv:math/0212182v4} (2004).
-使用箇所：Theorem 2.4とその証明（ample sequenceからのabel圏の再構成）．
+使用箇所：Theorem 2.4とその証明．
 \bibitem{LiuWangZigzag}
 J.~Liu, Z.~Wang, \emph{$A_\infty$-deformations of zigzag algebras via Ginzburg dg algebras},
 \href{https://arxiv.org/abs/2301.06757v3}{arXiv:2301.06757v3} (2025).
-使用箇所：Theorem 1.1，\S4.3．形式性の先行結果は同論文のEtg\"u--Lekili，Lekili--Uedaへの帰属による．
+使用箇所：Theorem 1.1，\S4.3．形式性の先行結果のEtg\"u--Lekili，Lekili--Uedaへの帰属を保持する．
 \bibitem{KellerAinf}
 B.~Keller, \emph{Introduction to $A$-infinity algebras and modules},
 Homology Homotopy Appl. \textbf{3} (2001), no.~1, 1--35;
 \href{https://arxiv.org/abs/math/9910179}{arXiv:math/9910179}.
-使用箇所：\S\S6.5, 7.5, 7.7（twisted objectsと拡大閉包）．
+使用箇所：\S\S6.5, 7.5, 7.7．
 \bibitem{Mizuno}
 Y.~Mizuno, \emph{Classifying $\tau$-tilting modules over preprojective algebras of Dynkin type},
 \href{https://arxiv.org/abs/1304.0667v3}{arXiv:1304.0667v3} (2013).
 使用箇所：Dynkin preprojectiveの有限次元性とtorsion classの既知分類．
 \bibitem{dTdVV}
-L.~de Thanhoffer de V\"olcsey, M.~Van den Bergh,
-\emph{Some new examples of non-degenerate quiver potentials},
+L.~de Thanhoffer de V\"olcsey, M.~Van den Bergh, \emph{Some new examples of non-degenerate quiver potentials},
 \href{https://arxiv.org/abs/1005.0808v3}{arXiv:1005.0808v3}.
-使用箇所：\S3，Theorem 4.2.1（geometric helixのrolled-up代数に関する既知一般論）．
+使用箇所：\S3，Theorem 4.2.1．
 \bibitem{EOR}
-P.~Etingof, A.~Oblomkov, E.~Rains,
-\emph{Generalized double affine Hecke algebras of rank 1 and quantized Del Pezzo surfaces},
+P.~Etingof, A.~Oblomkov, E.~Rains, \emph{Generalized double affine Hecke algebras of rank 1 and quantized Del Pezzo surfaces},
 \href{https://arxiv.org/abs/math/0406480v3}{arXiv:math/0406480v3} (2006).
-比較箇所：\S1（quantized del Pezzoと境界），\S11（preprojectiveとの接続）．
+比較箇所：\S\S1, 11．
 \bibitem{EtingofRains}
 P.~Etingof, E.~Rains, \emph{Central extensions of preprojective algebras, the quantum Heisenberg algebra, and 2-dimensional complex reflection groups},
 \href{https://arxiv.org/abs/math/0503393v3}{arXiv:math/0503393v3} (2006).
-使用箇所：\S1, (1)に記載された既知のDynkin preprojectiveのmatrix Hilbert公式．
+使用箇所：\S1, (1)のmatrix Hilbert公式．
 \bibitem{AiharaMizuno}
 T.~Aihara, Y.~Mizuno, \emph{Classifying tilting complexes over preprojective algebras of Dynkin type},
 Algebra Number Theory \textbf{11} (2017), no.~6, 1287--1315;
 \href{https://doi.org/10.2140/ant.2017.11.1287}{doi:10.2140/ant.2017.11.1287}.
-使用箇所：\S3A（自己入射性と既知のNakayama置換）．
+使用箇所：\S3A．
 \bibitem{Stacks}
 The Stacks Project Authors, \emph{The Stacks Project},
-\href{https://stacks.math.columbia.edu/tag/00FV}{Tag 00FV}（Nullstellensatz），
-\href{https://stacks.math.columbia.edu/tag/00IP}{Tag 00IP}（Krullの共通部分定理）．
+\href{https://stacks.math.columbia.edu/tag/00FV}{Tag 00FV}，
+\href{https://stacks.math.columbia.edu/tag/00IP}{Tag 00IP}．
 \bibitem{DolgachevWalls}
 I.~V.~Dolgachev, \emph{Classical Algebraic Geometry: a modern view. II},
 author's draft, August 10, 2025,
 \href{https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1467/2025/10/CAG-2.pdf}{著者公開稿}.
-使用箇所：Chapter 8, Theorem 8.3.2, \S8.3.2（弱del Pezzoの反標準収縮）．
+使用箇所：Chapter 8, Theorem 8.3.2, \S8.3.2．
 \bibitem{SeidelThomasWalls}
 P.~Seidel, R.~Thomas, \emph{Braid group actions on derived categories of coherent sheaves},
 \href{https://arxiv.org/abs/math/0001043}{arXiv:math/0001043v2} (2000).
-使用箇所：Propositions 2.10, 2.12--2.13（spherical twistとbraid関係）．
+使用箇所：Propositions 2.10, 2.12--2.13．
 \bibitem{DrinfeldWalls}
 V.~Drinfeld, \emph{DG quotients of DG categories},
 \href{https://arxiv.org/abs/math/0210114}{arXiv:math/0210114v7} (2008).
-使用箇所：\S\S1.2--1.3, 1.6（dg商，Homのcone公式と普遍性）．
+使用箇所：\S\S1.2--1.3, 1.6．
 \bibitem{DonovanWemyssWalls}
 W.~Donovan, M.~Wemyss, \emph{Noncommutative enhancements of contractions},
 Adv. Math. \textbf{344} (2019), 99--136;
 \href{https://arxiv.org/abs/1612.01687}{arXiv:1612.01687}.
-比較箇所：Introduction, \S\S1.1, 6．与えられた幾何学的収縮に対する理論であり，
-本稿の任意の非可換曲面上に収縮射を構成する定理としては用いない．
+比較箇所：Introduction, \S\S1.1, 6．与えられた幾何学的収縮を出発点とする．
+\bibitem{KeelerAmple}
+D.~S.~Keeler, \emph{Criteria for $\sigma$-ampleness},
+\href{https://arxiv.org/abs/math/9912051}{arXiv:math/9912051v2} (2000).
+使用箇所：Theorem 1.2(1),(2)（左右noetherian性と数値的作用によるampleness判定）．
+\bibitem{BKSWalls}
+A.~Bondal, M.~Kapranov, V.~Schechtman, \emph{Perverse schobers and birational geometry},
+\href{https://arxiv.org/abs/1801.08286}{arXiv:1801.08286v1} (2018).
+使用箇所：Theorem 2.14と\S2F（fiber次元高々1のcoherent導来局所化）．
 \end{thebibliography}
 \end{document}

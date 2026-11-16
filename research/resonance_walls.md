@@ -1,70 +1,61 @@
-# 最大共鳴と零指数壁：現在の知識
+# 最大共鳴・零指数壁・coherent収縮
 
-2026-11-17 / hearts-v28。最初に `../00_research_plan.md` を読む。完全な証明は主論文の `four_hearts_maximal_density.tex` と `four_hearts_zero_walls.tex` にあり、ここでは依存関係・障害・次の着手を記す。以前の `current_assessment.md` と個別validationはv26までの実施範囲であり、今回の状態は `resonance_walls_validation.json` を参照する。
+2026-11-17 / hearts-v29。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
 
-## 1. 最大共鳴
+## 最大共鳴の現在の知識
 
-固定した滑らかな平面楕円E、flex原点、非torsion q、3≤r≤8で、全根共鳴は単純根指数m_iの整数表示
+固定した楕円E、flex原点、非torsion q、3≤r≤8で最大共鳴は単純指数の整数表示
 
     3p1=(m0−2m1−m2)q,  pi=p1+(m1+...+m_(i−1))q
 
-と同値。方程式の解は、相異性・genuine性を課す前にはE[3]の九選択となる。相異点の範囲で全根指数非零がgenuine条件に等しい。正整数倍点pi=Ni qは差根と正次数根の明示列挙から全根指数非零。任意の厳密な整数順序を課しても、正整数の累積和を表すunimodular群自己同型からZariski稠密となる。
+に等しい。相異性等を課す前にE[3]の九選択がある。全根指数非零がgenuine条件。正整数倍点pi=Ni qは全根で非零指数を持ち、任意の厳密な整数順序もunimodular累積和写像によってZariski稠密。既存整列定理と合わせ、指定heartの一致・不一致はともに稠密で非構成可能。これは点ごとの固定楕円chartの主張で、相対t構造や全moduliの代数性の主張ではない。数値根の数8,20,40,72,126,240は実在既約sheafの個数ではなく、Hilbert関数も跳ばない。
 
-既存 `thm:sorted-spectrum` を使うと、昇順のRains heartは反標準heartと一致し、N1<N3<N2では負指数単純が実在して一致しない。両集合が稠密なので、固定楕円chartで一致条件も不一致条件も構成可能ではない。相対t構造や一様なkernelを持つ族は構成していない。この点ごとの結論を、そのような追加仮定下の開性と混同しない。
+## 古典的な零壁と実在対象
 
-数値共鳴根の個数は8,20,40,72,126,240だが、同じheartの既約root sheaf数ではない。反標準環のHilbert関数の跳びを意味しない。
+十一因子は十の共線根と一つのconic根。弱del Pezzoの反標準収縮f:S→Sbarは(-2)配置をDu Val点へ縮める。K_C=i_*O_C(−1)は2-spherical、全反標準orbitに直交し、Rf_*で消える。特異モデルの剰余体は無限高次Extを持つのでDb(cohS)とDb(cohSbar)は同値でない。Euler列O(−2)→O(−1)^2→Oは同一曲線類の正負相殺であって、genuine非torsionの異なる隣接根の例ではない。
 
-## 2. 零指数壁の既知模型
+Q0=((1,1,1),(1,2,2),(1,3,4))の有理数六点・反標準三次式・nodeのHessian−2304は主論文に保持。非torsionの例はE=C/(Z+iZ)、q=√2、六点(√3,√5,−√3−√5,√7,√11,√13)、L1=O(3o)、L0=L1q。唯一の共鳴根は±(h−e1−e2−e3)で指数0、前半三点だけ共線。U+と27theta係数非零は残るが成分逆数detQ=0でcornerは無限次元。AS模型と弱gluingの指定比較は未構成。
 
-十八係数非零chartの十一因子は、十の共線根と一つのconic根。一般壁の可換blow-upでは一つの(-2)曲線Cが反標準収縮でA1点へ縮む。K_C=i_*O_C(−1)は2-spherical、全反標準twistに直交し、Rf_*で消える。任意次数の弱del Pezzoにも同じ障害がある。特異モデルの剰余体の高次Extは無限に残るため、滑らかなSのDbとその反標準qgrのDbは同値ではない。
+## 全orbit核とcoherent関手
 
-Q0=((1,1,1),(1,2,2),(1,3,4))の六点・反標準三次式・nodeとHessian−2304を主論文へ収録した。P1のEuler列O(−2)→O(−1)^2→Oも、正負指数の完全相殺を表す。ただしこれは可換同一曲線類の模型で、genuine非torsionの異なる隣接根の対ではない。
+標準弱楕円gluingDqはB=O_S^perpにeをRHom(M,e)=RHom_E(Li*M,q)で付ける。Fq(e)=O_E、Fq|B=Li*(−)⊗q^−1、theta→id→i_*Fq、Fq s=ΨFqを使う。境界Ψは平行移動と正次数tensor。qの位数は問わない。
 
-## 3. 弱楕円gluingの核定理
+既存の `thm:weak-orbit-kernel` は Nq-tail=Nq=iota_q ker Rf_* を全RHom・合成込みで同定する。tail→境界消滅→s周期→Bの対象G、RΓG=Li*G=0→射影公式とSbarのample twist→Rf_*G=0が証明の順序。コンパクト対象内の直交消滅だけからthick生成を推論していない。K_C,q=iota_qK_Cは全qで実在するが、任意のRains heartでの単純sheaf性は未証明。
 
-Sは滑らかな射影有理弱del Pezzo、Eは滑らかな反標準曲線、d=K_S²>0。B=O_S^perpとし、Rainsの標準dg gluingでeをRHom(M,e)=RHom_E(Li*M,q)によって付ける。Fq(e)=O_E、Fq|B=Li*(−)⊗q^−1、theta→id→i_*Fq、Fq s=Psi Fqを使う。qの位数制限はない。
+今回の `thm:weak-coherent-sections` はcoherent有限性を閉じる。eのexceptionalityと正次数境界line bundleのH1消滅から、正orbit間の高次Extを消し、中心正則gとR/g=B(E,Ψ)を得る。平行移動は数値的divisor群に恒等、正次数line bundleはampleなのでKeeler Theorem1.2でBは左右noetherian。固定全次数で有限のg進filtrationからRも左右noetherianとなる。
 
-f:S→Sbarを反標準収縮とすると、
+任意Xについて、n≥1で
 
-    Nq-tail = Nq = iota_q { G∈Perf(S) : Rf_*G=0 }
+    N^j_(n−1) --g--> N^j_n --> C^j(FX)_n --> N^(j+1)_(n−1)
 
-を得る（`thm:weak-orbit-kernel`）。ここでNqは全整数のs-orbitに右直交する対象、tailは各cohomological degreeについて十分高い正twistでHomが消える対象。
+が完全。C^j(V)=⊕H^j(E,Ψ^nV)は有限生成B加群でcohomologicalに有界。従って(N^j/gN^j)の正次数部分はC^jの部分加群として有限生成、degree0を補いgraded NakayamaでN^jを有限生成にできる。XとFXの初期cohomologyの範囲の外ではgは全射でN0=0なので全Nn=0。ここでgが同型とは主張せず全射だけを使う。
 
-証明の要点は、tail消滅→境界の正次数orbitによる検出→FqX=0→sX=X→X=iotaG、RΓG=Li*G=0、という順序。古典的Cartier triangleでG(nH)=Gとなり、反標準収縮の射影公式とSbar上のample twistのSerre消滅からRf_*G=0を得る。逆向きは収縮外での同型とEの例外配置からの非交叉による。コンパクト対象内の直交の消滅だけからthick生成を推論していない。
+正のdg orbit代数がcohomology0だけを持つので、good truncationで通常のRへ移し、module ⊕RHom(e,s^nX)からPhi=πRΓ*を構成する。有限生成性と有界性からDb(qgrR)に入り、kerPhi=Nqを得る。標準弱gluingでは以前の有限性の追加仮定は不要となった。
 
-iota_qはdg完全忠実なので、核の全RHomと合成はqによらない。任意の(-2)曲線のK_Cをiota_qで送ることで、全qに実在する零指数2-spherical対象を構成する。任意のRains heartでのsheaf性はこの構成からは従わない。
+## 特異gluingとしての収縮先
 
-## 4. 証明済みの帰結と追加仮定
+BKSのTheorem2.14は、射影f、幾何fiber次元≤1、Rf_*O=Oの下でDb(cohS)/kerRf_*≃Db(cohSbar)をdg局所化として与える。弱del PezzoのDu Val収縮はこの仮定を満たす。
 
-- coherentなPhi=πRΓ*が定義され、各次数付きExtが有限生成・有界でcohomologyを計算するなら、ker Phi=Nq。追加仮定付きの `prop:weak-coherent-kernel`。
-- Qq=(Dq/Nq)^naturalは圏論的な収縮候補。orbit対象と核はSerre双対性によって両側直交するため、局所化はorbit間の全Hom・合成を変えず、反標準環Rを保存する。B側の商と降下gluing moduleでも記述できる。
-- K_C,qのspherical twistは全orbitで自然に恒等となり、Rへの作用は恒等。Phiが定義されKを消すならPhi T_K=Phi。ADEのbraid関係は既知のspherical twist定理を使う。
-- 非genuineなら、標準pairがAZ-ampleで一様な高次Ext消滅を持つ有界heartへのpointed導来同値はない。構造対象を忘れた全抽象的同値の不存在ではない。
+Bbar=O_Sbar^perpについてB/Nf≃Bbar。fは境界近傍で同型なのでLi*G=L i_bar* RfG、gluing moduleはBbar上のRHom_E(L i_bar*(−),q)へ降りる。これにexceptional ebarを付けたDbar_qがQq=(Dq/Nq)^naturalに等しい（`thm:singular-gluing-target`）。q=OではGorenstein双対とCartier triangleによりDb(cohSbar)を回復する。
 
-核の同定は、商とDb(qgr R)の同値を証明していない。Qqのnoetherian heart・proper性・Serre関手の存在も未証明。これらを本節の成果に含めない。
+Sが非genuineなら、特異点xのideal I_xはRΓI_x=0でBbarに入る。Gorenstein次元2と0→I_x→O→k(x)→0からj>2でExt^j(I_x,I_x)=Ext^j(k(x),k(x))。したがってQqには全qで無限高次自己Extがあり、properでなくsourceDqと抽象的にも同値でない。まだ同定していないDb(qgrR_q)の性質として述べてはいけない。
 
-## 5. 非torsionの明示的零壁
+## 再発を避けるべき誤った推論
 
-E=C/(Z+iZ)、q=√2、六点(√3,√5,−√3−√5,√7,√11,√13)、L1=O(3o)、L0=L1qを取る。多重二次体のcharacter射影で得られるQ線型独立性から、共鳴する根は±(h−e1−e2−e3)だけで指数0。前半三点だけが共線し、唯一の(-2)曲線がある。
+内部次数の下有界性なしにはN/gN有限生成からN有限生成は従わない。例えばk[g,g^−1]はgによる商が零だがk[g]上有限生成でない。新証明のNは非負内部次数である。次数0の境界列の左端を零とみなさず、正次数の単射と有限な補正を使う。g進還元の有限性は固定全次数を保つ同次生成元に対して使う。
 
-(U+)はu=−q,t=−(√7+√11+√13),u−t≠0から成立。27個のtheta引数はすべて非格子。Qの九minorとdetQは非零だが成分逆数のdetは零で、cornerは無限次元。楕円線束のこの計算はgenuineを必要としない。しかしこのAS模型と弱Dqの指定同値を構成したわけではない。ここが次の一壁の入力監査に適した明示例となる。
+核の同定から商同値を結論しない。perfect対象だけで特異標的の全coherent対象を尽くさない。sourceのproper性を商へ移さない。Rのorbitの一致は全非perfect対象間のRHomの一致ではない。
 
-## 6. 次の課題と失敗しやすい推論
+## 残課題
 
-最優先は一つのA1壁でcoherent反標準関手の有限生成性・有界性を閉じること。その後、商から標的への完全忠実性・本質的全射性を調べる。核が同じというだけで局所化同値は従わない。perfect対象だけの商を、特異標的の非perfectなcoherent複体も含む圏と同一視しない。
+一般qのDbar_q→Db(qgrR_q)の完全忠実性・本質的全射性。まずA1壁のI_xと生成対象の間の全Extと積を比較する。coherent有限性は解決したので、それを次の課題として反復しない。指定heartでのK_C,qの位置、壁上AS比較、局所・完成代数、複数壁、曲面族の相対化は別問題として残る。
 
-K_C,qの指定heart内の位置、perverse heart、局所・完成代数、AS実現の存続は未解決。複数零壁や相対化は後段。固定(S,E)での核のq不変性を、曲面パラメータを動かす降下の証明にしない。
+## 一次資料と検証範囲
 
-## 7. 一次資料と今回の照合
+- Rains, *Filtered deformations of elliptic algebras*, arXiv:2107.13540v2, §4 (4.4)–(4.7), Proposition5.1と(5.3)。標準gluingと中心元を確認。https://arxiv.org/abs/2107.13540
+- Keeler, *Criteria for sigma-ampleness*, arXiv:math/9912051v2, Theorem1.2(1),(2)。有限位数を除外しない左右noetherian性。https://arxiv.org/abs/math/9912051
+- Bondal–Kapranov–Schechtman, *Perverse schobers and birational geometry*, arXiv:1801.08286v1, Theorem2.14、§2F。fiber次元≤1の局所化定理。https://arxiv.org/abs/1801.08286
+- Dolgachev, *Classical Algebraic Geometry II*, author draft 2025-08-10, Theorem8.3.2と§8.3.2；Drinfeld math/0210114v7, §§1.2–1.3,1.6；Seidel–Thomas math/0001043v2, Propositions2.10,2.12–2.13。既存の零壁入力。
+- Donovan–Wemyss, *Noncommutative enhancements of contractions*, Adv.Math.344(2019),99–136。与えられた幾何学的収縮を出発点とする点を区別する。
 
-- Rains, *Filtered deformations of elliptic algebras*, arXiv:2107.13540v2 (2022), §4 (4.4)–(4.7), pp.31–35。一般有理曲面のgluing、境界triangle、effective rootsと稠密性。https://arxiv.org/pdf/2107.13540
-- Dolgachev, *Classical Algebraic Geometry: a modern view. II*, author draft, August 10, 2025, Chapter8 Theorem8.3.2, §8.3.2。弱del Pezzoの反標準モデル。https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1467/2025/10/CAG-2.pdf
-- Drinfeld, *DG quotients of DG categories*, arXiv:math/0210114v7 (2008), §§1.2–1.3,1.6。Homのconeと普遍性。https://arxiv.org/pdf/math/0210114
-- Seidel–Thomas, *Braid group actions on derived categories of coherent sheaves*, arXiv:math/0001043v2 (2000), Propositions2.10,2.12–2.13。https://arxiv.org/pdf/math/0001043
-- Donovan–Wemyss, *Noncommutative enhancements of contractions*, Adv. Math.344 (2019),99–136, Introduction, §§1.1,6。与えられた幾何学的収縮から始まる理論である。https://www.maths.gla.ac.uk/~mwemyss/DW4.pdf
-
-これらの関連一次本文を今回読んだ。該当PDFのweb screenshotはCache missで失敗したものがあるため、全引用ページの画像確認完了とはしない。既知結果を入力とする今回の組合せの網羅的新規性、外部査読、機械形式化は未実施。Rains2025の全体は今回再監査していない。
-
-## 再現
-
-`python3 computations/verify_density_zero_walls.py` は根列挙、240の整数列、72の順序行列、零壁のQ線型条件、27theta引数、三次恒等式とHessianを厳密計算する。稠密性・sheaf存在・dg同値の証明を計算で代替しない。主論文はリポジトリrootから `latexmk -lualatex papers/dp-hearts.tex`。今回の抜粋10ページと全文未組版の区別はvalidationに記す。
+今回の新しい証明は内部点検済み。一次資料の関連定理・証明を読んだが、PDF screenshotはCache missで失敗したものがあり、全引用ページの画像確認とはしない。網羅的新規性、独立査読、形式化は未実施。改稿3節を18ページ抜粋としてLuaLaTeX組版し全ページのレイアウトを確認した。全文組版・既存21計算の再実行は今回未実施。再開時の全文検証は `bash scripts/check.sh all` と `bash scripts/check.sh tex`。

@@ -1,0 +1,230 @@
+\section{弱楕円gluingのcoherent反標準関手と収縮圏}\label{sec:coherent-contraction}
+この節では第\ref{sec:zero-walls}節の標準弱楕円gluingを固定する．
+$S$は滑らかな射影有理弱del Pezzo曲面，$E\in|-K_S|$は滑らかな楕円曲線，
+$d=K_S^2>0$，$q\in\Pic^0(E)$である．$q$の位数に制限を課さない．
+$e\in\cD_q$は構造exceptional対象，$s=s_q$は反Serre作用とし，
+$F_qs\simeq\Psi_qF_q$と書く．本節の結論は任意の抽象的な非可換曲面ではなく，
+この指定gluingとその自然な境界triangleについてのものである．
+
+\subsection{境界の正次数性からの有限生成}
+\begin{lemma}[次数付きNakayamaと境界切断]\label{lem:graded-boundary-finiteness}
+次の二つが成り立つ．
+\begin{enumerate}
+\item 非負次数付き代数$R$の正次数中心元$g$と，下に有界な次数付き右加群$N$について，
+$N/gN$が有限生成なら$N$も有限生成である．この主張は$N$上の$g$の単射性を要求しない．
+\item $\Psi$を楕円曲線上の平行移動と正次数のline bundleによるtensorの合成とし，
+$B=\bigoplus_{n\ge0}H^0(E,\Psi^n\OO_E)$とする．任意の$V\in\Db(\coh E)$について
+\[
+ C^j(V)=\bigoplus_{n\ge0}H^j(E,\Psi^nV)
+\]
+は右$B$有限生成で，非零となる$j$は有限個である．
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(1)では$N/gN$の有限個の同次生成元を$N$へ持ち上げ，それらが生成する部分加群を$L$とする．
+$N=L+gN$なので，$N$の最低次数からの帰納法により$N=L$となる．
+
+(2)をまずcoherent sheaf $V$について示す．十分大きい$a$を選び，
+$\OO_E^{\oplus h}\twoheadrightarrow\Psi^aV$の核を$K$とする．
+平行移動は次数とHarder--Narasimhan slopesを変えず，$\Psi^m$は全slopesを
+$m\deg(\Psi\OO_E)$だけ増加させる．従って$n\gg0$で
+$H^1(E,\Psi^nK)=0$であり，$\Psi^n$でtwistした評価列から
+\[
+ B_n^{\oplus h}\twoheadrightarrow H^0(E,\Psi^{a+n}V)
+\]
+を得る．この写像は次数$a$の切断への右$B_n$作用である．
+有限個の低次数成分を加えれば$C^0(V)$の有限生成性が従い，$C^1(V)$は有限次元である．
+$B$の左右noetherian性はtwisted homogeneous coordinate ringの既知定理による．
+平行移動は数値的divisor群に恒等的に作用し，正次数line bundleはampleなので，
+Keelerの判定と左右noetherian性が適用される
+\cite[Theorem 1.2(1),(2)]{KeelerAmple}．
+一般の有界複体では，有限個のcohomology sheafに対するhypercohomology spectral sequenceを用いる．
+$n\gg0$ではその高次sheaf cohomologyが消え，
+$H^j(E,\Psi^nV)=H^0(E,\Psi^nH^jV)$となる．
+この同定は$B$作用と両立し，有限個の低次数を補って結論を得る．
+曲線のcohomological dimensionが1であることから，$j$の有界性も従う．
+\end{proof}
+
+\begin{theorem}[弱gluingにおけるcoherent導来切断]\label{thm:weak-coherent-sections}
+標準弱楕円gluingでは，反標準環
+\[
+ R_q=\bigoplus_{n\ge0}\Hom(e,s^ne)
+\]
+は局所有限な連結左右noetherian代数で，中心正則元$g\in(R_q)_1$を持ち，
+$R_q/gR_q\simeq B(E,\Psi_q)$である．任意の$X\in\cD_q$について
+\[
+ N^j(X)=\bigoplus_{n\ge0}\Hom(e,s^nX[j])
+\]
+は右$R_q$有限生成で，非零となる$j$は有限個である．
+自然なdg関手
+\[
+ \Phi_q=\pi\mathbf R\Gamma_*:\cD_q\longrightarrow\Db(\qgr R_q)
+\]
+が定まり，$H^j\Phi_qX=\pi N^j(X)$，$\Phi_qe=\pi R_q$，
+$\Phi_qs\simeq(1)\Phi_q$を満たす．さらに
+\begin{equation}\label{eq:weak-coherent-kernel-final}
+ \boxed{\ker\Phi_q=\mathcal N_q=\iota_q\ker(Rf_*).}
+\end{equation}
+従って，標準弱楕円gluingでは命題\ref{prop:weak-coherent-kernel}のcoherent有限性の条件が成立する．
+\end{theorem}
+\begin{proof}
+\emph{反標準環．}
+境界triangleを$s^ne$に適用すると
+\[
+ \RHom(e,s^{n-1}e)\longrightarrow\RHom(e,s^ne)
+ \longrightarrow R\Gamma(E,\Psi_q^n\OO_E)\longrightarrow
+\]
+を得る．$n\ge1$では最後のline bundleの次数は$nd>0$なので，そのcohomologyは次数0のみである．
+$e$のexceptionalityを初期値として帰納すると，
+$\Ext^j(e,s^ne)=0$ $(j\ne0,n\ge0)$と
+\[
+ 0\longrightarrow(R_q)_{n-1}\xrightarrow{\ g\ }(R_q)_n
+ \longrightarrow B(E,\Psi_q)_n\longrightarrow0\quad(n\ge1)
+\]
+を得る．積との両立性と$g$の中心性は，境界の自然変換によるものであり，
+Rains\cite[Proposition 5.1と式(5.3)]{Filtered}と同じ構成である．
+次数0も$k$なので商は$B(E,\Psi_q)$となる．
+
+$g$進filtrationの随伴次数付き環は$B(E,\Psi_q)[g]$で左右noetherianである．
+同次idealのinitial idealの有限生成元を持ち上げて$g$進次数で還元する．
+固定した全次数では$g$進filtrationは有限なので還元は有限回で終わる．
+従って同次idealは有限生成であり，一般のidealには全次数filtrationを用いて
+同じ結論を得る．これが$R_q$の左右noetherian性を与える．
+
+\emph{次数付きExtの有限生成と有界性．}
+一般の$X$に対する境界triangleから，$n\ge1$で
+\begin{equation}\label{eq:weak-central-exact}
+ N^j(X)_{n-1}\xrightarrow{\ g\ }N^j(X)_n
+ \longrightarrow C^j(F_qX)_n\longrightarrow N^{j+1}(X)_{n-1}
+\end{equation}
+が完全である．これは境界restrictionと積の自然性により次数付き右$R_q$加群の列であり，
+$C^j(F_qX)$への作用は$R_q\twoheadrightarrow B(E,\Psi_q)$を経由する．
+従って$(N^j(X)/gN^j(X))_{\ge1}$は$C^j(F_qX)_{\ge1}$の部分加群である．
+前補題とnoetherian性からこれは有限生成で，有限次元の次数0部分を補えば
+$N^j(X)/gN^j(X)$全体も有限生成となる．前補題(1)より$N^j(X)$は有限生成である．
+この議論では次数0の列の左端を誤って零と置かない．正次数の単射と有限な低次数の補正で十分である．
+
+$F_qX$のcohomologyの範囲を$[a,b]$とすると，$C^j(F_qX)=0$は
+全$n\ge0$について$j\notin[a,b+1]$で成立する．
+また$\RHom(e,X)$も有界である．両者の範囲の外では
+\eqref{eq:weak-central-exact}の$C^j$が零なので，$g:N^j_{n-1}\to N^j_n$は全射である．
+$N^j_0=0$を初期値として，その範囲外の全成分が零になる．
+ゆえに非零の$j$は有限個である．
+
+\emph{関手の構成と核．}
+正のdg orbit代数$\mathcal R_q=\bigoplus_{n\ge0}\RHom(e,s^ne)$を取る．
+第一段階により，これはcohomological degree 0にしかcohomologyを持たない．
+good truncationを介するdg代数のquasi-isomorphism
+$\mathcal R_q\leftarrow\tau_{\le0}\mathcal R_q\to R_q$でmoduleを運ぶと，
+$\bigoplus_{n\ge0}\RHom(e,s^nX)$が自然な$R_q$-moduleの導来対象を定め，
+そのcohomologyは$N^j(X)$である．上の有限生成性と有界性から
+$\Db(\gr R_q)$に入り，exactな商関手$\pi$を施して$\Phi_q$を得る．
+有限個の低次数を除く内部shiftの同定が$\Phi_qs\simeq(1)\Phi_q$を与える．
+cohomology公式と核の主張は命題\ref{prop:weak-coherent-kernel}および
+定理\ref{thm:weak-orbit-kernel}による．genuine性，orbitによる全圏の生成，
+標的の有限大域次元は，この構成には使っていない．
+\end{proof}
+
+\begin{remark}[三つの有限性の区別]\label{rem:three-finiteness}
+この定理は，反標準\emph{環}のnoetherian性，個々の対象の次数付きExtの\emph{有限生成性}，
+そのcohomological degreeの\emph{有界性}を順に証明している．
+$g$可逆な非零加群には$N/gN=0$となる例があるが，ここで使う$N^j(X)$は
+内部次数が非負の切断加群であり，下に有界性がその誤用を排除する．
+また$\ker\Phi_q$の同定だけでは，誘導関手の完全忠実性・本質的全射性は従わない．
+\end{remark}
+
+\subsection{古典的特異モデル上のgluingとしての商}
+$\bar i:E\hookrightarrow\overline S$を反標準収縮後の境界とし，
+\[
+ \overline{\cB}=\OO_{\overline S}^{\perp}\subset\Db(\coh\overline S),\qquad
+ \mathcal M_q(G)=\RHom_E(L\bar i^*G,q)
+\]
+と置く．境界は特異点を通らず，Cartier divisorなので$L\bar i^*$は有界coherent複体を保つ．
+$\overline{\cD}_q$を，$\overline{\cB}$にexceptional対象$\bar e$を
+$\RHom(\bar e,G)=0$，$\RHom(G,\bar e)=\mathcal M_q(G)$で付けた
+pretriangulated dg gluingの冪等完備化と定義する．
+これは定義であり，ある非可換abel圏の有界導来圏であることを先取りしない．
+
+\begin{theorem}[収縮圏の特異gluing表示]\label{thm:singular-gluing-target}
+標準弱楕円gluingのdg商は
+\[
+ \boxed{(\cD_q/\mathcal N_q)^\natural\simeq\overline{\cD}_q.}
+\]
+この同値は$e$を$\bar e$へ送り，共通成分では$Rf_*:\cB\to\overline{\cB}$から誘導される．
+$q=\OO_E$では$\overline{\cD}_{\OO_E}\simeq\Db(\coh\overline S)$である．
+\end{theorem}
+\begin{proof}
+反標準収縮$f:S\to\overline S$は射影的で，幾何学的fiberの次元は高々1，
+Du Val特異点の有理性から$Rf_*\OO_S=\OO_{\overline S}$である．
+従ってBondal--Kapranov--Schechtman\cite[Theorem 2.14, \S2F]{BKSWalls}の
+\emph{既知の}局所化定理が適用され，
+\[
+ \Db(\coh S)/\mathcal N_f\simeq\Db(\coh\overline S)
+\]
+をdg圏として得る．この定理は任意次元fiberについての一般局所化予想を必要としない．
+
+$Rf_*$は構造対象を保存し，
+$\RHom(\OO_S,G)=\RHom(\OO_{\overline S},Rf_*G)$である．
+したがって$\cB/\mathcal N_f\simeq\overline{\cB}$となる．
+具体的には，$\overline{\cB}$の対象を局所化定理によって持ち上げれば，大域切断の消滅から
+その持ち上げも$\cB$に入る．$\cB$の二対象間の局所化のroofでは，coneが
+$\mathcal N_f\subset\cB$に入るため，中間対象も$\cB$に取れる．これが完全忠実性を与える．
+
+$f$は$E$の近傍で同型なので
+$Li^*G\simeq L\bar i^*Rf_*G$であり，gluing moduleは
+$\cB/\mathcal N_f$上で$\mathcal M_q$に一致する．
+命題\ref{prop:zero-dg-quotient}のgluingとdg商の両立性を使えば所望の同定を得る．
+
+$q=\OO_E$のとき，$\overline S$は射影Gorenstein有理曲面で
+$\omega_{\overline S}=\OO_{\overline S}(-E)$である．
+$G\in\overline{\cB}$についてGrothendieck双対性から
+$\RHom(G,\omega_{\overline S})=R\Gamma(G)^*[-2]=0$であり，
+Cartier divisorのtriangleが
+$\RHom(G,\OO_{\overline S})\simeq\RHom_E(L\bar i^*G,\OO_E)$を与える．
+また$\OO_{\overline S}$はexceptionalで，大域切断の評価triangleにより
+$\Db(\coh\overline S)$は$\overline{\cB}$とこの対象で生成される．
+従って上記gluingはその有界coherent導来圏に一致する．
+\end{proof}
+
+\begin{corollary}[零根壁の商圏には高次自己Extが残る]\label{cor:singular-gluing-unbounded}
+$S$がgenuineでないなら，任意の$q$について$\mathcal Q_q$には
+$\Hom(W,W[j])\ne0$となる$j>0$が無限にある対象$W$が存在する．
+特に$\mathcal Q_q$はproper dg圏ではなく，滑らかなsource $\cD_q$と抽象的にも導来同値でない．
+\end{corollary}
+\begin{proof}
+$\overline S$の特異点$x$を選び，そのideal sheafを$I_x$とする．
+$R\Gamma(\OO_{\overline S})=k=R\Gamma(k(x))$なので$R\Gamma(I_x)=0$で，
+$I_x\in\overline{\cB}$である．$\overline S$はGorenstein曲面なので
+$\Ext^j(k(x),\OO_{\overline S})=0$ $(j>2)$．
+$0\to I_x\to\OO_{\overline S}\to k(x)\to0$をRHomの両変数へ用いると
+\[
+ \Ext^j(I_x,I_x)\simeq\Ext^j(k(x),k(x))\quad(j>2)
+\]
+を得る．非正則局所環での剰余体の最小自由解消は無限に続き，
+右辺は無限個の次数で非零である．支持が一点なので局所Extと大域Extは一致する．
+$\overline{\cB}$は全ての$\overline{\cD}_q$へ完全忠実に入るから，
+その中の$I_x$の像を$W$とすればよい．
+source $\cD_q$では任意の二対象間のRHomの全cohomologyが有限次元であり，
+この性質は三角圏同値で保存されるので最後の主張を得る．
+\end{proof}
+この系の標的は\emph{構成した}特異gluing $\overline{\cD}_q$である．
+$q\ne\OO_E$でこれを$\Db(\qgr R_q)$と同定したことにはならない．
+
+\subsection{残る比較問題の正確な形}\label{subsec:coherent-future}
+本節によって，標準弱楕円gluingのcoherent有限生成性・有界性，
+自然関手の全核，およびdg商の具体的な特異gluing表示が得られた．
+一般の$q$について残る核心は，そこから誘導される自然関手
+\[
+ \overline\Phi_q:\overline{\cD}_q\longrightarrow\Db(\qgr R_q)
+\]
+の完全忠実性と本質的全射性である．
+$q=\OO_E$では，反標準環の$qgr$が$\coh\overline S$であることと射影公式により，
+$\Phi_q$は$Rf_*$に一致するので，局所化同値が成立する．
+非自明$q$では，境界と反標準orbit上の比較だけでは，特異点に対応する非perfect対象間の
+全高次Extを制御できない．まず一つの$A_1$壁でこの部分の比較を閉じることが課題である．
+
+指定Rains heartでの収縮対象の位置，壁上のAS模型との同定，局所・完成代数，
+曲面族に対する底変更と降下は別の課題として残る．
+本節の有限生成の補題，古典的な局所化定理，dg gluingの一般論自体の新規性は主張しない．
+追加的な内容は，それらを同じ$(S,E,q,e,s)$に適用し，零指数の全核，
+coherent反標準関手，特異gluingの三者を自然関手つきで接続した点にある．

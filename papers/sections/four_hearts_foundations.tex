@@ -1,202 +1,198 @@
-\section{序論：四つの構成と三つの比較問題}\label{sec:intro}
+\section{序論：反標準heartと二種類の根現象}\label{sec:intro}
 滑らかな可換del Pezzo曲面では，点のblow-up，反標準環，例外列から作るhelixは
-いずれも同じ圏$\coh S$を回復する．非可換化すると，この一致には二つの障害が現れる．
-第一に，同じ導来圏の中で標準的なheartが変わり得る．第二に，導来同値が存在しても，
-構造対象$\OO$をどの対象へ送るかが自動的には決まらない．
-本稿では次の三つを分ける：abel圏の構成，指定された導来同値，その同値のt-exactnessである．
-構造対象・反Serre作用・境界restriction・標識の保存はさらに別に確認する．
+同じcoherent sheaf圏を回復する．非可換の場合には，同じ導来圏に異なる標準heartが現れ，
+導来同値の存在だけでは構造対象や反標準切断の同定は決まらない．
+本稿の問いは，\emph{指定された構造対象と反Serre作用がどのheartを選ぶか}である．
+その答えには，非零指数の共鳴に伴うheartのtiltと，零指数壁に伴う対象の収縮という
+二つの異なる現象が現れる．
 
-名称は構成の由来を表す．\emph{VdB heart}はVan den Berghの実際のblow-upで得る
-coherent sheaf圏，\emph{Rains heart}はRainsのgluingとblowdown表示で指定するt構造のheart，
-\emph{anticanonical heart}は指定対象の反標準環の$\qgr$，
-\emph{AS heart}はArtin--Schelter正則$\mathbb Z$-代数の$\qgr$である．
-四名称が四つの相異なる圏を意味するわけではない．特に同じblow-up表示を用いる場合の
-VdB--Rains一致と，VdBのsection modelとの比較は混同してはならない．
+構造対象を$e$，Serre関手を$\Sfun$，反Serre作用を$s=\Sfun^{-1}[2]$とし，
+$R(e,s)=\bigoplus_{n\ge0}\Hom(e,s^ne)$を反標準orbit環と呼ぶ．
+名称は構成の由来を表し，\emph{VdB heart}はVan den Berghのraw blow-up，
+\emph{Rains heart}はgluingとblowdown表示で指定されるt構造，
+\emph{AS heart}はArtin--Schelter正則$\mathbb Z$-代数，
+\emph{反標準heart}は指定された$R(e,s)$の$qgr$から得る．
+四名称が四つの相異なるabel圏の存在を意味するわけではない．
+圏の構成，導来同値，そのt-exactness，構造対象・境界・標識の保存を分けて扱う．
 
-\subsection{主結果の見取り図}
-本稿の比較は次の形を取る．各矢の仮定は後の節で明記する．
+\subsection{genuine領域：heartの選択と有限次元表現}
+滑らかな射影有理曲面$S$の$H=-K_S$がampleである場合をgenuineと呼ぶ．
+滑らかな楕円境界$E\in|H|$と$q\in\Pic^0(E)$による標準Rains gluingを固定すると，
+比較の基本図式は次のようになる．
 \begin{equation}\label{eq:overview}
 \begin{tikzcd}[column sep=large,row sep=large]
 \AV \arrow[r,"\text{同じblow-up表示}","\simeq"'] & \AR
 \arrow[d,phantom,"\text{HRS tilt}" description] \\
-\AAS \arrow[r,"\text{有限corner条件}","\simeq"'] & \AAC
+\AAS \arrow[r,"\text{指定AS実現}","\simeq"'] & \AAC
 \end{tikzcd}
 \end{equation}
-右側の縦の表示はabel同値の矢ではない．指定した導来同値で同じ三角圏に入れたとき，
-一方のheartが他方のHRS tiltになることを表す．下側の横矢は条件付きであり，
-任意のAS表示に存在する同値ではない．
+右側の縦の表示はabel同値ではなく，指定導来同値の下でのheartの関係である．
+下側にはfull very strong helixとrolled-up同定などの入力があり，
+任意のpotentialに対して存在する矢とは解釈しない．
 
-\begin{theorem}[比較定理の要約]\label{thm:summary}
-以下の各主張を，それぞれの適用範囲で得る．
+\begin{theorem}[genuine領域の比較と表現論]\label{thm:summary}
+以下はそれぞれに記した仮定の下で成り立つ．
 \begin{enumerate}
-\item 同じ初期heart，blow-up中心，gluing bimodule，blow-down関手を同定した
-VdB表示とRains表示では，誘導される導来同値はt-exactである
-（定理\ref{thm:RV}）．
-\item 滑らかなgenuine可換del Pezzo $S$，滑らかな$E\in|-K_S|$，
-$q\in\Pic^0(E)$からのRains gluingでは，自然な関手
-$\Phi:\Db(\AR)\simeq\Db(\AAC)$がある．$H=-K$がnefなRains heartに対し
+\item 滑らかなgenuine $S$，滑らかな楕円境界$E$，任意の$q\in\Pic^0(E)$からの
+標準gluingでは，自然反標準導来切断$\Phi$はdg同値であり，Rains heart上の振幅は$[0,1]$である．
+従って
 \[
-\Phi^{-1}(\AAC)=\langle\cF[1],\cT\rangle,
-\quad \cT=\ker H^1\Phi,\quad\cF=\ker H^0\Phi
+ \Phi^{-1}(\AAC)=\langle\cF[1],\cT\rangle,\qquad
+ \cT=\ker H^1\Phi,\quad\cF=\ker H^0\Phi
 \]
-である（定理\ref{thm:derived}，\ref{thm:globaltilt}）．
-\item 境界非交叉の既約根sheaf $M$が実在し，$m=\chi(\OO,M)<0$なら，
-$(\OO,\Sfun^{-1}[2])$はRains heartでAZ-ampleでない．自然な$\Phi$はt-exactでないが，
-(2)の範囲では依然として導来同値である（系\ref{cor:negative}）．
-\item AS helixをfoldした代数$B$と構造頂点$p$が
-命題\ref{prop:corner}の有限性条件を満たし，$pBp$が指定した反標準環であるとする．
-自然な$\AAS\to\AAC$がabel同値となる必要十分条件は
-$\dim_k B/BpB<\infty$である（系\ref{cor:ASac}）．
-\item (2)で$q$が非torsionなら，全heartの差は境界非交叉の有限長Serre圏$\cZ$に集中する．
-その実在単純根の図式は有限ADE型であり，
+となる（定理\ref{thm:derived}，\ref{thm:globaltilt}）．
+\item さらに$q$が非torsionなら，$\cF$は境界非交叉の有限長Serre圏$\cZ$に含まれる．
+その実在単純根は有限ADE図式$\Gamma$をなし，
 \[
  \Phi\text{ がt-exact}\iff(e,s)\text{ がAZ-ample}
- \iff\chi(e,S)>0\quad(\text{全ての実在単純 }S\in\cZ)
+ \iff\chi(e,S_i)>0\quad(\text{全ての実在単純 }S_i\in\cZ)
 \]
-となる．負指数単純を順次tiltする有限手順が標的heartを回復する
+である．負指数単純の有限回のtiltが標的heartを回復する
 （定理\ref{thm:globaldefect}，\ref{thm:Eulerchamber}，\ref{thm:globalADEtilts}）．
-\item 同じ範囲で，$\cZ$と標的の有限次元heartはそれぞれ
-$\operatorname{mod}_{\rm fd}\Pi(\Gamma)$とabel同値である．
-標的単純の次元を$m_i=\chi(e,\beta_i)>0$とすると，全有限次元$A$加群は
+\item $\cZ$と標的の有限次元heartは，それぞれ$\operatorname{mod}_{\rm fd}\Pi(\Gamma)$とabel同値である．
+$A=R/(g-1)$，標的単純の次元$m_i=\chi(e,\beta_i)>0$に対して，
+全有限次元$A$加群は一つの有限次元商
 \[
- A/I\simeq\End_{\Pi(\Gamma)}(\bigoplus_iP_i^{\oplus m_i})
+ A/I\simeq\End_{\Pi(\Gamma)}\left(\bigoplus_iP_i^{\oplus m_i}\right)
 \]
 を経由する（定理\ref{thm:ADE-abelian}，系\ref{cor:ADE-affine-quotient}）．
-\item 三次曲面型の規格化decupleでは，27個のtheta係数から入力の$L_1$六点を復元し，
-頂点除去cornerは$L_0$に依存しない．full very strong周期helixとrolled-up同定を
-備えたAS実現では，指定されたAS比較はt-exactである
-（定理\ref{thm:theta-potential}，\ref{thm:original-six-points}，\ref{thm:normalized-abelian}）．
-\item (6)の普遍商$D=A/I$は，非被約基底を含む古典的な表現族を支配し，
+これは162次元の頂点除去cornerとは別の代数である．
+\item $D=A/I$について，非被約基底を含む古典的な表現スキームは
 $\operatorname{Rep}_n(A)\simeq\operatorname{Rep}_n(D)$となる．
-その表現stackは$\sum_i m_id_i=n$を満たすpreprojective表現stackの和である
-（定理\ref{thm:finite-rep-stack}）．$D$は自己入射的で，Frobeniusである必要十分条件は
-$m_i=m_{\nu(i)}$である（命題\ref{prop:quotient-Frobenius}）．
+表現stackは$\sum_i m_id_i=n$を満たすpreprojective表現stackの和である
+（定理\ref{thm:finite-rep-stack}）．$D$は自己入射的で，
+Frobeniusとなる条件は$m_i=m_{\nu(i)}$である（命題\ref{prop:quotient-Frobenius}）．
+\item 同じ初期heart，中心，gluing bimodule，blow-down関手を同定したVdB表示とRains表示では，
+誘導される同値はt-exactである（定理\ref{thm:RV}）．同じ最後のraw blow-upについては
+section-model関手を自然反標準関手へ同定できる
+（定理\ref{thm:VdBcanonical}，系\ref{cor:fourfunctors}）．
+\item 三次曲面のAS helixのfoldingと反標準orbitの同定，命題\ref{prop:corner}の有限性入力の下では，
+自然corner restrictionがabel同値となる必要十分条件は$\dim B/BpB<\infty$である．
+規格化decupleでは全27theta係数から入力の$L_1$六点を復元でき，頂点除去cornerは$L_0$に依存しない．
+指定されたfull very strong AS実現とrolled-up同定の下で，AS--反標準比較そのものがt-exactである
+（系\ref{cor:ASac}，定理\ref{thm:theta-potential}，\ref{thm:original-six-points}，\ref{thm:normalized-abelian}）．
 \end{enumerate}
 \end{theorem}
-さらに三次曲面型の標準noetherian周期表示では，(4)の有限性条件と指定AOU同値のt-exactnessを
-四交比の十一の非零条件で判定する（定理\ref{thm:AOUexactlocus}）．
-係数トーラス上の一致開集合は，古典的六点モジュライと四次元トーラスの積となる
-（系\ref{cor:coefficientopen}）．これは係数空間の記述であり，全点のAS正則性を主張しない．
+実在する負指数根sheafは，導来切断で消えるのでなく次数1へ移る．
+それが反標準AZ amplenessの失敗を検出する（系\ref{cor:negative}）．
+一般の対象の総Euler値だけではtorsion pairは判定できず，
+全ての非零商または部分対象のEuler値を用いる（命題\ref{prop:numericaltorsion}）．
 
-二つの追加的な接続を重視する．第一に，VdBの最後のsection-model関手は，
-構造対象と反Serre作用を保つことから内在的な反標準導来切断と自然に同定される
-（定理\ref{thm:VdBcanonical}）．従って同じ最終blow-upのRains実現では，
-比較関手を別の仮定として与えずに四者を接続できる（系\ref{cor:fourfunctors}）．
-第二に，境界非交叉部分のtorsion pairは全ての部分対象・商のEuler標数で決まり，
-有限ADE型では負指数の単純tiltを有限回繰り返すと指定された反標準heartに到達する
-（命題\ref{prop:numericaltorsion}，定理\ref{thm:Eulerchamber}）．
-根類だけの比較でなく，実際のheartの一致を証明する点が重要である．
+整数倍点$p_i=N_iq$の実在配置では，単純tiltは整数列の整列として記述される．
+一つの負指数根だけを持つ配置と$E_6$の混合配置を第\ref{sec:single-root}節までに具体化する．
+$E_6$の普遍有限商は例によって970次元となり，そのbasic代数の156次元とも区別される．
+生成元ごとの作用行列を計算したことと，忘却関手が指定する商の同型型を決めたことは異なる．
 
-第(1)項はRainsの既知のt構造の記述の適用である．第(4)項は一般のcorner理論を
-構造対象つき比較へ適用した判定法である．第(2)，(3)項は本研究の楕円gluingと共鳴の
-結果をまとめたもので，必要な証明を本稿に収める．
-\emph{全四heartの存在・一致・相対降下を一括して主張する定理ではない．}
+\subsection{最大共鳴と零指数壁}
+固定した$E,q$について，相異なる正整数倍点は次数1--6の全根を非零指数で共鳴させる．
+任意の厳密な整数順序を課してもその配置はZariski稠密である
+（定理\ref{thm:maximal-density-main}）．整列定理と合わせると，
+指定heartが反標準heartと一致する点も一致しない点も稠密であり，
+その一致条件は構成可能でない（系\ref{cor:nonconstructible-texact}）．
+これは点ごとに指定したheartの結論で，代数的な相対t構造の存在や全曲面モジュライの成分分類ではない．
 
-さらに実際のrestriction条件\eqref{eq:two-nontrivial}を満たすAOU領域では，
-最後の二つのmutationが対象を変えないことから
-$E_0\simeq\pi F$を証明し，AS側の構造対象と反標準環を同定する
-（定理\ref{thm:AOU-pointed}，系\ref{cor:AOU-ring}）．
-これにより，corner有限性を確認した範囲ではAOUの指定関手自体のt-exactnessも得る
-（系\ref{cor:AOU-texact}）．
+一方，$H=-K_S$がnefかつbigでampleでない弱del Pezzoでは，
+反標準収縮$f:S\to\overline S$の核が存在する．
+古典的な$(-2)$曲線$C$の$i_*\OO_C(-1)$は全反標準orbitから見えず，
+零指数での対象の消失は，genuine領域のtiltと異なる現象である．
 
-境界の規約は比較の一部である．第\ref{sec:boundarydata}節では，VdBの右加群shiftから
-実際のOrlov restrictionを運び，$L=L_1$，$q=L_0L_1^{-1}$という共通辞書を得る．
-印刷された別のshift規約と混在させず，明示した三条件の開集合で規格化した
-AOU型同値$\Psi_+$を構成する（定理\ref{thm:right-dictionary}，系\ref{cor:normalized-pointed}）．
-これにより，単に復元の候補を与えるだけでなく，指定構成でどの候補を使うかを決める．
-なお共通の境界dg模型の同定と，標準heartのt-exactな同定は区別する．
+\begin{theorem}[弱gluingのcoherent収縮と商圏の記述]\label{thm:weak-summary}
+$S$を滑らかな射影有理弱del Pezzo曲面，$E\in|-K_S|$を滑らかな楕円曲線とし，
+任意の$q\in\Pic^0(E)$による標準gluing $\cD_q$を取る．
+\begin{enumerate}
+\item $R_q$は左右noetherianで，各$X\in\cD_q$の次数付きExt
+$\bigoplus_{n\ge0}\Hom(e,s_q^nX[j])$は有限生成で，非零の$j$は有限個である．
+従ってcoherentな自然dg関手$\Phi_q:\cD_q\to\Db(\qgr R_q)$が存在する．
+\item その全核は
+\[
+ \ker\Phi_q=\mathcal N_q
+ =\iota_q\{G\in\Perf(S):Rf_*G=0\}
+\]
+である．ここで$\mathcal N_q$は全反標準orbitに直交するdg部分圏で，
+$\iota_q$は共通gluing成分$\OO_S^\perp$の包含である．
+\item $(\cD_q/\mathcal N_q)^\natural$は，$\OO_{
+\overline S}^{\perp}\subset\Db(\coh\overline S)$にexceptional対象を
+$\RHom_E(L\bar i^*(-),q)$でglueした特異gluing $\overline{\cD}_q$と同値である．
+$q=\OO_E$ではこれは$\Db(\coh\overline S)$である．
+\end{enumerate}
+証明は定理\ref{thm:weak-orbit-kernel}，\ref{thm:weak-coherent-sections}，
+\ref{thm:singular-gluing-target}に与える．
+\end{theorem}
+この定理は，coherent有限性を追加仮定として課すことなく標準弱gluingへ適用できる．
+ただし一般の$q$について$\overline{\cD}_q\simeq\Db(\qgr R_q)$までは結論しない．
+その比較は自然関手$\overline\Phi_q$の完全忠実性と本質的全射性に帰着する．
+非genuineの場合，$\overline{\cD}_q$には無限個の高次数に自己Extを持つ対象があり，
+source $\cD_q$のpropernessを商に移してはいけない（系\ref{cor:singular-gluing-unbounded}）．
 
+\subsection{先行研究と寄与の範囲}
+Van den Bergh\cite{VdB}は非可換blow-upと，一般位置の下でのsection algebraへの導来比較を構成した．
+Rains\cite{Rains,Filtered}はそのgluingとt構造，effective roots，数値的なnef/ample coneを解析した．
+数値的amplenessと指定pairのAZ amplenessは定義から同じではない．
+本稿のVdB--Rains一致は既知のpseudo-canonicalな認識の適用であり，
+追加的な問題は\emph{自然な反標準関手が選ぶheart}を実在対象で決定することである．
+Rainsの2025年monograph\cite{RainsBook}では，旧稿のLemma 4.9，Proposition 4.17，
+Theorem 4.30，Theorem 9.10，Corollary 10.16はそれぞれ
+Lemma 11.10，Proposition 11.19，Theorem 11.31，Theorem 16.10，Corollary 17.17に対応する．
+単純根sheafの存在にはProposition 18.27直前の記述を用い，nef仮定付きの同命題自体を根へ誤適用しない．
 
-本稿の係数条件を実際の共通領域へ結び付ける中心結果は
-第\ref{sec:ellipticcoefficients}節である．正規化decupleのpotentialを全係数で計算し，
-二系列の係数比を$L_1$による\emph{入力六点}の射影座標と同定する．
-その結果，十一条件はこの六点の一般位置と同値となる．
-さらにpointedなvery strong helixを標的のample pairから再構成することで，
-規格化共通領域では右noetherian性を導き，$\Psi_+$がabel同値に制限されることを得る
-（定理\ref{thm:normalized-abelian}）．
-従ってAS--反標準の一致と，共鳴に伴う順序付きRains heartのtiltを同じデータで比較できる．
+Abdelgadir--Okawa--Ueda\cite{AOU}の三次曲面型構成とOkawa--Ueda\cite{OU,OUHelices}の
+helix理論はAS比較の入力である．本稿では実際の右加群shiftから境界辞書
+$L=L_1$，$q=L_0L_1^{-1}$を運び，構造対象を保存する規格化mutationを固定する
+（第\ref{sec:boundarydata}節，定理\ref{thm:AOU-pointed}）．
+AOUの印刷座標の異なるshift規約を混在させず，未変更の全座標への翻訳を確定したとも主張しない．
+指定$\Psi_+$のt-exactness，actual theta係数と入力六点の一致，$L_0$非依存を
+この規格化の下で証明する．elliptic Cauchy恒等式自体は既知\cite{EllipticCauchy}である．
+係数トーラスの十一条件と一致領域は定理\ref{thm:AOUexactlocus}，系\ref{cor:coefficientopen}に記す．
 
-\subsection{先行研究と本稿の位置}
-Van den Bergh \cite{VdB}は非可換blow-upを構成し，section algebraへの比較を
-一般位置条件の下で導来同値とした．Rains \cite{Rains,Filtered}はそのblow-upの
-導来圏とt構造をgluingで記述し，effective rootと数値的なnef/ample coneを解析した．
-その「ample」はeffective coneによる数値的概念であり，指定pairのAZ amplenessと
-定義上同じではない．Rainsの2025年のmonograph \cite{RainsBook}も照合に用いる．
-旧稿のLemma 4.9，Proposition 4.17，Theorem 4.30，Theorem 9.10，Corollary 10.16は，
-同書v1のLemma 11.10，Proposition 11.19，Theorem 11.31，Theorem 16.10，Corollary 17.17に対応する．
-有効単純根の既約sheafの存在には同書Proposition 18.27直前の記述を用い，
-nef性を仮定する同命題そのものを$(-2)$単純根へ適用しない．
+HRS理論\cite{CHZ}，Kleinian圏のWeyl反射\cite{BridgelandKleinian}，
+length heartの単純tilt\cite{BCPW}，ADE zigzagの形式性\cite{LiuWangZigzag}と
+拡大閉包の復元\cite{KellerAinf}，Dynkin torsion classの分類\cite{Mizuno}は既知の機構である．
+本稿ではこれらを二つの実在heartへ適用し，Euler次元から元のアフィン代数の
+\emph{特定の非basicな有限商}を取り出す．自己入射性・Nakayama置換\cite{AiharaMizuno}と
+matrix Hilbert公式\cite{EtingofRains}も既知入力として区別する．
+GDAHAとmultiplicative preprojectiveを通じたquantized del Pezzoの先行研究\cite{EOR}は，
+境界や表示を確認せずに本稿の滑らかな楕円gluingへ同一視しない．
 
-Abdelgadir--Okawa--Ueda \cite{AOU}は三次曲面型AS代数を構成し，
-十分一般な楕円六点データについてVdBのsection modelとの導来比較を与えた．
-Okawa--Ueda \cite{OU}はこのAS構成をdel Pezzo型へ拡張する．
-これらを，raw blow-up heartとの無条件なabel同値とは読まない．
-HRS tiltのrealizationが一般には同値でないことは\cite{CHZ}で詳しく論じられている．
-本稿では既知の導来同値からtiltを記述する場合と，抽象的にtiltを作る場合を区別する．
+弱領域ではRainsの一般有理曲面のgluingを出発点とし，
+境界の正次数性とKeelerのnoetherian性\cite{KeelerAmple}からcoherent導来切断を構成する．
+古典的な反標準収縮\cite{DolgachevWalls}に対する
+Bondal--Kapranov--Schechtmanのfiber次元高々1の局所化定理\cite[Theorem 2.14]{BKSWalls}を用い，
+dg商\cite{DrinfeldWalls}を特異モデル上のgluingに同定する．
+これらの一般定理自体を新しい結果とはせず，固定された$(S,E,q,e,s)$の
+全orbit核・coherent関手・収縮圏を接続することを本稿の結論とする．
+与えられた収縮から始まる非可換収縮環\cite{DonovanWemyssWalls}は，
+任意の非可換曲面上の収縮射の存在を代替するものではない．
 
-VdBの\S11.2は既に境界非交叉対象の有限長性と単純対象数を扱う．
-またADE型のheartとWeyl反射はKleinian特異点の安定性条件で既知であり
-\cite{BridgelandKleinian}，単純tiltがlength heartを保つ一般条件は\cite{BCPW}で研究されている．
-本稿はそれらの機構の発見を主張せず，反標準Euler関数による\emph{標的heartの選択}と，
-VdB・Rains・AOUの\emph{指定関手}への適用を区別して述べる．
+\subsection{仮定・未解決点と第2論文の役割}
+自然導来\emph{同値}とHRS比較はgenuine性を使う．実在ADE根によるheart選択と
+アフィン有限商には非torsion性を加える．AS比較には指定helixとrolled-up同定を加える．
+これに対しcoherent反標準\emph{関手}と全核・特異gluing表示は弱del Pezzoまで成り立ち，
+$q$の位数制限を必要としない．任意の非可換曲面，特異楕円境界，相対t構造への拡張は含まない．
 
-ADE形式性\cite{LiuWangZigzag}と$A_\infty$模型による拡大閉包の復元\cite{KellerAinf}も既知入力である．
-本稿ではそれらを二つの実在heartへ別々に適用し，標的のEuler次元を用いて，
-元の$A$の全有限次元表現を支配する\emph{非basicな商}まで特定する．
-Dynkin torsion classのWeyl分類\cite{Mizuno}を新しい分類結果とはしない．
-自己入射性とNakayama置換も既知\cite[\S3A]{AiharaMizuno}である．
-本稿では実際の忘却次元を保つ非basicな商についてFrobenius性を判定し，
-$E_6$の整数倍六点では一般の次元公式と非Frobeniusな970次元例を得る．
-さらに，全有限次元表現の共通kernelを用いて非被約な表現スキームまで同定する．
-この固定曲面上の古典的な表現族の同定は，曲面族でのheart降下や導来表現stackの同定ではない
-（第\ref{sec:finite-rep-geometry}節）．
-また良い可換geometric helixの頂点除去商の有限性は既知一般論\cite{dTdVV}でも説明できる．
-corner側の具体的寄与は，入力六点への同定，$L_0$非依存，十一因子による正確な境界，
-一様Hilbert関数と162次元の平坦族，および指定heart比較への接続である．
-
-quantized del Pezzoとpreprojectiveの接続には，Etingof--Oblomkov--Rains
-\cite[\S\S1, 11]{EOR}のGDAHAとmultiplicative preprojectiveによる先行研究もある．
-同論文のアフィンdel Pezzo表示はnodalな境界を除いたものを含み，
-本稿は滑らかな楕円境界の指定gluingを扱う．
-本稿の$A$をそのGDAHAの球部分代数へ無条件に同一視せず，
-普遍有限商を与える一般的な拡大閉包・忘却関手の機構と，この幾何設定への適用を区別する．
-
-\subsection{仮定と結論の依存関係}
-自然導来比較とその振幅はgenuine avatarと滑らかな楕円境界を使い，$q$の位数は問わない．
-根による全heartの認識と有限商には，さらに$q$の非torsion性を使う．
-AS比較はfull very strong helixとrolled-up同定を入力とする別の結論である．
-これを一般のtupleに対するOUの双有理再構成から特殊共鳴点へ自動延長しない．
-第\ref{sec:single-root}節では一つの負指数根だけを持つ実際の配置を示し，
-整数倍点の$E_6$例とともに，抽象的な認識を実在対象で検出する．
-二つの境界外heartの同定と有限商の証明は第\ref{sec:ADEquotient}節にまとめる．
-
-本稿の目的は，これらの構成を指定関手・構造対象・仮定つきで一つの比較体系にすることである．
-既知のblow-up定理，HRS対応，AS定義自体を新しい結果とはしない．
-AOUの構造対象の同定は，同論文のmutation列，境界上のadmissibility，
-例外対のrestriction比較から導く明示的な帰結である．これをAOUの導来同値定理そのものの
-新証明とはしない．本研究の組合せによる主張の網羅的新規性調査と外部独立査読は未了である．
-elliptic Cauchy行列とそのdeterminant公式は既知\cite{EllipticCauchy}であり，
-本稿の追加点は，実際のdecupleの関係係数と元の六点の幾何の同定，およびheart比較への適用である．
-また，境界作用を復元する数値的整合性検査を第\ref{sec:boundarydata}節に置く．
-AOU v1の複数の表示を同じ境界同定で読むと非torsionの場合に不整合が生じるため，
-本稿では右加群規約から運んだ実際のtupleと$\Psi_+$を明示して使う．
-未変更の全印刷座標への翻訳を確定したという意味ではない．
+第2論文\texttt{dp-hearts2.tex}は，符号別Ext・混合拡大の詳細，固定dg圏のframed形式変形，
+三次曲面cornerの完全Hilbert関数と162次元平坦族・厳密計算を扱う．
+良いgeometric helixのcorner有限性自体は既知一般論\cite{dTdVV}でも説明できる．
+本稿は自然比較に必要な有限性と六点復元を自立して証明し，細かいHilbert計算を重複させない．
+零指数壁での一般$q$の$qgr$同定，指定heartでの収縮対象の位置，局所完成代数，
+曲面族の底変更・降下は第\ref{subsec:coherent-future}節の課題として明記する．
+これらの未解決点と，本稿で証明するpointwiseな結論を混同しない．
 
 \section{記法，realization，反標準環}\label{sec:setup}
-基礎体は$k=\mathbb C$とし，圏は$k$-線形とする．導来比較には適合するdg enhancementを用いる．
-$\cD$は冪等完備で，使用するRHomの全cohomologyは有限次元とする．
-$\cH\subset\cD$が有界heartであるだけでは，realization
-$\operatorname{real}_{\cH}:\Db(\cH)\to\cD$が同値とは限らない．
-同値となる場合を本稿では\emph{derived type}と呼ぶ．
+基礎体は$k=\mathbb C$とし，圏は$k$-線形で適合するdg enhancementを用いる．
+sourceの滑らかなgluing $\cD_q$は冪等完備でproper，すなわち各RHomの全cohomologyが有限次元である．
+零指数壁の商$\mathcal Q_q$や特異gluing $\overline{\cD}_q$にはpropernessを仮定しない．
+有界heart$\cH\subset\cD$からのrealization
+$\operatorname{real}_{\cH}:\Db(\cH)\to\cD$が同値となる場合を\emph{derived type}と呼ぶ．
+heartが有界であるだけではこの同値は従わない．
 
 Serre関手を$\Sfun$，$\theta=\Sfun[-2]$，$s=\theta^{-1}=\Sfun^{-1}[2]$と書く．
 $s$を単にAS代数の次数1 shiftと同一視しない．一般の$\mathbb Z$-代数には
 一周期的なshiftの指定自体がなく，helixの一周期は複数頂点を通ることがある．
-$s$がheartを両方向で保つなら
+derived typeのheartを$s$が両方向で保つなら
 \[
 \Ext^i_{\cH}(M,N)=\Hom_{\cD}(N,s^{-1}M[2-i])^*=0\quad(i>2)
 \]
-なので，derived typeの$\cH$のhomological dimensionは高々2である．
+なので，$\cH$のhomological dimensionは高々2である．
 $\OO$がexceptionalなら$\Ext^2(\OO,s^{-1}\OO)=k$であり，ちょうど2となる．
 
 \begin{definition}[構造対象つき比較]
@@ -300,4 +296,3 @@ $L$を短完全列へ施した際の左端の核も同じ議論で有限次元�
 $(N\otimes_RpB)p=N$とcounitが逆同値を与える．
 逆に$(-)p$が同値なら$\pi(B/BpB)$は零に送られるので零であり，有限生成性から有限次元である．
 \end{proof}
-

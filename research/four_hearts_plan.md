@@ -1,25 +1,21 @@
-# 四heart比較の実施方針
+# 四heart比較とcoherent収縮の実施方針
 
-2026-11-17 / hearts-strategy-v6。恒常原則と研究全体の達成基準は `../00_research_plan.md`。現在の数学本文はhearts-v28。最大共鳴と零指数壁の知識は `resonance_walls.md`、今回の検証は `resonance_walls_validation.json` を参照する。
+2026-11-17 / hearts-strategy-v7。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v29）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
 
-## 中心結果の構成
+## 現在の公表構成
 
-自然反標準導来比較 → Euler標数によるheart選択 → 規格化AS比較・actual theta係数と元六点 → 最大共鳴の稠密性と零指数壁 → 混合A2・全ADE有限商・具体例、という主題を保つ。既存の中心結果と有効な証明は削らない。cornerの完全Hilbert関数と共鳴の形式変形は `papers/dp-hearts2.tex` に保持する。
+主論文の序論はgenuine領域の自然比較・Euler選択・ADE有限商と、弱領域のcoherent反標準関手・収縮核・特異gluingという二つの定理群を区別する。最大共鳴稠密性と零指数対象の消失も別現象として説明する。基礎的HRS・ample orbit・cornerの証明、actual theta係数、有限次元表現論、明示例を保持する。
 
-## 現在有効な入力
+## 解決した有限性と残る比較
 
-右加群の辞書L=L1、q=L0/L1、sheaf-normalized mutationと(U+)を固定する。標準AS実現のfull very strong性とrolled-up同定を、任意potentialに自動適用しない。全ADEのpreprojective模型・普遍有限商・表現スキームは既存本文に証明があり、今回の零壁研究で再証明したものではない。
+`four_hearts_coherent_contraction.tex` の境界切断の有限生成→gによる商→下有界graded Nakayama→cohomological有界性により、全標準弱gluingでPhi:Dq→Db(qgrR)を構成した。kerPhiは既存orbit核に一致する。Keelerの定理は有限位数も含む。BKS Theorem2.14を古典的反標準収縮へ適用し、dg商はSbar上のO^perpに境界moduleをglueしたDbar_qとなる。
 
-## 今回統合したこと
+残るのは一般qのDbar_q→Db(qgrR)の全RHom比較と全射性。A1特異点のideal I_xがO^perpに入り、高次Extが無限に残ることを使って局所模型を作る。genuineのInd-orbit生成の論証を弱領域へそのまま適用せず、核と非perfect対象を明示して扱う。
 
-最大共鳴の整数表示と次数1–6の稠密性は `four_hearts_maximal_density.tex` に完全証明を置いた。既存の整列定理との組合せで、指定heartの一致・不一致の両集合が稠密で非構成可能となる。
+## 最優先の点検
 
-`four_hearts_zero_walls.tex` では古典的な全次数の収縮障害、有理数上の一壁の方程式、Euler列の相殺を主論文へ統合した。標準弱楕円gluingでは、全orbit核Nqが古典的反標準収縮の核の像に一致し、全qで非零spherical対象が残る。dg商はorbit環を変えず、零指数twistはその環から見えない。
+degree0補正、右R作用、g進filtrationの固定全次数での有限性、dg代数のgood truncationを確認する。BKSの幾何学的仮定を確認する。次に全文を組版し、既存のADE形式性→abel圏復元と特殊共鳴族のAS入力を独立監査する。二論文の証明状態と参照先を揃え、一般qのqgr比較・壁上heart・AS実現・相対化を完成扱いしない。
 
-## 次の着手
+## 検証と保存
 
-まず新しい核同定とdg商の証明・文献入力を独立点検し、主論文全体を組版する。次に明示的なA1零壁で次数付きExtの有限生成性・有界性を確認する。coherent Phiの核の同定は条件付きであり、商からqgrへの完全忠実性・全射性を別に証明する。完了基準は単なる核の再計算でなく、実際の収縮比較を閉じる補題である。
-
-零壁の実際の楕円potentialはadmissibleでcornerが無限次元となるが、そのAS模型と弱gluingの指定比較は未構成。ここで壊れる入力を一つずつ確かめる。複数壁、perverse heart、完成局所代数、曲面族の底変更・降下は後段とする。
-
-今回の追加二節は10ページ抜粋として組版済み。全文組版と旧20検算の再実行は未実施。今後の検証で実行した範囲を正確に書き換え、以前のvalidationを現在の成功として引用しない。
+今回のLuaLaTeX確認は改稿3節の18ページ抜粋のみで、全ページのレイアウトを画像確認した。全文・第2論文の組版および21検算の再実行は未実施。詳細は `two_papers_validation.json`。共有mainを確認して通常のfast-forwardで保存し、PDF・ZIP・中間物は追跡しない。

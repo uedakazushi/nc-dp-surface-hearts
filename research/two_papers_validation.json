@@ -1,86 +1,70 @@
 {
   "date_JST": "2026-11-17",
-  "structure_version": "hearts-v28 / hearts2-v1",
-  "strategy_version": "hearts-strategy-v6",
-  "canonical_repo": "uedakazushi/nc-dp-surface-hearts",
+  "main_version": "hearts-v29",
+  "companion_version": "hearts2-v1 (unchanged)",
+  "strategy_version": "hearts-strategy-v7",
+  "base_commit": "26f5bea126dc69be1df186327122af5e64969ba2",
   "canonical_branch": "main",
-  "current_documents": [
-    {
-      "file": "papers/dp-hearts.tex",
-      "role": "Natural pointed hearts, HRS/ADE, theta geometry, universal affine quotient, maximal density and zero-index dg-orbit kernels.",
-      "status": "Main source retained from hearts-v27; only driver path and version changed."
-    },
-    {
-      "file": "papers/dp-hearts2.tex",
-      "role": "Uncovered resonance Ext/extension/formal deformation and cubic quiver corner finite/flat geometry, including original detailed proofs.",
-      "status": "New standalone combined driver, using existing proofs plus reorganized context and mixed A2 example."
-    }
+  "proof_status": "New weak-gluing proofs written and internally checked. Not independently peer reviewed or formally verified; no exhaustive novelty claim.",
+  "new_results_within_specified_setup": [
+    "All q, smooth rational weak del Pezzo S and smooth anticanonical E: R_q is left and right noetherian; graded Ext modules of every object are finitely generated and cohomologically bounded.",
+    "Construction of the natural coherent dg functor Phi_q:D_q to Db(qgr R_q), with kernel equal to the complete anticanonical orbit-null category and iota_q ker Rf_*.",
+    "The dg quotient is a gluing of O_(Sbar)^perp in Db(coh Sbar) and an exceptional object, with boundary module RHom_E(Li^*(-),q).",
+    "For non-genuine S, the quotient has an object with nonzero self-Ext in infinitely many degrees and is not proper; this is not transferred to the unproved qgr identification."
   ],
-  "current_sources": [
-    "papers/sections/dp_hearts2_resonance_body.tex",
-    "papers/sections/dp_hearts2_corner_body.tex",
-    "papers/sections/dp_hearts2_mixed_a2_examples.tex"
+  "primary_inputs_checked": {
+    "Rains": "2107.13540v2 section 4 equations (4.4)-(4.7), Proposition 5.1 and equation (5.3).",
+    "Keeler": "math/9912051v2 Theorem 1.2(1),(2); covers both finite- and infinite-order translations.",
+    "BKS": "1801.08286v1 Theorem 2.14 and section 2F; projective map, geometric fibres of dimension at most one, Rf_*O=O."
+  },
+  "not_proved": [
+    "For general nontrivial q, the induced singular-gluing functor to Db(qgr R_q) is fully faithful and essentially surjective.",
+    "Wall AS comparison, placement of contraction objects in specified hearts, local completed algebra, and relative descent."
   ],
-  "scope": {
-    "primary_math": "No changes to the mathematical proof content of the main paper; renamed and retitled with same section inputs.",
-    "companion": "Uncovered sign Ext, connecting maps, mixed A2 examples, zigzag deformation, cubic eleven-factor discriminant, six-point moduli, Hilbert function, finite flat 162-dimensional algebra family, exact rational certificates. The duplicated maximal-density and weak-wall detailed sections are now provided only in the main paper.",
-    "reference_policy": "Maximal-density and zero-index-wall proofs live in the main paper; companion provides minimal statements or explicit source citations, not another full copy. The natural Rains comparison and full ADE quotient are also cited from main."
+  "source_files_git_blobs": {
+    "papers/dp-hearts.tex": "fe613c5fbb7664facb5b81fbaaa4678a89379a85",
+    "papers/sections/four_hearts_foundations.tex": "16e57bba9ccfb42b398846dea0553796fa891f2b",
+    "papers/sections/four_hearts_zero_walls.tex": "5a48fe9866399c68e698a7f90e126817a59824f0",
+    "papers/sections/four_hearts_coherent_contraction.tex": "d9dafa4afd8b62cf628a4cd24252649dc0127de5"
   },
-  "source_integrity": {
-    "root_paper_drivers": 2,
-    "companion_label_count": 81,
-    "companion_internal_reference_count": 72,
-    "companion_citation_count": 43,
-    "companion_bibliography_entries": 13,
-    "companion_missing_labels": [],
-    "companion_duplicate_labels": [],
-    "companion_missing_citation_keys": [],
-    "companion_missing_inputs": [],
-    "result": "PASS in static staging analysis",
-    "main_label_count": 158,
-    "main_internal_reference_count": 232,
-    "main_citation_count": 92,
-    "main_bibliography_entries": 28,
-    "main_missing_labels": [],
-    "main_duplicate_labels": [],
-    "main_missing_citation_keys": [],
-    "main_missing_inputs": [],
-    "all_25_section_sources_used_by_current_drivers": true,
-    "all_root_drivers": [
-      "papers/dp-hearts.tex",
-      "papers/dp-hearts2.tex"
-    ]
-  },
+  "local_and_github_source_blobs_match": true,
   "typesetting": {
-    "dp_hearts": "NOT RUN on new driver",
-    "dp_hearts2": "NOT RUN on new driver",
-    "previous_validation": "Earlier successful builds of 3 retired drivers do NOT establish a build of these 2 drivers."
+    "scope": "Excerpt of the rewritten foundations, zero-wall section, new coherent-contraction section, and main bibliography; not the complete main paper.",
+    "engine": "LuaLaTeX / LuaTeX-ja",
+    "pages": 18,
+    "status": "PASS",
+    "pdf_sha256": "4249ab0145e4a4f7ba16421379eacdd004567582ee07d0885544d040c32aaad9",
+    "all_pages_layout_images_inspected": true,
+    "undefined_internal_refs_or_citations": false,
+    "overfull_or_underfull": false,
+    "missing_glyphs": false,
+    "external_references": "References to results outside the excerpt are printed as * and explicitly explained, not assigned invented main-paper numbers.",
+    "main_full_compile": "NOT RUN",
+    "companion_full_compile": "NOT RUN"
   },
-  "computation": {
-    "new_scripts_added": 0,
-    "existing_scripts_rerun": "NOT RUN on this reorganization",
-    "mathematical_computations_unchanged": true,
-    "exact_check_of_unchanged_source": {
-      "script": "computations/verify_density_zero_walls.py",
-      "git_blob": "fdcab772602640a1cc1f12f7215076efe11b164d",
-      "result": "PASS",
-      "positive_integer_lists": 240,
-      "order_matrix_tests": 72,
-      "nonzero_theta_forms": 27,
-      "node_hessian_determinant": -2304,
-      "scope": "These arithmetic checks do not prove categorical results or verify LuaLaTeX."
-    }
+  "static_checks": {
+    "modified_section_label_count": 34,
+    "duplicate_labels_in_modified_sections": [],
+    "unresolved_citation_keys_in_modified_sections": [],
+    "external_main_reference_count_in_modified_sections": 26,
+    "all_main_recursive_sources_rechecked": false,
+    "all_original_main_top_level_inputs_retained": true
+  },
+  "computations": {
+    "new_numerical_proof_claims": false,
+    "existing_21_scripts_rerun": false,
+    "note": "The new general statements are mathematical proofs, not numerical experiments. Existing computational assets were not changed."
   },
   "limitations": [
-    "Primary-source novelty and external proof audit were not repeated.",
-    "Full LuaLaTeX builds and PDF inspection of both renamed/merged drivers remain to be executed in the configured Codex environment.",
-    "Old driver filenames are removed from the current tree; the remaining mathematical source sections feed the 2 current drivers.",
-    "Generated PDFs, aux/log/cache, and archived old copies are not tracked.",
-    "GitHub commit creation and remote head verification are recorded separately."
+    "Full-main and companion builds and all-script reruns remain to be performed in the complete repository checkout.",
+    "Existing ADE, AS, and finite-quotient proofs and all earlier bibliography were not exhaustively independently re-audited in this pass.",
+    "Several web PDF screenshot calls failed with Cache miss; primary text was checked but not all cited source pages were visually inspected.",
+    "No submission, public release, repository visibility change, or authorship decision was made."
   ],
-  "reproduce": [
+  "reproduce_full_repository": [
+    "bash scripts/cloud_setup.sh",
     "bash scripts/check.sh all",
     "bash scripts/check.sh tex"
   ],
-  "persistence": "GitHub main is canonical; Library upload only if GitHub push fails."
+  "persistence": "GitHub main is canonical. Creation of Git objects, branch update, and remote verification are separate from local proof and typesetting checks. PDFs and build caches are not tracked."
 }

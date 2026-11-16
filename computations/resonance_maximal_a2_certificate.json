@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-15",
+  "version": "resonance-maximal-roots-v2",
+  "elliptic_curve": "y^2=x^3-x+1",
+  "q": [
+    "0",
+    "1"
+  ],
+  "two_q": [
+    "1/4",
+    "-7/8"
+  ],
+  "non_torsion_reason": "Nagell--Lutz, 2q has nonintegral x coordinate",
+  "six_multipliers": [
+    1,
+    3,
+    2,
+    5,
+    7,
+    11
+  ],
+  "nonzero_triple_determinants": 20,
+  "nonzero_conic_determinant": true,
+  "E6_roots": 72,
+  "all_root_indices_nonzero": true,
+  "simple_root_indices": [
+    6,
+    2,
+    -1,
+    3,
+    2,
+    4
+  ],
+  "root_chart": "3 p1=(m0-2m1-m2)q; p_i=p1+(m1+...+m_{i-1})q",
+  "simple_root_effectivity_source": "Rains 2107.13540v2 Sec4; Rains 1907.11301v1 Sec9 and Sec11",
+  "actual_mixed_A2_pair": {
+    "alpha": "e1-e2",
+    "beta": "e2-e3",
+    "m_alpha": 2,
+    "m_beta": -1,
+    "intersection": 1,
+    "Ext1_dim": 1
+  },
+  "single_extension_connecting_rank_options": [
+    0,
+    1
+  ],
+  "single_extension_cohomology_options": [
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "repeated_extension_rank_cases_checked": 125,
+  "full_faithfulness_conditional_prediction": "dim Hom_A(V_alpha(2d),V_beta(1d))=1 and V_alpha has V_beta as quotient",
+  "actual_delta_rank": "NOT COMPUTED",
+  "scope": "Arithmetic (rational cubic six-point witness + exact root enumeration for all degrees d=1..6) completed in local mathematically equivalent scripts. Noncommutative root sheaf existence from Rains, not computed; delta rank and all-q derived equivalence unverified.",
+  "all_degrees_1_through_6": {
+    "1": {
+      "blowups": 8,
+      "root_count": 240,
+      "all_root_indices_nonzero": true,
+      "simple_indices": [
+        6,
+        2,
+        -1,
+        3,
+        2,
+        4,
+        2,
+        4
+      ]
+    },
+    "2": {
+      "blowups": 7,
+      "root_count": 126,
+      "all_root_indices_nonzero": true,
+      "simple_indices": [
+        6,
+        2,
+        -1,
+        3,
+        2,
+        4,
+        2
+      ]
+    },
+    "3": {
+      "blowups": 6,
+      "root_count": 72,
+      "all_root_indices_nonzero": true,
+      "simple_indices": [
+        6,
+        2,
+        -1,
+        3,
+        2,
+        4
+      ]
+    },
+    "4": {
+      "blowups": 5,
+      "root_count": 40,
+      "all_root_indices_nonzero": true,
+      "simple_indices": [
+        6,
+        2,
+        -1,
+        3,
+        2
+      ]
+    },
+    "5": {
+      "blowups": 4,
+      "root_count": 20,
+      "all_root_indices_nonzero": true,
+      "simple_indices": [
+        6,
+        2,
+        -1,
+        3
+      ]
+    },
+    "6": {
+      "blowups": 3,
+      "root_count": 8,
+      "all_root_indices_nonzero": true,
+      "simple_indices": [
+        6,
+        2,
+        -1
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": "hearts-v3/torus-v1",
+  "good_cross_ratios": [
+    [
+      "-1/4",
+      "1/16"
+    ],
+    [
+      "1/6",
+      "-1/4"
+    ]
+  ],
+  "nine_good_minors": [
+    "-5/4",
+    "-15/16",
+    "5/16",
+    "-5/6",
+    "-5/4",
+    "-5/12",
+    "5/12",
+    "-5/16",
+    "5/96"
+  ],
+  "bad_ratio_matrix": [
+    [
+      "1",
+      "2",
+      "3"
+    ],
+    [
+      "4",
+      "8",
+      "5"
+    ],
+    [
+      "6",
+      "7",
+      "11"
+    ]
+  ],
+  "bad_minor_zero": true,
+  "nonzero_cycle": true,
+  "jacobian_relations_checked": 21,
+  "gauge_invariance": true,
+  "scope": "Exact rational examples only; universal proof in cubic_heart_corner.tex"
+}

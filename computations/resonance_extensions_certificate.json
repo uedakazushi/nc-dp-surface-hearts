@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-15",
+  "version": "resonance-extensions-v1",
+  "E6_roots": 72,
+  "ordered_pair_intersection_counts": {
+    "0": 2160,
+    "1": 1440,
+    "2": 72,
+    "-2": 0,
+    "-1": 1440
+  },
+  "adjacent_A2_example": {
+    "alpha": [
+      0,
+      -1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "beta": [
+      0,
+      0,
+      -1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "sum": [
+      0,
+      -1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "mixed_rank_cases_checked": 46,
+  "euler_sequence": "0 -> O_P1(-2) -> O_P1(-1)^2 -> O_P1 -> 0",
+  "euler_connecting_rank": 1,
+  "euler_middle_term_derived_global_sections_zero": true,
+  "scope": "Exact root-lattice arithmetic and elementary P1 cohomology. No test for Rains sheaf existence, all-q derived equivalence, or existence of mixed extensions on genuine noncommutative del Pezzo."
+}

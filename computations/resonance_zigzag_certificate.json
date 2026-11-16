@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-15",
+  "version": "resonance-zigzag-v2",
+  "field_characteristic": 0,
+  "root_tables": [
+    {
+      "degree": 6,
+      "root_system": "A2+A1",
+      "rank": 3,
+      "roots": 8,
+      "edges": 1,
+      "ext_total": 8,
+      "formal_components": 2,
+      "component_dimension": 1
+    },
+    {
+      "degree": 5,
+      "root_system": "A4",
+      "rank": 4,
+      "roots": 20,
+      "edges": 3,
+      "ext_total": 14,
+      "formal_components": 8,
+      "component_dimension": 3
+    },
+    {
+      "degree": 4,
+      "root_system": "D5",
+      "rank": 5,
+      "roots": 40,
+      "edges": 4,
+      "ext_total": 18,
+      "formal_components": 16,
+      "component_dimension": 4
+    },
+    {
+      "degree": 3,
+      "root_system": "E6",
+      "rank": 6,
+      "roots": 72,
+      "edges": 5,
+      "ext_total": 22,
+      "formal_components": 32,
+      "component_dimension": 5
+    },
+    {
+      "degree": 2,
+      "root_system": "E7",
+      "rank": 7,
+      "roots": 126,
+      "edges": 6,
+      "ext_total": 26,
+      "formal_components": 64,
+      "component_dimension": 6
+    },
+    {
+      "degree": 1,
+      "root_system": "E8",
+      "rank": 8,
+      "roots": 240,
+      "edges": 7,
+      "ext_total": 30,
+      "formal_components": 128,
+      "component_dimension": 7
+    }
+  ],
+  "proof_scope": {
+    "Rains": "Root-sheaf existence for each effective simple root; effective cone pointed; equal-numerical-class injections are isomorphisms; rank-zero Euler pairing. Primary Rains arXiv:1907.11301v1.",
+    "local_result": "All other irreducible root classes excluded via negative pairing; total graded Ext algebra is Dynkin zigzag using Serre 2-CY pairing.",
+    "formality": "Liu--Wang, J. Algebra 677 (2025), Theorem 1.1, arXiv:2301.06757v3: intrinsic formality ADE zigzag over characteristic zero. Isolated A1 factor is degree-formal.",
+    "deformation": "Fixed enhanced Rains dg category, framed MC before gauge quotient has x_ij*x_ji=0 per Dynkin edge and no higher A-infinity terms.",
+    "not_verified": "Rains relative surface moduli; entire anticanonical heart; actual 2d/1d A=R/(g-1) module matrices; mixed delta rank; all-q derived equivalence."
+  },
+  "reproduction": "python3 computations/verify_resonance_zigzag.py",
+  "calculation_scope": "Exact root enumeration, negative pairings, simple graph, leaf elimination; not a numerical proof of sheaf existence or intrinsic formality."
+}

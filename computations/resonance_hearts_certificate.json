@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-15",
+  "version": "resonance-hearts-v2",
+  "degrees_checked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "root_alpha": "h-e1-e2-e3",
+  "root_square": -2,
+  "root_H_intersection": 0,
+  "positive_negative_sign_checks_range": "-20..20",
+  "numerical_ext_formula": "dim H0=max(m,0),dim Ext1=max(-m,0),Ext2=0",
+  "dual_root_euler": "chi(R1 ad M)=-chi(M)",
+  "spherical_root_self_euler": 2,
+  "example_model": "Classical (-2)-curve O_P1(m-1), R1ad=O_P1(-m-1): signs checked for 41 indices.",
+  "scope": "Local arithmetic verification only; categorical conclusions from Rains Cor5.9/7.26/7.30/7.31/7.16 and 10.16 plus Serre; root-sheaf existence and all-q derived equivalence not numerically verified."
+}

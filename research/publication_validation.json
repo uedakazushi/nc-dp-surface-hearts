@@ -1,0 +1,198 @@
+{
+  "date_JST": "2026-11-16",
+  "version": "hearts-v25 / resonance-hearts-v9 / corner-v8",
+  "base_commit": "fb73f71f0f7b8508dfcbaa93b6b66207d5ced47a",
+  "proof_status": "Proofs written and internally audited; no independent peer review or formal verification.",
+  "new_proof_chain": [
+    "prop:cubic-helix-input",
+    "lem:formal-ADE-heart",
+    "thm:ADE-abelian",
+    "lem:finite-fibre-quotient",
+    "cor:ADE-affine-quotient",
+    "cor:E6-970",
+    "prop:single-root-complete",
+    "cor:single-root-AS"
+  ],
+  "primary_inputs": {
+    "formality": "Liu-Wang 2301.06757v3 Theorem 1.1; prior attribution to Etgu-Lekili and Lekili-Ueda retained",
+    "extension_closure": "Keller math/9910179, Sections 6.5,7.5,7.7",
+    "special_cubic_helix": "AOU 2404.00175v1 Lemma 7.4 and following construction; OU 2007.07620v1 Definition 4, Theorem 5, (18)-(22)",
+    "E6_matrix_Hilbert": "Etingof-Rains math/0503393v3 Section 1 (1), a known formula, not claimed new"
+  },
+  "verification": {
+    "setup": "bash scripts/cloud_setup.sh: PASS with user-local TeX",
+    "fast": "PASS",
+    "all_python_scripts": 20,
+    "all_python_exit_codes_zero": true,
+    "tex_three_drivers": "PASS",
+    "fresh_format_and_user_local_packages_tested": true,
+    "static_recursive_inputs_labels_citations": "PASS",
+    "finite_checks": {
+      "A2_hilbert": [
+        2,
+        2,
+        0
+      ],
+      "A3_hilbert": [
+        3,
+        4,
+        3,
+        0
+      ],
+      "A3_cartan": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "weighted_A3_quotient_dimension": 40,
+      "E6_roots": 72,
+      "E6_cartan": [
+        [
+          4,
+          2,
+          4,
+          6,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          3,
+          2
+        ],
+        [
+          4,
+          3,
+          6,
+          8,
+          6,
+          3
+        ],
+        [
+          6,
+          4,
+          8,
+          12,
+          8,
+          4
+        ],
+        [
+          4,
+          3,
+          6,
+          8,
+          6,
+          3
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          3,
+          2
+        ]
+      ],
+      "E6_basic_dimension": 156,
+      "weighted_E6_quotient_dimension": 970,
+      "isolated_resonant_roots": [
+        [
+          -1,
+          [
+            -1,
+            -1,
+            -1,
+            0,
+            0,
+            0
+          ],
+          1
+        ],
+        [
+          1,
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          -1
+        ]
+      ],
+      "nonzero_theta_arguments": 27,
+      "scope": "Exact finite checks only; categorical proofs are in the paper."
+    },
+    "visually_inspected": "Selected title, ADE proof, isolated-root and companion title pages; not all pages.",
+    "harmless_typesetting_notices": [
+      "Legacy mathematical font command rm",
+      "Japanese font scaling and unavailable italic shape uses upright Japanese font"
+    ]
+  },
+  "manuscripts": {
+    "papers/cubic_heart_corner.tex": {
+      "pages": 17,
+      "input_files": 6,
+      "labels": 41,
+      "bibliography_entries": 6,
+      "missing_references": [],
+      "missing_citations": [],
+      "overfull_underfull": false,
+      "missing_glyphs": false,
+      "pdf_sha256": "475478aebb2f31d308f237c3a8151905659601715222c5215c489203720a63cb",
+      "source_sha256": "4c865ce23494d43122e07bf8c0f4b8d8bd441b4bcde40de0f9d748e154f92ab8"
+    },
+    "papers/nc_del_pezzo_hearts.tex": {
+      "pages": 52,
+      "input_files": 12,
+      "labels": 131,
+      "bibliography_entries": 22,
+      "missing_references": [],
+      "missing_citations": [],
+      "overfull_underfull": false,
+      "missing_glyphs": false,
+      "pdf_sha256": "edcfdd8812b93f8bfbadb6eb5037f085a0070d2dab1facd98d6ec0c93e96fb1e",
+      "source_sha256": "939c1cb12d3c34de70904385eb927cbadada8905777f551451ad61d1413e85a8"
+    },
+    "papers/nc_del_pezzo_resonance_hearts.tex": {
+      "pages": 24,
+      "input_files": 8,
+      "labels": 59,
+      "bibliography_entries": 7,
+      "missing_references": [],
+      "missing_citations": [],
+      "overfull_underfull": false,
+      "missing_glyphs": false,
+      "pdf_sha256": "a3fa5501c4d650a8f718138ea776f7b250cc18918331a781c08b9dc94e3d81e0",
+      "source_sha256": "f4ea84930328539b9307fa98d6796a535922c2a8d8b0c9a8f03c437850df63ae"
+    }
+  },
+  "limitations": [
+    "No exhaustive priority claim; GDAHA/multiplicative preprojective literature distinguished from smooth elliptic gluing.",
+    "No elliptic-generator-by-generator action matrices or kernel generators computed.",
+    "No independent external review.",
+    "Author identity, affiliations, acknowledgments and journal formatting remain author decisions.",
+    "No public submission, visibility change, or journal publication performed."
+  ],
+  "reproduce": [
+    "bash scripts/cloud_setup.sh",
+    "bash scripts/check.sh full"
+  ],
+  "persistence": "Sources only on GitHub main; PDFs and caches remain untracked."
+}

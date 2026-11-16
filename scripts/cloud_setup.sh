@@ -3,6 +3,9 @@
 set -Eeuo pipefail
 cd "$(dirname "$0")/.."
 export DEBIAN_FRONTEND=noninteractive
+mkdir -p build
+export PIP_CACHE_DIR="$PWD/build/pip-cache"
+if [ -f build/tex-user/env.sh ]; then source build/tex-user/env.sh; fi
 command -v python3 >/dev/null || { echo 'Python 3 required' >&2; exit 1; }
 python3 -m venv .venv
 .venv/bin/python -m pip install --disable-pip-version-check -r requirements.txt

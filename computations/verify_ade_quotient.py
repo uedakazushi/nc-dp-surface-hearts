@@ -63,6 +63,19 @@ def main():
     assert row * col == sp.zeros(1)
     assert col * row == sp.Matrix([[0, 1], [0, 0]])
     assert col * row - col * row == sp.zeros(2)
+    # Specialization of the known Dynkin matrix Hilbert formula (Etingof--Rains,
+    # math/0503393v3, Section 1, (1)); not a relation-space computation in E6.
+    adjacency = sp.zeros(6)
+    for i, j in [(0, 3), (1, 2), (2, 3), (3, 4), (4, 5)]:
+        adjacency[i, j] = adjacency[j, i] = 1
+    hh = [sp.eye(6), adjacency]
+    for _ in range(2, 12):
+        hh.append(adjacency*hh[-1] - hh[-2])
+    assert hh[-1] == sp.zeros(6)
+    c6 = sum(hh, sp.zeros(6))
+    assert sum(c6) == 156
+    m6 = sp.Matrix([6, 1, 1, 2, 2, 4])
+    assert (m6.T*c6*m6)[0] == 970
 
     # Coordinates in the independent generators (q,x,y,z,w,v) of E.
     pp = [sp.Matrix(a) for a in [
@@ -91,6 +104,8 @@ def main():
                for c in range(3, 6) for b in range(3) for t in shifts)
     result = dict(A2_hilbert=h2, A3_hilbert=h3, A3_cartan=c3.tolist(),
                   weighted_A3_quotient_dimension=40, E6_roots=len(roots),
+                  E6_cartan=c6.tolist(), E6_basic_dimension=156,
+                  weighted_E6_quotient_dimension=970,
                   isolated_resonant_roots=resonant, nonzero_theta_arguments=27,
                   scope="Exact finite checks only; categorical proofs are in the paper.")
     dest = Path('build/ade_quotient_checks.json')

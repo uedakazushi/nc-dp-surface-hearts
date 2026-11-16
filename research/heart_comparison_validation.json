@@ -86,5 +86,6 @@
     "papers/nc_del_pezzo_hearts.tex": "87571970e3ad8c817803b32f386f876d309fe3fdf5dd91707cfcc089c94217f5",
     "computations/verify_cubic_heart_numerics.py": "e62692dce86a910f83da86b8e87172fd094210fad6b22e3209f519d25a133321",
     "research/heart_comparison.md": "d46bf896395bd8dc1beba2d0d8f67e62a6764125fda6b847ff30c8e3bff598d4"
-  }
+  },
+  "current_verification": "research/publication_validation.json; versioned checks in this file refer only to the stated earlier scope."
 }

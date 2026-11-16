@@ -183,5 +183,6 @@
     "python3 computations/verify_four_hearts_boundary.py",
     "python3 computations/verify_four_hearts_elliptic.py",
     "latexmk -lualatex -outdir=build papers/nc_del_pezzo_hearts.tex"
-  ]
+  ],
+  "current_verification": "research/publication_validation.json; versioned checks in this file refer only to the stated earlier scope."
 }

@@ -138,6 +138,35 @@ $I$は全有限次元表現の共通annihilatorであり，任意の有限次元
 一般の次元ベクトルでは非basicなMorita代表となる．
 混合$A_2$の指数$+2,-1$では標的単純の次元は$(1,1)$で，既存の四次元商を回復する．
 
+\begin{corollary}[整数倍点$E_6$例の普遍商の次元]\label{cor:E6-970}
+系\ref{cor:E6spectrum}の例では，全有限次元表現を支配する商$A/I$は970次元である．
+そのbasic代数$\Pi(E_6)$は156次元で，頂点除去cornerの162次元とも異なる．
+\end{corollary}
+\begin{proof}
+標的の単純の順序を系\ref{cor:E6spectrum}とし，$m=(6,1,1,2,2,4)^{\mathsf t}$とする．
+辺の集合は
+\[
+ \{(0,3),(1,2),(2,3),(3,4),(4,5)\}
+\]
+である．
+preprojective代数の既知matrix Hilbert公式\cite[\S1, (1)]{EtingofRains}を使うと，
+右projective間のHom次元行列は
+\[
+ C_\Pi=\begin{pmatrix}
+ 4&2&4&6&4&2\\
+ 2&2&3&4&3&2\\
+ 4&3&6&8&6&3\\
+ 6&4&8&12&8&4\\
+ 4&3&6&8&6&3\\
+ 2&2&3&4&3&2
+ \end{pmatrix}.
+\]
+具体的には隣接行列$D$に対して$H_0=1,H_1=D,H_n=DH_{n-1}-H_{n-2}$とし，
+$C_\Pi=\sum_{n=0}^{10}H_n$である．$h(E_6)=12$と上記既知公式からこの次数範囲を得る．
+従って$\dim\Pi(E_6)=\sum_{ij}(C_\Pi)_{ij}=156$で，
+系\ref{cor:ADE-affine-quotient}より$\dim A/I=m^{\mathsf t}C_\Pi m=970$となる．
+\end{proof}
+
 \begin{remark}[既知入力と具体性の範囲]
 形式性と拡大閉包の復元は既知理論である．本節の帰結は，
 指定反標準比較のEuler次元を使って，その理論が\emph{元の}$A$のどのMorita代表を選ぶかを定める点にある．

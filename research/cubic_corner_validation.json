@@ -117,5 +117,6 @@
     "novelty_exhaustive_search": false,
     "prior_scripts_rerun": false
   },
-  "persistence": "GitHub main canonical; if push successful no Library upload."
+  "persistence": "GitHub main canonical; if push successful no Library upload.",
+  "current_verification": "research/publication_validation.json; versioned checks in this file refer only to the stated earlier scope."
 }

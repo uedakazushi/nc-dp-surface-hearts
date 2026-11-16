@@ -113,7 +113,7 @@
 - `lem:finite-fibre-quotient`：実際の忘却関手の有限自由presentationからprojective表現P=⊕P_i^{m_i}を得る。Gに対応する右A加群のannihilator Iは全有限次元表現の共通annihilatorとなる。B=A/I上のprojective generator GにMorita二重中心化を適用し、B≃End_Π(P)を得る。右作用が自然変換としてA^op→End(P)^opになる点も明示した。
 - `cor:ADE-affine-quotient`：全有限次元商はこの普遍有限商の商である。m_i=1のA2では四次元商を回復する。一般にはΠ自体ではなく非basicなMorita代表となる。
 
-既知の形式性・Keller復元・Morita補題そのものを独立の新規成果とはしない。幾何学的に指定されたEuler次元から元のAの作用像を定める接続が寄与候補である。楕円生成元ごとの行列・kernelの係数表示は未計算。162次元の頂点除去cornerとは別物である。
+既知の形式性・Keller復元・Morita補題そのものを独立の新規成果とはしない。幾何学的に指定されたEuler次元から元のAの作用像を定める接続が寄与候補である。楕円生成元ごとの行列・kernelの係数表示は未計算。162次元の頂点除去cornerとは別物である。整数倍点E6例のm=(6,1,1,2,2,4)について、既知matrix Hilbert公式からΠ(E6)は156次元、実際の普遍商は970次元となる（cor:E6-970）。
 
 単根の明示例は `four_hearts_single_root.tex` にある。E=C/(Z+iZ)、q=√2、六点(√3,√5,−√3−√5−√2,√7,√11,√13)、L1=O(3o)、L0=L1qとする。1と六つの平方根のQ線型独立性から、共鳴する根は±(h−e1−e2−e3)のみ。固定blowdownで実在する唯一の単純は指数−1であり、全torsionfree部分はadd S、一回のtilt、普遍商A/I=kを得る。同じデータでu=−2q、t=−√7−√11−√13、全27theta係数は非零で、六点・十一条件・162次元cornerまで接続する。他の全整数指数の排除は整数独立性による証明であり、有限体での試行ではない。
 
@@ -139,7 +139,7 @@
 
 Rainsの2019稿と2025稿の関連番号は、Lemma 4.9→Lemma 11.10、Proposition 4.17→11.19、Proposition 4.24→11.25、Theorem 4.30→11.31、Lemma 5.7→12.7、Theorem 9.10→16.10、Corollary 10.16→17.17。有効simple root自身に対するirreducible sheafの存在は、2019 Proposition 11.23直前と2025 Proposition 18.27直前の記述を用いる。nef条件を課す後続命題そのものを(-2)単純根へ誤適用しない。
 
-全ADEのabel圏と元のAの有限商をこの設定で同時に記述した同一の結果は、今回確認した主要箇所では見つからなかった。これは今回の検索で同一結果を確認していないという状態であり、新規性確定ではない。追加検索ではEtingof–Oblomkov–RainsのGDAHA/quantized del Pezzoとmultiplicative preprojectiveの接続、de Thanhoffer de Völcsey–Presottoのgeneralized preprojectiveを用いる別種の非可換del Pezzoも見つかった。本稿の滑らかな楕円境界とこれらの主対象の同一視は行っておらず、独立の比較課題である。Rains 2025の409頁全文を取得不能とする以前の記述は更新したが、全文の証明・関連研究の網羅的監査は未完了である。
+全ADEのabel圏と元のAの有限商をこの設定で同時に記述した同一の結果は、今回確認した主要箇所では見つからなかった。これは今回の検索で同一結果を確認していないという状態であり、新規性確定ではない。追加検索では[Etingof–Oblomkov–Rains](https://arxiv.org/abs/math/0406480v3) §§1,7,11のGDAHA/quantized del Pezzoとmultiplicative preprojectiveの接続、[de Thanhoffer de Völcsey–Presotto](https://arxiv.org/abs/1503.03992v4)のgeneralized preprojectiveを用いる別種の非可換del Pezzoも見つかった。本稿の滑らかな楕円境界とこれらの主対象の同一視は行っておらず、独立の比較課題である。Rains 2025の409頁全文を取得不能とする以前の記述は更新したが、全文の証明・関連研究の網羅的監査は未完了である。
 
 ## 5. 公表の構成と残る判断
 
@@ -152,7 +152,7 @@ Rainsの2019稿と2025稿の関連番号は、Lemma 4.9→Lemma 11.10、Proposit
 - `bash scripts/check.sh fast` が成功し、その後 `bash scripts/check.sh all` で全20本が終了コード0。
 - 新しい `verify_ade_quotient.py` はA2/A3の道代数の全同次関係空間を有理数で計算し、Hilbert係数(2,2)と(3,4,3)、A3のCartan行列、重複度(1,2,3)の商の次元40を確認する。中央頂点で非零往復行列が相殺する例も検査する。E6の72根から単根例の±α0だけが共鳴することと27theta引数の非零性も厳密整数計算で確認する。
 - これらの計算は一般の形式性、sheaf存在、導来同値、複素非torsion性や新規性の証明を代替しない。単根例の独立性は本文の多重二次体の証明による。
-- LuaLaTeXの不足部品を作業領域内へ展開し、LuaLaTeX formatを生成した。Debian TeX Live 2024.20250309と整合するLuaTeX/LuaTeX-jaを使い、3主原稿を全文組版する。PDF・ログ・キャッシュはGitへ追跡しない。再生成可能なPDFはbuild/に置く。
-- input/include、label/ref/eqref、bibitem/citeと最終組版ログを点検する。具体的なページ数と残る組版警告は最終確認に従う。
+- LuaLaTeXの不足部品を作業領域内へ展開し、LuaLaTeX formatを生成した。Debian TeX Live 2024.20250309と整合するLuaTeX/LuaTeX-jaを使い、3主原稿を全文組版した。再現用の `scripts/cloud_tex_user.sh` も実行して成功した。PDF・ログ・キャッシュはGitへ追跡しない。再生成可能なPDFはbuild/に置く。
+- input/include、label/ref/eqref、bibitem/citeと最終組版ログを点検する。主稿52ページ、共鳴補助稿24ページ、corner補助稿17ページ。未定義参照・引用・欠落glyph・overfull/underfull boxを最終ログで検出しなかった。現在の機械可読な検証記録は `publication_validation.json` を参照する。主稿の表紙、ADE商の論証、単根例のページ画像を目視した。全93ページを目視確認したとは報告しない。
 
 生成、証明の自己点検、有限計算、全文組版、Git commit/push、remote SHA照合は別々の操作であり、外部独立査読は実施していない。

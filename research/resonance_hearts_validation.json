@@ -89,26 +89,121 @@
     "mixed_proof_git_blob_sha": "6fb2f70a3cda96b2d91ea4510493965fd1f640d6",
     "global_proof_git_blob_sha": "f68434a76e97602e681c00b26e3be83b64dab3a5",
     "execution": "PASS: committed-source-identical Python standard-library Fraction arithmetic, re-executed locally after final edits.",
-    "indices_p_n": [1,8],
-    "indecomposable_multiplicities": [0,4],
-    "cases": {"positive_sum":17500,"negative_sum":17500,"balanced_hypothetical":5000,"total":40000},
-    "source_Hom": [[1,0,0,1],[0,1,1,0],[1,0,1,1],[0,1,1,1]],
-    "source_ambient_Ext1": [[0,1,0,0],[1,0,0,0],[0,0,0,0],[0,0,0,0]],
+    "indices_p_n": [
+      1,
+      8
+    ],
+    "indecomposable_multiplicities": [
+      0,
+      4
+    ],
+    "cases": {
+      "positive_sum": 17500,
+      "negative_sum": 17500,
+      "balanced_hypothetical": 5000,
+      "total": 40000
+    },
+    "source_Hom": [
+      [
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ]
+    ],
+    "source_ambient_Ext1": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
     "quotient_dimension": 4,
     "radical_square_zero": true,
-    "two_representation_image_dimensions": [3,3],
+    "two_representation_image_dimensions": [
+      3,
+      3
+    ],
     "regular_representation_commutant_dimension": 4,
-    "local_Weyl_reflected_indices": [1,1],
+    "local_Weyl_reflected_indices": [
+      1,
+      1
+    ],
     "actual_elliptic_generator_matrices_computed": false,
     "categorical_existence_or_equivalence_proved_by_computation": false,
     "typesetting": "PASS: both updated proof sections in a standalone Japanese LuaLaTeX validation driver stating the imported results, nine pages; all page images checked, and the changed final page re-rendered and inspected after the last proof clarifications. No undefined-reference, overfull-box, or missing-glyph warning in that final log.",
     "main_manuscript_full_compile_in_this_session": false,
     "previous_four_resonance_scripts_rerun_in_this_session": false,
     "previous_exact_results_retained": {
-      "root_counts_degree_6_to_1": [8,20,40,72,126,240],
-      "zigzag_Ext_dimensions_degree_6_to_1": [8,14,18,22,26,30],
-      "formal_branch_counts_degree_6_to_1": [2,8,16,32,64,128],
-      "explicit_simple_indices": [6,2,-1,3,2,4],
+      "root_counts_degree_6_to_1": [
+        8,
+        20,
+        40,
+        72,
+        126,
+        240
+      ],
+      "zigzag_Ext_dimensions_degree_6_to_1": [
+        8,
+        14,
+        18,
+        22,
+        26,
+        30
+      ],
+      "formal_branch_counts_degree_6_to_1": [
+        2,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "explicit_simple_indices": [
+        6,
+        2,
+        -1,
+        3,
+        2,
+        4
+      ],
       "scope": "Existing certificates and proofs retained, not newly executed in this session. Free rank-option enumerations are not the current geometric rank status."
     }
   },
@@ -116,5 +211,6 @@
     "python3 computations/verify_resonance_mixed_a2.py",
     "latexmk papers/nc_del_pezzo_resonance_hearts.tex"
   ],
-  "persistence": "GitHub main is canonical. The two proof-section hashes and executed-code hash match the remote content. No Library copy after successful GitHub save."
+  "persistence": "GitHub main is canonical. The two proof-section hashes and executed-code hash match the remote content. No Library copy after successful GitHub save.",
+  "current_verification": "research/publication_validation.json; versioned checks in this file refer only to the stated earlier scope."
 }

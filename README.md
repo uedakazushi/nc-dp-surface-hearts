@@ -30,7 +30,7 @@
     latexmk papers/nc_del_pezzo_resonance_hearts.tex
     latexmk papers/cubic_heart_corner.tex
 
-2026-11-16に全20検算を実行して成功。3主原稿をLuaLaTeXで組版し、参照と引用の整合を点検する。今回の確認範囲は研究評価に記載する。Python3/SymPyとLuaLaTeX・LuaTeX-ja・latexmkを用い、PDF・Synctex・ログはbuild/へ再生成する。
+2026-11-16に全20検算を実行して成功。3主原稿をLuaLaTeXで組版し、参照と引用の整合を点検する。今回の確認範囲は研究評価と [公表稿の検証記録](research/publication_validation.json) に記載する。Python3/SymPyとLuaLaTeX・LuaTeX-ja・latexmkを用い、PDF・Synctex・ログはbuild/へ再生成する。
 
 ## 独立して継続する関連研究
 

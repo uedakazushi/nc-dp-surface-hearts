@@ -10,6 +10,8 @@
 
 AS入力は `prop:cubic-helix-input` でAOU Lemma 7.4とOkawa–Ueda (2020) Theorem 5により確認する。後者のacyclic exceptional helixとOU (2025)のvery strongの定義が一致する。
 
+E6例の普遍有限商は970次元であり、basicなΠ(E6)の156次元、頂点除去cornerの162次元と区別する。計算にはEtingof–Rains (math/0503393v3) §1 (1)の既知matrix Hilbert公式を使う。
+
 ## 規約と確実性の区別
 
 VdBはraw blow-up heart、Rainsは指定blowdown/gluingのt構造、反標準は指定eとs=S^{-1}[2]のorbit環のqgr、ASは三次元AS正則Z-algebraのqgr。AS helix全体と一頂点のorbit、AS次元3とambient AS4、Z-algebraと一周期graded algebraを分ける。有界heartの存在はrealization Db(heart)→ambientの同値を含意しない。

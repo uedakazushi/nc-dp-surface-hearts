@@ -1,0 +1,411 @@
+\section{楕円境界データの復元と規約の整合性}\label{sec:boundarydata}
+独立な構成のパラメータを同定するには，pointedな導来圏だけでなく，
+境界関手の\emph{実際の像}とその上の反Serre作用を揃える必要がある．
+Rains \cite[(4.11)--(4.13)]{Filtered}の復元を境界作用まで明示し，
+VdBの右加群規約から運んだ実際のcollectionに適用する．
+一般的復元原理自体は既知であり，本節の要点は，平面twist・blow-up・section modelを
+一つの境界同定で追うことで具体的な辞書を確定することにある．
+
+\subsection{rank・Chern類・Euler標数によるrestrictionの式}
+$S=\operatorname{Bl}_{p_1,\ldots,p_r}\mathbb P^2$，$d=9-r>0$，
+$H=-K_S=3h-\sum_i e_i$とし，滑らかな境界$E$への古典的restrictionを
+$\rho:\Pic S\to\Pic E$と書く．$L=\rho(h)$，$q\in\Pic^0(E)$とし，
+Rainsのgluingにおける境界関手を$F_q$とする．原点$o\in E$を選び，
+$a\in E$と$P_a=\OO_E(a-o)\in\Pic^0(E)$を同一視する．
+平行移動を$t_a(x)=x+a$と書くので，線束$M$について
+\begin{equation}\label{eq:translation-convention}
+ t_a^*M\simeq M\otimes P_a^{-\deg M},\qquad
+ t_{a*}M\simeq M\otimes P_a^{\deg M}
+\end{equation}
+である．この二つを入れ替えてはならない．
+
+\begin{proposition}[restrictionと反Serre境界作用]\label{prop:boundarynormal}
+$x\in K_0(S)\simeq K_0(\cD_q)$のrank，第一Chern類，Euler標数を
+$u,D,c=\chi(e,x)$と書く．このとき
+\begin{equation}\label{eq:detrestriction}
+ \operatorname{rank}F_q(x)=u,\qquad
+ \det F_q(x)=\rho(D)\otimes q^{c-u}.
+\end{equation}
+境界上で$F_qs=\Psi_EF_q$と書き，$\Psi_E$が平行移動と線束のtensor積からなる
+Rainsの自己同値であるとする．$q=P_a$なら
+\begin{equation}\label{eq:boundarynormal}
+ \boxed{\Psi_E=t_{a*}(-\otimes\rho(H)),\qquad
+ \Psi_E(\OO_E)=\rho(H)\otimes q^d.}
+\end{equation}
+これらは線束・自己同値の同型類の式であり，すべての線束同型の標準的な選択を主張しない．
+\end{proposition}
+\begin{proof}
+$K_0(S)$の基底を$[\OO_{e_i}(-1)]$，$[\OO(-2h)]$，$[\OO(-h)]$，$[\OO]$とする．
+それらのrankとEuler標数は順に$(0,0),(1,0),(1,0),(1,1)$である．
+Rainsの境界像は，順に$k_{p_i}$，$L^{-2}q^{-1}$，$L^{-1}q^{-1}$，$\OO_E$であるから，
+全基底について\eqref{eq:detrestriction}が成り立ち，加法性により一般の類にも従う．
+
+Serre作用の数値式は可換側と同じなので，$s$は
+\[
+ (u,D,c)\longmapsto(u,D+uH,c+D\cdot H+ud)
+\]
+と作用する．$\delta=D\cdot H$と置けば，$\det F_q(sx)$は
+$\det F_q(x)\otimes\rho(H)^u\otimes q^{\delta+ud}$となる．
+これは\eqref{eq:translation-convention}による\eqref{eq:boundarynormal}の作用と一致する．
+数値式だけで任意のdg関手を同定しているわけではない．ここでは既知の
+平行移動・tensor積型の中で作用を決めている．実際，
+$s[\OO_{e_i}(-1)]=[\OO_{e_i}(-1)]+[\mathrm{pt}]$から
+$\Psi_E(k_{p_i})=k_{p_i+a}$となり，平行移動が$a$と決まる．
+また$\det F_q(se)=\rho(H)q^d$がtensor因子を決める．
+\end{proof}
+
+\subsection{実際のrestriction tupleによる辞書}
+\begin{proposition}[境界像からのpointed復元]\label{prop:actualdictionary}
+境界関手を備えたdg圏にfull exceptional collection
+$(T_1,\ldots,T_r,B_2,B_1,e)$があるとする．
+その\emph{実際の}境界像が$(k_{p_1},\ldots,k_{p_r},U_2,U_1,\OO_E)$であるとする．
+$\deg U_2=-6$，$\deg U_1=-3$とし，forward pairのRHomを境界restrictionが
+quasi-isomorphismに写すと仮定する．このとき候補パラメータは一意に
+\begin{equation}\label{eq:actualdictionary}
+ q=U_2U_1^{-2},\qquad L=U_1U_2^{-1}
+\end{equation}
+である．$L$による埋込みと$p_i$のblow-upにRainsの構成を適用できれば，
+そのordered directed dg模型は元の圏とpointedに同値となる．
+この主張は指定heartのt-exactな一致を含まない．
+\end{proposition}
+\begin{proof}
+$U_2=L^{-2}q^{-1}$，$U_1=L^{-1}q^{-1}$を解けば\eqref{eq:actualdictionary}を得る．
+各forward RHomとその合成を境界のdg模型へ写すと，後向き射を零とし対角を$k$にした
+同じtriangular dg代数が得られる．これは\cite[(4.11)]{Filtered}の模型である．
+full exceptional collectionは各圏をそのperfect module圏に同定するので結論を得る．
+個々の$K_0$類の一致だけを用いず，実際のrestriction関手が保存する合成を使っている．
+\end{proof}
+
+$c_1(T_i)=e_i$，$D_E=\sum_i p_i$とすると，この辞書には次の必要条件が伴う：
+\begin{equation}\label{eq:dictionarycompatibility}
+ \Psi_E(k_{p_i})=k_{p_i+a},\qquad
+ \Psi_E(\OO_E)=U_2^{d-3}U_1^{3-2d}\otimes\OO_E(-D_E),
+ \qquad P_a=U_2U_1^{-2}.
+\end{equation}
+特に三次曲面では第二の式は$U_1^{-3}(-D_E)$である．
+これはEuler行列からも独立に検査できる．Orlov順序のEuler行列を$C$とすれば，
+列ベクトルへの反Serre作用は$(C^{\mathsf t})^{-1}C$であり，三次曲面では
+\begin{equation}\label{eq:point-class-audit}
+ [\mathrm{pt}]=[B_2]-2[B_1]+[e],\quad
+ [sT_i]=[T_i]+[\mathrm{pt}],\quad
+ [se]=4[e]-3[B_1]-\sum_i[T_i].
+\end{equation}
+従ってこの検査は，gluingの公式の単なる再代入ではない．
+
+\subsection{文献の表示を共通座標へ移す際の障害}\label{subsec:boundaryaudit}
+ここではAOU v1の(9.2)，(9.3)，(9.25)，(9.47)を，\emph{同じ曲線上の同じ記号と同じrestriction同定}
+で同時に読むことができるかを検査する．原典の全構成や主定理を否定するものではなく，
+本稿で独立な表示を接続する際の，明確な整合性条件を与える．
+$\sigma=t_b$，$L_1=\sigma^*L_0$，$\deg L_0=3$，$Q=L_1L_0^{-1}=P_{-3b}$とする．
+印刷されたrestriction tupleは
+\begin{equation}\label{eq:printedtuple}
+ U_2=L_0^{-5}L_1^3=L_0^{-2}Q^3,\qquad
+ U_1=L_0^{-2}L_1=L_0^{-1}Q
+\end{equation}
+である．これから得る$q_{\rm res}=Q$と$L_{\rm res}=L_0^3L_1^{-2}$に対し，
+\eqref{eq:dictionarycompatibility}は境界の平行移動を$t_{-3b}$とし，
+構造対象の像を$L_0^3Q^{-3}(-D_E)$とする．
+一方，印刷された境界shiftを文字通り
+\begin{equation}\label{eq:printedshift}
+ \Psi_{\rm lit}=\sigma_*^3(-\otimes N),\qquad
+ N=L_0\otimes\sigma^*L_0\otimes(\sigma^2)^*L_0\otimes\OO_E(-D_E)
+\end{equation}
+と読むと，$\Psi_{\rm lit}(k_p)=k_{p+3b}$，
+$\Psi_{\rm lit}(\OO_E)=L_0^3(-D_E)$となる．
+従って二つの表示の同時成立には
+\begin{equation}\label{eq:normalization-obstruction}
+ Q^2\simeq\OO_E,\qquad Q^3\simeq\OO_E
+\end{equation}
+が必要であり，結局$Q\simeq\OO_E$となる．$\sigma$が無限位数ならこれは不可能である．
+この不整合は形式的な整数指数でなく，\eqref{eq:point-class-audit}による
+点支持と構造対象の像の二つの独立な検査で検出される．
+
+\begin{remark}[比較する規約を固定する]
+この計算は二つの印刷式を同じ境界同定で併用することを排除するのであって，
+AOUの主定理全体を否定するものではない．以下ではVdBの右加群規約を定義から固定し，
+初期の$\OO_X(-1),\OO_X(-2)$を実際のfunctorで運んでrestrictionを再計算する．
+この規格化した構成から作るAS代数と同値には下添字$+$を付ける．
+印刷されたdecupleを同じパラメータでそのまま使ったAS代数や同値との同一視は主張しない．
+したがって，以下の結論を著者により確認された訂正表として引用してはならない．
+\end{remark}
+
+\subsection{境界作用を先に固定した復元と九つの候補}
+\begin{proposition}[boundary-first復元]\label{prop:boundaryfirst}
+実際の境界作用を$\Psi_E=t_{a*}(-\otimes N)$と固定し，
+$T_i$のrestrictionを$k_{p_i}$，$e$のrestrictionを$\OO_E$とする．
+上のRains型gluingと両立する候補は
+\[
+ q=P_a,\qquad L^{\otimes3}\simeq N(D_E)
+\]
+である．$N$の次数が$9-r$なら，$L$は次数3の線束であり，その選択は$E[3]$の九通り．
+$L$を選ぶと$U_1=L^{-1}q^{-1}$，$U_2=L^{-2}q^{-1}$が決まる．
+これらから実際のblow-upとgluingを作れる場合には，復元された境界作用は指定した$\Psi_E$に一致する．
+\end{proposition}
+\begin{proof}
+命題\ref{prop:boundarynormal}から$q=P_a$，$N=\rho(H)=L^3(-D_E)$が必要である．
+逆にこの式を満たす$L$を選び，対応するblow-up上のRains gluingを作れば同命題が十分性を与える．
+$\Pic^3(E)\to\Pic^9(E)$，$L\mapsto L^3$は複素楕円曲線上の$[3]$のtorsorであり，
+各fiberは$E[3]\simeq(\mathbb Z/3)^2$である．同じ境界作用だけで九つのgluing圏やheartが
+互いに同値になるとは主張しない．
+\end{proof}
+
+たとえば\eqref{eq:printedshift}を境界作用として固定し，点のラベルも固定するなら，
+$N=L_1^3(-D_E)$であるから，これと両立する候補は必ず
+\begin{equation}\label{eq:boundaryfirst-AOU}
+ \begin{split}
+ q&=L_0L_1^{-1},\qquad L=L_1\otimes\varepsilon,\qquad\varepsilon\in E[3],\\
+ U_1&=L_0^{-1}\varepsilon^{-1},\qquad
+ U_2=(L_0L_1)^{-1}\varepsilon^{-2}
+ \end{split}
+\end{equation}
+となる．境界作用だけからは九候補を区別できない．
+次の計算では初期の平面twistをさらに固定することによって$\varepsilon=\OO_E$を選ぶ．
+
+
+\subsection{右加群規約で運んだOrlov collection}
+VdBの量子平面$X=\operatorname{Proj}A(E,\sigma,L_0)$を取る．
+右加群を使い，境界を$E$へ同定する規約は
+\cite[(5.4), \S10冒頭]{VdB}に固定する．すなわち境界上の次数1 shiftは
+\begin{equation}\label{eq:right-plane-shift}
+ S_+(M)=\sigma_*(M\otimes L_0),\qquad
+ S_+^{-1}(M)=\sigma^*M\otimes L_0^{-1}.
+\end{equation}
+特に$S_+$を$M\mapsto L_0\otimes\sigma^*M$へ置き換えてはならない．
+
+\begin{lemma}[負の平面twistの実際の境界像]\label{lem:plane-negative-twists}
+上の規約で$L_1=\sigma^*L_0$とすると，
+\[
+ Li^*\OO_X(-1)=L_0^{-1},\qquad
+ Li^*\OO_X(-2)=(L_0L_1)^{-1}.
+\]
+\end{lemma}
+\begin{proof}
+正のshiftはinvertible bimodule $(L_0)_\sigma$によるtensorである．
+その右加群への作用は\eqref{eq:right-plane-shift}であるから，
+$Li^*\OO_X(-k)=S_+^{-k}(\OO_E)$を$k=1,2$について計算すればよい．
+これは$K_0$だけでなく線束そのものの同型である．
+\end{proof}
+
+\begin{proposition}[反復比較を通るrestrictionの保存]\label{prop:transported-tuple}
+VdB \S11.1の各段階$X_j\xleftarrow{\alpha_j}\widetilde X_j
+\xrightarrow{\delta_j}X_{j+1}$が同論文の導来比較の仮定を満たすとする．
+境界の同定をblow-up側の$\beta_j$とsection側の$\delta_{j,E}$で運び，
+$G_j=R\delta_{j*}L\alpha_j^*$と置く．
+平面の標準三対象を$G_{j}$の合成で運び，例外対象をその後の同じ合成で運んだ
+Orlov collectionを$(T_1,\ldots,T_r,B_2,B_1,e_F)$と書く．
+このとき，その実際の境界像は
+\begin{equation}\label{eq:right-actual-tuple}
+ (k_{p_1},\ldots,k_{p_r},(L_0L_1)^{-1},L_0^{-1},\OO_E)
+\end{equation}
+である．例外対象の順序は同じ表示で固定し，対応する点を同じ順序で記す．
+\end{proposition}
+\begin{proof}
+VdB Theorem 6.3.1(1),(4)より$\beta_j$は滑らかな曲線の一点でのblow-up，従って同型で，
+$R\alpha_{j*}j_*=i_*R\beta_{j*}$が成り立つ．左随伴の一意性から
+$Lj^*L\alpha_j^*\simeq L\beta_j^*Li^*$を得る．
+Proposition 9.1.8，式(9.11)は
+$Li_{j+1}^*R\delta_{j*}\simeq R\delta_{j,E*}Lj^*$を与える．
+これらの実際の境界同型を使えば$G_j$はrestrictionを保存する．
+構造対象の保存は$L\alpha_j^*\OO_{X_j}=\OO_{\widetilde X_j}$と
+Proposition 9.2.3(1)による．
+例外対象のrestrictionが$k_{p_j}$であることは，同じ境界同定に関する
+VdBの例外対象の列，または\cite[(9.24)--(9.27)]{AOU}による．
+全てを後の段階へ運び，補題\ref{lem:plane-negative-twists}を使う．
+\end{proof}
+
+\begin{theorem}[共通規約での具体的なgluing辞書]\label{thm:right-dictionary}
+$r=6$とし，$\sigma p_1,\ldots,\sigma p_6$が$L_0$による平面埋込みで一般位置にあるとする．
+命題\ref{prop:transported-tuple}のordered collectionを備えた
+$\Db(\qgr F)$に対応するRainsのパラメータは
+\begin{equation}\label{eq:right-dictionary}
+ \boxed{L=L_1,\qquad q=L_0L_1^{-1},\qquad
+ S=\operatorname{Bl}_{p_1,\ldots,p_6}\mathbb P(H^0(E,L_1)^*) .}
+\end{equation}
+$S$はgenuineな滑らかな三次曲面であり，Rains gluingの圏$\cD_q$と
+$\Db(\qgr F)$は，構造対象と境界関手を保つdg同値で結ばれる．
+境界の反Serre作用は双方で
+\[
+ \sigma_*^3\bigl(-\otimes L_1^3(-D_E)\bigr)
+\]
+となる．境界作用から残っていた$E[3]$の九候補のうち，
+この指定collectionに対応するのは$\varepsilon=\OO_E$だけである．
+この同値のt-exactnessは本定理には含めない．
+\end{theorem}
+\begin{proof}
+$U_2=(L_0L_1)^{-1},U_1=L_0^{-1}$を\eqref{eq:actualdictionary}へ代入すると，
+$q=L_0L_1^{-1}$，$L=L_1$を得る．
+$\sigma$は$(E,L_1)$から$(E,L_0)$への埋込みつき同型なので，
+$\sigma p_i$の$L_0$一般位置条件は$p_i$の$L_1$一般位置条件と等しい．
+従って対応する可換blow-upはgenuineである．
+
+初期collectionはVdBのsemiorthogonal decompositionと各$R\delta_*$の同値からfullである．
+標的のSerre関手は$(-1)[2]$であり，境界triangleから，任意のforward exceptional pairの
+RHomは境界でのRHomに自然にquasi-isomorphicとなる\cite[Proposition 9.3]{AOU}．
+この同定はrestriction関手に由来するため合成を保存する．
+よって命題\ref{prop:actualdictionary}を適用して，Rainsの三角dg模型と同定する．
+これは全RHomと合成の同定であり，数値類だけの同定ではない．
+$\sigma=t_b$なら$q=P_{3b}$で，$\rho(H)=L_1^3(-D_E)$である．
+命題\ref{prop:boundarynormal}が表示した境界作用を与える．
+最後に\eqref{eq:boundaryfirst-AOU}の$U_1$が実際の$L_0^{-1}$と等しいことから
+$\varepsilon=\OO_E$となる．
+\end{proof}
+
+\begin{remark}[印刷tupleが現れる別のshift]
+$S_-(M)=L_0\otimes\sigma^*M$と定義すれば，
+$S_-^{-1}(\OO_E)=L_0^{-2}L_1$，
+$S_-^{-2}(\OO_E)=L_0^{-5}L_1^3$となり，\eqref{eq:printedtuple}を再現する．
+この計算は，二種類のshiftを混在させたときに不整合が起こる理由を説明する．
+しかし$S_-$は\eqref{eq:right-plane-shift}の$S_+$とは異なり，
+点対象と正の境界shiftの規約も同時に変更しなければならない．
+本稿は$S_+$と明示したtransportを採用する．原典の全記号をどの変更で同時に読み替えるか，
+また著者による正式な訂正の有無については別の確認事項とする．
+\end{remark}
+
+\subsection{正規化したdecupleと明示的な許容開集合}
+$D_{123}=p_1+p_2+p_3$，$D_{456}=p_4+p_5+p_6$と置く．
+mutationにはcohomological shiftの規格化も必要である．本節では
+\begin{equation}\label{eq:mutation-shift-normalization}
+ L_EF=\operatorname{Cone}(\RHom(E,F)\otimes E\to F),\qquad
+ R_F^-E=\operatorname{Cone}(E\to\RHom(E,F)^*\otimes F)[-1]
+\end{equation}
+とし，これらが互いに逆のcollection操作になる規約を使う．
+AOUの(9.29)--(9.43)と同じ隣接交換の順序でこの操作を行うが，
+$R_6^-R_7^-R_8^-$の段階の後には，末尾の三つの変異対象を$[1]$でshiftする．
+これはその境界像を次数2の\emph{線束}にするための指定である．
+個々の対象のshiftはexceptionalityとfullnessを保ち，この三対象は以後の操作で動かない．
+この手順を\emph{sheaf-normalized mutation列}と呼ぶ．
+原典のmutation記号やline bundleの略記だけから，このshiftを暗黙に推論しない．
+\begin{proposition}[actual restrictionに対する三条件]\label{prop:normalized-admissible}
+相異なる六点について，命題\ref{prop:transported-tuple}の初期collectionへ
+上記sheaf-normalized mutation列を施す．次の三条件を仮定する：
+\begin{equation}\label{eq:normalized-open}
+ \OO_E(D_{123})\not\simeq L_0,\qquad
+ \OO_E(D_{456})\not\simeq L_1,\qquad
+ \OO_E(D_E)\not\simeq L_0L_1.
+ \tag{$U_+$}
+\end{equation}
+このとき最後のcollectionのrestrictionは
+\begin{equation}\label{eq:normalized-decuple}
+\begin{gathered}
+ \OO_E,\quad (L_0L_1)^{-1}(D_E),\quad L_0^{-1}(D_{123}),\\
+ \OO_E(p_1),\ \OO_E(p_2),\ \OO_E(p_3),\\
+ L_0(-p_4),\ L_0(-p_5),\ L_0(-p_6)
+\end{gathered}
+\end{equation}
+であり，これはadmissible elliptic decupleである．
+この式の九線束のadmissibilityは，六点が相異なる範囲で正確に\eqref{eq:normalized-open}と同値である．
+固定した$(E,\sigma,L_0)$に対して，この三条件とVdBの一般位置条件の共通部分は
+$E^6$の非空Zariski開集合である．
+\end{proposition}
+\begin{proof}
+境界でのmutationはexceptional pairのRHom比較を通じて評価triangleと両立する．
+点と線束についての局所計算は$0\to M\to M(p)\to k_p\to0$による．
+さらに次数$-2$の線束$M$を$\OO_E$の右にmutateする箇所では，$M^{-1}$が
+次数2の大域生成線束なので$0\to M\to\OO_E^{\oplus2}\to M^{-1}\to0$を使う．
+従って$R^-_{\OO_E}M=M^{-1}[-1]$であり，指定した$[1]$により$M^{-1}$になる．
+点対象を線束の右へ動かす他の箇所では，$R^-_M k_p=M(p)$で追加shiftは不要である．
+この二つの列を各mutationへ順に適用すると，最後の二回の直前のrestrictionは
+\[
+ (U_2(D_E),U_1(D_{123}),\OO_E,\OO_E(p_1),\OO_E(p_2),\OO_E(p_3),
+ U_1^{-1}(-p_4),U_1^{-1}(-p_5),U_1^{-1}(-p_6))
+\]
+となる．最初の三対象の次数は零である．\eqref{eq:normalized-open}の第一・第三条件は
+$U_1(D_{123})$と$U_2(D_E)$が非自明であることを意味するため，
+最後の二回のmutationは$\OO_E$を変えず，\eqref{eq:normalized-decuple}を得る．
+
+同じdegree blockで相異なることがadmissibilityである\cite[Definition 7.1]{AOU}．
+次数1，2のblockでは点の相異性だけでよい．次数0の三線束の比較は，
+第一・第三条件と，その比$L_1^{-1}(D_{456})$の非自明性，すなわち第二条件である．
+各違反条件は和写像$E^k\to\Pic^k E$の一つのfiberであり真の閉集合である．
+VdBの六点一般位置の違反も対角線，三点和，六点和の有限個の真の閉集合からなる．
+$E^6$は既約なのでその有限和の補集合は非空開となる．
+この議論では$\sigma$を固定しており，無限位数性を族におけるZariski開条件とはしていない．
+\end{proof}
+
+\begin{corollary}[規格化したAOU型同値への適用]\label{cor:normalized-pointed}
+前命題の開集合上で，\eqref{eq:normalized-decuple}からAS代数$\mathsf A_+$を作り，
+運ばれたcollectionのsheaf-normalized mutationからAOUの方法で同値を構成する．すると
+\[
+ \Psi_+:\Db(\qgr F)\xrightarrow{\sim}\Db(\qgr\mathsf A_+),\qquad
+ \Psi_+(\pi F)=\OO_{\mathrm{AS},+}(0,0)
+\]
+はpointedであり，$F=R(e_{\mathrm{AS},+},s_{\mathrm{AS},+})$となる．
+標準周期表示に対する右noetherian性を確認すれば，定理\ref{thm:AOUexactlocus}の十一条件は
+この\emph{実際のdecupleから作ったpotential}に対する$\Psi_+$のt-exactnessを判定する．
+\end{corollary}
+\begin{proof}
+前命題の最後のcollectionはfullであり，境界上の線束の次数と同次数での相異性から
+forwardの高次Extが消える．Proposition 9.3を使えば圏内でもstrongで，End代数は
+\eqref{eq:normalized-decuple}のEnd代数と同じである．
+AOU \S7，Lemma 7.4とその直後のAS構成および\S9のtilting比較を使い，同じEnd代数を
+持つAS標準collectionを得る．両方のfull strong collectionの比較が$\Psi_+$を与える．
+前命題の第一・第三条件は条件\eqref{eq:two-nontrivial}を実際のrestrictionについて保証する．
+定理\ref{thm:AOU-pointed}，系\ref{cor:AOU-ring}と定理\ref{thm:AOUexactlocus}を適用する．
+これは印刷式(9.53)を変更せず代入したAS代数との同一視ではない．
+この構成での右noetherian性と十一条件の非消滅は，
+後の定理\ref{thm:normalized-abelian}で独立の追加仮定なしに導く．
+\end{proof}
+
+\begin{proposition}[decupleからの逆辞書]\label{prop:inverse-decuple}
+原点を選んだ滑らかな楕円曲線$E$上のordered admissible decupleを
+\[
+ (\OO_E,A_0,B_0;
+ K_1,K_2,K_3;
+ C_1,C_2,C_3)
+\]
+と書く．$A_0,B_0$は次数0，$K_i$は次数1，$C_j$は次数2である．
+\eqref{eq:normalized-decuple}の形に書くための線束と点は一意に
+\begin{equation}\label{eq:inverse-decuple}
+\begin{split}
+ \OO_E(p_i)&=K_i\quad(1\le i\le3),\\
+ L_0&=K_1K_2K_3B_0^{-1},\\
+ \OO_E(p_{3+j})&=L_0C_j^{-1}\quad(1\le j\le3),\\
+ L_1&=\OO_E(D_E)L_0^{-1}A_0^{-1},\\
+ q&=L_0L_1^{-1}
+\end{split}
+\end{equation}
+で復元される．$\sigma^*L_0=L_1$を満たす平行移動$\sigma$は九つ存在し，
+それらは$E[3]$のtorsorをなす．全六点の相異性と$L_1$一般位置を追加すれば，
+各選択に対するVdB構成と命題\ref{prop:normalized-admissible}によって，元のdecupleへ戻る．
+無限位数の平行移動を要求するなら，さらに$q$の非torsion性を課す．
+\end{proposition}
+\begin{proof}
+次数1の線束は一意の点の線束である．$B_0=L_0^{-1}(D_{123})$から$L_0$，
+$C_j=L_0(-p_{3+j})$から残る点，$A_0=(L_0L_1)^{-1}(D_E)$から$L_1$が順に一意に決まる．
+$\sigma=t_b$について$\sigma^*L_0=L_0P_{-3b}$なので，$[3]b$を指定する方程式となる．
+複素楕円曲線の$[3]$は全射で核が$E[3]$，従って九つの解を持つ．
+元のadmissibilityは三つの条件\eqref{eq:normalized-open}に戻るため，
+一般位置の仮定の下で前の構成と互いに逆になる．$3b$が非torsionであることと$b$が非torsionであることは同値である．
+\end{proof}
+\begin{remark}
+ここでの九つの$\sigma$は，\emph{decupleだけを入力として平面translationを復元する}際の曖昧さである．
+既に$\sigma$と初期平面twistを固定した定理\ref{thm:right-dictionary}で，
+$\varepsilon=\OO_E$と決まった九候補とは入力が異なる．
+原点とline bundleの同型類を固定したPicardパラメータ上では，この九つの選択は$[3]$の引戻しによる有限étale被覆である．
+自己同型で商を取った全モジュライstackが九対一で同型になる，あるいは九つの平面が
+同じ標準heartを与えるという主張ではない．
+\end{remark}
+
+\begin{corollary}[整数倍点の明示的な共通領域]\label{cor:normalized-cyclic-family}
+flex $o\in E$，非torsion $q=P_a$，相異なる正整数$N_1,\ldots,N_6$を取り，
+$p_i=N_i a$とする．$L_1=\OO_E(3o)$，$L_0=L_1q$とし，$3b=a$を満たす$b$を選んで$\sigma=t_b$と置く．
+このデータは$\sigma^*L_0=L_1$とVdBの一般位置条件を満たし，\eqref{eq:normalized-open}も満たす．
+従って本節の規格化したpointed比較を適用できる．
+\end{corollary}
+\begin{proof}
+$\sigma^*L_0=L_0P_{-3b}=L_1$である．$L_1$埋込みの三点共線は三つの$N_i$の和，
+六点conic条件は全$N_i$の和が$q$の位数で零になることを意味するため起こらない．
+従って$\sigma p_i$は$L_0$一般位置である．
+三条件の左辺と右辺の比は順に
+\[
+ q^{N_1+N_2+N_3-1},\qquad
+ q^{N_4+N_5+N_6},\qquad
+ q^{\sum_iN_i-1}
+\]
+であり，全指数は正なので非自明である．
+\end{proof}
+\begin{remark}
+この系は，整数倍点の共鳴例を実際の規格化したdecupleと接続する．
+この三指数の計算だけでnoetherian性や十一因子$\Delta$の非零性を結論するわけではない．
+それらは後の第\ref{sec:ellipticcoefficients}節で，実際のpotentialとvery strong helixを用いて証明する．
+\end{remark}

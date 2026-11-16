@@ -1,0 +1,262 @@
+\section{楕円decupleのpotentialと十一条件の幾何学的意味}\label{sec:ellipticcoefficients}
+本節では，第\ref{sec:boundarydata}節で規約を固定したdecupleの関係式を直接計算する．
+その結果，構造頂点を除くcornerは$L_0$に依存せず，
+$L_1$による\emph{元の六点}の可換三次曲面cornerに一致することが分かる．
+従って第\ref{sec:explicitcorner}節で係数空間に書いた十一条件を，
+新しく作った補助的な六点でなく，入力の楕円データへ引き戻せる．
+最後に，pointedなvery strong helixからの再構成を用いて，
+この共通領域で残っていた右noetherian性を導出する．
+
+\subsection{次数二の切断の関係式}
+$E=\mathbb C/(\mathbb Z+\tau\mathbb Z)$とし，$\vartheta(z)$を奇Jacobi theta関数とする．
+$\vartheta(z+1)=-\vartheta(z)$，
+$\vartheta(z+\tau)=-e^{-\pi i\tau-2\pi iz}\vartheta(z)$と規格化する．
+次数$d$，Abel和$\lambda$の線束の切断を，乗数
+$(-1)^d$と$(-1)^de^{-\pi id\tau-2\pi idz+2\pi i\lambda}$を持つ関数で表す．
+以下の数は$E$の点の複素数liftを選んだものであり，等式はこの選択と整合するliftで読む．
+選択を変えると矢・関係式の基底が変わるが，零条件と後述の行列の行・列rescaling類は変わらない．
+
+\begin{lemma}[三つのdegree-two sectionの関係]\label{lem:theta-relation}
+$r_1,r_2,r_3$を$E$上で相異なる点とし，$d$を固定する．
+$f_b(z)=\vartheta(z-r_b)\vartheta(z-d+r_b)$と置く．
+添字を$3$で巡回させ，
+\[
+ c_b=\vartheta(r_{b+1}-r_{b+2})\,
+       \vartheta(r_{b+1}+r_{b+2}-d)
+\]
+とすると，$\sum_{b=1}^3 c_bf_b=0$である．これが三切断間の唯一の関係を生成する．
+特に$c_b=0$と$r_{b+1}+r_{b+2}=d$ in $E$は同値である．
+\end{lemma}
+\begin{proof}
+三切断は同じ次数2の線束に属する．$z=r_1$へ代入すると第一項は零で，
+残りの二項は$\vartheta$の奇性により相殺する．$z=r_2,r_3$でも同様である．
+従ってその和は三つの異なる零点を持つ次数2の切断なので恒等的に零．
+二切断が比例するのは有効零divisor
+$\{r_b,d-r_b\}$が一致するときだけである．三点が相異なるので，
+三切断すべてが比例することはなく，spanは次元2，関係空間は次元1である．
+最後の主張もthetaの零点と相異性から従う．
+\end{proof}
+
+$D_x=p_1+p_2+p_3$，$D_y=p_4+p_5+p_6$とし，
+$x_b=p_b$，$y_c=p_{3+c}$ $(1\le b,c\le3)$と書く．
+$L_i$のAbel和を$\ell_i$，$X=\sum_bx_b$，$Y=\sum_cy_c$とする．
+第\ref{eq:normalized-decuple}式の三blockを
+\[
+ A_0=\OO_E,\quad A_1=(L_0L_1)^{-1}(D_x+D_y),\quad
+ A_2=L_0^{-1}(D_x),\quad
+ B_b=\OO_E(x_b),\quad C_c=L_0(-y_c)
+\]
+とし，$u=X-\ell_0$，$t=\ell_1-Y$と置く．
+条件$(U_+)$は$u,t,u-t$が$E$上で非零という条件である．
+矢を$\mathsf x_{ab}:A_a\to B_b$，$\mathsf y_{bc}:B_b\to C_c$，
+関係式に双対なrolled-up矢を$\mathsf z_{ca}$とする．
+
+\begin{theorem}[正規化decupleの全potential]\label{thm:theta-potential}
+相異なる六点と条件$(U_+)$の下で，矢の基底と関係式の基底を選べば，
+正規化decupleから得るpotentialは
+\begin{equation}\label{eq:theta-potential}
+ W_+=\sum_{a=0}^2\sum_{b,c=1}^3
+ \vartheta(y_c-x_b+t_a)
+ [\mathsf z_{ca}\mathsf y_{bc}\mathsf x_{ab}],
+ \qquad(t_0,t_1,t_2)=(u,t,0)
+\end{equation}
+と書ける．これは解析的な局所座標表示であり，矢rescalingを除く関係式の同型類を与える．
+特に$w_{1bc},w_{2bc}\ne0$の範囲では，係数比行列は行・列rescalingを除き
+\begin{equation}\label{eq:theta-Q}
+ Q_{bc}=\frac{\vartheta(y_c-x_b)}{\vartheta(y_c-x_b+t)}
+\end{equation}
+である．そのrescaling類は$L_0$に依存しない．
+\end{theorem}
+\begin{proof}
+$A_a$のAbel和を$a_a$，$C_c$のAbel和を$c_c=\ell_0-y_c$とする．
+各一次元Homの基底を
+$\vartheta(z-x_b+a_a)$と$\vartheta(z-c_c+x_b)$で表す．
+その積に補題\ref{lem:theta-relation}を適用すると，関係係数は
+\[
+ \vartheta(x_{b+1}-x_{b+2})\,
+ \vartheta(X-x_b-a_a-c_c)
+ =\vartheta(x_{b+1}-x_{b+2})\,
+   \vartheta(y_c-x_b+u-a_a).
+\]
+第一因子は非零で$b$だけに依存するから，矢$\mathsf x_{ab}$の基底変更で除ける．
+各$(a,c)$の関係を規格化する自由度は$\mathsf z_{ca}$の基底変更である．
+$a_0=0$，$a_1=u-t$，$a_2=u$を代入して\eqref{eq:theta-potential}を得る．
+AOUのpotentialは各長さ二関係とその双対矢の積の和である
+\cite[(4.7), \S7]{AOU}ため，これが全27係数を与える．
+一般の矢基底の変更では$Q$は行・列rescalingだけ変わり，式\eqref{eq:theta-Q}の同型類は不変である．
+\end{proof}
+
+\subsection{係数比は入力六点の射影座標である}
+$\OO_E(D_y)\not\simeq L_1$を仮定する．
+$L_1$で埋め込んだ$p_4,p_5,p_6$は非共線なので，それらを座標三点へ送れる．
+その座標で最初の三点を列に持つ行列を$P=(P_{cb})$とする．
+
+\begin{theorem}[元の六点によるcornerの復元]\label{thm:original-six-points}
+上の設定で，$w_{1bc}$がすべて非零なら
+\begin{equation}\label{eq:original-P}
+ P\sim (Q^{\langle-1\rangle})^{\mathsf t}
+\end{equation}
+が行・列rescalingを除いて成り立つ．従って
+\[
+ B(W_+)/B(W_+)e_{A_0}B(W_+)
+\]
+のgraded同型類は$L_0$に依存しない．六点が一般位置にある場合，
+$L_1$埋込みでの同じ六点の滑らかな可換三次曲面から得るcornerと一致し，この商は有限次元である．
+\end{theorem}
+\begin{proof}
+$\{1,2,3\}\setminus\{c\}=\{d,e\}$とする．$L_1$の切断
+\[
+ h_c(z)=\vartheta(z-y_d)\vartheta(z-y_e)\vartheta(z-y_c-t)
+\]
+の零divisorは$y_d+y_e+(y_c+t)$で，Abel和は$Y+t=\ell_1$である．
+$h_c(y_c)\ne0$，$h_c(y_d)=h_c(y_e)=0$なので，三切断は座標三点を規格化する基底となる．
+$G(z)=\prod_{j=1}^3\vartheta(z-y_j)$と置くと，$x_b\ne y_j$より
+\[
+ \frac{h_c(x_b)}{G(x_b)}
+ =\frac{\vartheta(x_b-y_c-t)}{\vartheta(x_b-y_c)}
+ =\frac{\vartheta(y_c-x_b+t)}{\vartheta(y_c-x_b)}=Q_{bc}^{-1}.
+\]
+切断基底と各点のfiber trivializationを変える自由度が行・列rescalingであるから
+\eqref{eq:original-P}を得る．
+構造頂点を除いた商は二系列$w_1,w_2$だけに依存し，それらが全て非零のとき
+その矢rescaling類は$Q$の行・列rescaling類で決まる．
+一般位置の場合には，第\ref{sec:explicitcorner}節の可換幾何の表示
+$w_1^{\rm geo}=P^{\mathsf t},w_2^{\rm geo}=1$と比較すれば
+主張した商の同型を得る．有限性は定理\ref{thm:eleven}による．
+\end{proof}
+
+\begin{corollary}[十一条件の楕円パラメータへの引戻し]\label{cor:elliptic-discriminant}
+六点は相異なり，$\OO_E(D_y)\not\simeq L_1$とする．
+このとき$w_{2bc}$は常に非零であり，
+\[
+ w_{1bc}=0\quad\Longleftrightarrow\quad
+ L_1\simeq\OO_E(x_b+D_y-y_c).
+\]
+全$w_{1bc}$が非零となる範囲では，九つのminorと二つのdeterminantの零条件は
+\begin{align*}
+ Q_{bc}Q_{b'c'}-Q_{bc'}Q_{b'c}=0
+ &\quad\Longleftrightarrow\quad
+ L_1\simeq\OO_E(x_b+x_{b'}+y_e),
+ \quad\{e\}=\{1,2,3\}\setminus\{c,c'\},\\
+ \det Q^{\langle-1\rangle}=0
+ &\quad\Longleftrightarrow\quad L_1\simeq\OO_E(D_x),\\
+ \det Q=0
+ &\quad\Longleftrightarrow\quad L_1^2\simeq\OO_E(D_x+D_y).
+\end{align*}
+従って十八係数非零と十一条件の同時成立は，
+$L_1$による元の六点が一般位置にあることと同値である．
+\end{corollary}
+\begin{proof}
+係数の条件は\eqref{eq:theta-potential}から従う．
+$2\times2$ minorは非零成分の逆数を取っても零条件が同じであり，
+\eqref{eq:original-P}を通じて，最初の二点と残り一つの座標点の共線性に等しい．
+$\det Q^{\langle-1\rangle}$は最初の三点の共線性を表す．
+六点がconic上にある条件は，座標三点を通るconicの残り三点への評価行列のdeterminantが零という条件である．
+その評価行列は，各行の非零因子を除き$P$の成分逆数であり，零条件は$\det Q=0$となる．
+楕円曲線上の三点共線条件と六点conic条件はそれぞれ
+$L_1\simeq\OO_E(\text{三点和})$，$L_1^2\simeq\OO_E(\text{六点和})$である．
+後者の十分性は，平面三次$E$に対する
+$H^0(\mathbb P^2,\OO(2))\simeq H^0(E,L_1^2)$からも従う．
+最後の三点の共線性は初めから排除されており，これで全20個の三点条件とconic条件を尽くす．
+\end{proof}
+\begin{remark}
+式\eqref{eq:theta-Q}の逆数行列はelliptic Cauchy行列である．
+Frobeniusのdeterminant公式\cite[(1.7), (2.1)]{EllipticCauchy}を使っても上の因子を得る．
+本稿ではその恒等式自体を新結果とせず，元の六点の射影座標を直接同定する証明を与えた．
+全27係数が非零という追加条件は不要である．実際，
+$w_{0bc}=0$は$L_0\simeq\OO_E(D_x-x_b+y_c)$を意味し，
+$L_1$一般位置でも起こり得るが構造頂点を除いたcornerには影響しない．
+\end{remark}
+
+\subsection{ampleな構造対象からのnoetherian再構成}
+次の命題は，有限cornerだけから一般のJacobi環のnoetherian性を導く主張ではない．
+\emph{既に存在する}pointed導来比較の中に，full very strong周期helixがあることを使う．
+
+\begin{proposition}[ample構造対象を含むhelix]\label{prop:ample-helix-noetherian}
+$\cH$はHom有限noetherian abel圏で，homological dimensionは有限$d$とする．
+$(e,s)$はAZ-ampleで，全coherent対象への高次Ext tailが消えるとする．
+$\Db(\cH)$にfull very strong helixがあり，その周期作用が$s$，
+foundationが$(E_1=e,E_2,\ldots,E_l)$であるとする．
+このとき全$E_i$は$\cH$に属し，$T=\bigoplus_iE_i$について$(T,s)$もAZ-ampleとなる．
+従って$B_T=\bigoplus_{n\ge0}\Hom(T,s^nT)$は右noetherianで，
+$\qgr B_T\simeq\cH$となる．
+この同値は各$E_i$と対応する標準projectiveの像，およびそれらの射を保存する．
+\end{proposition}
+\begin{proof}
+very strong性から$n\gg0$で$\Hom(e,s^nE_i[k])=0$ $(k\ne0)$となる．
+命題\ref{prop:unique}のheart認識を標的$\cH$に適用し，$E_i\in\cH$を得る．
+同様に$\Ext^{>0}(T,s^ne)=0$ $(n\gg0)$である．
+任意の$M\in\cH$に対し，AZ生成性を$d$回用いて
+\[
+ 0\to K_d\to P_{d-1}\to\cdots\to P_0\to M\to0
+\]
+を取り，各$P_j$を有限個の負twist $s^{-a}e$の直和とする．
+有限個の$P_j$について高いtwistで$\Ext^{>0}(T,s^nP_j)=0$となる．
+次元移動により
+$\Ext^k(T,s^nM)\simeq\Ext^{k+d}(T,s^nK_d)=0$ $(k>0,n\gg0)$．
+$e$は$T$の直和因子なので$(T,s)$は全対象を生成し，上の消滅はAZの全射条件を与える．
+
+Artin--Zhangの再構成定理\cite[Theorem 4.5]{AZ}を適用する．
+ample sequenceを用いた構成と逆関手は\cite[Theorem 2.4]{PolishchukProj}も参照されたい．
+右noetherian性に必要な点を明示するため，graded右イデアル$I\subset B_T$を取る．
+$I_n$を射$s^{-n}T\to T$と見た像の和は，$T$のnoetherian性から有限個の射の像で生成される部分対象$J$に安定する．
+それらの射を$f_i:s^{-a_i}T\to J$とする．AZ全射条件を
+$\bigoplus_i s^{-a_i}T\twoheadrightarrow J$へ適用すると，高次数の$I$は
+$f_i$の右倍で生成される．低次数部分は有限次元なので，$I$全体は有限生成である．
+一般の右イデアルにも次数filtrationの最高次項を用いて持ち上げられ，右noetherian性を得る．
+再構成関手は$M\mapsto\pi\bigoplus_n\Hom(T,s^nM)$であり，最後の主張はこの定義から従う．
+\end{proof}
+
+\begin{theorem}[規格化共通領域でのAS--反標準一致]\label{thm:normalized-abelian}
+第\ref{sec:boundarydata}節の規格化した構成を取り，VdBの導来比較条件，
+六点の相異性，$L_1$一般位置，および$(U_+)$を満たすとする．
+そこで用いた標準AS実現，すなわちfull very strong周期helixと
+そのrolled-up Jacobi環$B(W_+)$の同定の下で，$B(W_+)$は右noetherianであり，
+\[
+ \boxed{\qgr\mathsf A_+\simeq\qgr F}
+\]
+となる．この同値は系\ref{cor:normalized-pointed}の指定dg同値$\Psi_+$のheartへの制限である．
+従ってこの共通領域では，右noetherian性と十一条件の非消滅を独立に追加する必要はない．
+\end{theorem}
+\begin{proof}
+$\cH=\qgr F$はnoetherian，Hom有限で，Serre関手$(-1)[2]$からhomological dimensionは2である．
+標準の$(\pi F,(1))$はAZ-ampleかつ高次Extのtail消滅を満たす．
+AS標準helixのvery strong性と周期性は\cite[Definition 3.1, (3.9)--(3.10)]{OU}の入力であり，
+pointedな$\Psi_+^{-1}$で運べば，前命題の仮定を満たすhelixを$\Db(\qgr F)$に得る．
+そのorbit代数は，指定したAS実現の下で$B(W_+)$である．
+前命題から右noetherian性と$qgr$のabel同値を得る．周期coverによって$\qgr\mathsf A_+$と同定する．
+この再構成はfoundationとそのEnd代数への作用を保存するため，
+full strong generatorのdg Yoneda同定を通じて，誘導する導来同値は指定$\Psi_+$と同じである．
+従って$\Psi_+$自体がt-exactとなる．
+係数側でも，系\ref{cor:elliptic-discriminant}により$L_1$一般位置から十一条件が成立し，
+第\ref{thm:AOUexactlocus}定理の判定と一致する．
+\end{proof}
+\begin{remark}[非循環性と範囲]
+前命題は先にAS標準heartのnoetherian性やt-exactnessを仮定していない．
+noetherianな標的$\qgr F$，そのample構造対象，および導来圏内のvery strong helixから導いている．
+ただし任意のfull strong collectionをvery strongと読み替えてはならず，
+本定理は第\ref{sec:boundarydata}節で用いたAS実現の範囲に限る．
+任意のpotential，特異境界，あるいは未変更の印刷AOU座標の全領域への主張ではない．
+\end{remark}
+
+\begin{corollary}[整数倍点族の二つの比較]\label{cor:cyclic-AS-equality}
+系\ref{cor:normalized-cyclic-family}の整数倍点族では，規格化AS heartは反標準heartと一致する．
+一方，同じpointed導来圏内の順序付きRains heartは，
+定理\ref{thm:sorted-spectrum}の整列手順によってそのheartへ移る．
+特に$(q,3q,2q,5q,7q,11q)$では一回の単純tiltで移り，
+反標準側の単純次元は$(6,1,1,2,2,4)$である．
+\end{corollary}
+\begin{proof}
+正整数倍点は$L_1$一般位置と$(U_+)$を満たすので前定理を適用できる．
+Rains heartの記述は既存の整列定理による．
+ここでは同じ構造対象を保つdg比較によって共通の導来圏に運んでいる．
+\end{proof}
+
+\begin{remark}[検算]
+\texttt{verify\_four\_hearts\_elliptic.py}は，Weierstrass曲線上のMiller関数を使い，
+各一次元Homの切断とその積を有限体上の\emph{実際の有理関数}として構成する．
+関係式は関数体で交差乗算して検査し，係数比の逆数と$L_1$射影座標の行・列rescaling類を照合する．
+さらに二種類の混合共線壁，最初の三点の共線壁，conic壁を強制した例を別々に検査する．
+これは有限体上の有限個の厳密検算であり，複素数上の全パラメータ定理や
+noetherian性・heart同値の証明ではない．
+\end{remark}

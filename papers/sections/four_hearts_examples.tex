@@ -1,0 +1,332 @@
+\section{混合\texorpdfstring{$A_2$}{A2}によるheartのずれの具体化}\label{sec:A2}
+この節は定理\ref{thm:derived}のgenuine楕円gluingで，$q$非torsionとする．
+$H=-K$はnef，$H^2>0$．楕円境界と交わらない一次元以下の対象を
+$\cZ=\{M\in\AR:\dim M\le1,\ F_qM=0\}$と書く．
+
+\subsection{単純根sheafと有限長部分圏}
+\begin{lemma}\label{lem:offboundary}
+$\cZ$は有限長Serre部分圏であり，その既約純一次元root sheafは$\AR$の単純対象である．
+\end{lemma}
+\begin{proof}
+境界非交叉な対象の零次元商$Z$には$i^*Z=0$が従い，$\theta Z\to Z$は全射となる．
+両者の数値類は等しいので\cite[Corollary 7.7]{Rains}から同型である．
+$[Z]=\ell[\mathrm{pt}]$，$\ell\ge0$に対して境界determinantは$q^{\ell}$であり，
+非torsion性から$\ell=0$，従って$Z=0$．既約純一次元sheafの非零部分対象の商は
+零次元なので，この場合には単純性が得られる．
+
+$0\to N\to M\to Q\to0$，$M\in\cZ$とすると，nef性と加法性から
+$Hc_1(N)=Hc_1(Q)=0$．$i^*Q=0$なので$\theta Q\to Q$は全射であり，
+rank零，$Kc_1(Q)=0$と\cite[Corollary 7.15]{Rains}から数値類は変わらない．
+Corollary 7.7と自然性により$\theta Q\to Q$，$\theta N\to N$はいずれも同型で，
+$N,Q\in\cZ$となる．拡大閉性は境界triangleから従う．
+真の降鎖の逐次商は零次元になれないため，\cite[Proposition 7.32]{Rains}の
+finitely partitive性が降鎖を止める．coherent heartのnoetherian性と合わせて有限長となる．
+\end{proof}
+
+\begin{corollary}[全境界外圏のtorsion pair]\label{cor:Ztilt}
+定理\ref{thm:globaltilt}のtorsion pairは$\cZ$へ制限され，
+\[
+\cT\cap\cZ=\ker\Ext^1(e,-),\qquad
+\cF\cap\cZ=\ker\Hom(e,-)
+\]
+となる．これは二根部分圏だけでなく全$\cZ$についての結論である．
+\end{corollary}
+\begin{proof}
+$\cZ$がSerre部分圏なので，その対象のtorsion分解の部分対象と商も$\cZ$に属する．
+$M\in\cZ$では$g$が可逆に作用し，各$\Ext^j(e,s^nM)$の移行写像が同型となる．
+その局所化を$V^j(M)$とすれば$\dim V^j(M)=\dim\Ext^j(e,M)$であり，
+$H^j\Phi(M)=0$と$\Ext^j(e,M)=0$は同値である．
+\end{proof}
+
+異なる二根sheaf$S_\alpha,S_\beta\in\cZ$には
+\begin{equation}\label{eq:rootext}
+\Hom(S_\alpha,S_\beta)=\Ext^2(S_\alpha,S_\beta)=0,
+\qquad \dim\Ext^1(S_\alpha,S_\beta)=\alpha\cdot\beta
+\end{equation}
+が成り立つ．実際，単純性からHomが消え，境界非交叉とSerre双対性からExt$^2$も消える．
+rank-zero Euler形式$\chi(S_\alpha,S_\beta)=-\alpha\beta$が残る次元を与える．
+
+隣接根$\alpha\beta=1$，$\chi(e,S_+)=p>0$，$\chi(e,S_-)=-n<0$を固定し，
+両向きの非分裂拡大を
+\begin{equation}\label{eq:PQ}
+0\to S_-\to P\to S_+\to0,
+\qquad 0\to S_+\to Q\to S_-\to0
+\end{equation}
+とする．存在は\eqref{eq:rootext}から従い，各中間項は同型を除き一意である．
+
+\begin{proposition}[connecting mapの最大rank]\label{prop:rank}
+$P$のconnecting map$\delta:\Hom(e,S_+)\to\Ext^1(e,S_-)$は
+$\rk\delta=\min(p,n)$を満たす．従って
+\[
+(h^0(P),h^1(P))=((p-n)_+,(n-p)_+),\qquad (h^0(Q),h^1(Q))=(p,n),
+\]
+ただし$h^j(M)=\dim\Ext^j(e,M)$，$x_+=\max(x,0)$とする．
+このrankの証明には定理\ref{thm:derived}を必要としない．
+\end{proposition}
+\begin{proof}
+符号別Extから$\Hom(e,P)=\ker\delta$，$\Ext^1(e,P)=\operatorname{coker}\delta$．
+非零$f:e\to P$があれば，$P\to S_+$との合成は非零で全射となる．
+像と$S_-$との交わりは零か$S_-$であり，前者なら拡大が分裂するので後者である．
+従って$f$は全射．核$L$はrank-one torsion-freeで$c_1(L)=-(\alpha+\beta)$．
+Corollary 10.12と$H(K+\alpha+\beta)=-H^2<0$により
+$\Ext^2(e,L)=\Hom(L,\theta e)^*=0$．$e$のexceptionalityから$h^1(P)=0$となる．
+$p>n$なら$\ker\delta\ne0$なので$\delta$は全射．$p\le n$で$h^0(P)>0$とすると
+$\chi(e,P)=h^0(P)>0$に矛盾するので，この場合は単射である．
+$Q$には逆向き短完全列の六項完全列を使う．
+\end{proof}
+
+\begin{proposition}[二根の全有限長対象]\label{prop:A2category}
+$\cC=\langle S_+,S_-\rangle_{\mathrm{Serre}}$は
+$\operatorname{mod}_{\mathrm{fd}}\Pi(A_2)$と同値であり，直既約対象は$S_+,S_-,P,Q$の四つである．
+ここで$\Pi(A_2)$は二頂点・両向き二矢と，両方の長さ二の道を零とする関係を持つ代数である．
+$p>n$では$(\cT\cap\cC,\cF\cap\cC)=(\add(S_+,P),\add(S_-))$，
+$p<n$では$(\add(S_+),\add(S_-,P))$である．
+\end{proposition}
+\begin{proof}
+非分裂性と単純性から，順序$(S_+,S_-,P,Q)$でHom次元は
+\[
+\begin{pmatrix}
+1&0&0&1\\0&1&1&0\\1&0&1&1\\0&1&1&1
+\end{pmatrix}.
+\]
+例えば$\Hom(P,Q)$は$P\twoheadrightarrow S_+\hookrightarrow Q$で生成され，
+逆方向も同様で，両合成は零である．$\theta$はこれらの対象で自然に恒等なので
+\[
+\dim\Ext^1(U,V)=\dim\Hom(U,V)+\dim\Hom(V,U)+c_1(U)c_1(V).
+\]
+上の表を代入すると，$P,Q$から二単純へのExt$^1$はすべて零である．
+長さによる帰納法から$P\oplus Q$は$\cC$のprojective generatorであり，
+そのEnd代数は表示した四次元代数となる．
+その表現$x:U_+\to U_-$，$y:U_-\to U_+$，$xy=yx=0$は，
+$\operatorname{im}y\subset\ker x$，$\operatorname{im}x\subset\ker y$に適合する基底により，
+一方の矢だけが非零の一次元対と孤立一次元空間へ分解される．従って直既約は四つである．
+最後の主張は命題\ref{prop:rank}と符号別Extによる．
+\end{proof}
+
+$\cC$の内在的ExtはambientのExtと異なる．実際$\Pi(A_2)$の単純加群には
+二周期的なprojective resolutionがあり，$\Ext^{2j}_{\cC}(S_+,S_+)=k$ $(j\ge0)$である．
+従って$\Db(\cC)\to\Db(\AR)$は完全忠実でない．
+また$p=n$なら$P$は自然な導来切断で消えるが，genuine avatarでは
+$\alpha+\beta$が零指数根となるためこの同時共鳴自体が排除される．
+
+\subsection{反標準側の二つのcharacter}
+\begin{example}[実在する指数$(2,-1)$]
+滑らかな平面三次$E$の変曲点を原点に取り，非torsion $q$について
+\[
+(p_1,\ldots,p_6)=(q,3q,2q,5q,7q,11q)
+\]
+とする．三点共線なら対応する正整数の和の$q$倍が零となり，六点conicも同様なので，
+六点は一般位置である．$\alpha=e_1-e_2$，$\beta=e_2-e_3$の指数は$2,-1$．
+Rainsのsimple-root effectivityと既約sheaf存在結果
+\cite[\S4]{Filtered}\cite[\S11, p.~141]{Rains}の適用条件を
+補題\ref{lem:Rains-simple-existence}で確認する．このchartでは上記の$S_+,S_-$が同じheartに実在する．
+数値計算だけをsheaf存在の代わりには用いない．
+\end{example}
+
+\begin{lemma}[境界外でのExtの比較]\label{lem:localization}
+有限次元$A=R/(g-1)$加群$U,V$を境界外の$\qgr R$の対象とみなすと，
+全$j\ge0$で$\Ext_A^j(U,V)\simeq\Ext_{\qgr R}^j(U,V)$である．
+\end{lemma}
+\begin{proof}
+$R[g^{-1}]$は強次数付き環で，その次数付き加群圏は$\operatorname{Mod}A$と同値である．
+exactな中心局所化の右随伴はrestrictionで，これもexactかつ完全忠実である．
+局所化加群は内部次数torsionに導来的に直交するため，右随伴は$\QGr R$にも降りる．
+よって導来随伴も完全忠実となる．有限次元加群の非負次数格子は$k[g]$上有限自由で，
+有限生成$R$加群を与える．locally noetherian圏でのcoherent Extとの一致により主張を得る．
+\end{proof}
+
+\begin{theorem}[三角表現と四次元商]\label{thm:affinequotient}
+上の指数$(2,-1)$の例で$V=\Phi(S_+)$，$U=\Phi(S_-)[1]$，$W=\Phi(P)$とする．
+これらはそれぞれ次元$2,1,1$の$A$加群であり，
+\[
+0\longrightarrow W\longrightarrow V\longrightarrow U\longrightarrow0
+\]
+は非分裂で，$W\not\simeq U$である．$A$の$V$への作用像は全三角行列代数となる．
+逆向き非分裂拡大$0\to U\to V'\to W\to0$も存在し，
+\[
+A/\Ann_A(V\oplus V')\simeq\Pi(A_2).
+\]
+新しい二単純の根類は$\alpha+\beta,-\beta$であり，指数は$1,1$である．
+\end{theorem}
+\begin{proof}
+最大rankから短完全列を得る．定理\ref{thm:derived}，補題\ref{lem:localization}と
+$\Ext_X^1(P,S_-)=0$から$\Hom_A(W,U)=0$となり，二つの一次元加群は異なる．
+非零包含$S_-\to P$は同値によって非零の$\Ext_A^1(U,W)$へ移るので，拡大は非分裂である．
+異なるcharacterを持つ二次元非分裂表現の像には，二つの対角冪等元と非零の非対角cornerがあり，
+像は全三角行列代数である．
+
+同様に$\Ext_A^1(W,U)=\Ext_X^2(P,S_-)=\Hom_X(S_-,P)^*=k$から$V'$が存在する．
+$V\oplus V'$への像は，共通の二つの対角成分と両向きの非対角成分からなる
+四次元代数$C_0\simeq\Pi(A_2)$の部分代数$C$である．characterの分離から
+$C$の半単純像は$k\times k$である．$J=\operatorname{rad}C_0$は$J^2=0$なので，
+冪等元を持ち上げ，$1+J$による共役で標準の対角冪等元に合わせる．
+両拡大の非分裂性により二つの一次元cornerがともに像へ入り，$C=C_0$となる．
+最後に$[P]=[S_+]+[S_-]$，$[S_-[1]]=-[S_-]$を使う．
+\end{proof}
+
+反射$s_\beta(v)=v+(v\beta)\beta$は$(\alpha,\beta)$を$(\alpha+\beta,-\beta)$へ送る．
+従ってこの局所模型では，正負の共鳴から反標準heartの正指数二単純への組替えがWeyl反射に対応する．
+ここまでの主張は二根部分系に限る．Rainsの単純根存在結果を適用した$E_6$への拡張は，
+後の系\ref{cor:E6spectrum}で別に与える．
+商$A\to\Pi(A_2)$もhomological epimorphismではない．商の単純加群の高次Extは二周期的だが，
+ambientのExtは次数2を超えて消えるからである．
+
+\begin{remark}[同型型と生成元の係数]
+この定理は実際の有限次元商の同型型を与える．しかし，楕円データからあらかじめ固定した
+$A$の生成元に対するcharacterの値や拡大cocycleの係数を数値式で与えてはいない．
+その明示計算と全$E_6$のアフィン作用行列は別の課題として残る．
+単純加群の根類と次元の決定とは区別する．
+\end{remark}
+
+\input{papers/sections/four_hearts_root_chambers.tex}
+
+\section{四者を同じ図式に置くための条件}\label{sec:alignment}
+比較は二圏ずつの同値の存在だけでは完了しない．同じ$e$と$s$を使って反標準環を作り，
+比較の合成がその構造を保つことを確認する必要がある．
+\begin{proposition}[pointedな比較の接続]\label{prop:alignment}
+次のデータが与えられたとする．
+同じblow-up表示によるpointedな$J:\Db(\AV)\simeq\Db(\AR)$，
+定理\ref{thm:derived}の$\Phi$，およびpointedな
+$E:\Db(\AAS)\simeq\Db(\AR)$がある．さらにAS側で系\ref{cor:ASac}の条件と
+命題\ref{prop:unique}の高次消滅が成立するとする．
+このとき$\Phi E$は標準AS heartから反標準heartへのt-exact同値であり，
+$\Phi J$はVdB heartに対して$J^{-1}(\cT),J^{-1}(\cF)$によるHRS比較となる．
+従って$\cF=0$なら四者はこれらの指定関手の下で一致する．
+\end{proposition}
+\begin{proof}
+corner同値からAS側の指定反標準orbitは豊富である．pointed性により環とorbitを同定でき，
+両heartは命題\ref{prop:unique}の認識式を満たすので$\Phi E$はt-exact．
+$J$のt-exactnessはtorsion pairを$\AV$へ運び，定理\ref{thm:globaltilt}の式を保つ．
+$\cF=0$のときの結論は命題\ref{prop:hrs}から従う．
+\end{proof}
+
+実際のrestriction条件\eqref{eq:two-nontrivial}の下では，定理\ref{thm:AOU-pointed}により
+section model--AS比較のpointed性が得られる．
+VdBの最後のraw blow-upと同じRains表示については，系\ref{cor:fourfunctors}で
+指定関手を実際に接続した．異なるavatarとの比較にはなおデータの同定を要する．
+確認済みの範囲と残る同定は，次の表のとおりである．
+\begin{center}
+\small
+\begin{tabular}{p{.18\textwidth}p{.36\textwidth}p{.35\textwidth}}
+\toprule
+比較 & 結論と適用範囲 & 自動的には従わないこと\\
+\midrule
+VdB--Rains & 同じblow-up・gluing・blow-down表示でabel同値 & 独立に選んだavatarのデータ対応\\
+Rains--反標準 & genuine smooth楕円gluingで導来同値，一回のHRS tilt & 任意nc曲面・特異境界への拡張\\
+VdB--section model & VdBの一般位置条件下で振幅1の導来同値 & raw blow-upとのheart一致\\
+AS--反標準 & 規格化共通領域でnoetherian性と標準heartの一致を導出 & 任意potential・全AS locusへの拡張\\
+section model--AS & 実際のrestriction条件の下でpointed導来同値，反標準環も一致 & 全域での標準heartの一致\\
+四者の接続 & 同じ最終VdB表示では自然関手を同定，$\Delta\ne0$で単一tilt & 独立avatarの同定，相対降下\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{可換基準点と非可換共鳴}
+滑らかな可換三次曲面$S$では，実際のblow-up heartとRainsの可換heartは$\coh S$である．
+$-K_S$がampleなので反標準環の$\qgr$も$\coh S$を回復する．
+標準的なline bundle helixの各周期部分列$\OO(D_i-nH)$もSerreの生成・消滅を満たし，
+ASの$\mathbb Z$-代数から同じheartを再構成する．この場合には四者の一致を実際に確認できる．
+しかし，一つの可換点での一致から，非可換パラメータ空間での一致locusの開性を推論しない．
+命題\ref{prop:density}は，楕円chartでは負指数共鳴が可算個の軌跡の合併として稠密となることを示す．
+「稠密な共鳴」と「一つの閉じた判別因子」，あるいは「導来特異化」は異なる概念である．
+
+\subsection{族に移すときの追加課題}
+本稿の主要な比較は幾何学的点での結果である．基礎$T$上の族へ移すには，
+少なくともgluing bimoduleとkernelの相対perfect性，orbitのHomの基底変更，
+有限性と消滅次数の一様性，t構造の基底変更適合性を確認する必要がある．
+構造対象の同型と反Serre作用への適合を降下データとして保つことも必要である．
+構造対象の同定については命題\ref{prop:AOU-relative-object}が相対Homのperfectnessと
+基底変更の下で評価triangleから自然な同型を与える．その前提となる相対圏の構成と
+全heartの降下を，この対象単独の同定から推論しない．
+
+有限cornerの範囲だけなら次の初等的な相対判定が使える．
+\begin{proposition}\label{prop:relativecorner}
+有限型基礎$T$上に次数1生成のgraded代数族$C$があり，各$C_N$が有限表示で
+fiberの形成と両立するとする．このときfiberが有限次元となるlocusは
+$\bigcup_{N\ge1}\{t:(C_N)_t=0\}$であり開である．
+$T$がnoetherianなら，この開locus上である共通の$N$を選べる．
+\end{proposition}
+\begin{proof}
+各集合はcoherent module $C_N$のsupportの補集合であり開である．
+補題\ref{lem:cutoff}によってこれらは$N$とともに増加し，合併が求めるlocusとなる．
+noetherian空間の開集合は準コンパクトなので有限部分被覆を選び，最大の$N$を取る．
+\end{proof}
+三次曲面型では第\ref{sec:explicitcorner}節の十一条件がこの開集合の明示式を与える．
+この命題は有限cornerのfiber条件を述べるだけであり，heartの相対同値・flatness・stack降下を
+証明するものではない．本稿のt構造比較と，内在的非可換del Pezzoモジュライの
+全成分分類は分離して扱う．
+
+\appendix
+\section{三次曲面の数値データと再現手順}\label{app:numerics}
+可換三次曲面の標準格子を
+$\Pic(S)=\mathbb Zl\oplus\bigoplus_{i=1}^6\mathbb Ze_i$，
+$l^2=1$，$e_i^2=-1$，$H=3l-\sum e_i$とする．
+AOU \cite[(4.1)]{AOU}の九線束のChern類は
+\[
+0,\quad -2l+\sum e_i,\quad -l+e_1+e_2+e_3,
+\quad e_1,e_2,e_3,\quad l-e_4,l-e_5,l-e_6.
+\]
+各三つが一blockをなし，$H$次数は$0,1,2$である．
+$\chi(\OO(D),\OO(E))=1+\tfrac12(E-D)(E-D+H)$からEuler行列は
+\[
+C=\begin{pmatrix}I_3&J_3&2J_3\\0&I_3&J_3\\0&0&I_3\end{pmatrix},
+\qquad \det C=1,
+\]
+ただし$J_3$は全成分1の行列．成分総和は45である．
+これは可換点の既知のfull strong性と合わせてEnd代数の次元を確認するが，
+Euler行列だけからstrong性を証明してはいない．
+$K_0$でのSerre作用は$C^{-1}C^{\mathsf t}$，反Serre作用はその逆であり，
+後者は$H$によるtensorと一致する．
+
+根は$e_i-e_j$ $(i\ne j)$，$\pm(l-e_i-e_j-e_k)$ $(i<j<k)$，
+$\pm(2l-\sum e_i)$の72個である．各根について$\alpha^2=-2$，$H\alpha=0$．
+反標準Euler値は$n=0,\ldots,8$で
+\[
+1,4,10,19,31,46,64,85,109
+\]
+となる．これらを添付コードで有理数上の厳密計算として確認する．
+
+混合$A_2$では，四直既約のHom表をquiver射の線形方程式から求め，
+Euler形式とSerre双対からambient Ext$^1$を検算する．
+指数$p,n=1,\ldots,8$，四直既約の重複度$0,\ldots,4$について
+40,000通りのcohomology公式を検査する．$p=n$の検算は仮想的線形代数の確認であって，
+genuine avatar上にそのsheafが存在することの証拠ではない．
+
+構造対象のmutationについては，AOUの操作の合成順序を実装し，
+標識対象の位置が$9,9,9,6,6,3,1$と移ることと，最後の二箇所だけに
+Hom消滅の入力が必要であることを検査する．
+実際の$\mathcal U_2,\mathcal U_1$を使った\eqref{eq:two-degree-zero}の次数零性も検査する．
+印刷された旧指数の検算は境界規約を保証するものではなく，現在は
+第\ref{subsec:boundaryaudit}節の不整合を再現する検査と区別する．
+境界検算ではさらに，逆の右mutationの$[-1]$と，末尾三対象への$[1]$を明示して
+各段階のrankとdeterminantを計算し，実際の正規化したdecupleの指数と一致することを検査する．
+これは非自明な楕円線束のcohomology消滅やmutation対象の同型を計算で証明するものではなく，
+証明に使う順序と数値の独立な確認である．
+
+Euler chamberの検算は有限根系$A_2+A_1,A_4,D_5,E_6,E_7,E_8$について行う．
+各型で32個のregular汎関数を作り，負の単純を選ぶ三通りの規則を比較する．
+停止回数が初期負正根数に一致し，終端根集合が正値根の単純根集合に一致することを整数上で検査する．
+これは有限個の根格子計算であって，単純sheafの実在やheartの同定を数値実験に置き換えるものではない．
+
+整数倍点族では$3\le r\le8$の各型で40組の相異なる正整数を選び，
+Picard格子での根の明示列挙とWeyl反射による列挙を照合する．
+具体的六点の全720順列について，停止回数が逆転数に等しく，全単純の次元が同じ整列公式となることを検査する．
+これらは格子の検算であり，Rainsの既知のsheaf存在結果を計算で証明するものではない．
+
+本稿は主TeXファイルと九つのsectionソースからなり，\texttt{latexmk -lualatex}で再生成できる．
+日本語LuaLaTeX，LuaTeX-ja，\texttt{tikz-cd}，Python~3を用いる．
+リポジトリrootでの主要コマンドは
+\begin{verbatim}
+python3 computations/verify_cubic_heart_numerics.py
+python3 computations/verify_four_hearts.py
+python3 computations/verify_four_hearts_corner.py
+python3 computations/verify_four_hearts_chambers.py
+python3 computations/verify_four_hearts_sorted.py
+python3 computations/verify_four_hearts_boundary.py
+python3 computations/verify_four_hearts_elliptic.py
+latexmk -lualatex papers/nc_del_pezzo_hearts.tex
+\end{verbatim}
+である．数値検算は，sheafの存在，derived type，導来完全忠実性，
+または新規性を計算によって証明するものではない．
+
+

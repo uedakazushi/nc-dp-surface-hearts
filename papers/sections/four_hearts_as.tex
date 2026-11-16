@@ -1,0 +1,224 @@
+\section{AS heartと反標準heart：helixからcornerへ}\label{sec:AS}
+\subsection{AS構成が指定するもの}
+AS heartは，適切なnoetherian性を満たす三次元Artin--Schelter正則
+$\mathbb Z$-代数の$\qgr$として定義する．三次曲面の場合には
+$\{0,1,2\}\times\mathbb Z$を添字とする代数を使い，標準的な九対象のfoundationがある
+\cite[\S3--4]{AOU}．より一般のdel Pezzo型の標識とAS条件は
+\cite[Definitions 1.1, 3.1]{OU}に従う．
+ここでのAS正則次元3は曲面のhelix代数の次元であり，
+非可換射影三空間を与える四次元AS正則ambientと同じものではない．
+また非周期的な$\mathbb Z$-代数を，根拠なく一周期の次数付き代数に置き換えない．
+
+very strong helixは例外性，特定の周期範囲でのstrong性，Serre作用との周期関係を与える．
+そのhelixがheartを再構成するためには，生成性と高次Ext消滅を伴う豊富性も用いる．
+しかし，九対象の全orbitの豊富性から，そのうちの一つ$e$のorbitの豊富性は自動的には従わない．
+本稿で反標準環を作るのは後者であり，ここにcornerを導入する理由がある．
+
+\subsection{実際のrestrictionを用いた構造対象の同定}
+AOU\cite[\S9]{AOU}の設定を固定する．楕円曲線$Y$は滑らかで，
+$L_0=\OO_Y(H)$，$L_1=\sigma^*L_0$は次数3，$\sigma$は無限位数の平行移動とし，
+六点は同節の比較が成り立つ一般位置にあるとする．
+同節の$\coh\widetilde X$は\emph{最初から}$\qgr F$であり，
+構造対象は$e_F=\pi F$である．Lemma 9.2はSerre関手を$(-1)[2]$と同定し，
+Theorem 9.4はAS代数$\mathsf A$に対するdg導来同値
+\begin{equation}\label{eq:AOU}
+\Psi:\Db(\qgr F)\xrightarrow{\sim}\Db(\qgr\mathsf A)
+\end{equation}
+を与える．右側の構造対象を$e_{\mathrm{AS}}=\OO(0,0)$と書く．
+原典の構成では，mutation後のfoundationの先頭$E_0$が$e_{\mathrm{AS}}$へ移る．
+以下では$E_0$を実際の対象として同定する．これは$K_0$や境界restrictionだけによる同定ではない．
+本稿で新たに構成する$\Psi_+$については，第\ref{eq:mutation-shift-normalization}式の
+mutation規約と明示したshiftを使う．以下の先頭対象の議論は，後方三対象のshiftを変更しても影響を受けない．
+
+ここで境界の同定を一つ固定し，初期collectionの最後の三対象の実際のrestrictionを
+$(\mathcal U_2,\mathcal U_1,\OO_Y)$と書く．$\mathcal U_2,\mathcal U_1$はそれぞれ
+次数$-6,-3$の線束とする．$D_6=p_1+\cdots+p_6$，$D_3=p_1+p_2+p_3$と置き，
+\begin{equation}\label{eq:two-degree-zero}
+\mathcal L_A=\mathcal U_2\otimes\OO_Y(D_6),\qquad
+\mathcal L_B=\mathcal U_1\otimes\OO_Y(D_3)
+\end{equation}
+を定める．両者の次数は零である．以下のpointed比較には，\emph{実際のrestriction}に対する条件
+\begin{equation}\label{eq:two-nontrivial}
+\mathcal L_A\not\simeq\OO_Y,\qquad\mathcal L_B\not\simeq\OO_Y
+\tag{R}
+\end{equation}
+を明示的に仮定する．実際のdegree-zero blockがadmissibleならこの条件を満たす．
+AOU v1の(9.47)に印刷された$\mathcal U_2=L_0^{-5}L_1^3$，$\mathcal U_1=L_0^{-2}L_1$を
+他の境界式と同じ座標で無条件に使えるわけではない．第\ref{subsec:boundaryaudit}節の
+検査がその障害を示すため，ここでは印刷式の代入でなく，条件\eqref{eq:two-nontrivial}を入力とする．
+この形なら，本節の論証は座標式の規約に依存しない．
+第\ref{thm:right-dictionary}定理の右加群規格化では実際の$\mathcal U_i$を計算し，
+命題\ref{prop:normalized-admissible}の三条件の下で(R)を確認する．
+そのdecupleから構成した同値は$\Psi_+$と書き，元の印刷式でラベル付けした同値とは区別する．
+
+\begin{theorem}[AOUの構造対象の同定]\label{thm:AOU-pointed}
+AOU導来比較の設定と実際のrestriction条件\eqref{eq:two-nontrivial}の下で，最後のmutationで得る対象は
+$E_0\simeq e_F$である．従って\eqref{eq:AOU}は
+\[
+\Psi(e_F)\simeq e_{\mathrm{AS}},\qquad
+\Psi\circ(1)\simeq s_{\mathrm{AS}}\circ\Psi,
+\quad s_{\mathrm{AS}}=\Sfun_{\mathrm{AS}}^{-1}[2]
+\]
+を満たすpointed導来同値として規格化できる．
+この結論だけでは$\Psi$のt-exactnessを主張しない．
+\end{theorem}
+\begin{proof}
+AOUの(9.28)--(9.43)のmutation列を$\tau_1,\ldots,\tau_7$とする．
+$\tau_1$の末尾は$e_F$である．$\tau_2,\tau_3$への操作は末尾に触れず，
+$\tau_3\to\tau_4$の$R_6R_7R_8$はこの対象を変えずに第六位置へ動かす．
+右mutationの組$(C,D)\mapsto(D,R_D C)$では右側の$D$自体は変わらないためである．
+$\tau_4\to\tau_5$はその位置に触れず，$R_3R_4R_5$で第六位置から第三位置へ動く．
+従って$\tau_6$の先頭三対象は$(A,B,e_F)$である．
+ここまでの$e_F$の位置は$9,9,9,6,6,3$であり，いずれも対象そのものは保存されている．
+
+点対象のspherical twistが線束を対応する点でtwistすることを用い，
+AOU (9.48)--(9.52)のmutation計算を実際の$\mathcal U_i$で行うと，境界の導来restrictionは
+$Li^*A=\mathcal L_A$，$Li^*B=\mathcal L_B$，$Li^*e_F=\OO_Y$である．
+$(A,e_F)$と$(B,e_F)$は例外対なので，AOU Proposition 9.3により
+\[
+\RHom(A,e_F)\simeq R\Gamma(Y,\mathcal L_A^{-1}),\qquad
+\RHom(B,e_F)\simeq R\Gamma(Y,\mathcal L_B^{-1}).
+\]
+楕円曲線の非自明な次数零線束の全cohomologyは零である．
+実際，非零切断があれば次数零の有効divisorが零となって線束が自明になる．
+従って$H^0=0$，Riemann--Rochから$H^1=0$である．
+\eqref{eq:two-nontrivial}より上の二つのRHomは零となる．
+
+左mutationの定義triangle
+\[
+\RHom(B,e_F)\otimes B\longrightarrow e_F
+\longrightarrow L_Be_F\longrightarrow
+\]
+から，実際の自然射$e_F\to L_Be_F$は同型となる．
+さらに$\RHom(A,L_Be_F)=0$なので$L_A L_Be_F\simeq e_F$．
+これが最後の$L_1L_2$で得る先頭$E_0$である．
+AOU (9.55)--(9.57)の同値は$E_0$を$e_{\mathrm{AS}}$へ送るので構造対象を保つ．
+反Serre作用への適合は，dg同値によるSerre関手の一意性とLemma 9.2から従う．
+\end{proof}
+
+\begin{corollary}[同じ反標準環の回復]\label{cor:AOU-ring}
+上のpointed同定と反Serre作用の整合的な反復を選ぶと，次数付き環の同型
+\[
+F\simeq R(e_{\mathrm{AS}},s_{\mathrm{AS}})
+=\bigoplus_{n\ge0}\Hom(e_{\mathrm{AS}},s_{\mathrm{AS}}^n e_{\mathrm{AS}})
+\]
+を得る．従ってAS側から作る反標準heartは，AOUのsection modelの$\qgr F$と同じである．
+ただし，AS標準heartそのものがこれと一致するという結論ではない．
+\end{corollary}
+\begin{proof}
+まず$F_n\to\Hom_{\qgr F}(e_F,e_F(n))$が全$n\ge0$で同型であることを確認する．
+AOU (9.1)の中心正則元$t$による短完全列を使う．境界の次数$n$の線束は
+$n>0$で次数$3n$を持つため，$H^1$が零となる．
+$e_F$のexceptionalityから始めて帰納すると
+$\Ext^1(e_F,e_F(n))=0$ $(n\ge0)$である．
+この短完全列の大域切断と
+$0\to F_{n-1}\xrightarrow{t}F_n\to(F/tF)_n\to0$を比較し，
+$F_0=\End(e_F)=k$を使えば自然な飽和写像は各次数で同型となる．
+これらは乗法に適合する．定理\ref{thm:AOU-pointed}の同定を施すと主張を得る．
+反Serre関手との自然同型は一回分を選んで整合的に反復するので，積の整合性も保たれる．
+\end{proof}
+
+\begin{proposition}[構造対象の同定の相対版]\label{prop:AOU-relative-object}
+基礎$T$上で上記mutation列と$e_F$が相対的に定義されているとする．
+$R\!\operatorname{Hom}_T(A,e_F)$，$R\!\operatorname{Hom}_T(B,e_F)$がperfectで，
+導来基底変更に適合し，各幾何学的fiberで\eqref{eq:two-nontrivial}と
+上のrestriction比較が成り立つと仮定する．
+このとき評価triangleの自然射から$E_0\simeq e_F$が族として得られ，
+その同型は任意の導来基底変更に適合する．
+\end{proposition}
+\begin{proof}
+二つの相対Hom複体は全幾何学的fiberで零である．perfect complexに対する
+導来Nakayama補題から双方は零となる．局所的に有限自由複体を取り，
+任意の点のfiberがacyclicならその点の近傍で可縮にできることからもこの消滅が分かる．
+従って最後の二つの評価triangleの自然射が相対的にも同型である．
+評価射とconeの形成は指定したdg模型で基底変更に適合するので，得た同型も適合する．
+\end{proof}
+\begin{remark}
+相対命題はmutation列・perfectness・基底変更を仮定している．
+相対圏の構成，AS admissibilityの全退化点への延長，heart同値やモジュライstackの降下を
+この命題だけから結論しない．ただし，その仮定下では$E_0$の同定に新たな
+fiberごとのスカラー選択を要求せず，評価triangleの自然射が同型を与える．
+\end{remark}
+
+\begin{corollary}[VdB--ASの導来比較の範囲]\label{cor:VdBAS}
+VdBの最後のsection-model比較とAOUの比較\eqref{eq:AOU}の両方が適用でき，
+中間の$\qgr F$を同じデータで同定しているなら，それらの合成は
+VdBの当該blow-up heartとAS heartの導来同値を与える．
+そのt-exactnessと構造対象の保存は，これだけでは従わない．
+\end{corollary}
+\begin{proof}
+二つの指定dg同値を合成する．VdB側では既に非自明なHRS tiltがあり得るため，
+合成がt-exactであることは同値性だけの帰結ではない．構造対象の保存には各関手での像を照合する必要がある．
+AOU側の保存は定理\ref{thm:AOU-pointed}で確定したが，VdB側の関手との
+同じデータにおける適合性は別に指定する．
+\end{proof}
+
+\subsection{一対象の反標準orbitを判定する}
+AS側の標識されたfoundationを$E_1=e,E_2,\ldots,E_r$とし，
+$T_0=\bigoplus_iE_i$，$B_n=\Hom(T_0,s^nT_0)$と置く．
+$E_1$への射影を$p\in B_0$とすると，積の規約を合わせれば
+\begin{equation}\label{eq:foldedcorner}
+pBp=\bigoplus_{n\ge0}\Hom(e,s^ne)=R(e,s).
+\end{equation}
+以下の条件は，任意のAS退化点で自動的に成立するものではない．
+
+\begin{corollary}[AS--反標準のabel同値判定]\label{cor:ASac}
+上のfoldingが$\AAS\simeq\qgr B$を与え，$e$が$\pi(pB)$に対応するとする．
+$B$と$R=pBp$が局所有限右noetherianで，$Bp$が右$R$有限生成，
+$pB$が左$R$有限生成であると仮定する．このとき自然なcorner関手
+\[
+K:\AAS\simeq\qgr B\longrightarrow\qgr R(e,s)
+\]
+は，$\dim_k B/BpB<\infty$と同値にabel同値となる．
+その場合$K(e)=\pi R$であり，確認したfoldingの下で$s$と$(1)$にも適合する．
+\end{corollary}
+\begin{proof}
+式\eqref{eq:foldedcorner}と命題\ref{prop:corner}を使う．
+$(pB)p=pBp$が構造対象の保存を与える．反標準次数のshiftと$s$の適合性は
+foldingの定義に含めたものである．
+\end{proof}
+
+この系が同定するのは，\emph{AS側の指定対象から作った}反標準heartである．
+実際のrestriction条件\eqref{eq:two-nontrivial}を確認したAOU領域では，
+系\ref{cor:AOU-ring}がこれを$F$と同定する．
+独立に指定したRains側の環との比較には，そのパラメータと構造対象の同定をなお要する．
+$B/BpB$が無限次元でも，それはこの自然なabelian corner関手が同値でないことを意味するだけで，
+別の導来同値の不存在ではない．
+
+\begin{corollary}[指定されたAOU同値のt-exactnessへの帰結]\label{cor:AOU-texact}
+実際のrestriction条件\eqref{eq:two-nontrivial}を満たすAOU領域で，系\ref{cor:ASac}のfoldingと有限性条件が成立し，
+$\dim_k B/BpB<\infty$であるとする．このときAOUの指定同値$\Psi$自体がt-exactである．
+\end{corollary}
+\begin{proof}
+corner同値$K$と系\ref{cor:AOU-ring}から，AS標準heartは
+$(e_{\mathrm{AS}},s_{\mathrm{AS}})$に関してAZ生成性と全高次Extのtail消滅を満たす．
+これらは$\qgr F$の標準heartから$K$で運ばれる性質である．
+定理\ref{thm:AOU-pointed}により$\Psi$はpointedなので，
+命題\ref{prop:unique}の認識式を両側に適用するとt-exactnessが従う．
+\end{proof}
+この系は，指定したAOU関手と抽象的なcorner同値とを接続する．
+規格化した実際の共通領域では，追加の有限性条件を後の定理\ref{thm:normalized-abelian}で満たすことを示す．
+全AOU領域で有限corner条件を証明したという意味ではない．
+
+\begin{lemma}[有限次数による判定が有効になる条件]\label{lem:cutoff}
+$C=B/BpB$が非負次数付きで，有限次元$C_0$上，次数1で生成されるとする．
+このとき$C_N=0$なら全$n\ge N$で$C_n=0$である．
+従って$C$が有限次元であることと，ある$N$で$C_N=0$であることは同値である．
+\end{lemma}
+\begin{proof}
+任意の次数$n\ge N$の生成単項式は，長さ$N$の先頭部分を含む．
+$C_N=0$ならそれが零となる．逆は次数ごとの局所有限性による．
+\end{proof}
+三次曲面のJacobi表示では道長次数と反標準cut次数は異なる．
+補題を道長次数に適用した結果を反標準cornerへ移すには，この二つのgradingの関係を確認する．
+単に有限次数の計算が良好だったという理由だけで，全次数の有限性を結論しない．
+
+\begin{remark}[三次曲面の具体的corner計算との関係]
+同プロジェクトの別稿\nolinkurl{cubic_heart_corner.tex}は，指定された九頂点表示について，
+四交比の十一のdeterminant条件，一様な道長7での消滅，および
+$8+21t+33t^2+38t^3+33t^4+21t^5+8t^6$という有限cornerのHilbert関数を扱う．
+一様な道長境界と全Hilbert関数の詳細は別稿に保持する．本稿では次節で，
+有限性に必要十分な十一条件の証明を自立した形で収め，指定AOU同値の
+t-exactnessへ接続する．この係数判定から全potentialのAS正則性を結論しない．
+\end{remark}
+

@@ -1,0 +1,219 @@
+\section{三次曲面型の一致領域：四交比による完全判定}\label{sec:explicitcorner}
+本節では一般のcorner条件を，AOUの三block表示で係数の条件に置き換える．
+有限cornerの幾何学的判定は同プロジェクトの別稿で扱っているが，
+ここでは必要な証明を全て収め，前節で確定したpointed性と接続する．
+純粋なJacobi環の命題と，AS heartへ適用する際のnoetherian仮定を区別する．
+
+\subsection{二つのgradingと自動的に得られる有限性}
+頂点を$A_a,B_b,C_c$ $(0\le a,b,c\le2)$，矢を
+$x_{ab}:A_a\to B_b$，$y_{bc}:B_b\to C_c$，$z_{ca}:C_c\to A_a$とする．
+\[
+ W(w)=\sum_{a,b,c}w_{abc}[z_{ca}y_{bc}x_{ab}],\quad
+ B(w)=k\widetilde Q/(\partial W),\quad p=e_{A_0},\quad C(w)=B(w)/B(w)pB(w).
+\]
+全矢の次数を1とする道長次数を$\ell$，$x,y$の次数を0，$z$の次数を1とする
+次数をcut次数と呼ぶ．block番号を$\lambda(A)=0,\lambda(B)=1,\lambda(C)=2$とすると，
+始点$u$，終点$v$の道について
+\begin{equation}\label{eq:cutpath}
+ \ell=3\deg_{\mathrm{cut}}+\lambda(v)-\lambda(u).
+\end{equation}
+従って両次数での右有界性は同値であり，cutの各次数も有限次元である．
+cut次数のcoverの$(A_a,n),(B_b,n),(C_c,n)$をそれぞれ
+$(a,3n),(b,3n+1),(c,3n+2)$に対応させると，AOUの無限quiverそのものになる．
+このreindexingは加群圏とtorsion部分圏を同定する．標準の周期的なAS実現では
+\begin{equation}\label{eq:explicitfold}
+ \AAS\simeq\qgr B^{\mathrm{cut}},\quad
+ e_{\mathrm{AS}}=\pi(pB),\quad s_{\mathrm{AS}}=(1)_{\mathrm{cut}},\quad
+ pB^{\mathrm{cut}}p=R(e_{\mathrm{AS}},s_{\mathrm{AS}}).
+\end{equation}
+最後のHomの飽和と周期性にはAS projective helixの既知の性質
+\cite[\S4]{AOU}\cite[(3.9)--(3.10), Remark 5.4]{OU}を用いる．
+道長gradedの$\qgr B$を，そのまま一つのAS heartと同一視してはいけない．
+
+\begin{lemma}[有限cornerから両bimoduleの有限性へ]\label{lem:automaticcorner}
+有限quiverの道長斉次関係による商$B$と頂点の和$p$について，$B/BpB$が有限次元なら，
+$Bp$は右$pBp$有限生成，$pB$は左$pBp$有限生成である．さらに$B$が右noetherianなら$pBp$も右noetherianである．
+\end{lemma}
+\begin{proof}
+$C_N=0$なる$N$を取る．任意の長さ$N$の道は，$p$の頂点を通る同じ長さの道の線形結合となる．
+$p$から出る長い道の終端側$N$個をこの形で書き換え，最後に$p$を通る位置で切れば，
+長さ$\le N$の$Bp$の道と$pBp$の道の積になる．従って前者の有限個の道が右加群を生成する．
+逆に$p$へ入る道の始端側を用いれば左有限生成性も従う．この操作はcut次数にも斉次的である．
+$R=pBp$の右イデアル$I$に対して$(IB)p=I$なので，右イデアルの増大列は
+$B$のnoetherian性により停止する．
+\end{proof}
+従って標準的な右noetherian AS表示では，有限cornerを証明した後に
+両bimoduleの有限性を別の未解決仮定として残す必要はない．
+
+\subsection{係数による有限cornerの必要十分条件}
+$C(w)$は$w_{1bc},w_{2bc}$の十八係数だけに依存する．これらが非零なら
+$q_{bc}=w_{2bc}/w_{1bc}$，$Q=(q_{bc})$と置く．$Q^{\langle-1\rangle}$は成分ごとの逆数行列であり，
+通常の逆行列ではない．
+
+\begin{theorem}[十一条件による判定]\label{thm:eleven}
+任意の$w\in\mathbb A^{27}$について，$\dim_k C(w)<\infty$となる必要十分条件は，
+十八係数$w_{1bc},w_{2bc}$が全て非零で，次の十一個の値が全て非零となることである：
+\begin{equation}\label{eq:elevenconditions}
+ q_{bc}q_{b'c'}-q_{bc'}q_{b'c}\quad(b<b',\ c<c'),\qquad
+ \det Q,\qquad \det Q^{\langle-1\rangle}.
+\end{equation}
+この命題は$B(w)$のAS正則性やnoetherian性を仮定しない．
+\end{theorem}
+\begin{proof}
+\emph{必要性．}
+一つの$w_{abc}$ $(a=1,2)$が零なら，三角形$x_{ab},y_{bc},z_{ca}$だけを残す．
+各矢を$t$倍の行列単位へ送る$k[t]$上の表現が全Jacobi関係を満たし，
+三角閉路の像は$t^3$倍の冪等元となる．その全ての冪が非零なので$C(w)$は無限次元である．
+
+十八係数が非零なら$y$のrescalingで$w_{1bc}=1$とできる．
+二行二列の小行列式が零なら，その長方形上で$q_{bc}=r_bs_c$と書ける．
+行和・列和が零の$T=\left(\begin{smallmatrix}1&-1\\-1&1\end{smallmatrix}\right)$を置き，
+その支持で$x_{1b}=z_{c1}=1$，$x_{2b}=-r_b^{-1}$，$z_{c2}=s_c^{-1}$，$y_{bc}=T_{bc}$，
+他の矢を零とする．全関係は行和・列和または$1-q_{bc}/(r_bs_c)$に帰着する．
+再び各矢に$t$を掛けると非零の三角閉路の全冪が残る．
+
+$\det Q=0$なら$Q=UV$，$U\in M_{3,2}(k)$，$V\in M_{2,3}(k)$と書き，
+$0\ne h\in\ker U^{\mathsf t}$，$0\ne k\in\ker V$を取る．
+$A_1$をrank 2，他の残る頂点をrank 1とする$k[t]$表現を
+\[
+ x_{1b}=tU_{b\bullet},\quad z_{c1}=-tV_{\bullet c},\quad
+ x_{2b}=z_{c2}=t,\quad y_{bc}=th_bk_c
+\]
+で定める．$\partial y$の関係は$-UV+Q=0$，他の関係は
+$Vk=0,h^{\mathsf t}U=0,Qk=0,h^{\mathsf t}Q=0$である．
+$h_bk_c\ne0$の閉路が$t^3h_bk_c$に写るため無限次元となる．
+$\det Q^{\langle-1\rangle}=0$の場合は$A_1,A_2$を交換して同じ議論を使う．
+
+\emph{十分性．}
+$P=(Q^{\langle-1\rangle})^{\mathsf t}$の列を$p_1,p_2,p_3$とし，
+$p_4,p_5,p_6$を座標点とする．各成分と九つの小行列式と$\det P$の非零性は，
+六点のどの三点も共線でないことに等しい．座標三点を通るconicは
+$aX_0X_1+bX_1X_2+cX_2X_0=0$であり，残る三点の評価行列は，各行の非零因子を除き
+$P$の成分逆数の転置である．従って六点がconic上にない条件は$\det Q\ne0$．
+ゆえに$S=\operatorname{Bl}_{p_1,\ldots,p_6}\mathbb P^2$は滑らかな可換三次曲面である．
+
+この六点からAOUの九線束helixと幾何学的potential $w^{\rm geo}$を作ると，矢の基底を選んで
+\begin{equation}\label{eq:twoseries}
+ w^{\rm geo}_{1bc}=P_{cb},\qquad w^{\rm geo}_{2bc}=1
+\end{equation}
+となる\cite[(8.4)--(8.7)]{AOU}．この恒等式は次のようにも確認できる．
+添字$b$を3で読み，$u_b=(P_{0b}P_{1b},P_{1b}P_{2b},P_{2b}P_{0b})$，
+$D_b=(u_{b+1}\times u_{b+2})\cdot(X_0X_1,X_1X_2,X_2X_0)$，
+$M_b=(P_{\bullet,b+1}\times P_{\bullet,b+2})\cdot X$，$L_{bc}=\det[p_{b+1},p_{c+4},X]$とする．
+$D_b$は$p_{b+1}$以外の五点を通るconicであり，Cramerの恒等式から
+\[
+ \sum_bP_{cb}D_bL_{bc}=0,\qquad \sum_bM_bL_{bc}=0.
+\]
+例えば$c=0$の前者は
+$X_1\sum_bP_{0b}P_{2b}D_b-X_2\sum_bP_{0b}P_{1b}D_b=0$
+で，二つの和は共通の行列式を掛けた$X_2X_0$と$X_0X_1$に等しい．
+他の$c$は巡回対称性による．各関係空間は一次元なので\eqref{eq:twoseries}が従う．
+従って二系列の比は元の$Q$と等しく，$C(w)\simeq C(w^{\rm geo})$となる．
+ここでは$w_{0bc}$を幾何学的な値へ変えてよい．それらは商$C$に影響しないからである．
+
+$H=-K_S$とすると幾何学的rolled-up環は
+$\bigoplus_{v,v',n\ge0}\Hom(E_v,E_{v'}(nH))$である\cite[(4.9)]{AOU}．
+各$v$に対し$E_v^\vee(mH)$が大域生成される$m$を取り，評価の核を$K_v$とする．
+評価列を$E_{v'}((n-m)H)$でtensorしてSerre消滅を使うと，$n\gg0$で
+\[
+ H^0(E_v^\vee(mH))\otimes H^0(E_{v'}((n-m)H))
+ \twoheadrightarrow\Hom(E_v,E_{v'}(nH))
+\]
+となる．左辺は全て$\OO_S(mH)$を経由するため，構造頂点を通る積である．
+有限個の$v,v'$に共通の閾値を取れば全高cut次数で$B_n\subset BpB$となり，
+式\eqref{eq:cutpath}から商は有限次元である．
+\end{proof}
+
+\subsection{四交比と指定AOU同値のt-exactness}
+行・列rescalingを除き
+\[
+ Q\sim\begin{pmatrix}1&1&1\\1&a&b\\1&c&d\end{pmatrix},
+\qquad a,b,c,d\in k^\times
+\]
+とできる．四交比は$q_{ij}q_{00}/(q_{i0}q_{0j})$ $(i,j=1,2)$である．
+\begin{equation}\label{eq:Deltaheart}
+\begin{split}
+\Delta={}&(a-1)(b-1)(c-1)(d-1)(a-b)(c-d)(a-c)(b-d)(ad-bc)\\
+&\cdot\bigl((a-1)(d-1)-(b-1)(c-1)\bigr)\\
+&\cdot\bigl(bc(1-a)(1-d)-ad(1-b)(1-c)\bigr).
+\end{split}
+\end{equation}
+最後の二因子は$\det Q$と$abcd\det Q^{\langle-1\rangle}$である．
+従って有限corner条件は正確に$\Delta\ne0$である．
+
+\begin{lemma}[標準AS helixからの高次消滅]\label{lem:ASfulltail}
+標準noetherian AS実現で，foundationを$E_v$とする．任意の$M\in\AAS$に対して
+$\Ext^j(E_v,s^nM)=0$ $(j>0,n\gg0)$である．
+\end{lemma}
+\begin{proof}
+$M$をnoetherianなAS加群の像として取り，AS正則性とnoetherian性から有限生成projectiveの
+有限解消を選ぶ．$\pi$を施すと，各項が有限個のhelix対象からなる解消を得る．
+標準projective helixはvery strongであり，十分大きい$s$-shiftの後では各項に対する
+$\Ext^{>0}(E_v,-)$が零となる\cite[Definition 3.1と(3.10)の直前]{OU}．
+有限個の項に共通の$n$を取り，この解消へ$\RHom(E_v,s^n-)$を適用する．
+項は非正cohomological次数に置かれるので，正次数のcohomologyはない．
+\end{proof}
+
+\begin{theorem}[指定AOU比較の明示的な必要十分条件]\label{thm:AOUexactlocus}
+AOUの導来比較の領域で，実際のrestriction条件\eqref{eq:two-nontrivial}を満たす
+定理\ref{thm:AOU-pointed}の同値$\Psi$を取り，
+その標準周期AS表示$B(w)$が右noetherianであるとする．以下は同値である．
+\begin{enumerate}
+\item $\Psi$は標準heartについてt-exactである．
+\item 自然なcorner $(-)p:\AAS\to\qgr F$はabel同値である．
+\item $C(w)$は有限次元である．
+\item $w_{1bc},w_{2bc}$は全て非零で，四交比が$\Delta\ne0$を満たす．
+\end{enumerate}
+従ってこの表示では，両corner bimoduleの有限性は独立の追加仮定ではない．
+\end{theorem}
+\begin{proof}
+(iii)$\Leftrightarrow$(iv)は定理\ref{thm:eleven}．
+(iii)$\Rightarrow$(ii)は補題\ref{lem:automaticcorner}と命題\ref{prop:corner}，
+(ii)$\Rightarrow$(iii)は$\pi C$が零へ送られることによる．
+pointed性により$R(e_{\mathrm{AS}},s_{\mathrm{AS}})=F$である．
+(ii)ならAS側の$(e,s)$は標準反標準pairのAZ豊富性を継承する．
+補題\ref{lem:ASfulltail}および標的のSerre消滅を用い，命題\ref{prop:unique}を
+pointedな$\Psi$へ適用すると(i)を得る．
+
+逆に(i)なら$(e,s)$はAS heartでAZ-ampleとなる．各$E_{v'}$に対し
+$\bigoplus_l s^{-m_l}e\twoheadrightarrow E_{v'}$を取り，核を$K$とする．
+補題\ref{lem:ASfulltail}から，十分大きい$n$で
+\[
+ \bigoplus_l\Hom(E_v,s^{n-m_l}e)\twoheadrightarrow\Hom(E_v,s^nE_{v'})
+\]
+となる．各像は$E_v\to s^{n-m_l}e\to s^nE_{v'}$と分解され，$n\ge m_l$なら
+両因子は非負cut次数の$B$に属する．有限個の$v,v'$に共通の閾値を取ると，
+全高cut次数が$BpB$に入り(iii)を得る．
+\end{proof}
+
+\begin{corollary}[非空開集合と古典的六点モジュライ]\label{cor:coefficientopen}
+十八係数の矢rescaling商は四交比トーラス$(\mathbb G_m)^4$であり，
+その有限corner開集合$D(\Delta)$は，順序付き一般位置六点のmoduli $M_{\mathrm{cubic}}$と同型である．
+全二十七係数非零のAOU係数商トーラス$(\mathbb G_m)^8$上で，有限corner locusは
+この$D(\Delta)$の逆像である．その写像は全射のtorus準同型で切断を持ち，
+従ってこの係数開集合は非標準的に$M_{\mathrm{cubic}}\times(\mathbb G_m)^4$と同型である．
+\end{corollary}
+\begin{proof}
+$y$のrescalingで第一系列を1とし，残りの$x,z$のrescalingで$Q$を行・列正規化する．
+$P=(Q^{\langle-1\rangle})^{\mathsf t}$による六点復元は，座標三点を固定した後の
+行・列rescalingと一致する．定理\ref{thm:eleven}の証明が一般位置条件との同値を与える．
+全係数商からの写像はこれら四つの独立な指標で与えられる．
+$w_{0bc}=w_{1bc}=1$，$w_{2bc}=Q$と置けばtorus準同型としての切断を得る．
+核の次元は$8-4=4$である．
+\end{proof}
+例えば$(a,b,c,d)=(-1/4,1/16,1/6,-1/4)$で全十一因子が非零であり，開集合は非空である．
+AOU Theorem 1.1のbirational対応の定義域では，この係数開集合の逆像も非空稠密開である．
+\emph{圏の結論は常に定理\ref{thm:AOUexactlocus}の適用域との共通部分で使う．}
+とくに，無限位数translationの条件自体をZariski開と主張せず，全potentialのAS正則性や
+全AS対象のnoetherian性もこの係数計算から導かない．
+
+\begin{remark}[検算と適用範囲]
+\texttt{verify\_four\_hearts\_corner.py}は，六点復元の六つの恒等式を12変数の整数係数多項式として
+全係数で検算する．上の具体係数では，全Jacobi関係の全道による積を列挙して
+有理数と$\mathbb F_{1000003}$でそれぞれ
+$(\dim C_0,\ldots,\dim C_7)=(8,21,33,38,33,21,8,0)$を得る．
+次数1生成ゆえ$C_7=0$は全高次数消滅を含意する．
+しかし，定理\ref{thm:eleven}の全パラメータでの十分性は有限個の検算でなく六点幾何の証明による．
+また，$\Delta=0$なら指定$\Psi$のt-exactnessは失敗するが，AOUの導来同値は適用条件内で残る．
+その点で負指数のRains根が必ず存在することや，異なる構造対象を許す全abel同値の不存在は主張しない．
+\end{remark}

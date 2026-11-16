@@ -1,0 +1,114 @@
+\section{section-model関手の内在的同定と比較図式}\label{sec:canonicalcomparison}
+本節では，VdBのsection-model関手と反標準導来切断を，同じ既知のblow-up表示に対して
+自然に同定する．単なる生成対象上の次元一致ではなく，次数付きの右作用を保つRHomの同定を用いる．
+VdBの関手の存在と境界上の性質は既知の入力であり，その結果を別の新しい存在定理とは呼ばない．
+
+\begin{lemma}[導来切断によるpointed関手の認識]\label{lem:pointedrecognition}
+$R$は局所有限な連結次数付き右noetherian代数で，標準のtails構成が
+$R_n\simeq\Hom(\pi R,\pi R(n))$ $(n\ge0)$を満たすとする．
+$\cD$上の自己同値$s$と対象$e$に対し，dg同値
+$G:\cD\simeq\Db(\qgr R)$，同型$G(e)\simeq\pi R$，自然同型$Gs\simeq(1)G$を取る．
+これらを整合的に反復して得る次数付き環の同型を
+$R(e,s)\simeq R$として固定すると，自然同型
+\[
+ G(X)\simeq\pi\bigoplus_{n\ge0}\RHom_{\cD}(e,s^nX)
+\]
+がある．ここでは右$R$作用とdg構造も同定する．
+\end{lemma}
+\begin{proof}
+$\pi:\operatorname{Gr}R\to\QGr R$の右随伴を$\omega$とする．その次数$n$部分は
+$\Hom_{\QGr R}(\pi R(-n),-)$である．$\pi$はexactで，counit
+$\pi\omega I\to I$は各対象で同型である．従ってinjective resolutionに項別に適用して
+$\pi R\omega Y\simeq Y$を得る．非負内部次数へ切断しても，捨てる負次数部分は
+右有界なgraded加群としてtailsのtorsionとなるため$\pi$の像は変わらない．
+一方，指定dg同値と$s$の整合性から
+\[
+ \RHom_{\cD}(e,s^nX)
+ \simeq\RHom_{\QGr R}(\pi R,G(X)(n))
+\]
+となる．合成に関する自然性により，この同型は$R(e,s)\simeq R$の下で右$R$作用と両立する．
+直和を取りcounitを適用すれば結論を得る．まず$D(\QGr R)$で構成し，
+$G(X)$が有界coherentであることから所要の部分圏に入る．
+\end{proof}
+\begin{remark}
+負次数切断に関する主張は，右有界なgraded加群の各元が十分高次数の作用で消えるというtorsionの意味である．
+有限次元でない負次数全体を，一括して有限次元加群と呼んではいけない．
+また環の同定を固定しなければ，次数付き環の自己同型によるtwistの曖昧さが残る．
+$K_0$の一致やorbitのExtの次元だけでは本補題を適用できない．
+\end{remark}
+
+\begin{theorem}[VdBの最後の比較関手は反標準導来切断である]\label{thm:VdBcanonical}
+VdBの三次曲面構成の最後の段階
+$W=\widetilde X_6\xrightarrow{\delta}V=X_7=\operatorname{Proj}F$を取り，
+Theorem 11.1.3の一般位置条件とcoherent有界部分への制限条件を満たすとする．
+$e_W=\OO_W$，$s_W=\Sfun_W^{-1}[2]$とする．
+標的のSerre関手が$(-1)[2]$である設定では，
+\[
+ R\delta_*e_W\simeq\pi F,\qquad
+ R(e_W,s_W)\simeq F,\qquad
+ \boxed{R\delta_*\simeq\pi\mathbf R\Gamma_{(e_W,s_W),*}}.
+\]
+これらは，$R\delta_*$が誘導する環の同定を使った自然同型である．
+指定楕円境界へのrestrictionとも両立する．
+\end{theorem}
+\begin{proof}
+VdB \cite[(9.5), Proposition 9.2.3(1)]{VdB}の記号で，blow-upを作るsheaf algebraを
+$\mathcal D$，その大域切断を$D$と書くと
+$R\Gamma(X,\mathcal D\OO_X)=D$である．従って(9.5)から
+$R\delta_*\OO_W\simeq\pi D=\OO_V$となる．
+Lemma 11.1.1によりこの入力は当該反復の各段階で適用できる．
+Theorem 11.1.3は$R\delta_*$の導来同値を与える．標的のSerre同定
+\cite[Lemma 9.2]{AOU}とSerre関手の一意性から
+$R\delta_*s_W\simeq(1)R\delta_*$を得る．
+$F_n\simeq\Hom(\pi F,\pi F(n))$の飽和は系\ref{cor:AOU-ring}の証明で確認した．
+従ってRHomとその合成から$R(e_W,s_W)\simeq F$が従い，
+補題\ref{lem:pointedrecognition}が最後の同定を与える．
+境界についてはSerre関手の一意性だけを使わず，
+VdB \cite[Proposition 9.1.8, (9.11)]{VdB}の
+$Li_V^*R\delta_*\simeq R\delta_{Y*}Li_W^*$を用いる．この設定で$\delta_Y$は境界の同定である．
+\end{proof}
+
+\begin{corollary}[同じ表示での四者の接続]\label{cor:fourfunctors}
+上の$W$を同じblow-upとgluingからRainsの言葉で実現し，
+定理\ref{thm:RV}のpointed t-exact同値$J:\Db(\AV)\simeq\Db(\AR)$を取る．
+さらに同じ$F$にAOU比較を適用し，実際のrestriction条件\eqref{eq:two-nontrivial}を確認する．このとき
+\[
+ R\delta_*\simeq\Phi_{\mathrm R}J,\qquad
+ \Psi R\delta_*\simeq\Psi\Phi_{\mathrm R}J
+\]
+が構造対象と反Serre作用を保って成立する．
+標準noetherian AS表示で十八係数非零かつ$\Delta\ne0$なら，
+$\Psi R\delta_*$によるVdB--AS比較は，
+$(\ker R^1\delta_*,\ker\delta_*)$に関する一回のHRS tiltである．
+\end{corollary}
+\begin{proof}
+定理\ref{thm:VdBcanonical}を$J$で運び，Rains側のorbit環を同じ$F$に同定する．
+その構造対象からの導来切断が$\Phi_{\mathrm R}$である．
+$\Delta\ne0$では定理\ref{thm:AOUexactlocus}により$\Psi$はt-exactだから，
+$R\delta_*$のHRS分解を変更せずAS側へ運べる．
+\end{proof}
+\begin{remark}[同じデータの意味と残る範囲]
+この結果は，独立に選んだ比較同値を仮定する代わりに，VdBの指定した最後のraw blow-upと
+その同じRains実現について自然関手を同定する．一方，VdBは反復の途中でsection modelを用いる．
+任意の可換avatarから一度に作ったgluingや，途中でsection modelを使わない六回のraw blow-upが，
+その同じheartになるとは結論しない．その区別を無視したパラメータ辞書は本稿の定理に含めない．
+\end{remark}
+
+\begin{proposition}[tiltの差は境界非交叉部分に集中する]\label{prop:boundarydefect}
+定理\ref{thm:VdBcanonical}の範囲で，境界非交叉なcoherent対象のSerre部分圏を
+$\operatorname{Iso}_Y(W)$，$\operatorname{Iso}_Y(V)$とする．
+$\ker\delta_*\subset\operatorname{Iso}_Y(W)$であり，
+$R^1\delta_*(M)\in\operatorname{Iso}_Y(V)$である．
+また$\delta_*$は境界非交叉部分を除いたabel商圏の同値を誘導する．
+\end{proposition}
+\begin{proof}
+VdB \cite[Theorem 9.1.9]{VdB}は，$\delta_*,\delta^*$が対応するIso部分圏を保ち，
+高次導来関手の像がIsoに入り，Isoによる大きいabel商圏の逆同値になることを示す．
+Lemma 9.1.5のcoherence保存とnoetherian性によってcoherent商圏へ制限する．
+$\delta_*M=0$なら商圏で$M$も零なので，最初の包含も従う．
+\end{proof}
+\begin{remark}[既知のexceptional objectsとの関係]
+VdB \cite[Theorem 11.2.1, Lemma 11.2.4]{VdB}は既に境界非交叉対象の有限長性と，
+楕円点配置による単純対象数の公式を与えている．従って有限長性や個数の存在自体を本研究の新規性としない．
+第\ref{sec:rootchambers}節では，反標準Euler標数からtorsion pairと単純対象の根類を選ぶ方法を記述する．
+\end{remark}

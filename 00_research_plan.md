@@ -1,110 +1,74 @@
-# 研究方針：非可換del Pezzo曲面の反標準heartと根圏
+# 研究方針：反標準heart・最大共鳴・零指数根壁
 
-2026-11-16（日本時間）/ hearts-strategy-v4。本書を再開時に最初に読む。GitHub mainが正本。現状評価・一次資料・今回の検証範囲は [研究評価](research/current_assessment.md) にまとめる。
+2026-11-17 / hearts-strategy-v5。再開時は本書を最初に読む。現行主論文は `papers/nc_del_pezzo_hearts.tex`（hearts-v27）。GitHub mainが正本であり、リポジトリ全体が再開に必要な現行一式となる。新しい証明と未解決点の案内は `research/resonance_walls.md`、今回の検証範囲は `research/resonance_walls_validation.json`。
 
-## 最優先目標と達成基準
+## 恒常的な原則と保存許可
 
-**指定された構造対象と反Serre作用から反標準heartを認識し、Rains・VdB・ASの幾何学的な構成が、そのheartと一致する範囲、tiltで結ばれる範囲、収縮を伴う範囲を明示する。** 既存の比較・Euler選択・楕円係数の成果を公表可能な主定理にまとめることを最優先とし、全ADE根圏と元のアフィン代数の普遍有限商、その古典的表現族への帰結までを公表核へ含める。
+数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性を総合し、研究全体の価値を最大化する。重要な方針変更は理由と元の目標の達成・未達成を現在有効な方針へ統合し、時系列の変更記録を蓄積しない。
 
-達成の単位は、仮定・指定関手・構造対象・証明・先行研究との差が揃った定理である。原稿数、例数、計算回数、係数表示の長さを成果の尺度にしない。現在は主論文にADE構造結果を集約し、共鳴稿とcorner稿を技術的な補助原稿として維持する。3本の独立論文とはみなさない。
+証明済み、追加仮定付き、未完成、予想、計算的観察を分ける。仮定・既知入力・証明所在・未解決箇所を明記する。本文に証明があること、今回その証明を点検したこと、有限計算、外部独立査読、形式化を区別する。誤りは依存する主張・要約・方針にも反映し、有用な反例・障害を研究ノートに残す。
 
-## 恒常的な研究原則と保存許可
-数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性を総合して、研究の価値を最大化するよう目標・方針を柔軟に変える。重要な変更では理由、元の目標の達成部分・未解決部分を現行の方針へ統合し、時系列の変更記録を蓄積しない。証明済み、追加仮定付き、未完成、予想、計算的観察を区別し、仮定・依存結果・証明の所在・未解決箇所を明記する。原稿に証明が書かれたこと、今回点検したこと、計算で確認したこと、外部独立査読を区別する。誤りは依存する本文・要約・研究方針へ反映し、有用な反例・障害は研究ノートに整理する。
+公表稿は原則日本語LuaLaTeXとし、現在の成果を理解しやすい論理順で構成する。重要な先行研究の一次資料と適用条件を確認し、Introductionに既知結果と寄与の関係を具体的に書く。未確認の書誌・文献内容を補わず、新規性が未確認なら明記する。原稿の本数やページ数を目的にせず、必要なら統合・分割する。価値ある数学と証明を軽量化のため削除しない。
 
-公表用論文の重要な主張は一次文献で仮定と範囲を照合し、Introductionに既知の内容と寄与を具体的に記す。未確認の書誌を推測で補わない。原稿は原則日本語LuaLaTeXで書き、現在の成果が分かる論理順に構成し、版ごとの追記や履歴を積み上げない。価値ある定理・証明を軽量化のため削除しない。ノートは現在有効な知識、着想、例、計算、障害と文献比較を収め、研究日誌や原稿に重複する全証明を置かない。
+ノートは現在有効な着想・例・反例・計算・障害・文献比較を整理し、作業日誌にしない。本文の証明を重複転記せず参照先を示す。再開に必要な情報を会話だけに残さない。現行bundleは方針・ノート・論文と最小限のソース・文献情報・計算・証明書・再現手順から自己完結させ、旧版・旧ZIP・バックアップ・変更履歴・外部文献PDF・中間物・キャッシュを収録しない。再取得が難しい入力と必要な証明書は保持する。
 
-研究継続用bundleは研究方針・研究ノート・公表用論文、必要なソース・PDF・書誌・検算コード・証明書・再現手順の最小の自己完結した一式とする。研究区切りでユーザー承諾なくLibraryへ保存することは一般原則として許可済み。ただしこの研究ではGitHub `main`を正本とする個別指示を優先し、GitHubへのpush成功時はLibraryへの重複保存をせず、失敗時にのみ緊急避難に用いる。Libraryの既存ファイルは明示指示なく削除しない。過去版ZIP・旧原稿・バックアップ・変更履歴・中間生成物・キャッシュを現行bundleに残さない。生成・検証・commit・push・remote SHAの確認を別々に報告する。
+研究区切りの承諾不要Library保存は一般原則として許可済み。ただし本研究の個別指示は **GitHub mainを正本とし、保存成功時はLibraryへ重複保存せず、失敗時だけ緊急避難に使う** ことである。既存Libraryファイルは無断削除しない。mainへ通常のfast-forward保存を行い、force push・PR・GitHub Actionsを使わない。並行更新を失わないよう保存前にheadを確認する。PDF・ZIPはGit追跡せず生成する。生成・証明点検・計算・組版・commit・remote確認を別の状態として報告し、背景での自動継続は約束しない。
 
-GitHubへはmainに通常のfast-forward pushを行い、force push・不要なPR・GitHub Actionsを使用しない。共有mainの並行更新を失わないよう内容を確認し、競合は正しく統合する。バックグラウンドの自動再開を保証しない。
+## 現在の目標と変更理由
 
-## 現在の到達点
+中心は、構造対象と反Serre作用が選ぶ反標準heart、実在根のEuler標数によるheartの違い、その有限次元表現論である。最大共鳴のZariski稠密性と既知の零指数根壁を主論文へ統合し、非可換零指数壁の一般論を証明できたところまで含めるという指定に従い、弱楕円gluingの全orbit核を今回の構造目標として進めた。
 
-以下は「現行原稿に証明があり、今回主要な論理と依存関係を点検した結果」である。外部入力を含む全証明の独立検証・網羅的新規性確認を完了したという意味ではない。
+最大共鳴の稠密性・整数表示・古典的な収縮障害は主論文へ完全な証明付きで移した。さらに、標準弱楕円gluingでは全反標準orbitに直交するdg部分圏が古典的反標準収縮の核と一致することを証明した。これは収縮対象を構成する結果であり、商が反標準qgrの有界導来圏であることまでは解決していない。主論文の中心成果を保ったまま、この境界を明記する。
 
-| 内容 | 証明の所在・適用範囲 |
+## 現在の到達点と主張の状態
+
+| 内容 | 状態・証明の所在 |
 | --- | --- |
-| 指定された自然反標準導来切断の同値と全heartのHRS tilt | four_hearts_geometric.tex の thm:derived, thm:globaltilt。滑らかな楕円境界を持つgenuine avatarの指定gluing。 |
-| 全heartの差の検出と反標準heartの選択 | four_hearts_root_chambers.tex の thm:globaldefect, prop:numericaltorsion, thm:Eulerchamber, thm:globalADEtilts。非torsionの場合、torsion-free部分は境界非交叉の有限ADE根圏に集中する。t-exact性は全実在単純根の正Euler値で判定できる。 |
-| 規格化AS–反標準heartの一致 | four_hearts_elliptic_coefficients.tex の thm:normalized-abelian。指定されたfull very strong周期helixとrolled-up同定を入力とする。全potentialのAS正則性やnoetherian性は主張しない。 |
-| actual decupleの27個のtheta係数・元六点の復元 | 同節の thm:theta-potential, thm:original-six-points, cor:elliptic-discriminant。cornerはL0に依存せず、L1で埋め込んだ入力六点の可換cornerに一致する。 |
-| corner有限性の十一条件・一様Hilbert関数 | cubic_heart_corner.tex と対応section。標数0で18係数非零のchart。有限性と十一非零条件とC7=0が同値、Hilbert係数は(8,21,33,38,33,21,8)、総次元162。 |
-| 同じ最後のraw blow-upからのVdB/Rains/反標準関手の接続 | four_hearts_canonical_comparison.tex の thm:VdBcanonical, cor:fourfunctors。独立に選んだblowdown表示や六回raw反復全体の比較とは区別する。 |
-| 混合A2の全対象・rank・四次元アフィン商 | resonance_mixed_a2_category.tex と resonance_global_heart.tex。rank δ=min(p,n)、二根Serre圏はmod Π(A2)。指数+2/−1の指定比較では元のA=R/(g−1)に四次元商がある。 |
-| 整数倍点族の単純次元と埋め込まれたheart | four_hearts_root_chambers.tex。例(1,3,2,5,7,11)の単純次元は(6,1,1,2,2,4)、一回のtilt。720個はこの構成からの埋め込まれたheartで、全heart分類や抽象abel圏の720同型類を意味しない。 |
+| genuineな楕円gluingの自然導来比較と全heartのHRS tilt | 既存本文の証明を保持。`four_hearts_geometric.tex`。今回全証明を再監査したものではない。 |
+| 実在ADE根のEuler標数による反標準heart選択、有限単純tilt、整数倍点の整列 | 既存本文を保持。`four_hearts_root_chambers.tex`。稠密性の新しい系はここを入力とする。 |
+| 規格化AS–反標準の一致、actual theta係数、元六点の復元 | 指定AS実現などの入力を含む既存結果を保持。`four_hearts_elliptic_coefficients.tex`。任意potentialへの主張ではない。 |
+| 全ADE根圏、普遍有限商、970次元例、Frobenius判定、古典的Repの一致 | 既存本文を保持。`four_hearts_ade_quotient.tex`、`four_hearts_finite_representation_geometry.tex`。独立査読と生成元の具体的作用行列は未完了。 |
+| 次数1–6の最大共鳴と任意整数順序のZariski稠密性 | 完全な本文証明を追加・内部点検。`four_hearts_maximal_density.tex`。九価の整数表示とgenuine判定を含む。 |
+| 指定heartの一致点・不一致点がともに稠密で、いずれも構成可能でない | 同節の `cor:nonconstructible-texact`。固定楕円chartの点ごとの主張。相対t構造や全モジュライについての主張ではない。 |
+| 古典的零根壁の収縮・2-spherical核・導来非同値 | 既知収縮理論の帰結を証明付きで主論文へ統合。`four_hearts_zero_walls.tex`。有理数上の明示的三次方程式とEuler列の相殺例を含む。 |
+| 標準弱楕円gluingの全orbit核 | `thm:weak-orbit-kernel`：Nq-tail=Nq=iota_q ker Rf_*。任意q、固定(S,E)。完全な本文証明を追加・内部点検。 |
+| 非可換零指数spherical対象・Rを変えないdg商・不可視twist | 同節の対応する系・命題。全qで対象を直接構成するが、指定Rains heartでのsheaf性は未証明。 |
+| coherent反標準導来切断の全核 | `prop:weak-coherent-kernel`。有界性と次数付きExtの有限生成性などの追加仮定付き。 |
+| dg商とDb(qgr R)の同値、壁上のAS比較、相対収縮 | 未解決。主論文末尾の将来の課題に明記。 |
 
-## 二種類の壁を分ける
+162次元cornerの一様Hilbert関数・有限平坦族は `cubic_heart_corner.tex` に完全証明を保持する。共鳴補助稿の形式変形・zigzag・混合A2の詳細も保持する。重複の整理のために未移管の有効な内容を削らない。
 
-1. **非零指数の共鳴：** ρ(α)q^m=O_E、m≠0。genuineな一般位置の内部でも起こる。指定導来比較の下で実在根sheafの像が次数0または1に現れ、既存のHRS/Euler選択定理が働く。固定根圏内のEuler chamberと、楕円パラメータ空間の幾何学的chamberは別概念である。共鳴軌跡の稠密性から有限個の壁の補集合を想像しない。
-2. **零指数の古典的根壁：** ρ(α)=O_E。十一因子の消滅は、対応chartで入力六点の共線・conic条件である。ここではgenuine性・一般位置を使う既存定理の仮定を外れる。まずどの入力が壊れるかを決める。既存導来同値の延長や単純なtiltを先取りしない。
+## 次に着手する課題
 
-規格化共通領域でAS–反標準のt-exactnessと十一因子非消滅は既に結論である。その全入力を保持したまま十一因子が零になる壁を探すことはできない。古典的壁の課題は、weak avatar・収縮・商圏の問題として設定し直す。
+### 1. 新しい核同定の独立点検と全文再組版
 
-## 優先順位と具体的な着手
+Rainsの一般有理曲面gluing (4.4)–(4.7)、正次数の境界orbitによる検出、反標準収縮の射影公式を順に点検する。genuine性を用いずに済む箇所と、弱del Pezzo・滑らかな境界・固定gluingを必要とする箇所を明示する。主論文全体を `latexmk -lualatex papers/nc_del_pezzo_hearts.tex` で再組版し、新しい参照と既存節の連結を確認する。今回の組版は追加二節の抜粋に限る。
 
-### P0：中心定理の正確性と新規性を固定する
+### 2. coherent収縮へ進むための最初の補題
 
-現在の比較・Euler選択・楕円係数の3つを一つの主定理の論理順にする。Rains 2025の該当本文、AOU §7/§9、OUのvery strong入力について、仮定と右加群規約、構造対象、境界、環の右作用を照合する。対応する一次資料と現時点の照合範囲は研究評価に記載した。
+一つのA1零指数壁で、N^j(X)=⊕Hom(e,s^nX[j])の有限生成性と有界性を、具体的な生成対象に対して証明する。既存genuine比較のInd-orbit生成の証明をそのまま使うことはできない。今回はその生成を妨げる全核が同定されたので、核を除いた商側でどの生成・trace・有限性が必要かを確認する。
 
-主定理の各適用例では「genuine avatar」「実在する向き付き単純根」「pointedな指定比較」「full very strong helix」「rolled-up環の同定」を個別に確認する。形式的なpointed recognition、AZ再構成、根共鳴の存在・稠密性、Dynkin torsion classのWeyl分類を単独の新規成果に数えない。
+完了基準は、自然関手の核の再確認ではなく、商から標的への完全忠実性または本質的全射性を与える新たな補題である。核の同定だけでVerdier局所化を同値と呼ばない。perfect商とcoherent有界導来圏、冪等完備化を区別する。
 
-**完了条件：** 中心定理ごとに、既知入力と本研究の追加部分をIntroductionで特定し、未確認の外部入力を残した箇所は条件付きと明記する。既に証明のあるEuler chamber選択や、同一最後段階のVdB関手同定を新しい未解決課題に戻さない。
+### 3. 同じ明示的零壁のAS模型とheart
 
-### P1：公表核を完成し、最小例で比較を閉じる
+`ex:zero-elliptic-wall` のE=C/(Z+iZ)、q=√2、六点(√3,√5,−√3−√5,√7,√11,√13)を用いる。実在する非可換零指数対象と、admissibleな楕円decuple、無限次元cornerまでは証明済み。次はAS実現、noetherian性、標準helix、指定比較の入力を個別に確かめる。一般位置でのVdB比較を壁へ自動延長しない。
 
-主題を「反標準heartの幾何学的認識と実在根による選択」とする。自然導来切断 → HRS tilt → Euler選択 → 規格化AS比較 → actual theta係数・六点・corner → 具体例、の順に整理する。cornerの十一条件・162次元族・一様消滅次数7は、主論文の技術的中核または一つの補助原稿に集約する。有効な証明はすべて保持する。
+### 4. 後段の相対問題
 
-既存の整数倍点E6例を主要検証例にし、説明用には一つの指定blowdown単純根だけが非零指数で共鳴するgenuineな配置を一組選ぶ。同じ(E,L0,L1,p_i,q)、potential、比較関手、実在root sheafとその像、HRS torsion pairまで結ぶ。他根の排除は無限個の共鳴条件を有限体計算で確認したことにしない。
+複数零根の交叉、局所・完成代数、perverse heart、曲面族での底変更・降下は、上記の一壁で比較関手を閉じてから進める。既知の非可換収縮環は与えられた幾何学的収縮を入力とするため、非可換曲面上の収縮射の存在を代用しない。任意のnc del Pezzoの全モジュライ分類は本プロジェクトの完了条件にしない。
 
-**完了条件：** 最小例とE6例において、heartの差を実在対象で検出でき、指定されたAS–反標準同値と両立する。新例は `four_hearts_single_root.tex` の E=C/(Z+iZ)、q=√2、六点(√3,√5,−√3−√5−√2,√7,√11,√13)で閉じた。他根の全整数指数は整数独立性により排除した。新例の大量追加は行わない。既存の強い結果を公表するために、以下P2・P3の全面解決を待つ必要はない。
+## 再開資料と検証
 
-### P2：ADE根圏とアフィン有限商の本文証明
+本書 → `research/resonance_walls.md` → 主論文の新二節 → 必要に応じ `research/heart_comparison.md`、`research/resonance_hearts.md`、`research/cubic_corner.md` と既存証明を読む。旧ノート内の未解決状態が現在の主論文と食い違う場合は、本書と本文を優先する。旧bundleや会話の取得を前提にしない。
 
-**本文に証明を追加し、今回論証を点検した範囲。独立査読済みという意味ではない。** `four_hearts_ade_quotient.tex` の lem:formal-ADE-heart → thm:ADE-abelian → lem:finite-fibre-quotient → cor:ADE-affine-quotient が証明の鎖である。
+```sh
+python3 -m pip install -r requirements.txt
+python3 computations/verify_density_zero_walls.py
+bash scripts/check.sh all
+latexmk -lualatex papers/nc_del_pezzo_hearts.tex
+```
 
-標数0の実在する有限ADE配置にLiu–Wangの形式性とKellerの無shift twisted extension閉包の復元を適用する。Maurer–Cartanはpreprojective関係、次数0射はintertwiner、負次数射は零で、Dynkinの矢イデアルの冪零性が全表現を尽くす。これによりZ≃mod Π(Γ)を得る。Euler tiltで得たKの単純配置へ同じ議論を**別に**適用し、K≃mod Π(Γ)を得る。Db(Z)のambientへの完全忠実性は使わない。
+検算コードは新しい一つを加えて21本となる。今回実行したのは新コードで、既存20本は再実行していない。追加二節はLuaLaTeXで10ページの抜粋として組版し全ページを画像点検した。更新後の主論文全体と補助2稿の再組版は未実施。旧validationのv26全文組版記録をv27の成功として扱わない。現行の検証境界は `research/resonance_walls_validation.json` にある。
 
-実際の忘却関手はP=⊕P_i^{m_i}で表現される。GをPに対応する有限次元右A加群とし、I=Ann_A(G)と置く。全有限次元加群がGの有限直和の商になるのでIは全表現の共通annihilatorである。有限な作用像B=A/Iに対するMorita二重中心化から、右加群規約でA/I≃End_Π(P)を得る。単なるfaithfulnessから全射性を推論していない。これが全有限次元商を支配する普遍商である。
-
-今回、形式性をseparableな頂点環に相対的に取ること、有限上三角拡大上では準同型の和が有限となること、有限次元abel圏内のprojectivityを使うことを本文へ補った。次に必要なのは、関連文献に対する新規性の追加監査と外部の証明点検である。一般的な形式性・Morita補題を単独の新規定理とはしない。元の楕円生成元の行列表示は未計算であり、普遍商の同型型・実際の作用による構成とは区別する。162次元cornerとも同一視しない。
-
-### 普遍商の具体的構造と固定曲面の表現族
-
-`four_hearts_finite_representation_geometry.tex` に以下を集約した。一般的なMorita/Frobenius判定やKrullの定理そのものの新規性は主張しない。
-
-- 整列した六整数n1<…<n6に対し、普遍商の次元は(Σn_i)^2+(n6−n1)^2+(n5−n2)^2+(n4−n3)^2。
-- 商は自己入射的であり、FrobeniusであることはEuler次元m_iのNakayama不変性と同値。E6ではn1+n6=n2+n5=n3+n4が判定条件である。970次元例は非Frobenius、(1,2,3,4,5,6)の476次元例はFrobenius。
-- Aは有限生成なので、全有限次元表現の共通annihilatorは非被約な基底も含めてRep_n(A)=Rep_n(A/I)を与える。証明は普遍座標環の全ての極大イデアル冪の商に対してIの作用を消し、Krullの共通部分定理を使う。閉点の一致だけに依存しない。
-- 固定曲面の古典的表現stackはΣm_i d_i=nのpreprojective表現stackの和となる。これは曲面族のheart降下ではない。正則D加群の内部Ext²は零、ambient Ext²はDの双対なので、導来表現stackの同値へ拡張しない。
-
-### P3：零指数の一壁における収縮模型
-
-既存の一壁例Q0=((1,1,1),(1,2,2),(1,3,4))に対応する混合共線壁を第一候補とし、generic pointを調べる。actual decupleのadmissibility、AS正則性、標準helix、noetherian性、反標準環、自然関手のどれが存続するかを順に判定する。
-
-**完了条件：** 一つの実在する非可換族について、失敗する入力とkernel/収縮対象を特定し、古典的i_*O_{(-2)}(−1)の消失と比較する。定理の全入力が壁上で同時に成立しないことを証明できた場合も有効な構造結果である。壁の全列挙や全E6退化の分類へは先に進まない。
-
-### P4：相対化は構造定理が固定された後
-
-まず根図式・Euler次元・比較の仮定が一定の指定された底に限り、kernelの底変更、orbit環、相対torsion pairを調べる。pointwise同値からfpqc降下やmoduli stack同型を推論しない。有限位数q、特異楕円境界、weak avatarの一般理論は、この段階まで保留する。
-
-## 続行・縮小の判断
-
-- P0の主定理集約、P1の単根例、P2の本文証明が現行稿にある。以後はその論証と引用の独立点検を先行する。
-- P2で必要なenhancement・有限生成・作用像の全射性が証明できなければ、欠ける仮定と反例候補をノートに書き、既存A2結果と主論文を先に完成する。
-- P3はP0/P1を妨げない独立した小範囲の探索にする。数値的壁だけが得られて実在族へ結び付かない場合、結果は計算的観察に留める。
-- 出版物の独立性は新しい中心定理で判断する。共鳴別稿は全ADE有限商など独立した結論が揃った場合に分け、既存比較・根理論の重複は一箇所に集約する。
-
-## 研究範囲と再現
-
-H3完全分類は [nc-cubic-moduli](https://github.com/uedakazushi/nc-cubic-moduli)、次数1固有のモジュライは [nc-dp1-moduli](https://github.com/uedakazushi/nc-dp1-moduli)、nc三次三様体は [nc-cubic-threefold-moduli](https://github.com/uedakazushi/nc-cubic-threefold-moduli) が正本。本研究へ再統合しない。外部結果を実際に使う際は固定commitと仮定を記す。
-
-再開順は本書 → [研究評価](research/current_assessment.md) → [四heartの実施方針](research/four_hearts_plan.md) → [比較ノート](research/heart_comparison.md)・[共鳴ノート](research/resonance_hearts.md)・[cornerノート](research/cubic_corner.md) → 主原稿と依存section。詳細な証明を方針へ重複転記しない。
-
-    python3 -m pip install -r requirements.txt
-    python3 computations/verify_four_hearts.py
-    python3 computations/verify_resonance_mixed_a2.py
-    python3 computations/verify_cubic_corner.py
-    latexmk papers/nc_del_pezzo_hearts.tex
-    latexmk papers/nc_del_pezzo_resonance_hearts.tex
-    latexmk papers/cubic_heart_corner.tex
-
-必要時はcomputations/verify_*.py全20本を実行する。Python3/SymPy、LuaLaTeX・LuaTeX-ja・latexmkを使い、生成物はbuild/へ置く。今回の全20本の検算と3稿のLuaLaTeX組版、参照点検の実施範囲は研究評価に記す。計算成功を一般定理や文献照合の代用にしない。
+H3分類・次数1固有モジュライ・nc三次三様体は各別リポジトリの正本で継続し、ここへ再統合しない。必要な外部研究は固定commitと仮定を記して参照する。

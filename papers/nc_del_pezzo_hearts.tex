@@ -37,7 +37,7 @@
 \title{非可換del Pezzo曲面の反標準heartと根圏\\
 \large 幾何学的認識・Euler選択・アフィン有限商}
 \author{}
-\date{2026年11月16日\qquad 公表準備稿 hearts-v26}
+\date{2026年11月17日\qquad 公表準備稿 hearts-v27}
 \hypersetup{pdftitle={非可換del Pezzo曲面の反標準heartと根圏},pdfsubject={導来比較、HRS tilt、共鳴、反標準corner}}
 \begin{document}
 \maketitle
@@ -54,12 +54,18 @@ VdBの右加群規約で初期平面twistを運ぶと，Rainsの辞書は$L=L_1$
 noetherian性と十一因子の非消滅は独立の追加条件でなく結論となる．
 一方，順序付きRains heartは実在単純根のEuler標数で選ばれ，
 整数倍点族では整列による単純tiltで同じ反標準heartへ移る．
+次数1--6では全根の同時共鳴点がZariski稠密であり，指定heartの一致点と不一致点は
+同じ楕円chartでともに稠密となるため，一致条件は構成可能でない．
 標数0・非torsionの範囲では，実在するADE根の拡大閉包と標的の有限次元heartを
 それぞれDynkin preprojective加群圏と同定する．標的単純のEuler次元を$m_i$とすると，
 元のアフィン代数の全有限次元表現は
 $\End_{\Pi(\Gamma)}(\bigoplus_iP_i^{m_i})$という一つの有限次元商を経由する．
 この商は非被約基底上の古典的な表現族も支配し，そのFrobenius性は$m_i$のNakayama不変性で決まる．
 AS比較には指定されたfull very strong helixとrolled-up環の同定を入力とする．
+零指数根壁については古典的な反標準収縮を記載し，標準弱楕円gluingでは
+全反標準orbitに直交するdg部分圏が古典的収縮の核に一致し，gluingパラメータに依存しないことを示す．
+この核を除くdg商はorbit環を保存する．coherent反標準模型との商圏比較，
+壁上のheart・局所特異点・相対収縮は，証明した核の同定から分離した課題として残す．
 \end{abstract}
 \tableofcontents
 
@@ -70,6 +76,8 @@ AS比較には指定されたfull very strong helixとrolled-up環の同定を�
 \input{papers/sections/four_hearts_corner_locus.tex}
 \input{papers/sections/four_hearts_elliptic_coefficients.tex}
 \input{papers/sections/four_hearts_canonical_comparison.tex}
+\input{papers/sections/four_hearts_maximal_density.tex}
+\input{papers/sections/four_hearts_zero_walls.tex}
 \input{papers/sections/four_hearts_examples.tex}
 
 \begin{thebibliography}{99}
@@ -87,7 +95,8 @@ E.~M.~Rains, \emph{The birational geometry of noncommutative surfaces},
 \bibitem{Filtered}
 E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
 \href{https://arxiv.org/abs/2107.13540}{arXiv:2107.13540v2} (2022).
-使用箇所：Corollary 3.8とtraceの証明，\S4（特にpp.~34--35の単純根の有効性・存在），Proposition 5.1．
+使用箇所：Corollary 3.8とtraceの証明，\S4（(4.4)--(4.7)の一般の有理曲面のgluingと境界，
+特にpp.~34--35の単純根の有効性・存在），Proposition 5.1．
 \bibitem{RainsBook}
 E.~M.~Rains, \emph{The (noncommutative) geometry of difference equations},
 \href{https://arxiv.org/abs/2504.16187}{arXiv:2504.16187} (2025).
@@ -186,5 +195,24 @@ Algebra Number Theory \textbf{11} (2017), no.~6, 1287--1315;
 The Stacks Project Authors, \emph{The Stacks Project},
 \href{https://stacks.math.columbia.edu/tag/00FV}{Tag 00FV}（Nullstellensatz），
 \href{https://stacks.math.columbia.edu/tag/00IP}{Tag 00IP}（Krullの共通部分定理）．
+\bibitem{DolgachevWalls}
+I.~V.~Dolgachev, \emph{Classical Algebraic Geometry: a modern view. II},
+author's draft, August 10, 2025,
+\href{https://sites.lsa.umich.edu/idolga/wp-content/uploads/sites/1467/2025/10/CAG-2.pdf}{著者公開稿}.
+使用箇所：Chapter 8, Theorem 8.3.2, \S8.3.2（弱del Pezzoの反標準収縮）．
+\bibitem{SeidelThomasWalls}
+P.~Seidel, R.~Thomas, \emph{Braid group actions on derived categories of coherent sheaves},
+\href{https://arxiv.org/abs/math/0001043}{arXiv:math/0001043v2} (2000).
+使用箇所：Propositions 2.10, 2.12--2.13（spherical twistとbraid関係）．
+\bibitem{DrinfeldWalls}
+V.~Drinfeld, \emph{DG quotients of DG categories},
+\href{https://arxiv.org/abs/math/0210114}{arXiv:math/0210114v7} (2008).
+使用箇所：\S\S1.2--1.3, 1.6（dg商，Homのcone公式と普遍性）．
+\bibitem{DonovanWemyssWalls}
+W.~Donovan, M.~Wemyss, \emph{Noncommutative enhancements of contractions},
+Adv. Math. \textbf{344} (2019), 99--136;
+\href{https://arxiv.org/abs/1612.01687}{arXiv:1612.01687}.
+比較箇所：Introduction, \S\S1.1, 6．与えられた幾何学的収縮に対する理論であり，
+本稿の任意の非可換曲面上に収縮射を構成する定理としては用いない．
 \end{thebibliography}
 \end{document}

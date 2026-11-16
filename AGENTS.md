@@ -1,33 +1,24 @@
-# Codex指示：反標準heartの認識と根圏
+# Codex指示：反標準heartと零指数根壁
 
-2026-11-16 / hearts-strategy-v4。GitHub mainが正本。最初に00_research_plan.md、research/current_assessment.md、research/four_hearts_plan.mdを読み、必要な研究ノート・3主原稿・sectionへ進む。
+2026-11-17 / hearts-strategy-v5。最初に `00_research_plan.md`、`research/resonance_walls.md` を読み、主論文hearts-v27と必要な既存節へ進む。GitHub mainが正本。
 
-## 目標と優先順位
+## 現在の優先順位
 
-数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性から研究全体の価値を最大化する。最優先は、指定構造対象・自然関手による反標準heartの認識と、実在する有限ADE根圏によるheart選択を公表可能な主定理へまとめること。全ADE根圏のabel圏同定と元のA=R/(g−1)の普遍有限商の本文証明を追加した。00_research_plan.mdのP0/P1/P2について引用と証明の独立点検を優先する。零指数壁と相対化は後順位。
-
-既に原稿に証明のあるEuler chamber選択、全heartの有限単純tilt分解、同じ最後のraw blow-upでのVdB関手同定、actual potentialと元六点の復元を未解決として再実行しない。全ADEのmod Π同定と元のAの普遍有限商はfour_hearts_ade_quotient.texに本文証明を置いた。新しい論証の独立点検と生成元ごとの作用行列の未計算を区別する。
+価値の最大化を最優先にする。主論文には最大共鳴の稠密性と零指数根壁を追加済み。標準弱楕円gluingの全orbit核を古典的反標準収縮の核に同定した `thm:weak-orbit-kernel` と、orbit環を保存するdg商を独立点検する。その後、一つのA1壁でcoherent導来切断の有限生成性・有界性、商から反標準qgrへの比較を進める。既存のEuler選択・ADE有限商・actual potentialを未解決に戻さない。
 
 ## 必須の区別
 
-- 十一因子の零指数の古典的壁は一般位置/genuine仮定を外れる。非零指数のRains共鳴と混同しない。壁上へ既存導来同値を自動延長しない。
-- 実在単純根と数値的共鳴、指定関手のt-exact性と別の同値、raw blow-upとsection model、全対象のEuler符号と全商/部分対象によるtorsion判定を分ける。
-- D^b(境界外Serre圏)をambient部分圏と同一視しない。162次元cornerとAの根表現を支配する有限商を同一視しない。
-- 規格化AS比較のfull very strong helixとrolled-up同定は入力である。全potentialのAS性/noetherian性、全heart分類、形式的分枝の大域モジュライ成分性を推測しない。固定曲面の古典的Rep_nと普遍商の一致は新節で証明したが、曲面族のheart降下・導来表現stackとは区別する。自己入射性とFrobenius性は別であり、970次元商は非Frobeniusである。
-- Rains 2025の該当本文、AOU/OU、既知のzigzag形式性・Dynkin torsion分類を一次資料で照合する。既知の共鳴稠密性や一般corner有限性を単独の新規成果にしない。
+- 最大共鳴は非零指数のgenuineな点の結果。零指数壁は反標準orbitに見えない対象を持つ。両者を同じHRS tiltの問題にしない。
+- Nq-tail=Nq=iota_q ker Rf_*は固定(S,E)の標準弱gluingでのdg核の同定。任意の非可換曲面・全モジュライの相対定理ではない。
+- 非可換零指数spherical対象は直接構成したが、任意のRains heartで単純sheafであるとは証明していない。
+- ker Phi=Nqには本文のcoherent有限性仮定が必要。dg商とDb(qgr R)の同値、特異点型、壁上AS比較は未証明。
+- 数値共鳴とsheaf存在、raw blow-upとsection model、指定関手と任意の同値、有限長heartの内部Extとambient Extを分ける。162次元cornerと普遍アフィン有限商も別物。
+- 形式性・preprojective・Morita・収縮・twistの一般理論は既知入力。文献の仮定を一次資料で照合し、網羅的新規性・外部査読を完了したと主張しない。
 
-## 執筆・保存・再現
+## 検証・執筆・保存
 
-原稿は原則日本語LuaLaTeX。証明記載、今回の証明点検、有限計算、組版、保存、外部査読を分けて報告する。主張の仮定・依存結果・証明所在と未解決箇所を同期する。研究ノートは現行知識を整理し、作業日誌にしない。価値ある数学・証明・再現資産を削除して軽量化しない。3原稿を3公表論文と決めつけず、中心定理で統合・分割を判断する。H3分類・次数1固有モジュライ・nc三次三様体を再取り込みしない。
+日本語LuaLaTeXを用い、証明の状態と依存関係を本文・要約・方針で揃える。価値ある証明を削除して軽量化せず、ノートを作業日誌にしない。新しい検算は `python3 computations/verify_density_zero_walls.py`。既存の `bash scripts/check.sh all` は全verifyスクリプトを実行する。`bash scripts/check.sh tex` は3原稿を組版する。今回確認したのは新コードと追加二節の10ページ抜粋であり、v27主論文全文は再組版していない。既存v26のvalidationと混同しない。
 
-研究区切りで原稿・ノート・方針・必要な検証資産を自己完結した現行版にする。約15分を保存checkpointの目安に、共有mainの更新を確認して通常のfast-forwardで直接保存し、remote SHAを照合する。PR・GitHub Actions・force pushは使わない。PDF・ZIP・中間物・キャッシュは追跡しない。GitHub保存失敗時のみ、許可済みのLibrary緊急保存を用いる。背景での自動継続は約束しない。
+Cloud環境の導入は `bash scripts/cloud_setup.sh`、手順は `docs/CLOUD_CODEX.md`。約15分または数学的な区切りを保存checkpointの目安とし、並行mainを確認・安全に統合して通常のfast-forwardで直接保存する。force push・PR・GitHub Actionsを使わない。PDF・ZIP・中間物・環境cacheを追跡しない。保存とremote確認を区別する。
 
-今回の環境では全20検算が成功し、作業領域内のTeX部品補完で3稿を組版できた。詳細はresearch/current_assessment.md。環境部品はGit追跡せず、標準環境ではscripts/check.sh texを使う。
-
-## Cloud Codex の実行方法
-
-Cloud環境の初期化ではリポジトリrootから `bash scripts/cloud_setup.sh` を実行する。Debian/Ubuntuのaptとpipを使う（TeX Live日本語一式の初回導入は容量と時間を要する）。start時は `bash scripts/check.sh fast` で依存関係と研究コードを確認する。詳しくは `docs/CLOUD_CODEX.md`。
-
-- 研究の各区切りは `bash scripts/check.sh fast`、証明や計算を変更した時は該当する `computations/verify_*.py` と必要に応じ `bash scripts/check.sh all` を実行する。公表原稿の更新では `bash scripts/check.sh tex` で3本を組版し、全文検査が必要なら `bash scripts/check.sh full` とする。出力は `build/` に保存しGit追跡しない。
-- Codex Cloudのタスクは各々独立したcheckoutであり、`main`へのpush権限やnetworkは環境により異なる。変更をcommitする前に `git status --short` と `git fetch origin main` を確認する。mainが進んでいればその変更を安全に統合し、force pushせず通常のfast-forwardのみ。直接pushできなければcommitを保持し、ブロック理由を報告する。PRやGitHub Actionsへ自動的に切り替えない。
-- 一つの数学的補題・証明修正・整った計算チェックを最小作業単位とし、約15分をcheckpointの目安にする。作業を止める質問を増やさず、上位方針のP0→P1→P2へ自律的に進む。ただし未証明主張を完成扱いせず、外部ネットワーク・引用・セットアップ不能を正確に報告する。
+研究区切りのLibrary保存は一般に許可済みだが、本研究ではGitHub保存失敗時のみ緊急避難として用いる。成功時の重複保存、既存Library資料の無断削除、背景での自動継続の約束をしない。権限やネットワークの障害は未完了として報告する。現在の一式から再開できるよう方針・ノート・原稿・再現コードを同期する。

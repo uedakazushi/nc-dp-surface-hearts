@@ -1,0 +1,377 @@
+\section{零指数根壁：古典的収縮と非可換gluingの核}\label{sec:zero-walls}
+非零指数の共鳴と，$\rho(\alpha)=\OO_E$という零指数の壁は異なる．
+前者はgenuineなavatarの内部にもあり，既存の導来同値の下でheartが変わる．
+後者では反標準orbitから見えない非零対象が存在し得るため，
+導来同値を前提とするHRSの議論をそのまま延長してはならない．
+本節は古典的に知られた収縮を記載した後，標準的な弱楕円gluingについて
+\emph{orbitから見えない全対象}を同定する．反標準$qgr$との商圏比較には
+なお追加の有限性・局所化の議論が必要であり，未解決部分を末尾に分離する．
+
+\subsection{十一因子と古典的な収縮}
+$P=(Q^{\langle-1\rangle})^{\mathsf t}$の列を$p_1,p_2,p_3$，
+座標点を$p_4,p_5,p_6$とする．十八係数非零のchartでは，
+九つの$2\times2$ minorの消滅は，可動点二つと補集合の座標点一つの共線性を表す．
+残る$\det Q^{\langle-1\rangle}=0$は$p_1,p_2,p_3$の共線性，
+$\det Q=0$は六点conic条件である．対応する根はそれぞれ
+\[
+ h-e_i-e_j-e_k\quad\text{（十種類）},\qquad
+ 2h-\sum_{i=1}^6e_i
+\]
+であり，いずれも$\alpha^2=-2$，$H\alpha=0$を満たす．
+これは第\ref{sec:explicitcorner}節の六点復元を壁で読むことで従う．
+各divisorの一般点では対応曲線の真の変換$C$が唯一の$(-2)$曲線となる．
+
+\begin{theorem}[古典的根壁の不可視対象]\label{thm:zero-classical-contraction}
+滑らかな弱del Pezzo曲面$S$，$H=-K_S$，$H^2=d>0$について，
+反標準収縮を$f:S\to\overline S$とする．$i:C\hookrightarrow S$が$(-2)$曲線なら
+$K_C=i_*\OO_C(-1)$は非零の$2$-spherical対象で，
+\[
+ K_C(H)\simeq K_C,\qquad
+ \RHom_S(\OO_S(nH),K_C)=0\quad(n\in\mathbb Z),\qquad
+ Rf_*K_C=0.
+\]
+特に反標準pairは$\coh S$でAZ-ampleでない．$S$がgenuineでなければ
+\[
+ \Db(\coh S)\not\simeq
+ \Db\left(\qgr\bigoplus_{n\ge0}H^0(S,nH)\right).
+\]
+三次曲面の一つの根壁の一般点では，$\overline S$は一つの$A_1$特異点を持つ．
+\end{theorem}
+\begin{proof}
+弱del Pezzoの反標準モデルは$(-2)$曲線の各連結配置をDu Val特異点へ収縮し，
+他の場所では同型である\cite[Theorem 8.3.2, \S8.3.2]{DolgachevWalls}．
+$C\simeq\mathbb P^1$，$N_{C/S}=\OO_C(-2)$であり，局所Ext層は
+$\mathcal Ext^0_S(K_C,K_C)=\OO_C$，$\mathcal Ext^1_S(K_C,K_C)=\OO_C(-2)$．
+局所大域スペクトル列から自己Extは次数$0,2$で$k$，他は零である．
+$K_S|_C=\OO_C$なのでSerre関手は$K_C$を$K_C[2]$へ送り，spherical性を得る．
+$H|_C=\OO_C$と$R\Gamma(C,\OO_C(-1))=0$が二つの消滅を与える．
+非零$K_C$への全反標準twistからのHomが零なのでAZ生成性は失敗する．
+
+反標準環の$qgr$は$\coh\overline S$である（低次数では十分なVeroneseを用いる）．
+滑らかな$S$の任意の有界coherent複体間では十分高次のHomが零である．
+一方，$\overline S$の特異点$x$の剰余体は，非正則局所環上の最小自由解消が
+無限に続くので，$\Ext^j(k(x),k(x))\ne0$となる$j$が無限にある．
+支持が一点であるためこれは大域Extでも同じで，三角圏同値と矛盾する．
+一壁の一般点では例外配置が一本なので型は$A_1$である．
+\end{proof}
+
+\begin{remark}[正負指数の完全相殺の古典模型]
+$C\simeq\mathbb P^1$のEuler完全列を押し出すと
+\[
+0\longrightarrow i_*\OO_C(-2)\longrightarrow K_C^{\oplus2}
+ \longrightarrow i_*\OO_C\longrightarrow0
+\]
+となる．両端のEuler値は$-1,+1$であり，connecting map
+$H^0(C,\OO_C)\to H^1(C,\OO_C(-2))$は同型である．
+中間項は非零だが全反標準orbitから見えない．これは零指数壁での完全相殺を示す．
+両端は同じ曲線類を持ち，非torsionのgenuine gluingにおける異なる隣接根の
+正負指数の組と同一視しない．
+\end{remark}
+
+\begin{example}[有理数上の一壁と反標準方程式]\label{ex:zero-rational-wall}
+\[
+ Q_0=\begin{pmatrix}1&1&1\\1&2&2\\1&3&4\end{pmatrix}
+\]
+では行$(0,1)$・列$(1,2)$のminorだけが零で，
+$\det Q_0=1$，$\det Q_0^{\langle-1\rangle}=1/24$である．
+六点は
+\[
+ (1:1:1),(2:1:1),(12:4:3),(1:0:0),(0:1:0),(0:0:1)
+\]
+となり，共線三点は$p_1,p_2,p_4$だけで，直線は$y=z$である．
+反標準切断の基底を
+\[
+\begin{aligned}
+ A&=\tfrac13x^2(y-z)-xy(y-z),&
+ B&=\tfrac7{12}x^2(y-z)-x(y^2-z^2),\\
+ C&=\tfrac16x^2(y+2z)-\tfrac32xy^2+y^2z,&
+ D&=\tfrac14x^2(y+z)-\tfrac32xy^2+yz^2
+\end{aligned}
+\]
+と取ると，像の三次方程式は
+\[
+\begin{aligned}
+ 0={}&23A^3-22A^2B+44A^2C-42A^2D+8AB^2-16ABC\\
+ &-24AC^2+24AD^2+8B^2C+24BC^2-24BCD.
+\end{aligned}
+\]
+$y=z$は$[0:0:1:1]$へ移り，$C=1$の局所座標$(A,B,D-1)$で
+Hessian行列式は$-2304$である．従ってこの点は通常二重点である．
+これらは有理数係数の恒等式で検査できる．ここまでは可換曲面の計算であり，
+このpotentialの全非可換変形について同じ特異点型を主張していない．
+\end{example}
+
+\subsection{任意の実在零指数根sheafに対する障害}
+\begin{proposition}[零指数の条件付き消失判定]\label{prop:zero-sheaf-obstruction}
+Rainsの境界triangle，曲面のhomological dimension $2$，
+line bundleから一次元sheafへの$\Ext^2$消滅と
+構造line bundleの商に対するRiemann--Roch不等式が成立するheartを取る．
+境界非交叉の既約純一次元sheaf $M$が実在し，
+$c_1(M)^2=-2$，$Hc_1(M)=0$，$\chi(e,M)=0$とする．
+すると全$n\in\mathbb Z$で$\RHom(e,s^nM)=0$である．
+自然反標準導来切断が定義される範囲では$\Phi M=0$であり，保守的でない．
+\end{proposition}
+\begin{proof}
+境界triangleから$sM\simeq M$である．非零$e\to M$の像を$J$とすると，
+既約性から$c_1(J)=c_1(M)=\alpha$，余核は零次元である．
+Rains\cite[Corollary 10.16]{Rains}の不等式は
+$\chi(e,J)\ge-\alpha(\alpha+K)/2=1$を与え，
+零次元余核のEuler値は非負なので$\chi(e,M)=0$に反する．
+従って$\Hom(e,M)=0$．仮定した$\Ext^2$消滅とEuler値から$\Ext^1(e,M)=0$で，
+他の次数も消える．全twistは同じであり，導来切断複体そのものが零となる．
+\end{proof}
+ここでは\emph{実在}が仮定である．任意の数値的零指数根をこの命題でsheafへ置き換えたり，
+標準heartの変化を単なるtiltと呼んだりしない．次の結果ではsheafの実在を仮定せず，
+古典的な収縮対象をgluingの共通部分圏に直接埋め込む．
+
+\subsection{弱楕円gluingにおける全orbit核の不変性}
+$S$を滑らかな射影有理弱del Pezzo曲面，$E\in|H|$を滑らかな楕円曲線とする．
+$\cB=\OO_S^\perp\subset\Perf(S)$とし，$q\in\Pic^0(E)$について
+\begin{equation}\label{eq:weak-wall-gluing}
+ \RHom(e,M)=0,\qquad
+ \RHom(M,e)=\RHom_E(Li^*M,q)\quad(M\in\cB)
+\end{equation}
+による標準Rains gluingを$\cD_q$，共通部分圏の包含を$\iota_q:\cB\hookrightarrow\cD_q$と書く．
+この構成はgenuine性を必要としない\cite[\S4, (4.4)--(4.7)]{Filtered}．
+境界関手$F_q$，右随伴$i_{q*}$，$s_q=\mathbb S_q^{-1}[2]$は
+\begin{equation}\label{eq:weak-wall-boundary}
+ F_qe=\OO_E,\quad F_q\iota_qG=Li^*G\otimes q^{-1},\quad
+ s_q^{-1}X\longrightarrow X\longrightarrow i_{q*}F_qX\longrightarrow,
+ \qquad F_qs_q=\Psi_qF_q
+\end{equation}
+を満たす．$\Psi_q$は平行移動と次数$d=H^2>0$の線束によるtensorからなる．
+これらの\emph{実際の}dg gluingと境界関手を固定し，任意の数値的なavatarへ一般化しない．
+
+反標準収縮$f:S\to\overline S$について，充満dg部分圏を
+\[
+ \mathcal N_f=\{G\in\Perf(S):Rf_*G=0\},\qquad
+ \mathcal N_q=\{X\in\cD_q:\RHom(s_q^ne,X)=0\ (n\in\mathbb Z)\}
+\]
+と定める．$\mathcal N_f\subset\cB$である．
+また$\mathcal N_q^{\rm tail}$を，各$j$について
+$\Hom(e,s_q^nX[j])=0$が全ての十分大きい$n$で成り立つ対象の部分圏とする．
+
+\begin{theorem}[全orbit核と古典的収縮核の同定]\label{thm:weak-orbit-kernel}
+上の弱楕円gluingでは，$q$の位数によらず
+\begin{equation}\label{eq:weak-orbit-kernel}
+ \boxed{\mathcal N_q^{\rm tail}=\mathcal N_q=\iota_q(\mathcal N_f).}
+\end{equation}
+従ってorbitから見えない対象の\emph{充満dg圏}は，この標準gluingの$q$に依存しない．
+特に$\mathcal N_q=0$であることと，$S$がgenuineであることは同値である．
+\end{theorem}
+\begin{proof}
+\emph{tailから境界零へ．}
+$X\in\mathcal N_q^{\rm tail}$なら$s_q^{-1}X$も同じ条件を満たす．
+境界triangleへ$\RHom(s_q^{-n}e,-)$を施し，随伴を使うと
+\[
+ \Hom_E(\Psi_q^{-n}\OO_E,F_qX[j])=0\qquad(n\gg0)
+\]
+が各$j$について従う．$\Psi_q^n$は正次数のtwisted line bundleの作用である．
+楕円曲線のcohomologyと十分高い次数の線束による消滅・生成性から，
+この条件は有界対象$F_qX$が零であることを意味する．
+より具体的には，その有限個のcohomology sheafへのhyper-Ext spectral sequenceを
+$n\gg0$で退化させ，非零sheafの高い正twistは非零の大域切断を持つことを用いる．
+ゆえに$s_q^{-1}X\to X$は同型．周期性からtail消滅は
+$\RHom(e,X)=0$と全整数orbit消滅を与える．
+$e^\perp=\iota_q(\cB)$なので$X=\iota_qG$と書け，
+$R\Gamma(S,G)=0$かつ$Li^*G=0$となる．
+
+\emph{古典的収縮の核へ．}
+$Li^*G=0$ならCartier divisorのtriangleから
+$G(-H)\to G$が同型で，全整数$n$について$R\Gamma(S,G(nH))=0$である．
+十分可除な$a>0$と$\overline S$上のample line bundle$L$を取り，
+$f^*L=\OO_S(aH)$とする．射影公式により
+\[
+ R\Gamma\bigl(\overline S,Rf_*G\otimes L^n\bigr)=0\quad(n\ge0).
+\]
+$Rf_*G$は有界coherentであり，Serre消滅と大域生成を各cohomologyへ適用すれば
+$Rf_*G=0$を得る．従って$\mathcal N_q^{\rm tail}\subset\iota_q(\mathcal N_f)$．
+
+\emph{逆包含．}
+$G\in\mathcal N_f$なら$R\Gamma(S,G)=0$で，$G\in\cB$である．
+$f$は例外曲線の外で同型であり，それらは$E$と交わらない．
+$Rf_*G=0$をこの同型な開集合へ制限すると$G$はそこでも零なので，$Li^*G=0$である．
+式\eqref{eq:weak-wall-boundary}と$\RHom(e,\iota_qG)=0$から
+$s_q\iota_qG\simeq\iota_qG$と全orbit消滅を得る．
+よって$\iota_q(\mathcal N_f)\subset\mathcal N_q\subset\mathcal N_q^{\rm tail}$．
+$\iota_q$はdg完全忠実なので，等式は全RHomと合成を含む同定である．
+最後にgenuineなら$f$は同型で核は零．そうでなければ
+定理\ref{thm:zero-classical-contraction}の$K_C\ne0$が核にある．
+\end{proof}
+
+\begin{corollary}[実在する非可換零指数spherical対象]\label{cor:zero-spherical-persistence}
+$S$の任意の$(-2)$曲線$C$について$K_{C,q}=\iota_q(i_*\OO_C(-1))$は
+$\cD_q$の非零$2$-spherical対象で，$s_qK_{C,q}\simeq K_{C,q}$，
+$\chi(e,K_{C,q})=0$，$K_{C,q}\in\mathcal N_q$である．
+複数曲線の直和に対する導来End代数も$q$によらず可換側のものと同じである．
+\end{corollary}
+\begin{proof}
+$K_C\in\mathcal N_f\subset\cB$と完全忠実性により自己Extと全合成は保存される．
+境界triangleから$\mathbb S_qK_{C,q}\simeq K_{C,q}[2]$でありspherical性を得る．
+Euler値と残りは前定理による．
+\end{proof}
+これは\emph{対象の構成}であって，任意のblowdown表示のheartでそれがsheaf，
+あるいは単純sheafになることまで証明したものではない．
+そのheart内の位置の同定を必要とせず，指定反標準orbitの生成障害が全$q$で残る．
+
+\begin{proposition}[coherent導来切断に対する正確な核]\label{prop:weak-coherent-kernel}
+さらに$R_q=\bigoplus_{n\ge0}\Hom(e,s_q^ne)$が局所有限右noetherianで，
+自然dg関手$\Phi_q=\pi R\Gamma_*:\cD_q\to\Db(\qgr R_q)$が定義されるとする．
+各$X$について
+\[
+ N^j(X)=\bigoplus_{n\ge0}\Hom(e,s_q^nX[j])
+\]
+が有限生成で，非零となる$j$は有限個，かつ$H^j\Phi_qX=\pi N^j(X)$と仮定する．
+すると$\ker\Phi_q=\mathcal N_q=\iota_q(\mathcal N_f)$である．
+\end{proposition}
+\begin{proof}
+有限生成・局所有限な次数付き加群では，$\pi N^j=0$は$N^j$が有限次元であること，
+従って十分高い内部次数の成分が零であることと同値である．
+$\Phi_qX=0$と$X\in\mathcal N_q^{\rm tail}$の同値を得て，前定理を使う．
+\end{proof}
+この命題のcoherent有限性は\emph{追加仮定}である．
+全orbit核の同定から$qgr$値関手の有界性・有限生成性を逆に推論しない．
+ただし$K_{C,q}$の生の導来切断は全次数で既に零なので，それが消えること自体に
+全対象についての有限生成性は不要である．
+
+\subsection{dg商による圏論的な収縮候補}
+\begin{proposition}[orbit環を変えない圏論的収縮]\label{prop:zero-dg-quotient}
+標準弱楕円gluingに対し，pretriangulated dg商の冪等完備化を
+\[
+ \mathcal Q_q=(\cD_q/\mathcal N_q)^{\natural},\qquad
+ \ell_q:\cD_q\longrightarrow\mathcal Q_q
+\]
+とする．$s_q$は商上の自己同値$\overline s_q$へ降り，$\overline e=\ell_q e$はexceptionalである．
+全整数$a,b,j$について自然な写像
+\[
+ \Hom_{\cD_q}(s_q^ae,s_q^be[j])
+ \xrightarrow{\sim}
+ \Hom_{\mathcal Q_q}(\overline s_q^a\overline e,
+                     \overline s_q^b\overline e[j])
+\]
+は同型で，特に反標準orbit環は$R_q$のままである．
+また$\mathcal Q_q$は，$(\cB/\mathcal N_f)^{\natural}$に$\overline e$を
+$\RHom_E(Li^*(-),q)$の降下でglueした圏として記述できる．
+\end{proposition}
+\begin{proof}
+$\mathcal N_q$はthickで$s_q$不変なので自己同値は降りる．
+全orbit対象は$\mathcal N_q$に右直交し，Serre双対性により左にも直交する．
+実際$N\in\mathcal N_q$に対して
+$\RHom(N,s_q^be)=\RHom(s_q^be,s_q^{-1}N[2])^*=0$である．
+従ってVerdier局所化はこれらの対象間の全Homを変えない．
+dg商のHomを表すcone公式\cite[\S1.3.1]{DrinfeldWalls}でも，
+$\mathcal N_q$を経由する導来tensor項が零となることから同じ結論を得る．
+冪等完備化は既存の対象間のHomを変えない．合成との両立性が環の同定を与える．
+
+さらに$\mathcal N_f\subset\cB$で，gluing moduleはその上で零である．
+従ってこのmoduleはdg商$\cB/\mathcal N_f$へ降りる．
+元の圏の二成分からなるgluingにdg商の普遍性を適用すると，
+$\cB$側をこの商へ置き換え，exceptional成分をそのまま残したgluingを得る．
+双方のpretriangulated hullと冪等完備化を取れば表示した圏となる．
+\end{proof}
+この構成は圏論的な収縮候補を与えるが，$\mathcal Q_q$に目的のnoetherian heartが
+存在することや，それが$\Db(\qgr R_q)$であることは主張しない．
+また$\overline s_q$が商のSerre関手の逆から生じることも，ここでは結論しない．
+標的の特異性・proper性・coherent対象を別に扱う必要がある．
+
+\subsection{反標準模型から見えないtwistとpointed比較の障害}
+\begin{corollary}[零指数twistの不可視性]\label{cor:zero-twist-invisible}
+$K=K_{C,q}$のspherical twistを$T_K$とする．
+$T_K(e)\simeq e$で，構造対象と反Serre作用の整合する同定により
+$R_q$上の作用は恒等となる．また$\Phi_q$が定義され$\Phi_qK=0$なら
+\[
+ \Phi_qT_K\simeq\Phi_q.
+\]
+ADE配置の隣接曲線に対応するtwistはbraid関係を，非隣接のtwistは交換関係を満たす．
+\end{corollary}
+\begin{proof}
+$\RHom(K,e)=0$はgluing式と$Li^*K_C=0$から従い，
+Serre双対性と全orbit直交性から$\RHom(K,s_q^ne)=0$も全$n$で成り立つ．
+従ってtwistの評価triangle
+\[
+ \RHom(K,X)\otimes K\longrightarrow X\longrightarrow T_KX\longrightarrow
+\]
+の自然な第二射は，全orbit対象で同型であり，全ての射とその合成を保つ．
+これが環の作用の主張を与える．$\Phi_qK=0$なら同じtriangleを$\Phi_q$で送ればよい．
+異なる例外曲線のExtは交点一つに対し次数1で$k$，非交叉なら全て零である．
+既知のspherical twist定理\cite[Propositions 2.10, 2.12--2.13]{SeidelThomasWalls}を適用する．
+\end{proof}
+
+\begin{proposition}[ampleな標準模型へのpointed同値はない]\label{prop:zero-pointed-obstruction}
+$S$がgenuineでないとする．有界heart$\mathcal H\subset\mathcal D'$に
+$(e',s')$がAZ-ampleで，$s'$はheartを両方向で保ち，
+各$M\in\mathcal H$について全正次数Extが$n\gg0$で一様に消えるとする．
+このとき$(\cD_q,e,s_q)$から$(\mathcal D',e',s')$へのpointed導来同値は存在しない．
+\end{proposition}
+\begin{proof}
+非零$K_{C,q}$は全orbitに直交する．pointed同値があれば，その像も標的の全orbitに直交する．
+一方，標的の任意の有界対象$Y$の有限個のcohomologyへ高次Ext消滅を同時に適用すると，
+\[
+ \Hom(e',s'^nY[j])=\Hom(e',s'^nH^j_{\mathcal H}Y)\quad(n\gg0).
+\]
+AZ生成性は，非零sheafへの全ての十分高いtwistのHomが零になることを排除する．
+従って全orbit直交対象は零のみで，矛盾する．
+\end{proof}
+構造対象を忘れた任意の抽象的導来同値の不存在は，この命題からは従わない．
+可換側の非同値は別途，定理\ref{thm:zero-classical-contraction}で証明した．
+
+\subsection{非torsion gluing上の一つの零指数壁}
+\begin{example}[単一の零根を持つ明示的な弱avatar]\label{ex:zero-elliptic-wall}
+$E=\mathbb C/(\mathbb Z+i\mathbb Z)$，$L_1=\OO_E(3o)$とし，
+\[
+ \begin{gathered}
+ q=\sqrt2,\quad x=\sqrt3,\quad y=\sqrt5,\quad z=\sqrt7,
+ \quad w=\sqrt{11},\quad v=\sqrt{13},\\
+ (p_1,\ldots,p_6)=(x,y,-x-y,z,w,v).
+ \end{gathered}
+\]
+$L_0=L_1q$とする．$1,\sqrt2,\sqrt3,\sqrt5,\sqrt7,\sqrt{11},\sqrt{13}$の
+$\mathbb Q$線型独立性から，点は相異なり，共鳴する根は
+$\pm\alpha_0$，$\alpha_0=h-e_1-e_2-e_3$だけで，その指数はいずれも零である．
+実際$\rho(ah-\sum b_ie_i)q^m=\OO_E$から
+$b_1=b_2=b_3=b$，$b_4=b_5=b_6=0$，$m=0$となり，根の二方程式から$a=b=\pm1$を得る．
+前半三点だけが共線で，対応する直線の真の変換が唯一の$(-2)$曲線$C$である．
+$H$はnefで$H^2=3$だから$S$は弱del Pezzo．定理\ref{thm:weak-orbit-kernel}と
+系\ref{cor:zero-spherical-persistence}が，この非torsion gluingで非零の零指数対象$K_{C,q}$を構成する．
+
+楕円線束の条件$(U_+)$はなお成立する．実際$X=0$，$Y=z+w+v$なので
+$u=-q$，$t=-Y$，$u-t=Y-q$は全て非零である．
+実際の楕円decupleのtheta表示では27係数が全て非零である．
+実際$a=0,2$では引数に$z,w,v$の一つの係数が残り，$a=1$では残り二つの係数が残る．
+入力六点からの$Q$は
+九minorと$\det Q$が非零，$\det Q^{\langle-1\rangle}=0$となる．
+従って純代数的な十一条件の定理はこのcornerの無限次元性を与える．
+ここで使用するtheta式と六点復元は楕円線束の計算であり，genuine性を使わない．
+一方，このpotentialのAS模型と$\cD_q$との指定導来比較はここでは構成していない．
+一般位置外のVdB比較を適用したり，corner無限性だけからその模型の特異点型を決めたりしない．
+\end{example}
+
+\subsection{証明した範囲と将来の課題}\label{subsec:zero-wall-future}
+最大共鳴の稠密性はgenuineな点の定理であり，零指数壁の消失と矛盾しない．
+後者について本節で得たのは，任意次数の古典的な収縮障害，標準弱楕円gluingでの
+全orbit核の$q$不変性，実在spherical対象，orbit環を保存するdg商，
+twistの不可視性とpointed同値の障害である．
+coherent反標準導来切断の全核との一致は命題\ref{prop:weak-coherent-kernel}の追加仮定付きである．
+既知のgluing・収縮・spherical twist理論を入力とするこれらの組合せの網羅的新規性は未確認である．
+
+\paragraph{coherent収縮と商圏．}
+任意の弱楕円gluingについて$N^j(X)$の有限生成性と有界性を証明し，
+自然関手が全核を除いた商から標的へ完全忠実・本質的全射になるかを調べる．
+\emph{核が同定できたことだけではVerdier商と$\Db(\qgr R_q)$の同値は従わない．}
+perfect対象の商，coherent有界導来圏，冪等完備化を区別する必要がある．
+一つの$A_1$壁から始め，特異な標的の非perfect対象がどのように現れるかを点検する．
+
+\paragraph{heartと局所特異点．}
+$K_{C,q}$の指定Rains heartでの位置，零指数根配置全体に適合する
+相対的perverse heart，および収縮後の局所・完成代数を構成する．
+既存の非可換収縮環\cite{DonovanWemyssWalls}は\emph{与えられた幾何学的収縮}から出発するため，
+その定理だけで本節の非可換曲面に収縮射が存在するとは結論しない．
+ADEの古典配置が残ることから標的の特異点型や全有限次元表現を直ちに推論しない．
+
+\paragraph{AS模型・壁の交叉・族．}
+例\ref{ex:zero-elliptic-wall}の実際の楕円potentialについて，AS実現，noetherian性，
+標準helix，pointed比較の各入力を壁上で確認する．
+その後に複数零指数壁の交叉，特異楕円境界，曲面パラメータに関する底変更と降下へ進む．
+本節の$q$不変性は，\emph{固定した$(S,E)$のgluing}におけるdg部分圏の同定であり，
+任意の非可換del Pezzoの全モジュライ上の相対収縮定理ではない．
+\endinput

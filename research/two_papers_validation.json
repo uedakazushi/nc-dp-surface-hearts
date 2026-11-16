@@ -1,30 +1,35 @@
 {
   "date_JST": "2026-11-17",
-  "main_version": "hearts-v30",
+  "main_version": "hearts-v31",
   "companion_version": "hearts2-v1 (unchanged)",
-  "strategy_version": "hearts-strategy-v8",
-  "base_commit": "93c1e30b476e5ec5ab49da18e6c90934031a02cb",
+  "strategy_version": "hearts-strategy-v9",
+  "base_commit": "4d50f17396d5c9edcb39b85d83b6256adfa757ef",
   "canonical_branch": "main",
-  "proof_status": "New weak-gluing proofs written and internally checked. Not independently peer reviewed or formally verified; no exhaustive novelty claim.",
+  "proof_status": "New orbit-core restriction and residual-singularity proofs written, checked for logical dependencies; no independent peer-review or formal verification.",
   "new_results_within_specified_setup": [
     "All q, smooth rational weak del Pezzo S and smooth anticanonical E: R_q is left and right noetherian; graded Ext modules of every object are finitely generated and cohomologically bounded.",
     "Construction of the natural coherent dg functor Phi_q:D_q to Db(qgr R_q), with kernel equal to the complete anticanonical orbit-null category and iota_q ker Rf_*.",
     "The dg quotient is a gluing of O_(Sbar)^perp in Db(coh Sbar) and an exceptional object, with boundary module RHom_E(Li^*(-),q).",
     "For non-genuine S, the quotient has an object with nonzero self-Ext in infinitely many degrees and is not proper; this is not transferred to the unproved qgr identification.",
     "For all q, the common Bbar=O_(Sbar)^perp has quotient Bbar/(Bbar∩Perf Sbar) equivalent to Orlov's D_sg(Sbar), by the evaluation projection.",
-    "For singular Du Val points xi, images Ji,q of ideal sheaves satisfy dim Hom(Ji,q,Jj,q[n]) = 4 delta_ij for n>=3, for every q."
+    "For singular Du Val points xi, images Ji,q of ideal sheaves satisfy dim Hom(Ji,q,Jj,q[n]) = 4 delta_ij for n>=3, for every q.",
+    "Natural coherent anticanonical functor is dg fully faithful on the thick orbit-generated category T_q, and yields T_q equivalent to P_q in Db(qgr R_q), for all q in standard weak elliptic gluing.",
+    "For non-genuine S, T_q is strictly smaller than the singular dg quotient Q_q, and residual S_q=(Q_q/T_q)^natural is nonzero; at q=O_E it recovers D_sg(Sbar)^natural."
   ],
   "primary_inputs_checked": {
     "Rains": "2107.13540v2 section 4 equations (4.4)-(4.7), Proposition 5.1 and equation (5.3).",
     "Keeler": "math/9912051v2 Theorem 1.2(1),(2); covers both finite- and infinite-order translations.",
     "BKS": "1801.08286v1 Theorem 2.14 and section 2F; projective map, geometric fibres of dimension at most one, Rf_*O=O.",
     "Orlov": "arXiv:math/0302304v2, D_sg=Db(coh)/Perf.",
-    "Tate": "John Tate, Illinois J. Math. 1 (1957), 14-27, minimal resolution of complete intersections; corroborated by Stacks Project Tag 09PF and algebraic series calculation."
+    "Tate": "John Tate, Illinois J. Math. 1 (1957), 14-27, minimal resolution of complete intersections; corroborated by Stacks Project Tag 09PF and algebraic series calculation.",
+    "Rains_orbit": "Rains 2107.13540v2, Corollary 3.8, target orbit Ext and trace duality. Screenshot via web failed Cache miss; PDF text read.",
+    "Stacks_generator": "Stacks Project Tag 0BQQ: negative twists of an ample line bundle generate D_QCoh, whose compact objects are Perf."
   },
   "not_proved": [
     "For general nontrivial q, the induced singular-gluing functor to Db(qgr R_q) is fully faithful and essentially surjective.",
     "Wall AS comparison, placement of contraction objects in specified hearts, local completed algebra, and relative descent.",
-    "The common-component singularity quotient does not imply an intrinsic singularity-category identification for the entire noncommutative gluing or any equivalence with Db(qgr R_q)."
+    "The common-component singularity quotient does not imply an intrinsic singularity-category identification for the entire noncommutative gluing or any equivalence with Db(qgr R_q).",
+    "For nontrivial q, the residual comparison S_q to Db(qgr R_q)/P_q is an equivalence, or that equivalence of residuals suffices without gluing compatibilities."
   ],
   "source_files_git_blobs": {
     "papers/dp-hearts.tex": "fe613c5fbb7664facb5b81fbaaa4678a89379a85",
@@ -34,12 +39,12 @@
   },
   "local_and_github_source_blobs_match": true,
   "typesetting": {
-    "scope": "20-page excerpt (foundations, zero walls, coherent contraction, and Du Val singularity section), not the complete main manuscript.",
+    "scope": "Previous 20-page v30 excerpt was typeset; newly added orbit-core section has not yet been typeset in this pass.",
     "engine": "LuaLaTeX / LuaTeX-ja",
-    "pages": 20,
-    "status": "PASS",
+    "pages": null,
+    "status": "NOT RUN for v31",
     "pdf_sha256": null,
-    "all_pages_layout_images_inspected": true,
+    "all_pages_layout_images_inspected": false,
     "undefined_internal_refs_or_citations": false,
     "overfull_or_underfull": false,
     "missing_glyphs": false,
@@ -53,7 +58,13 @@
     "unresolved_citation_keys_in_modified_sections": [],
     "external_main_reference_count_in_modified_sections": 26,
     "all_main_recursive_sources_rechecked": false,
-    "all_original_main_top_level_inputs_retained": true
+    "all_original_main_top_level_inputs_retained": true,
+    "main_total_label_count": 175,
+    "main_duplicate_labels": [],
+    "main_unresolved_references": [],
+    "main_unresolved_citations": [],
+    "main_inputs_resolved": true,
+    "checked_against_staged_v31": true
   },
   "computations": {
     "new_numerical_proof_claims": false,

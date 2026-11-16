@@ -1,10 +1,10 @@
 # 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-17 / hearts-strategy-v8。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
+2026-11-17 / hearts-strategy-v9。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
 
 ## 現行の二論文
 
-**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v30）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
+**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v31）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
 
 **[dp-hearts2.tex](papers/dp-hearts2.tex)**（hearts2-v1）は補完論文。符号別Ext・混合A2の精密計算・ADE zigzag形式変形、cubic cornerの十一条件、一様Hilbert関数、162次元平坦族と計算証明を保持する。
 
@@ -14,6 +14,13 @@
 
 主論文は、共通部分圏 `O_(Sbar)^perp` のperfect商がOrlovの `D_sg(Sbar)` を回復すること、および全Du Val点のideal sheafの高次Extが
 `dim Hom(J_i,q,J_j,q[n])=4δ_ij (n>=3)` を満たすことも証明する。非自明qの反標準qgrとの同値は依然として未解決。
+
+## orbit-perfect coreの新結果
+
+弱楕円gluingでも、反標準orbitが生成する完全部分圏では自然関手が同値になる：
+`thick_{Dq}{s^ne} ≃ thick_{Db(qgr Rq)}{πRq(n)}`。
+ただし零指数壁ではその部分圏は収縮後の全圏を生成しない。
+残余商 `(Qq/thick orbit)^natural` は非零で、古典点q=O_EではOrlovの特異性圏に一致する。非自明qの全圏比較は未解決。
 
 ## 再開・再現
 

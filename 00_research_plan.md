@@ -1,6 +1,6 @@
 # 研究方針：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v8。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v30）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
+2026-11-17 / hearts-strategy-v9。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v31）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
 
 ## 恒常的な研究原則と保存許可
 
@@ -43,6 +43,20 @@ dim Hom(J_{i,q},J_{j,q}[n])=4δ_ij (n≥3) を満たす（`thm:duval-high-ext`�
 
 これは構成した特異gluingの共通部分商・高次Extの結果であり、一般qのDb(qgr R_q)を同定する結果ではない。
 次の価値ある課題は、A1壁でこの高次ExtのYoneda積・2周期構造と、反標準qgr側の像を比較することである。次元だけではADE型を区別できない。
+
+## 反標準orbitの完全部分圏と残余特異性
+
+第1論文の `four_hearts_orbit_core.tex` で、標準弱楕円gluingの全qについて
+Tq=thick{s_q^n e | n∈Z} に制限した自然関手は、Pq=thick{πR_q(n)}へのdg同値であることを証明した。
+証明はsourceの境界triangle・Serre双対性とRains Corollary 3.8のtarget orbit Ext公式、
+境界H¹(O_E)へのtrace比較に基づき、genuine領域で必要だったInd生成を用いない。
+TqはNqと両側直交するため、商Qq=(Dq/Nq)^naturalにも完全忠実に入る。
+
+**零指数壁の決定的障害：** 非genuineなSならQqには無限高次自己Extを持つ対象がある一方、Tqはsmooth proper sourceの部分圏なので全Homが有限である。
+従って Tq⊊Qq、残余商 Sq=(Qq/Tq)^natural は全qで非零。
+q=O_Eでは Tq=Perf(Sbar)、Sq=D_sg(Sbar)^natural。
+自然関手は残余商から Db(qgrR_q)/Pq への比較を誘導するが、一般の非自明qでこの比較が同値という主張はしない。
+中心の未解決問題は、この残余部分とorbit部分のgluingを含む全自然比較の検証である。
 
 ## 未解決の核心
 

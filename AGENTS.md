@@ -1,6 +1,6 @@
 # Codex指示：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v8。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v30）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
+2026-11-17 / hearts-strategy-v9。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v31）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
 
 ## 現在の数学的状態
 
@@ -11,6 +11,13 @@
 ## Du Val局所核の研究状態
 
 `four_hearts_duval_singularity.tex` に、Bbar/(Bbar∩Perf Sbar)=D_sg(Sbar) と Du Val点のidealの高次Ext次元4δij（全n≥3、全q）の証明がある。TateのPoincare級数 (1+t)^3/(1-t²) を既知入力とする。特異gluing全体の特異性圏や一般qのDb(qgr R_q)との同値は主張していない。次はYoneda積・2周期構造・qgr側の像の検証であり、高次Ext次元計算を未解決に戻さない。
+
+## 現行の新主定理：orbit-perfect core
+
+`four_hearts_orbit_core.tex` の `thm:orbit-core-equivalence` は任意qの標準弱楕円gluingでTq=thick orbitからPq=thick(qgrのfree twists)へのdg同値を示す。Rains Cor.3.8のorbit間Extと境界H¹へのtrace比較が入力であり、genuine時のorbit生成は使わない。
+`thm:residual-singularity` は非genuineならTq⊊Qq、残余Sq≠0、q=O_EではSq=D_sg(Sbar)^naturalとする。
+非自明qについてQq≅Db(qgr Rq)は依然未解決。完全忠実性をorbit上で示したことと、全圏の同値は混同しない。
+次は残余商の像、局所高次Yoneda積、orbitとのgluingをA1壁で比較する。
 
 ## 優先順位
 

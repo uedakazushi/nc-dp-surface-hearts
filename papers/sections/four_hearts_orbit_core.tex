@@ -1,0 +1,139 @@
+\section{反標準orbitの完全部分圏と残余特異性}\label{sec:orbit-core}
+本節は第\ref{sec:coherent-contraction}節の標準弱楕円gluingを固定する．
+$S$は滑らかな有理弱del Pezzo曲面，$E\in|-K_S|$は滑らかな楕円曲線，
+$q\in\Pic^0(E)$は任意とする．
+$\Phi_q:\cD_q\to\Db(\qgr R_q)$を定理\ref{thm:weak-coherent-sections}の
+自然関手，$\mathcal N_q=\ker\Phi_q$，
+$\mathcal Q_q=(\cD_q/\mathcal N_q)^\natural$とする．
+反標準orbitから生成される充満なthick部分圏を
+\[
+ \mathcal T_q=\thick_{\cD_q}\{s_q^ne:n\in\mathbb Z\},\qquad
+ \mathcal P_q=\thick_{\Db(\qgr R_q)}\{\pi R_q(n):n\in\mathbb Z\}
+\]
+と書く．後者を\emph{orbit-perfect core}と呼ぶ．
+これは非可換$qgr$のすべてのperfect対象を内在的に特徴付けた
+という意味の名称ではない．
+
+\begin{lemma}[弱gluingでのorbit間Ext]\label{lem:weak-orbit-ext}
+全整数$a,b$について，sourceとtargetの両方で，
+$s_q^ae,s_q^be$と$\pi R_q(a),\pi R_q(b)$の間のExtはそれぞれ
+\[
+\Ext^j(-,-)=
+\begin{cases}
+(R_q)_{b-a}&j=0,\ b\ge a,\\
+(R_q)_{a-b-1}^{*}&j=2,\ b<a,\\
+0&\text{それ以外}
+\end{cases}
+\]
+となる．さらに，これらの同定の下で自然関手$\Phi_q$が誘導する写像は
+全次数で同型である．
+\end{lemma}
+\begin{proof}
+source側の計算は補題\ref{lem:orbit}の証明と同じ境界triangleから従う．
+そこで使う入力は$e$のexceptionality，$s_q^{-1}\to\mathrm{id}$の
+自然変換，境界での$\Psi_q^n\OO_E$の次数が$nd>0$であること，
+および滑らかなgluingのSerre双対性であり，$-K_S$のamplenessは不要である．
+正twistの$H^1$消滅により正の相対次数の高次Extが消え，
+負の相対次数はSerre双対性で正側に帰着する．
+
+target側は$R_q$が楕円座標環$B(E,\Psi_q)$の中心正則Rees変形であることと
+Rains\cite[Corollary 3.8]{Filtered}から得られる．
+この既知の計算はgenuineなblow-upの存在を仮定しない．
+次数$0$の写像は$\Phi_q(s_q^ae)=\pi R_q(a)$と積の自然性から同型である．
+次数$2$の同定には境界$\Ext_E^1(\OO_E,\OO_E)=H^1(E,\OO_E)$へのtraceを使う．
+sourceとtargetで境界triangleと中心元$g$が同じなので，
+$\Phi_q$はこのtraceを保存する．
+特に$\Ext^2(e,s_q^{-1}e)\simeq H^1(E,\OO_E)$での写像は恒等で，
+Yoneda積と非退化なSerre pairingから全ての負twistについて同型となる．
+この比較は定理\ref{thm:derived}の完全忠実性証明のうち
+\emph{orbit間の計算}だけを再利用し，Ind圏でのorbit生成は使っていない．
+\end{proof}
+
+\begin{theorem}[orbit-perfect core上の同値]\label{thm:orbit-core-equivalence}
+任意の$q$について，$\Phi_q$は
+\[
+\boxed{\Phi_q|_{\mathcal T_q}:\mathcal T_q
+  \xrightarrow{\sim}\mathcal P_q}
+\]
+というdg同値を与える．
+さらに$\mathcal T_q$は$\mathcal N_q$と両側直交し，
+商関手$\ell_q:\cD_q\to\mathcal Q_q$は$\mathcal T_q$上で完全忠実である．
+従って$\mathcal P_q$は$\mathcal Q_q$内の
+$\overline{\mathcal T}_q:=\ell_q(\mathcal T_q)$とdg同値である．
+\end{theorem}
+\begin{proof}
+前補題はorbitの生成対象の間で$\Phi_q$が完全忠実であることを与える．
+両変数について有限直和，shift，cone，直和因子を取れば
+thick closure上でも完全忠実となり，像は定義より$\mathcal P_q$である．
+$N\in\mathcal N_q$なら$\RHom(s_q^ne,N)=0$が全$n$で成立する．
+定理\ref{thm:weak-orbit-kernel}より$s_q^{-1}N\simeq N$なので，
+Serre双対性により
+\[
+ \RHom(N,s_q^ne)
+ \simeq\RHom(s_q^ne,s_q^{-1}N[2])^{*}=0.
+\]
+したがって$\mathcal T_q$と$\mathcal N_q$は両側直交する．
+Drinfeld商では核を経由するHomの補正項が消えるので，
+$\ell_q$は$\mathcal T_q$上で完全忠実である．
+\end{proof}
+
+\begin{theorem}[零指数壁における残余特異性]\label{thm:residual-singularity}
+\[
+ \mathfrak S_q=
+ \bigl(\mathcal Q_q/\overline{\mathcal T}_q\bigr)^\natural
+\]
+をorbit-perfect coreを除いた残余dg商とする．
+\begin{enumerate}
+\item $S$がgenuineでないなら，任意の$q$について
+$\overline{\mathcal T}_q\subsetneq\mathcal Q_q$であり，
+$\mathfrak S_q\ne0$である．
+\item $q=\OO_E$では自然なdg同値
+\[
+ \boxed{\overline{\mathcal T}_{\OO_E}\simeq\Perf(\overline S),
+ \qquad
+ \mathfrak S_{\OO_E}\simeq D_{\rm sg}(\overline S)^\natural}
+\]
+が成立する．
+\item 自然関手$\overline\Phi_q:\mathcal Q_q\to\Db(\qgr R_q)$は
+$\overline{\mathcal T}_q$を$\mathcal P_q$に写すので，
+\[
+ \mathfrak S_q\longrightarrow
+ \bigl(\Db(\qgr R_q)/\mathcal P_q\bigr)^\natural
+\]
+という関手を誘導する．$q=\OO_E$ではこれは上の古典的な
+特異性圏の同値である．
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1)は高次Extの障害による．$\cD_q$はproperなので，
+$\mathcal T_q$の任意の二対象間の全次数のHomの総次元は有限である．
+前定理により$\overline{\mathcal T}_q$も同じ性質を持つ．
+一方，系\ref{cor:singular-gluing-unbounded}または
+定理\ref{thm:duval-high-ext}から，非genuineな$\mathcal Q_q$には
+無限個の次数で自己Extが非零となる対象がある．
+従って$\overline{\mathcal T}_q$は$\mathcal Q_q$全体でない．
+これはthick部分圏なのでVerdier商は非零である．
+
+(2)では$\mathcal Q_{\OO_E}\simeq\Db(\coh\overline S)$が
+定理\ref{thm:singular-gluing-target}で成立する．
+反標準orbitの像は$\OO_{\overline S}(nH)$に等しい．
+$H=-K_{\overline S}$はampleなので，その全整数twistは
+$D_{\mathrm{qc}}(\overline S)$を生成する
+（Stacks Project\cite{Stacks}，Tag 0BQQ）．
+それらはcompactで，compact対象は$\Perf(\overline S)$だから，
+そのthick closureは$\Perf(\overline S)$である．
+(3)は関手の普遍性による．古典的$q=\OO_E$では
+$\Phi_q$は$Rf_*$に一致し，対応する商も恒等となる．
+\end{proof}
+\begin{remark}[何を解決していないか]
+$\mathfrak S_q$を構成したことは，
+非自明$q$における
+$\overline\Phi_q:\overline{\cD}_q\to\Db(\qgr R_q)$
+の同値を証明するものではない．
+特に$\mathcal Q_q$と$\Db(\qgr R_q)$が
+同じorbit-perfect coreを持つとしても，
+その補充部分やgluing bimoduleが一致するとは限らない．
+零指数壁での障害は，単にorbit上のExtを比較するだけでは検出できず，
+特異点に対応する非perfect対象とその高次Yoneda積を
+標的で具体的に追う必要がある．
+\end{remark}

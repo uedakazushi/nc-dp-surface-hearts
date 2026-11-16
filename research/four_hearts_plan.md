@@ -1,6 +1,6 @@
 # 四heart比較とcoherent収縮の実施方針
 
-2026-11-17 / hearts-strategy-v8。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v30）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
+2026-11-17 / hearts-strategy-v9。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v31）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
 
 ## 現在の公表構成
 
@@ -15,6 +15,13 @@
 ## 局所特異性の次の具体的検査
 
 `four_hearts_duval_singularity.tex` ではBbarの特異性商と高次Ext次元4δijを証明した。A1壁で反標準qgr側に対応する対象を構成し、Yoneda積・2周期性と商からの全RHom写像を比較する。次元一致は完全忠実性を意味しないため、積と高次構造の一致も検査する。
+
+## 残余特異性を通じた比較の優先順位
+
+弱gluingでもorbit-perfect coreの同値は証明済み。非genuineなら残余Sq=(Qq/Tq)^naturalが非零。
+q=O_EではSq=D_sg(Sbar)^natural、非自明qの自然比較は残余Sq→Db(qgrRq)/Pqを誘導する。
+従って次の目標は、A1壁で特異点ideal sheafの像の高次Ext・Yoneda積と、orbitとの交叉作用をtargetで明示すること。
+残余商の同値だけで全圏の同値が自動的に従うとは仮定せず、gluingの比較も必要とする。
 
 ## 最優先の点検
 

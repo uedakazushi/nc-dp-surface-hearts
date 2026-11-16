@@ -1,6 +1,6 @@
 # 最大共鳴・零指数壁・coherent収縮
 
-2026-11-17 / hearts-v30。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
+2026-11-17 / hearts-v31。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
 
 ## 最大共鳴の現在の知識
 
@@ -58,6 +58,19 @@ P_k(t)=(1+t)^3/(1-t²)=1+3t+4t²+4t³+...
 内部次数の下有界性なしにはN/gN有限生成からN有限生成は従わない。例えばk[g,g^−1]はgによる商が零だがk[g]上有限生成でない。新証明のNは非負内部次数である。次数0の境界列の左端を零とみなさず、正次数の単射と有限な補正を使う。g進還元の有限性は固定全次数を保つ同次生成元に対して使う。
 
 核の同定から商同値を結論しない。perfect対象だけで特異標的の全coherent対象を尽くさない。sourceのproper性を商へ移さない。Rのorbitの一致は全非perfect対象間のRHomの一致ではない。
+
+## 反標準orbitの同値と残余特異性
+
+`four_hearts_orbit_core.tex` は全qの標準弱gluingに対し
+Tq=thick{s^n e}, Pq=thick{πRq(n)}で Φq|Tq:Tq≃Pq を証明する。
+sourceのorbit Extはeのexceptionality・境界triangle・Serre双対性、targetはRains Corollary3.8を使い、traceは境界H¹(O_E)を通じて比較する。genuineのInd生成は不要。
+Nqはs不変でTqと左右直交なので、Tqは収縮商Qqにも完全忠実に埋め込まれる。
+
+非genuineではQqに無限高次自己Extの対象がある一方、Tqはproper。
+従ってTq⊊Qq、残余Sq=(Qq/Tq)^naturalは非零。
+q=O_EではQq=Db(coh Sbar)、Tq=Perf(Sbar)、Sq=D_sg(Sbar)^natural。
+これは全qでSqが同じだという定理ではない。また残余商の比較だけでDbar_qとDb(qgr Rq)の全同値が従うとも主張しない。
+残るのは非perfect対象とorbitとのgluingを含む、非自明qでの全自然比較。
 
 ## 残課題
 

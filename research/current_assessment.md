@@ -1,6 +1,6 @@
 # 現在の評価と公表準備
 
-2026-11-17 / hearts-v30。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
+2026-11-17 / hearts-v31。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
 
 ## 中心的な価値
 
@@ -17,6 +17,16 @@ genuineな領域では、構造対象と自然反標準関手によるheartの�
 ## 今回追加した局所特異性の検出
 
 主論文に独立したDu Val局所節を追加した。共通部分圏Bbarのperfect商はOrlovのD_sg(Sbar)と同値であり、特異点idealの高次Extは全q、n≥3で4δij。前者は評価射による直交射影、後者はTateの既知の最小自由解消による。独立した新規性の完全確認ではない。次元4の計算からADE型の区別や非自明qの反標準qgr同定は従わない。
+
+## 今回の数学的進展：完全部分圏と残余特異性
+
+`papers/sections/four_hearts_orbit_core.tex` に2定理と1補題を追加した。
+まず自然coherent反標準関手は、弱gluingの全qでも反標準orbit上で完全忠実で、thick closureに制限すればtargetのorbit-perfect coreとdg同値。
+Rains 2022 Corollary 3.8のtarget Extと境界traceの自然性を既知入力とする。
+次に非genuineな場合、orbit-perfect coreは収縮dg商全体を生成せず、残余商は必ず非零。
+q=O_EではこれがPerf(Sbar)とD_sg(Sbar)を回復する。
+結論は非自明qの全Db(qgrR_q)同値ではなく、むしろ不明部分がorbitの外側に残ることを示す。
+本文の証明は追加済みで、全行の独立査読・網羅的新規性確認は未実施。
 
 ## 今残る核心
 

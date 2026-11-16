@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-15",
+  "version": "corner-v1",
+  "points": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      4,
+      2
+    ]
+  ],
+  "potential_matrices": [
+    [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        -2,
+        -2
+      ],
+      [
+        1,
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        -1,
+        2,
+        -4
+      ],
+      [
+        -1,
+        -3,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        -1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ]
+  ],
+  "removed_vertex": "A0",
+  "prime": 1000003,
+  "total_quotient_dimension": 162,
+  "vanishing_starts_in_arrow_degree": 7,
+  "interpretation": "Exact finite corner calculation, not an AS-regularity or full-heart classification test.",
+  "hilbert_function": [
+    8,
+    21,
+    33,
+    38,
+    33,
+    21,
+    8,
+    0
+  ],
+  "degree7_path_columns": 6804,
+  "degree7_blocks": 21,
+  "checked_fields": [
+    "Q",
+    "F_1000003"
+  ],
+  "certificate_sha256": "654a7b6607b2d8984978f844cc3383e6015777626b2eef46195004883550a26b",
+  "verification_script_sha256": "87974d9f52499ed5170b5c916c547b7c2593662aed911950b09c0cbeef52039e"
+}

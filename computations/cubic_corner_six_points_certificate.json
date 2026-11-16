@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-15",
+  "version": "corner-v4/geometric-reconstruction-v1",
+  "universal_integer_polynomial_identities": 6,
+  "geometric_relations": "w1_bc = P_cb, w2_bc = 1",
+  "reconstruction": "P=(entrywise_inverse(Q))^transpose",
+  "rational_cases": 3,
+  "F7_cross_ratio_points": 1296,
+  "F7_general_position_points": 80,
+  "F7_equivalence_11_versus_six_general": true,
+  "scope": "Finite algebra equivalence uses AOU rolled-up helix (4.9) and Serre vanishing; this code checks elementary universal polynomial identities and sample geometry, not AS-regularity of arbitrary potentials."
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-15",
+  "version": "corner-v3",
+  "rank2_matrix": [
+    [
+      "3",
+      "4",
+      "5"
+    ],
+    [
+      "5",
+      "6",
+      "7"
+    ],
+    [
+      "7",
+      "8",
+      "9"
+    ]
+  ],
+  "entrywise_reciprocal_scaled": [
+    [
+      "840",
+      "630",
+      "504"
+    ],
+    [
+      "504",
+      "420",
+      "360"
+    ],
+    [
+      "360",
+      "315",
+      "280"
+    ]
+  ],
+  "rank2_reciprocal_determinant": "1/198450",
+  "scaled_reciprocal_determinant": "80640",
+  "both_matrices_have_nine_nonzero_minors": true,
+  "jacobian_scalar_entries_checked": 27,
+  "surviving_cycle_coefficient": "1",
+  "F7_exhaustive": {
+    "admissible_points": 80,
+    "hilbert_function": [
+      8,
+      21,
+      33,
+      38,
+      33,
+      21,
+      8,
+      0
+    ],
+    "all_C7_zero": true,
+    "scope": "F7 only; not characteristic-zero sufficiency"
+  },
+  "proof_scope": "Eleven conditions necessary; whether they are sufficient in char zero remains open."
+}

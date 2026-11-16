@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-15",
+  "version": "corner-c7-v1",
+  "characteristic": 0,
+  "curve_count": 27,
+  "blowdown_line_classes": 4,
+  "KV_inputs": 13,
+  "KV_BC_min_intersection": 0,
+  "KV_BC_square": 8,
+  "KV_other_min_intersection": 2,
+  "KV_other_square": 25,
+  "path_blocks_degree7": {
+    "A_to_B": 6,
+    "B_to_C": 9,
+    "C_to_A": 6
+  },
+  "conclusion": "Geometric proof yields C7=0, Cn=0 n>=7, dim C6>=8, and sharp cutoff on eleven-condition locus.",
+  "verification_scope": "Exact Picard intersection checks performed; proof of multiplication surjectivity appears in cubic_corner_uniform_cutoff.tex."
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-15",
+  "version": "corner-hilbert-v1",
+  "geometric_hypothesis": "six ordered points in general position over a characteristic-zero algebraically closed field",
+  "full_Hom_dimensions": [
+    8,
+    21,
+    42,
+    74,
+    105,
+    147,
+    206,
+    252
+  ],
+  "through_structure_vertex_dimensions": [
+    0,
+    0,
+    9,
+    36,
+    72,
+    126,
+    198,
+    252
+  ],
+  "corner_hilbert_dimensions": [
+    8,
+    21,
+    33,
+    38,
+    33,
+    21,
+    8,
+    0
+  ],
+  "total_dimension": 162,
+  "exceptional_curves_checked": 27,
+  "four_blowdown_pairs": [
+    {
+      "a": 1,
+      "b": 1,
+      "intersection": 5,
+      "conic_image_curves": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "intersection": 4,
+      "conic_image_curves": [
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "intersection": 4,
+      "conic_image_curves": [
+        "q4",
+        "q5",
+        "q6"
+      ]
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "intersection": 5,
+      "conic_image_curves": [
+        "l12",
+        "l13",
+        "l23",
+        "q4",
+        "q5",
+        "q6"
+      ]
+    }
+  ],
+  "result": "Theoretical argument in papers/sections/cubic_corner_hilbert_series.tex gives constant Hilbert function and rank-162 finite flat family.",
+  "verification_scope": "Exact Picard/RR and bookkeeping checks were executed locally; geometric multiplication surjectivity is proved in the paper, not by this JSON."
+}

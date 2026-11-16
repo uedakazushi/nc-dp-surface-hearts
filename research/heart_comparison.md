@@ -1,6 +1,6 @@
 # 四つのheartの比較：現行研究ノート
 
-2026-11-16 / hearts-v25（数学本文）・hearts-strategy-v3（現行方針）。最初に `00_research_plan.md` と `research/current_assessment.md` を読む。現行原稿は `papers/nc_del_pezzo_hearts.tex` と依存section、検証状態は `research/four_hearts_validation.json`。証明が本文にある事項は所在と入力を示し、全文を重複させない。GitHub mainが正本で、保存成功時にはLibraryへ別途アップロードしない。
+2026-11-16 / hearts-v26（数学本文）・hearts-strategy-v4（現行方針）。最初に `00_research_plan.md` と `research/current_assessment.md` を読む。現行原稿は `papers/nc_del_pezzo_hearts.tex` と依存section、検証状態は `research/four_hearts_validation.json`。証明が本文にある事項は所在と入力を示し、全文を重複させない。GitHub mainが正本で、保存成功時にはLibraryへ別途アップロードしない。
 
 ## 現在の中心結果と再開点
 
@@ -11,6 +11,10 @@
 AS入力は `prop:cubic-helix-input` でAOU Lemma 7.4とOkawa–Ueda (2020) Theorem 5により確認する。後者のacyclic exceptional helixとOU (2025)のvery strongの定義が一致する。
 
 E6例の普遍有限商は970次元であり、basicなΠ(E6)の156次元、頂点除去cornerの162次元と区別する。計算にはEtingof–Rains (math/0503393v3) §1 (1)の既知matrix Hilbert公式を使う。
+
+`four_hearts_finite_representation_geometry.tex` では、整列六整数の次元公式(Σn_i)^2+Σ_{i=1}^3(n_{7−i}−n_i)^2と、Frobenius条件n1+n6=n2+n5=n3+n4を得る。970次元例は自己入射的だがFrobeniusでなく、半単純商は62次元、右socleは52次元である。
+
+固定曲面の古典的Rep_nは普遍商とスキームとして一致する。非被約構造は全Artin冪商とKrullの定理で検出し、閉点だけから推論しない。stackはΣm_i d_i=nのpreprojective表現stackの和。曲面族のheart降下や導来変形の同値ではない。
 
 ## 規約と確実性の区別
 

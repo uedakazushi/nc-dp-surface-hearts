@@ -1,0 +1,159 @@
+\section{普遍商の次元・Frobenius判定と表現スキーム}\label{sec:finite-rep-geometry}
+本節では曲面とその指定比較を固定し，前節の普遍商を$D=A/I$と書く．
+用いるMorita理論，Dynkin preprojectiveの自己入射性・Nakayama置換，
+および表現スキームの一般論は既知の入力である．
+目的は，幾何から指定された重複度$m_i$がその具体的な帰結をどう決めるかを示すことである．
+
+\subsection{整数倍六点の次元公式}
+\begin{corollary}[整列した六整数による普遍商の次元]\label{cor:E6-dimension-formula}
+定理\ref{thm:sorted-spectrum}で$r=6$とし，整列した正整数を
+$n_1<\cdots<n_6$とする．このとき
+\[
+ \boxed{\dim_kD=
+ \left(\sum_{i=1}^6n_i\right)^2
+ +(n_6-n_1)^2+(n_5-n_2)^2+(n_4-n_3)^2.}
+\]
+この数は入力六点の順序に依存しない．
+\end{corollary}
+\begin{proof}
+標的の単純の重複度は
+$m=(n_1+n_2+n_3,n_2-n_1,n_3-n_2,n_4-n_3,n_5-n_4,n_6-n_5)^{\mathsf t}$である．
+系\ref{cor:E6-970}の$C_\Pi$はこの標準単純根系のCartan行列なので，
+$\dim D=m^{\mathsf t}C_\Pi m$へ代入して整理すると表示式を得る．
+異なる順序も同じ整列した六整数を与えるため，最後の主張が従う．
+\end{proof}
+例えば$(1,2,3,5,7,11)$では$29^2+10^2+5^2+2^2=970$である．
+これは既知matrix Hilbert公式の具体的帰結であり，その公式自体を新しく証明しているのではない．
+
+\subsection{自己入射性とFrobenius性の違い}
+Dynkin preprojective代数$\Lambda=\Pi(\Gamma)$は自己入射的である．
+そのNakayama置換を，右projective coverに対して
+$\operatorname{soc}P_i=L_{\nu(i)}$となる規約で書く．
+既知の置換は\cite[\S3A]{AiharaMizuno}に記されている．
+各成分で$\nu^2=1$であり，$E_6$では前節の標識で
+\[
+ \nu=(1\ 5)(2\ 4),\qquad \nu(0)=0,\quad\nu(3)=3.
+\]
+
+\begin{proposition}[忘却関手の重複度によるFrobenius判定]\label{prop:quotient-Frobenius}
+$\Gamma$が空でないとする．普遍商$D$は自己入射的であり，
+\[
+ D\text{ がFrobenius}\quad\Longleftrightarrow\quad
+ m_i=m_{\nu(i)}\quad(\text{全ての }i).
+\]
+また
+\[
+ D/\operatorname{rad}D\simeq\prod_i\operatorname{Mat}_{m_i}(k),\qquad
+ \dim_k\operatorname{soc}(D_D)=\sum_i m_im_{\nu(i)}.
+\]
+\end{proposition}
+\begin{proof}
+$P=\bigoplus P_i^{m_i}$はprogeneratorなので，
+$\Hom_\Lambda(P,-)$は右$\Lambda$加群から右$D$加群へのMorita同値である．
+自己入射性はこの同値で保存される．頂点単純$L_i$の像を$V_i$，
+$P_i$の像を$Q_i$と書くと，$\dim_kV_i=m_i$かつ
+\[
+ D_D=\bigoplus_iQ_i^{m_i},\qquad
+ \operatorname{top}Q_i=V_i,\qquad
+ \operatorname{soc}Q_i=V_{\nu(i)}.
+\]
+半単純商の表示とsocleの次元はこの分解から従う．
+$Q_i$は$V_{\nu(i)}$のinjective hullでもあるから，
+\[
+ D^*_D\simeq\bigoplus_iQ_i^{m_{\nu(i)}}.
+\]
+有限次元代数がFrobeniusであることは$D_D\simeq D^*_D$と同値である．
+この特徴づけについては\cite[\S2.2]{EtingofRains}も参照されたい．
+Krull--Schmidtの一意性が表示した重複度の条件を与える．
+\end{proof}
+この一般判定は既知のFrobenius加群論の帰結である．
+Frobenius性をMorita同値だけで移すことはできない点が，本研究の非basicな商で重要となる．
+
+\begin{corollary}[六点の対称和と非Frobeniusな970次元商]\label{cor:E6-non-Frobenius}
+系\ref{cor:E6-dimension-formula}の商は
+\[
+ D\text{ がFrobenius}\quad\Longleftrightarrow\quad
+ n_1+n_6=n_2+n_5=n_3+n_4.
+\]
+特に$(1,2,3,5,7,11)$の970次元商は自己入射的だがFrobeniusではない．
+この例では$\dim D/\operatorname{rad}D=62$，$\dim\operatorname{soc}(D_D)=52$である．
+\end{corollary}
+\begin{proof}
+前命題の条件は$m_1=m_5$と$m_2=m_4$であり，
+それぞれ$n_1+n_6=n_2+n_5$，$n_2+n_5=n_3+n_4$に等しい．
+例では$m=(6,1,1,2,2,4)$なので$\sum m_i^2=62$，
+$\sum m_im_{\nu(i)}=52$となる．
+\end{proof}
+対照的に$(n_1,\ldots,n_6)=(1,2,3,4,5,6)$では三つの対称和が全て7であり，
+その普遍商は476次元のFrobenius代数となる．
+
+\subsection{非被約基底を含む古典的な表現族}
+$\operatorname{Rep}_n(A)$は，固定した$n$次元空間上の右$A$作用を表す古典的アフィンスキームとする．
+右作用は$A^{\rm op}$から行列環への準同型として記述する．
+
+\begin{lemma}[全有限次元表現のkernelと表現スキーム]\label{lem:universal-rep-scheme}
+$A$を有限生成$k$代数，$k$を代数閉体，$I\subset A$を
+全有限次元右$A$加群を消す両側イデアルとする．任意の$n\ge1$で
+\[
+ \operatorname{Rep}_n(A/I)\longrightarrow\operatorname{Rep}_n(A)
+\]
+は$\operatorname{GL}_n$同変なスキーム同型である．
+\end{lemma}
+\begin{proof}
+有限個の生成元に$n\times n$行列を割り当てて関係を課すと，
+$\operatorname{Rep}_n(A)$の座標環$C$は有限型可換$k$代数となる．
+関係式の集合が無限であっても，有限個の行列変数の多項式環がnoetherianなのでこの結論は変わらない．
+普遍右作用を$\rho:A^{\rm op}\to\operatorname{Mat}_n(C)$と書く．
+任意の極大イデアル$\mathfrak m\subset C$と$r\ge1$について，
+$C/\mathfrak m^r$は$k$上有限次元である
+（Nullstellensatzとnoetherian性，\cite[Tag 00FV]{Stacks}）．
+従って$(C/\mathfrak m^r)^n$を$k$ベクトル空間として見た有限次元$A$加群は$I$で消える．
+任意の$a\in I$に対し，$\rho(a)$の全成分は全ての$\mathfrak m^r$に入る．
+各極大点で局所化しKrullの共通部分定理\cite[Tag 00IP]{Stacks}を使うと，
+各成分は全ての$C_{\mathfrak m}$で零であり，従って$C$で零である．
+ゆえに普遍作用自体が$A/I$を経由する．これが逆のスキーム射を与え，
+基底変換にも自然なので$\operatorname{GL}_n$同変である．
+\end{proof}
+閉点だけでなく全ての$r$を用いることが肝心である．
+閉点での一致だけでは非被約構造を同定したことにならない．
+
+\begin{theorem}[固定曲面の有限次元表現stack]\label{thm:finite-rep-stack}
+系\ref{cor:ADE-affine-quotient}の設定では，任意の$n\ge1$に対して
+\[
+ \operatorname{Rep}_n(A)\simeq\operatorname{Rep}_n(D),
+\]
+\[
+ [\operatorname{Rep}_n(A)/\operatorname{GL}_n]
+ \simeq
+ \coprod_{\substack{\mathbf d\in\mathbb N^{\Gamma_0}\\
+                    \sum_i m_id_i=n}}
+ [\operatorname{Rep}_{\mathbf d}(\Pi(\Gamma))/
+                \prod_i\operatorname{GL}_{d_i}].
+\]
+この同値は非被約基底を含む古典的な有限局所自由表現族について成り立つ．
+$\Gamma$が空の場合，$n\ge1$の両辺は空である．
+\end{theorem}
+\begin{proof}
+本研究の$R$は連結局所有限な非負次数付き右noetherian環である．
+右イデアル$R_{\ge1}$の有限個の同次生成元を取り，次数で帰納すれば，
+それらは$R$を$k$代数として生成する．従って$A=R/(g-1)$は有限生成であり，前補題を適用できる．
+次に$P$のMorita bimoduleを任意の可換基底へtensorし，同値を得る．
+頂点冪等元による部分加群はベクトル束の直和因子なので，その階数$d_i$は局所定数である．
+各単純への忘却次元が$m_i$であるため，対応する$D$加群の階数は$\sum_i m_id_i$となる．
+各基底での同値とその同型射はpullbackと両立し，表示したstack同値を与える．
+\end{proof}
+
+\begin{remark}[古典的表現族と導来変形の境界]\label{rem:classical-not-derived}
+この定理は曲面のパラメータを固定している．曲面の族での根圏やheartの降下を証明していない．
+また導来表現stackの同値も主張しない．実際，$\Gamma\ne\varnothing$なら，
+右正則$D$加群を標的heartの対象$W$として見ると
+\[
+ \Ext^2_{\operatorname{mod}D}(D,D)=0,
+ \qquad
+ \Hom_{\cD_{\cZ}}(W,W[2])\simeq\End_D(D)^*\ne0.
+\]
+後者はambientの2-Calabi--Yau双対性による．
+特に970次元例の後者の空間は970次元である．
+従ってこのabel同定のrealizationはambient圏への完全忠実同値ではない．
+有限次元表現の古典的族を全て記述できることと，その導来変形理論を同定することは異なる．
+\end{remark}

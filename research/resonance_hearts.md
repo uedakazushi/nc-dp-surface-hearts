@@ -18,6 +18,8 @@
 
 元の楕円生成元のcharacter・cocycle・kernelの係数表示は、上の構造同定を優先した後で必要なA2/E6例について行う。character分離と非分裂性を未解決に戻さない。162次元のcorner B/BeBとAの根表現を支配する有限商は区別する。
 
+主論文の `four_hearts_finite_representation_geometry.tex` は固定したAの古典的表現stackを非被約基底も含めて普遍商へ還元する。これはambientの導来変形や曲面族のheart降下を同定した結果ではない。
+
 ## 2. 規約と符号別Ext
 
 θ=S[-2]、τ=θ^−1、境界triangle θM→M→i_*Li^*M、構造line bundle e、R=⊕Hom(e,τ^n e)、中心正則g∈R1、A=(R[g^−1])0=R/(g−1)を使う。qの向きは `Li^*M=0 ⇒ O_E(alpha)⊗q^m=O_E`、m=chi(e,M)、従ってrho(alpha)=q^(−m)。数値的共鳴だけからsheaf存在を補わず、Rainsのsimple-root effectivity/既約sheaf存在を入力とする。

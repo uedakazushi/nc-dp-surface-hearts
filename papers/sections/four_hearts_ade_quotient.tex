@@ -18,7 +18,10 @@ $A_1$成分の代数は$k$とする．同値は$S_i$を頂点単純へ送る．
 \end{lemma}
 \begin{proof}
 半単純環$k^{\Gamma_0}$上で単位と冪等元を保つminimal $A_\infty$模型を取る．
-標数0のADE形式性により，これは高次積が零のzigzag模型へ移せる．
+ここでは$k^{\Gamma_0}$はseparableであり，transferとHochschild cochainの正規化を
+この半単純環に相対的に取れる．正規化cochainは通常のcochainと同じHochschild cohomologyを計算するので，
+\cite[Theorem 4.2, \S4.4]{LiuWangZigzag}の消滅による形式性の議論も相対模型で働く．
+従って頂点冪等元を保ったまま，高次積が零のzigzag模型へ移せる．
 孤立$A_1$では正次数入力の高次積は出力次数が2を超えるため零である．
 成分間の全Extは零なので，この操作は連結成分ごとに行える．
 
@@ -44,6 +47,12 @@ Dynkin $\Pi(\Gamma)$は有限次元で，矢イデアルは冪零である．
 $f_jX_{ij}=X'_{ij}f_i$である．負次数の射は存在しないため，
 次数0の射をさらにhomotopyで割る必要はない．
 従ってHomも通常のintertwinerと一致し，得られる同値はabel同値である．
+選んだ組成列は上三角表示を作るためだけに使う．射にfiltration保存を要求しないため，
+組成列の選択を忘れた元のheartのHomを回復している．
+また形式性を実現する$A_\infty$準同型をtwisted objectへ施す際の和は，
+上三角の$\delta$を有限回以上合成すると零になるため，各対象上で有限和となる．
+従って形式変形だけの同定から任意の非冪零行列へ延長しているのではなく，
+有限拡大を全て扱う実際の圏同値である．
 \end{proof}
 
 \begin{theorem}[二つの境界外heartのabel模型]\label{thm:ADE-abelian}
@@ -97,6 +106,8 @@ flat，従ってprojectiveである．その$\Lambda$双対から
 $UE\simeq\Hom_\Lambda(P,-)$というprojective表現を得る．
 単純に適用すれば各直既約projectiveの重複度はちょうど$m_i$である．
 全$m_i$は正なので$P$，従って$G$はそれぞれの有限次元加群圏のprojective generatorである．
+ここでのprojectivityは有限次元加群のabel圏内でのものであり，
+全$A$加群の圏やambient三角圏でprojectiveであるとは主張しない．
 
 任意の有限次元$A$加群$M$は$G$の有限直和の商だから，$I$は全$M$を消す．
 逆包含は$M=G$から従う．$B=A/I$は有限次元ベクトル空間$G$上の作用像なので有限次元で，

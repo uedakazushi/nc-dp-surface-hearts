@@ -1,6 +1,6 @@
 # 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-16 / hearts-strategy-v3。Rains・Van den Bergh・Artin–Schelter・反標準heartを、指定された構造対象と自然関手を保って比較する研究。GitHub mainが正本。
+2026-11-16 / hearts-strategy-v4。Rains・Van den Bergh・Artin–Schelter・反標準heartを、指定された構造対象と自然関手を保って比較する研究。GitHub mainが正本。
 
 **最初に [研究方針](00_research_plan.md) を読む。** [現状評価・優先順位・一次資料と検証範囲](research/current_assessment.md) に今回の調査をまとめた。
 
@@ -14,7 +14,7 @@
 - [Rains共鳴](papers/nc_del_pezzo_resonance_hearts.tex)：符号別Ext、混合A2、最大共鳴、四次元アフィン商。
 - [Cubic corner](papers/cubic_heart_corner.tex)：四交比、十一条件、六点一般位置、Hilbert関数、有限平坦162次元族と古典根壁。
 
-主論文は反標準heartの認識・Euler選択・ADE有限商・単根例を集約する。共鳴稿とcorner稿は有効な証明を保持した補助原稿として扱い、3本の独立した完成論文とは数えない。
+主論文は反標準heartの認識・Euler選択・ADE有限商・単根例を集約する。普遍商の一般次元公式とFrobenius判定、非被約基底を含む固定曲面の古典的表現stackも記述する。共鳴稿とcorner稿は有効な証明を保持した補助原稿として扱い、3本の独立した完成論文とは数えない。
 
 [比較ノート](research/heart_comparison.md) / [共鳴ノート](research/resonance_hearts.md) / [cornerノート](research/cubic_corner.md) / [実施方針](research/four_hearts_plan.md) / [Codex指示](AGENTS.md)
 

@@ -76,6 +76,28 @@ def main():
     assert sum(c6) == 156
     m6 = sp.Matrix([6, 1, 1, 2, 2, 4])
     assert (m6.T*c6*m6)[0] == 970
+    nakayama = [0, 5, 4, 3, 2, 1]
+    perm = sp.zeros(6)
+    for i, j in enumerate(nakayama):
+        perm[i, j] = 1
+    assert hh[10] == perm
+    assert (m6.T*m6)[0] == 62
+    assert (m6.T*perm*m6)[0] == 52
+    assert [int((m6.T*h*m6)[0]) for h in hh] == [
+        62, 54, 73, 120, 125, 102, 135, 126, 73, 48, 52, 0]
+    nn = sp.symbols('n1:7')
+    mm = sp.Matrix([sum(nn[:3])] + [nn[i+1]-nn[i] for i in range(5)])
+    dimension_formula = sum(nn)**2 + sum((nn[5-i]-nn[i])**2 for i in range(3))
+    assert sp.expand((mm.T*c6*mm)[0] - dimension_formula) == 0
+    frobenius_constraints = [mm[1]-mm[5], mm[2]-mm[4]]
+    paired_sums = [nn[0]+nn[5]-nn[1]-nn[4],
+                   nn[1]+nn[4]-nn[2]-nn[3]]
+    assert all(sp.expand(a+b) == 0
+               for a, b in zip(frobenius_constraints, paired_sums))
+    # Symmetric six-point sums give a positive example of the criterion.
+    symmetric_m = mm.subs(dict(zip(nn, range(1, 7))))
+    assert perm*symmetric_m == symmetric_m
+    assert (symmetric_m.T*c6*symmetric_m)[0] == 476
 
     # Coordinates in the independent generators (q,x,y,z,w,v) of E.
     pp = [sp.Matrix(a) for a in [
@@ -106,6 +128,11 @@ def main():
                   weighted_A3_quotient_dimension=40, E6_roots=len(roots),
                   E6_cartan=c6.tolist(), E6_basic_dimension=156,
                   weighted_E6_quotient_dimension=970,
+                  E6_nakayama=nakayama, E6_semisimple_quotient_dimension=62,
+                  E6_right_socle_dimension=52, E6_example_is_Frobenius=False,
+                  symmetric_six_point_quotient_dimension=476,
+                  symmetric_six_point_is_Frobenius=True,
+                  symbolic_sorted_six_point_dimension_formula=str(dimension_formula),
                   isolated_resonant_roots=resonant, nonzero_theta_arguments=27,
                   scope="Exact finite checks only; categorical proofs are in the paper.")
     dest = Path('build/ade_quotient_checks.json')

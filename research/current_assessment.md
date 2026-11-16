@@ -1,6 +1,6 @@
 # 現状評価：反標準heartの認識と次の構造定理
 
-2026-11-16（日本時間）/ hearts-assessment-v2。今回の開始時点は [mainの基準commit fb73f71](https://github.com/uedakazushi/nc-dp-surface-hearts/tree/fb73f71f0f7b8508dfcbaa93b6b66207d5ced47a)。現行主稿はhearts-v25。本書は現在の研究判断・確認範囲を記す。方針は [00_research_plan.md](../00_research_plan.md) を優先し、作業履歴は蓄積しない。
+2026-11-16（日本時間）/ hearts-assessment-v3。今回の開始時点は [mainの基準commit 1196af1](https://github.com/uedakazushi/nc-dp-surface-hearts/tree/1196af16f9771850a0ad9bd86bcc40c9fcd0fbc9)。現行主稿はhearts-v26。本書は現在の研究判断・確認範囲を記す。方針は [00_research_plan.md](../00_research_plan.md) を優先し、作業履歴は蓄積しない。
 
 ## 総合判断
 
@@ -119,6 +119,20 @@
 
 三次曲面型の指定AS入力は `prop:cubic-helix-input` で照合した。AOU Lemma 7.4と直後のAS構成、Okawa–Ueda (2020) Definition 4/Theorem 5、同稿(18)–(22)を使う。acyclic exceptional helixの定義がOU (2025)のvery strongと一致し、同じdirected dg圏とSerre作用を使うため、特殊共鳴例へ一般tupleの半連続性を自動適用する必要はない。適用範囲は指定sheaf-normalized三次曲面構成であり、任意potentialへの主張ではない。
 
+### 普遍商から得る具体的帰結と今回の証明点検
+
+新節 `four_hearts_finite_representation_geometry.tex` は一般の整数倍六点の次元公式、Frobenius判定、固定曲面の古典的表現スキーム・stackを扱う。
+
+整列整数をn1<…<n6とするとdim(A/I)=(Σn_i)^2+(n6−n1)^2+(n5−n2)^2+(n4−n3)^2。C_ΠへのEuler次元の代入による厳密な多項式恒等式であり、既知Hilbert公式の具体的帰結である。
+
+Dynkin preprojectiveの既知自己入射性とNakayama置換を使うと、実際の非basicな商は自己入射的で、Frobenius性はm_i=m_ν(i)と同値となる。一般のFrobenius判定は既知加群論の帰結として証明を記載した。E6ではn1+n6=n2+n5=n3+n4が条件である。(1,2,3,5,7,11)の970次元商は半単純商62次元、右socle52次元で非Frobeniusである。対照的に(1,2,3,4,5,6)は476次元のFrobenius商を与える。自己入射性からFrobenius性を推論していない。
+
+全有限次元加群を消すIは、任意の有限次元可換Artin基底上の表現も消す。有限生成AのRep_nの普遍座標環は有限型なので、極大イデアルの全冪による商を検査しKrullの共通部分定理を使うと、Rep_n(A)=Rep_n(A/I)がスキームとして従う。閉点だけの一致より強く、非被約構造も含む。Morita bimoduleの底変更により、固定した曲面の有限階数表現stackはΣm_i d_i=nのpreprojective表現stackの有限直和である。
+
+これは曲面の楕円パラメータを動かすheart降下を解いたものではない。またD=A/Iの正則加群は内部Ext²(D,D)=0だが、ambientではExt²(D,D)=End(D)^*なので、導来変形は同一視しない。
+
+前節の既存証明の再点検では、頂点環のseparabilityによる相対Hochschild正規化、上三角twisted objectにおける有限和、射へfiltration保存を課さないことを補った。忘却関手のprojectivityは有限次元abel圏内のもので、全A加群上のprojectivityを仮定しないことも明示した。指定三次曲面のAS入力はAOU/OUの既存照合を維持している。外部独立査読ではない。
+
 ## 4. 一次文献の確認と新規性の境界
 
 以下は今回関連箇所を確認した一次資料である。原稿の全参考文献・全証明を網羅した一覧ではない。
@@ -133,6 +147,8 @@
 | [de Thanhoffer de Völcsey–Van den Bergh, Some new examples of non-degenerate quiver potentials](https://arxiv.org/pdf/1005.0808v3) | §3冒頭、Theorem 4.2.1 | 可換geometric helixの良い点でのcorner有限性は一般論で説明できる。十一因子・具体的族・heartへの接続に寄与を集中する。 |
 | [Okawa–Ueda, AS-regular algebras from acyclic spherical helices](https://arxiv.org/html/2007.07620v1) | Definitions 3,4、Theorem 5、(18)–(22) | admissible decupleのAS構成からfull very strong周期helixとrolled-up環へ進む入力。2025稿の一般性だけに依存しない。 |
 | [Keller, Introduction to A-infinity algebras and modules](https://arxiv.org/abs/math/9910179) | §§6.5,7.5,7.7と証明 | 無shift有限拡大閉包の復元。heartの内在的高次Extをambientと同一視しない。 |
+| [Aihara–Mizuno, Classifying tilting complexes over preprojective algebras of Dynkin type](https://doi.org/10.2140/ant.2017.11.1287) | §3A（pp.1296–1297） | 自己入射性とE6のNakayama置換の既知入力。tilting分類自体は本研究の新規性に含めない。 |
+| [The Stacks Project](https://stacks.math.columbia.edu/tag/00IP) | Tags 00FV, 00IP | 有限型座標環のArtin冪商とKrullの共通部分定理による非被約表現族の検出。 |
 | [Mizuno, Classifying τ-tilting modules over preprojective algebras of Dynkin type](https://arxiv.org/pdf/1304.0667v3) | Theorems 2.21, 2.30, 3.8, 4.1 | Dynkin preprojectiveのtorsion classesとWeyl群の分類は既知入力。 |
 | [Liu–Wang, A∞-deformations of zigzag algebras via Ginzburg dg algebras](https://arxiv.org/pdf/2301.06757v3) | Theorem 1.1、§3、Proposition 4.4 | 標数0のADE形式性とKoszul双対は既知。Etgü–Lekili、Lekili–Uedaの先行結果の帰属を保持する。 |
 | [Bousseau, Geometric helices on del Pezzo surfaces from tilting](https://arxiv.org/html/2603.22065v2) | Theorem 1.1、Corollary 1.2、Theorem 5.20 | 可換del Pezzoのgeometric helicesと完成反標準錐のNCCR mutationに既存結果がある。ncの指定heart比較と対象を区別する。v2に固定する。 |
@@ -150,9 +166,9 @@ Rainsの2019稿と2025稿の関連番号は、Lemma 4.9→Lemma 11.10、Proposit
 ## 6. 今回の再現確認
 
 - `bash scripts/check.sh fast` が成功し、その後 `bash scripts/check.sh all` で全20本が終了コード0。
-- 新しい `verify_ade_quotient.py` はA2/A3の道代数の全同次関係空間を有理数で計算し、Hilbert係数(2,2)と(3,4,3)、A3のCartan行列、重複度(1,2,3)の商の次元40を確認する。中央頂点で非零往復行列が相殺する例も検査する。E6の72根から単根例の±α0だけが共鳴することと27theta引数の非零性も厳密整数計算で確認する。
+- 新しい `verify_ade_quotient.py` はA2/A3の道代数の全同次関係空間を有理数で計算し、Hilbert係数(2,2)と(3,4,3)、A3のCartan行列、重複度(1,2,3)の商の次元40を確認する。中央頂点で非零往復行列が相殺する例も検査する。E6の72根から単根例の±α0だけが共鳴することと27theta引数の非零性も厳密整数計算で確認する。今回、整列六点の一般次元公式と対称和によるFrobenius判定を記号計算で確認し、970次元例の62/52と476次元の対照例も検算した。
 - これらの計算は一般の形式性、sheaf存在、導来同値、複素非torsion性や新規性の証明を代替しない。単根例の独立性は本文の多重二次体の証明による。
 - LuaLaTeXの不足部品を作業領域内へ展開し、LuaLaTeX formatを生成した。Debian TeX Live 2024.20250309と整合するLuaTeX/LuaTeX-jaを使い、3主原稿を全文組版した。再現用の `scripts/cloud_tex_user.sh` も実行して成功した。PDF・ログ・キャッシュはGitへ追跡しない。再生成可能なPDFはbuild/に置く。
-- input/include、label/ref/eqref、bibitem/citeと最終組版ログを点検する。主稿52ページ、共鳴補助稿24ページ、corner補助稿17ページ。未定義参照・引用・欠落glyph・overfull/underfull boxを最終ログで検出しなかった。現在の機械可読な検証記録は `publication_validation.json` を参照する。主稿の表紙、ADE商の論証、単根例のページ画像を目視した。全93ページを目視確認したとは報告しない。
+- input/include、label/ref/eqref、bibitem/citeと最終組版ログを点検する。主稿56ページ。共鳴補助稿24ページ、corner補助稿17ページ。未定義参照・引用・欠落glyph・overfull/underfull boxを最終ログで検出しなかった。現在の機械可読な検証記録は `publication_validation.json` を参照する。主稿の表紙、ADE商の論証、単根例と、現行v26のFrobenius・表現スキームの48–49ページ画像を目視した。全ページを目視確認したとは報告しない。
 
 生成、証明の自己点検、有限計算、全文組版、Git commit/push、remote SHA照合は別々の操作であり、外部独立査読は実施していない。

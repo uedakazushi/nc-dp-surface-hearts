@@ -1,7 +1,7 @@
 {
   "date_JST": "2026-11-16",
-  "version": "hearts-v25 / resonance-hearts-v9 / corner-v8",
-  "base_commit": "fb73f71f0f7b8508dfcbaa93b6b66207d5ced47a",
+  "version": "hearts-v26 / resonance-hearts-v9 / corner-v8",
+  "base_commit": "1196af16f9771850a0ad9bd86bcc40c9fcd0fbc9",
   "proof_status": "Proofs written and internally audited; no independent peer review or formal verification.",
   "new_proof_chain": [
     "prop:cubic-helix-input",
@@ -11,13 +11,21 @@
     "cor:ADE-affine-quotient",
     "cor:E6-970",
     "prop:single-root-complete",
-    "cor:single-root-AS"
+    "cor:single-root-AS",
+    "cor:E6-dimension-formula",
+    "prop:quotient-Frobenius",
+    "cor:E6-non-Frobenius",
+    "lem:universal-rep-scheme",
+    "thm:finite-rep-stack",
+    "rem:classical-not-derived"
   ],
   "primary_inputs": {
     "formality": "Liu-Wang 2301.06757v3 Theorem 1.1; prior attribution to Etgu-Lekili and Lekili-Ueda retained",
     "extension_closure": "Keller math/9910179, Sections 6.5,7.5,7.7",
     "special_cubic_helix": "AOU 2404.00175v1 Lemma 7.4 and following construction; OU 2007.07620v1 Definition 4, Theorem 5, (18)-(22)",
-    "E6_matrix_Hilbert": "Etingof-Rains math/0503393v3 Section 1 (1), a known formula, not claimed new"
+    "E6_matrix_Hilbert": "Etingof-Rains math/0503393v3 Section 1 (1), a known formula, not claimed new",
+    "selfinjectivity_and_Nakayama": "Aihara-Mizuno, Algebra Number Theory 11 (2017), Section 3A; known Dynkin input",
+    "scheme_theoretic_detection": "Stacks Project Tags 00FV and 00IP; universal matrix entries vanish in every Artin jet quotient"
   },
   "verification": {
     "setup": "bash scripts/cloud_setup.sh: PASS with user-local TeX",
@@ -110,6 +118,20 @@
       ],
       "E6_basic_dimension": 156,
       "weighted_E6_quotient_dimension": 970,
+      "E6_nakayama": [
+        0,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "E6_semisimple_quotient_dimension": 62,
+      "E6_right_socle_dimension": 52,
+      "E6_example_is_Frobenius": false,
+      "symmetric_six_point_quotient_dimension": 476,
+      "symmetric_six_point_is_Frobenius": true,
+      "symbolic_sorted_six_point_dimension_formula": "(-n1 + n6)**2 + (-n2 + n5)**2 + (-n3 + n4)**2 + (n1 + n2 + n3 + n4 + n5 + n6)**2",
       "isolated_resonant_roots": [
         [
           -1,
@@ -139,10 +161,18 @@
       "nonzero_theta_arguments": 27,
       "scope": "Exact finite checks only; categorical proofs are in the paper."
     },
-    "visually_inspected": "Selected title, ADE proof, isolated-root and companion title pages; not all pages.",
+    "visually_inspected": "Selected earlier title/ADE/isolated-root pages; final v26 Frobenius and representation-scheme pages 48-49. Not all pages.",
     "harmless_typesetting_notices": [
       "Legacy mathematical font command rm",
       "Japanese font scaling and unavailable italic shape uses upright Japanese font"
+    ],
+    "proof_audit": [
+      "Relative normalization over separable vertex ring and finite evaluation on triangular twisted objects",
+      "Projectivity used in finite-dimensional abelian categories only",
+      "Nonbasic Frobenius criterion proved by multiplicities in right regular and dual modules",
+      "All Artin jet orders used for universal representation kernel; not just closed points",
+      "Morita base change applies to fixed-curve finite locally free representation families",
+      "Ambient Ext2 of regular finite quotient is nonzero while intrinsic Ext2 vanishes; no derived equivalence claimed"
     ]
   },
   "manuscripts": {
@@ -156,19 +186,42 @@
       "overfull_underfull": false,
       "missing_glyphs": false,
       "pdf_sha256": "475478aebb2f31d308f237c3a8151905659601715222c5215c489203720a63cb",
-      "source_sha256": "4c865ce23494d43122e07bf8c0f4b8d8bd441b4bcde40de0f9d748e154f92ab8"
+      "source_sha256": "4c865ce23494d43122e07bf8c0f4b8d8bd441b4bcde40de0f9d748e154f92ab8",
+      "input_sha256": {
+        "papers/cubic_heart_corner.tex": "4c865ce23494d43122e07bf8c0f4b8d8bd441b4bcde40de0f9d748e154f92ab8",
+        "papers/sections/cubic_corner_determinantal_obstructions.tex": "edea843f82b1868985b78cae5ec5223888316203fe072557ae6c9a147c9e4694",
+        "papers/sections/cubic_corner_hilbert_series.tex": "7f58a58b32923ce7d5b7a2c61dc221e79bd1a82f900b41730690bd34f8df9829",
+        "papers/sections/cubic_corner_root_walls.tex": "a608523165ea1ab7c628134851be5e0f0bb20e757c8ff80794a772c316b83c64",
+        "papers/sections/cubic_corner_six_points.tex": "fc9fe36f4d27924b5519802374dfae8c9029cf1d2cd4225eae65dcbde7e03f29",
+        "papers/sections/cubic_corner_uniform_cutoff.tex": "cf9e072792b98c74bd39e296e7b1ebeda4f7c50f60f8ecc01e32a7aed3cc6251"
+      }
     },
     "papers/nc_del_pezzo_hearts.tex": {
-      "pages": 52,
-      "input_files": 12,
-      "labels": 131,
-      "bibliography_entries": 22,
+      "pages": 56,
+      "input_files": 13,
+      "labels": 138,
+      "bibliography_entries": 24,
       "missing_references": [],
       "missing_citations": [],
       "overfull_underfull": false,
       "missing_glyphs": false,
-      "pdf_sha256": "edcfdd8812b93f8bfbadb6eb5037f085a0070d2dab1facd98d6ec0c93e96fb1e",
-      "source_sha256": "939c1cb12d3c34de70904385eb927cbadada8905777f551451ad61d1413e85a8"
+      "pdf_sha256": "bd095b840b1d81e21d91c404c0d54e7dae950d75c1d38fdf0d79d75308533f6c",
+      "source_sha256": "6be0d55c1f89a26017717602d0e39646ddaa992a5cc8a9e1e806b7f928898264",
+      "input_sha256": {
+        "papers/nc_del_pezzo_hearts.tex": "6be0d55c1f89a26017717602d0e39646ddaa992a5cc8a9e1e806b7f928898264",
+        "papers/sections/four_hearts_ade_quotient.tex": "3ea59f8d5ef441821251f01584df71843994d0b5598bbee8b54f65d527de926d",
+        "papers/sections/four_hearts_as.tex": "4e9b4df1d4c26b13406523d6c9dd421b62ac0ff0bf6f6edf1a57206892287ce3",
+        "papers/sections/four_hearts_boundary_data.tex": "36aee8ccda015a9b273b4978820c354d98229f7f1a64730ac0be13a6f1713615",
+        "papers/sections/four_hearts_canonical_comparison.tex": "421836160ca4115853d59baf4d3ff3a8991ef352336fc9294863515b6491591a",
+        "papers/sections/four_hearts_corner_locus.tex": "f2aa19766c9f1de5e77ac9d227088e45e30d254736f8cc1aa28187772889ff0b",
+        "papers/sections/four_hearts_elliptic_coefficients.tex": "9837e755f6f7c5bb8da51bf8be471e67b996fd6eb263e8258250b4c3acc29f63",
+        "papers/sections/four_hearts_examples.tex": "46cd2eef833d310a14c93f8e339c75ba4032a917f69c791b92b89278818054bc",
+        "papers/sections/four_hearts_finite_representation_geometry.tex": "2a4fb201493af6f2ae999fe299c34fed392a76a42910d5d05caede687b78f78d",
+        "papers/sections/four_hearts_foundations.tex": "f3fc303a1f93bf987528663341fcc2fb03ecf3bfadaed0803ae97cf90b7bde85",
+        "papers/sections/four_hearts_geometric.tex": "162db3b23d222812e5459f8fe3f97a13ec5d025a09f4ec75cc165da4e0324be1",
+        "papers/sections/four_hearts_root_chambers.tex": "d9b2340c2805d2b8f2d2add9187282caf383a4828841abb196cf0b281ba220bb",
+        "papers/sections/four_hearts_single_root.tex": "b9b9b48376161b0b33ad4c90f7dde37b6aab8f521e3cf4e55e8d444196d57f2b"
+      }
     },
     "papers/nc_del_pezzo_resonance_hearts.tex": {
       "pages": 24,
@@ -180,7 +233,17 @@
       "overfull_underfull": false,
       "missing_glyphs": false,
       "pdf_sha256": "a3fa5501c4d650a8f718138ea776f7b250cc18918331a781c08b9dc94e3d81e0",
-      "source_sha256": "f4ea84930328539b9307fa98d6796a535922c2a8d8b0c9a8f03c437850df63ae"
+      "source_sha256": "f4ea84930328539b9307fa98d6796a535922c2a8d8b0c9a8f03c437850df63ae",
+      "input_sha256": {
+        "papers/nc_del_pezzo_resonance_hearts.tex": "f4ea84930328539b9307fa98d6796a535922c2a8d8b0c9a8f03c437850df63ae",
+        "papers/sections/resonance_extension_cancellation.tex": "8c9708fd7d63efb72a0c51a71048d671bce1222ddcecf037e0ea156eeb934f7f",
+        "papers/sections/resonance_global_heart.tex": "438096f2d0ca0518e855500e54e5ea35430206ea057b70813c3bb782e95be05e",
+        "papers/sections/resonance_maximal_a2.tex": "32d652b2b17d8704bc475fda5a1a80de67ec3384987ae8e0518237cc5ed5d7fc",
+        "papers/sections/resonance_maximal_all_degrees.tex": "de9737f6117421299c86bb47481d2fed0272da7e8f5b396529fc368dfcd4b984",
+        "papers/sections/resonance_mixed_a2_category.tex": "d9f377d2c82b44324b4b108dbf8d7911807abffd09087684622bc26fd56c4d1f",
+        "papers/sections/resonance_sign_trichotomy.tex": "6da12cb76bf339d933bf8a599959300171cbbac1dc7c483d4e1c15294ce6e1cf",
+        "papers/sections/resonance_zigzag_unique.tex": "9569fa0cb6674e31e822d896813ddf306e504ab2625a0d0fbb3e64685a20d38f"
+      }
     }
   },
   "limitations": [

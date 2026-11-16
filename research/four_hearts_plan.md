@@ -1,6 +1,6 @@
 # 四heart比較の実施方針
 
-2026-11-16 / hearts-strategy-v3。全体方針と恒常原則は [00_research_plan.md](../00_research_plan.md)、根拠と今回の検証は [current_assessment.md](current_assessment.md)。本書は四heart比較の着手順を具体化する。原稿の数学本文はhearts-v25が現行。
+2026-11-16 / hearts-strategy-v4。全体方針と恒常原則は [00_research_plan.md](../00_research_plan.md)、根拠と今回の検証は [current_assessment.md](current_assessment.md)。本書は四heart比較の着手順を具体化する。原稿の数学本文はhearts-v26が現行。
 
 ## 公表の中心
 
@@ -29,6 +29,8 @@ x_b=p_b、y_c=p_(3+c)、X=Σx、Y=Σy、u=X−ell0、t=ell1−Yと置くと、�
 既存の整数倍点例(1,3,2,5,7,11)は単純次元(6,1,1,2,2,4)と一回のtiltを与える。これを同じactual ASデータ・比較関手まで結ぶ依存関係を確認する。説明用の単根例を加える場合は、固定blowdownの実在単純根を一つ指定し、非零指数・genuine条件・他根の排除・像のcohomological degreeを同時に確認する。単なる数値共鳴をsheafの存在とみなさない。
 
 単根の明示例は `four_hearts_single_root.tex` にある。AOU Lemma 7.4とOkawa–Ueda (2020) Theorem 5を使う命題prop:cubic-helix-inputにより、三次曲面型の指定構成ではvery strong入力を照合した。一般tupleの半連続性を特殊族へ自動適用していない。
+
+固定曲面の古典的表現族は `thm:finite-rep-stack` により非被約基底も含めて普遍商へ還元できる。次元公式とFrobenius判定も同節に集約する。これは曲面族の相対heartではない。ambient Ext²と内部Ext²の不一致を境界として明記する。
 
 ## 次の点検と目標
 

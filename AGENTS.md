@@ -1,6 +1,6 @@
 # Codex指示：反標準heartの認識と根圏
 
-2026-11-16 / hearts-strategy-v3。GitHub mainが正本。最初に00_research_plan.md、research/current_assessment.md、research/four_hearts_plan.mdを読み、必要な研究ノート・3主原稿・sectionへ進む。
+2026-11-16 / hearts-strategy-v4。GitHub mainが正本。最初に00_research_plan.md、research/current_assessment.md、research/four_hearts_plan.mdを読み、必要な研究ノート・3主原稿・sectionへ進む。
 
 ## 目標と優先順位
 
@@ -13,7 +13,7 @@
 - 十一因子の零指数の古典的壁は一般位置/genuine仮定を外れる。非零指数のRains共鳴と混同しない。壁上へ既存導来同値を自動延長しない。
 - 実在単純根と数値的共鳴、指定関手のt-exact性と別の同値、raw blow-upとsection model、全対象のEuler符号と全商/部分対象によるtorsion判定を分ける。
 - D^b(境界外Serre圏)をambient部分圏と同一視しない。162次元cornerとAの根表現を支配する有限商を同一視しない。
-- 規格化AS比較のfull very strong helixとrolled-up同定は入力である。全potentialのAS性/noetherian性、全heart分類、形式的分枝の大域モジュライ成分性を推測しない。
+- 規格化AS比較のfull very strong helixとrolled-up同定は入力である。全potentialのAS性/noetherian性、全heart分類、形式的分枝の大域モジュライ成分性を推測しない。固定曲面の古典的Rep_nと普遍商の一致は新節で証明したが、曲面族のheart降下・導来表現stackとは区別する。自己入射性とFrobenius性は別であり、970次元商は非Frobeniusである。
 - Rains 2025の該当本文、AOU/OU、既知のzigzag形式性・Dynkin torsion分類を一次資料で照合する。既知の共鳴稠密性や一般corner有限性を単独の新規成果にしない。
 
 ## 執筆・保存・再現

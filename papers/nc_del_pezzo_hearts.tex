@@ -1,0 +1,143 @@
+\RequirePackage{fix-cm}
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage{tikz-cd}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{bookmark}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{0.22em}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{assumption}[theorem]{仮定}
+\newtheorem{remark}[theorem]{注意}
+\newtheorem{example}[theorem]{例}
+\renewcommand{\proofname}{証明}
+\newcommand{\cA}{\mathcal A}\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}\newcommand{\cD}{\mathcal D}\newcommand{\cH}{\mathcal H}
+\newcommand{\cT}{\mathcal T}\newcommand{\cF}{\mathcal F}
+\newcommand{\cK}{\mathcal K}\newcommand{\cZ}{\mathcal Z}\newcommand{\OO}{\mathcal O}
+\newcommand{\Db}{D^b}\newcommand{\Sfun}{\mathbb S}
+\newcommand{\AR}{\mathcal A_{\mathrm R}}
+\newcommand{\AV}{\mathcal A_{\mathrm V}}
+\newcommand{\AAS}{\mathcal A_{\mathrm{AS}}}
+\newcommand{\AAC}{\mathcal A_{\mathrm{ac}}}
+\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\End}{End}\DeclareMathOperator{\RHom}{RHom}
+\DeclareMathOperator{\coh}{coh}\DeclareMathOperator{\qgr}{qgr}
+\DeclareMathOperator{\QGr}{QGr}\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Perf}{Perf}\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Ind}{Ind}\DeclareMathOperator{\thick}{thick}
+\DeclareMathOperator{\rk}{rk}\DeclareMathOperator{\add}{add}
+\DeclareMathOperator{\Ann}{Ann}
+\title{非可換del Pezzo曲面の四つのheart\\
+\large VdB・Rains・反標準・Artin--Schelter構成の比較}
+\author{}
+\date{2026年11月16日\qquad 公表準備稿 hearts-v24}
+\hypersetup{pdftitle={非可換del Pezzo曲面の四つのheart},pdfsubject={導来比較、HRS tilt、共鳴、反標準corner}}
+\begin{document}
+\maketitle
+\begin{abstract}
+非可換del Pezzo曲面のVdB，Rains，反標準，Artin--Schelterという四つのheartを，
+構造対象と自然な比較関手を指定して比較する．genuineな滑らかな楕円gluingでは
+反標準導来切断が導来同値を与え，heartの差は境界非交叉部分のHRS tiltに集中する．
+VdBの右加群規約で初期平面twistを運ぶと，Rainsの辞書は$L=L_1$，$q=L_0L_1^{-1}$となる．
+規格化したmutation列から得る楕円decupleについて，全27関係係数をtheta関数で表示し，
+構造頂点を除いたcornerが$L_0$に依存せず，$L_1$による元の六点の可換cornerに一致することを示す．
+これにより，係数比の十一条件を元の六点の共線・conic条件へ引き戻す．
+さらにampleな構造対象を含むvery strong helixからnoetherianなorbit代数を再構成する．
+その結果，規格化した共通領域ではAS heartと反標準heartが一致し，
+noetherian性と十一因子の非消滅は独立の追加条件でなく結論となる．
+一方，順序付きRains heartは実在単純根のEuler標数で選ばれ，
+整数倍点族では整列による単純tiltで同じ反標準heartへ移る．
+未変更の文献座標への同一視，任意のpotentialのnoetherian性，相対heartの降下は主張しない．
+\end{abstract}
+\tableofcontents
+
+\input{papers/sections/four_hearts_foundations.tex}
+\input{papers/sections/four_hearts_geometric.tex}
+\input{papers/sections/four_hearts_boundary_data.tex}
+\input{papers/sections/four_hearts_as.tex}
+\input{papers/sections/four_hearts_corner_locus.tex}
+\input{papers/sections/four_hearts_elliptic_coefficients.tex}
+\input{papers/sections/four_hearts_canonical_comparison.tex}
+\input{papers/sections/four_hearts_examples.tex}
+
+\begin{thebibliography}{99}
+\bibitem{VdB}
+M.~Van den Bergh, \emph{Blowing up of non-commutative smooth surfaces},
+Mem. Amer. Math. Soc. \textbf{154} (2001), no.~734;
+\href{https://arxiv.org/abs/math/9809116}{arXiv:math/9809116v1}.
+使用箇所：(5.4)，Theorem 6.3.1，\S10冒頭，(9.5)，Lemma 9.1.5，Proposition 9.1.8，Theorem 9.1.9，Proposition 9.2.3，
+Lemma 11.1.1，Definition 11.1.2，Theorems 11.1.3, 11.2.1，Lemma 11.2.4，Remark 12.0.5．
+\bibitem{Rains}
+E.~M.~Rains, \emph{The birational geometry of noncommutative surfaces},
+\href{https://arxiv.org/abs/1907.11301}{arXiv:1907.11301v1} (2019).
+使用箇所：Lemma 4.9，Theorem 4.10，Propositions 4.13, 4.17，Theorem 4.30，
+\S5，\S7，Theorem 9.10，Corollaries 10.12, 10.16，Proposition 10.13，\S11（特にp.~141，Proposition 11.23の直前の有効単純根の存在についての記述）．
+\bibitem{Filtered}
+E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
+\href{https://arxiv.org/abs/2107.13540}{arXiv:2107.13540v2} (2022).
+使用箇所：Corollary 3.8とtraceの証明，\S4（特にpp.~34--35の単純根の有効性・存在），Proposition 5.1．
+\bibitem{RainsBook}
+E.~M.~Rains, \emph{The (noncommutative) geometry of difference equations},
+\href{https://arxiv.org/abs/2504.16187}{arXiv:2504.16187} (2025).
+本稿は書誌と概要を確認し，定理番号・仮定の照合には上記2019年稿を用いた．
+\bibitem{AOU}
+T.~Abdelgadir, S.~Okawa, K.~Ueda,
+\emph{Compact moduli of marked noncommutative cubic surfaces},
+\href{https://arxiv.org/abs/2404.00175}{arXiv:2404.00175v1} (2024).
+使用箇所：\S3--4，(4.1)，\S9，Lemma 9.2，Theorem 9.4，(9.2)--(9.3)，(9.25)，(9.28)--(9.57)，Definition 7.1，Proposition 9.3．
+これらの境界表示の同時使用に関する検査は第\ref{subsec:boundaryaudit}節を参照．
+\bibitem{OU}
+S.~Okawa, K.~Ueda, \emph{Marked Artin--Schelter surfaces of del Pezzo types},
+\href{https://arxiv.org/abs/2508.04986}{arXiv:2508.04986v1} (2025).
+使用箇所：Definitions 1.1, 3.1，\S6．
+\bibitem{AZ}
+M.~Artin, J.~J.~Zhang, \emph{Noncommutative projective schemes},
+Adv. Math. \textbf{109} (1994), 228--287.
+\href{https://doi.org/10.1006/aima.1994.1087}{doi:10.1006/aima.1994.1087}.
+\bibitem{CHZ}
+X.-W.~Chen, Z.~Han, Y.~Zhou, \emph{Derived equivalences via HRS-tilting},
+Adv. Math. \textbf{354} (2019), 106749;
+\href{https://arxiv.org/abs/1804.05629}{arXiv:1804.05629v2}.
+使用箇所：Theorems A, B，\S2--3．
+\bibitem{RSS}
+D.~Rogalski, S.~J.~Sierra, J.~T.~Stafford,
+\emph{Noncommutative Blowups of Elliptic Algebras},
+\href{https://arxiv.org/abs/1308.2216}{arXiv:1308.2216v2} (2015).
+使用箇所：Proposition 2.4（正次数，無限位数の境界自己同型）．
+\bibitem{YZ}
+A.~Yekutieli, J.~J.~Zhang, \emph{Rings with Auslander Dualizing Complexes},
+J. Algebra \textbf{213} (1999), 1--51;
+\href{https://arxiv.org/abs/math/9804005}{arXiv:math/9804005v3}.
+使用箇所：Theorems 4.5, 5.1(1), 5.13．
+\bibitem{Orlov}
+D.~Orlov, \emph{Smooth and proper noncommutative schemes and gluing of DG categories},
+\href{https://arxiv.org/abs/1402.7364}{arXiv:1402.7364v5} (2015).
+使用箇所：Theorems 3.18, 3.25，Corollary 3.19．
+\bibitem{BridgelandKleinian}
+T.~Bridgeland, \emph{Stability conditions and Kleinian singularities},
+Int. Math. Res. Not. \textbf{2009} (2009), no.~21, 4142--4157;
+\href{https://arxiv.org/abs/math/0508257}{arXiv:math/0508257v3}.
+使用箇所：\S2（ambient圏と内在的導来圏の区別），Lemma 3.5と\S3（単純tiltとWeyl反射）．
+\bibitem{BCPW}
+N.~Broomhead, R.~Coelho Sim\~oes, D.~Pauksztello, J.~Woolf,
+\emph{Simple tilts of length hearts and simple-minded mutation},
+Adv. Math. \textbf{503} (2026), Part B, 111197;
+\href{https://arxiv.org/abs/2401.02947}{arXiv:2401.02947v3}.
+使用箇所：Theorem 2.7およびRemark 2.8（left/right tiltの有限長性）．
+\bibitem{EllipticCauchy}
+V.~Prokofev, A.~Zabrodin, \emph{Elliptic Cauchy matrices},
+\href{https://arxiv.org/abs/2305.02837}{arXiv:2305.02837v1} (2023).
+使用箇所：(1.7)，(2.1)（elliptic Cauchy行列と既知のFrobenius determinant）．
+\bibitem{PolishchukProj}
+A.~Polishchuk, \emph{Noncommutative Proj and coherent algebras},
+\href{https://arxiv.org/abs/math/0212182}{arXiv:math/0212182v4} (2004).
+使用箇所：Theorem 2.4とその証明（ample sequenceからのabel圏の再構成）．
+\end{thebibliography}
+\end{document}

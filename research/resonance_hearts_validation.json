@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-16",
+  "version": "resonance-hearts-v8",
+  "manuscript": "papers/nc_del_pezzo_resonance_hearts.tex",
+  "proof_sections": [
+    "papers/sections/resonance_mixed_a2_category.tex",
+    "papers/sections/resonance_global_heart.tex"
+  ],
+  "scope": {
+    "mixed_rank": "Existing boundary-disjoint adjacent irreducible root sheaves in a Rains heart, q nontorsion, H=-K nef, H^2>0, exceptional structure line bundle. The proof does not assume derived full faithfulness.",
+    "global_comparison": "Only the specified Rains gluing from a smooth genuine classical del Pezzo S, a smooth anticanonical elliptic E, and q in Pic^0(E). No order restriction on q or the induced boundary translation. This is not a statement that different q give equivalent categories.",
+    "global_tilt": "The same gluing, with H nef in the chosen Rains heart. The full-heart torsion pair is defined by H^1 Phi and H^0 Phi. Its restriction to Z uses q nontorsion and the established Serre property.",
+    "affine_quotient": "The actual +2/-1 adjacent root example in this specified gluing; derived comparison and central localization identify the relevant ambient Ext. Generator coefficients in the original elliptic presentation remain uncomputed."
+  },
+  "claims": {
+    "general_connecting_rank": "For indices p>0,-n<0, the nonsplit extension P has rank delta=min(p,n), h0=max(p-n,0), h1=max(n-p,0). For p>n its rank-one torsion-free kernel has chi(L,L)=3-2(p-n), and is a line bundle precisely when p-n=1.",
+    "finite_length_category": "The source two-root Serre category is mod_fd Pi(A2). For vertex dimensions a,b and t=rank(x), h0=pa-min(p,n)t, h1=nb-min(p,n)t. Both unequal-index chambers give the displayed local torsion pairs; balanced indices would kill P but cannot occur for a genuine avatar.",
+    "derived_comparison_audit": "The companion manuscript's existing all-q comparison was checked through Ind-orbit generation, nonzero boundary trace, finiteness in both order cases, and source saturation. Its proof is rewritten with explicit inputs in resonance_global_heart.tex. This is an internal mathematical audit, not external peer review or formal verification.",
+    "global_HRS": "Phi has amplitude [0,1] on the entire chosen Rains heart. The anticanonical heart pulls back to <F[1],T>. For nontorsion q, the same torsion pair restricts to all Z with T=ker Ext1(e,-) and F=ker Hom(e,-).",
+    "characters": "In the +2/-1 example, W and U are distinct one-dimensional characters and 0->W->V->U->0 is nonsplit. The image on V is the full triangular two-by-two algebra, and Hom_A(V,U)=k.",
+    "finite_quotient": "The reverse nonsplit extension Vprime exists, and A/Ann(V plus Vprime) is Pi(A2), of dimension four and radical-square zero. The quotient is not a homological epimorphism.",
+    "local_reflection": "The two new character root classes are alpha+beta and -beta, so the numerical change (2,-1)->(1,1) is the beta Weyl reflection. Not a description of the full E6 heart by one reflection.",
+    "retained_results": "Existing sign trichotomy, degree 1-6 maximal numerical resonance density, irreducible-root uniqueness, Dynkin zigzag Ext, and fixed-category framed formality results are retained. These are not claims of full nc-moduli component coverage.",
+    "remaining": [
+      "Explicit values of the original elliptic algebra generators under the characters and off-diagonal cocycles",
+      "Generators for the kernel of the displayed affine quotient",
+      "The full E6 off-boundary affine action",
+      "Specified VdB/AS-heart and structure-object identifications",
+      "Relative family comparison and descent",
+      "Singular elliptic boundary, weak avatar, and non-locally-free gluing extensions"
+    ],
+    "safeguards": [
+      "Irreducibility alone does not imply simplicity; the proof uses nontorsion q and boundary-disjointness.",
+      "The arbitrary-index rank proof uses Corollary 10.12 for rank-one torsion-free sheaves, not an unjustified line-bundle claim.",
+      "Internal Ext in mod_fd Pi(A2) is periodic and is not ambient Ext in the Rains or affine category.",
+      "The comparison is not inferred merely from equality of graded Ext dimensions; a nonzero trace is tracked by the actual functor.",
+      "No claim of full target smoothness is used to prove essential surjectivity; source saturation supplies the adjoint."
+    ]
+  },
+  "primary_sources_checked": [
+    {
+      "id": "arXiv:1907.11301v1",
+      "author": "Eric M. Rains",
+      "title": "The birational geometry of noncommutative surfaces",
+      "locations": "Theorem 4.30 and Section 5; Corollaries 7.7,7.13,7.15,7.23; Proposition 7.32; Theorem 9.10; Corollary 10.12; Proposition 10.13; Section 11",
+      "use": "Heart and boundary inputs, numerical pairing, line generation, rank-one torsion-free Hom effectiveness, and line-bundle equality."
+    },
+    {
+      "id": "arXiv:2107.13540v2",
+      "author": "Eric M. Rains",
+      "title": "Filtered deformations of elliptic algebras",
+      "locations": "Corollary 3.8 and its boundary-trace proof; Section 4, equations (4.4),(4.7); Proposition 5.1",
+      "use": "Specified gluing and boundary, nef anticanonical class, Rees ring, and target orbit Ext pairing."
+    },
+    {
+      "id": "arXiv:1308.2216v2",
+      "authors": "D. Rogalski, S. J. Sierra, J. T. Stafford",
+      "title": "Noncommutative Blowups of Elliptic Algebras",
+      "locations": "Proposition 2.4",
+      "use": "Infinite-order case: domain with central regular element and elliptic THCR quotient of positive degree. The proposition permits degree one."
+    },
+    {
+      "id": "arXiv:math/9804005v3",
+      "authors": "A. Yekutieli, J. J. Zhang",
+      "title": "Rings with Auslander Dualizing Complexes",
+      "publication": "Journal of Algebra 213 (1999), 1-51",
+      "locations": "Theorems 5.13, 5.1(1), 4.5",
+      "use": "PI finite-order boundary, lifting a balanced dualizing complex through the central regular element, chi and finite local cohomological dimension."
+    },
+    {
+      "id": "arXiv:1402.7364v5",
+      "author": "D. Orlov",
+      "title": "Smooth and proper noncommutative schemes and gluing of DG categories",
+      "locations": "Theorems 3.18, 3.25; Corollary 3.19; Proposition 3.24",
+      "use": "Perfectness of the gluing module, smooth proper gluing, and representability of pseudo-perfect modules."
+    }
+  ],
+  "source_verification_limits": {
+    "primary_text": "Relevant statements and proof passages directly checked in parsed primary PDF text.",
+    "primary_pdf_screenshots": "Attempted but failed with Cache miss; not reported as visually inspected.",
+    "liu_wang_formality": "Retained existing known input; not re-audited in this session.",
+    "exhaustive_novelty_search": false,
+    "external_independent_peer_review": false,
+    "machine_formalization": false
+  },
+  "checks": {
+    "script": "computations/verify_resonance_mixed_a2.py",
+    "script_git_blob_sha": "4cfc70def4dfeba13b92195e2ab3fe6582b5a973",
+    "mixed_proof_git_blob_sha": "6fb2f70a3cda96b2d91ea4510493965fd1f640d6",
+    "global_proof_git_blob_sha": "f68434a76e97602e681c00b26e3be83b64dab3a5",
+    "execution": "PASS: committed-source-identical Python standard-library Fraction arithmetic, re-executed locally after final edits.",
+    "indices_p_n": [1,8],
+    "indecomposable_multiplicities": [0,4],
+    "cases": {"positive_sum":17500,"negative_sum":17500,"balanced_hypothetical":5000,"total":40000},
+    "source_Hom": [[1,0,0,1],[0,1,1,0],[1,0,1,1],[0,1,1,1]],
+    "source_ambient_Ext1": [[0,1,0,0],[1,0,0,0],[0,0,0,0],[0,0,0,0]],
+    "quotient_dimension": 4,
+    "radical_square_zero": true,
+    "two_representation_image_dimensions": [3,3],
+    "regular_representation_commutant_dimension": 4,
+    "local_Weyl_reflected_indices": [1,1],
+    "actual_elliptic_generator_matrices_computed": false,
+    "categorical_existence_or_equivalence_proved_by_computation": false,
+    "typesetting": "PASS: both updated proof sections in a standalone Japanese LuaLaTeX validation driver stating the imported results, nine pages; all page images checked, and the changed final page re-rendered and inspected after the last proof clarifications. No undefined-reference, overfull-box, or missing-glyph warning in that final log.",
+    "main_manuscript_full_compile_in_this_session": false,
+    "previous_four_resonance_scripts_rerun_in_this_session": false,
+    "previous_exact_results_retained": {
+      "root_counts_degree_6_to_1": [8,20,40,72,126,240],
+      "zigzag_Ext_dimensions_degree_6_to_1": [8,14,18,22,26,30],
+      "formal_branch_counts_degree_6_to_1": [2,8,16,32,64,128],
+      "explicit_simple_indices": [6,2,-1,3,2,4],
+      "scope": "Existing certificates and proofs retained, not newly executed in this session. Free rank-option enumerations are not the current geometric rank status."
+    }
+  },
+  "reproduction": [
+    "python3 computations/verify_resonance_mixed_a2.py",
+    "latexmk papers/nc_del_pezzo_resonance_hearts.tex"
+  ],
+  "persistence": "GitHub main is canonical. The two proof-section hashes and executed-code hash match the remote content. No Library copy after successful GitHub save."
+}

@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-16",
+  "version": "hearts-v24",
+  "manuscript": "papers/nc_del_pezzo_hearts.tex",
+  "continuation_plan": "research/four_hearts_plan.md",
+  "research_notes": "research/heart_comparison.md",
+  "priority": "Publication value through explicit coefficients, intrinsic geometric conditions, and removal of redundant assumptions; retain correctness and primary-source attribution.",
+  "current_claims": {
+    "actual_potential": {
+      "proof": "four_hearts_elliptic_coefficients.tex, lem:theta-relation and thm:theta-potential (Theorem 10.2)",
+      "state": "Proof written and internally checked.",
+      "statement": "For the normalized elliptic decuple, suitable arrow/relation bases give w_abc=theta(y_c-x_b+t_a), (t_0,t_1,t_2)=(X-ell_0,ell_1-Y,0). All 27 coefficients are computed, as local analytic gauge coordinates.",
+      "hypotheses": "Smooth complex elliptic curve, distinct six points, normalized admissibility U+; coherent theta lifts.",
+      "limitation": "Not an identification with unchanged printed AOU coordinates or a globally trivialized coefficient family."
+    },
+    "original_six_point_corner": {
+      "proof": "thm:original-six-points and cor:elliptic-discriminant (Theorem 10.3 / Corollary 10.4)",
+      "state": "Geometric proof written and internally checked; independent finite function-field tests executed.",
+      "statement": "Q=w_2/w_1 is independent of L0 up to row/column scaling. The actual L1-coordinate matrix of the first three points, with the last three as coordinate points, is the transpose of the entrywise reciprocal Q. On the general-position locus the finite corner is the classical corner of these same six points.",
+      "consequence": "The eighteen-coefficient and eleven-factor conditions are exactly the L1 general-position conditions. The extra first coefficient series may vanish without affecting this corner.",
+      "prior_identity": "The elliptic Cauchy/Frobenius determinant identity is known. The manuscript proves the particular coefficient/coordinate identification directly rather than claiming that identity as new."
+    },
+    "ample_helix_reconstruction": {
+      "proof": "prop:ample-helix-noetherian (Proposition 10.6)",
+      "state": "Abstract conditional theorem proved in the manuscript.",
+      "hypotheses": "Hom-finite noetherian abelian target of finite homological dimension; an AZ-ample structure pair with higher-Ext tail vanishing; a full very strong periodic helix containing the structure object and with the specified period.",
+      "statement": "The helix objects belong to the target heart. Dimension shifting proves ampleness of their direct sum. Artin-Zhang/Polishchuk reconstruction gives the right-noetherian orbit algebra and identifies qgr with the target heart. A direct graded-ideal proof of right noetherianity is included.",
+      "safeguard": "A merely full strong collection is not silently assumed very strong; no noetherian conclusion is inferred from a finite corner alone."
+    },
+    "normalized_abelian_comparison": {
+      "proof": "thm:normalized-abelian and cor:cyclic-AS-equality (Theorem 10.7 / Corollary 10.9)",
+      "state": "Proved in the specified normalized common construction, using its standard AS helix realization.",
+      "hypotheses": "The earlier normalized pointed construction, VdB comparison hypotheses, distinct six points in L1 general position, U+, and the specified standard AS very strong periodic helix / rolled-up Jacobi identification.",
+      "statement": "B(W+) is right noetherian and the specified normalized dg functor Psi+ is t-exact. Hence AS+ and anticanonical hearts agree here; right noetherianity and Delta nonvanishing need not be additional independent assumptions on this common locus.",
+      "application": "Positive-integer cyclic point configurations enter this common locus. Their ordered Rains hearts reach the same anticanonical/AS+ heart by the existing sorted-Euler tilt theorem.",
+      "limitation": "Not every potential, singular boundary, arbitrary full strong collection, or unchanged printed AOU presentation. No relative-heart descent claimed."
+    },
+    "retained_results": "Existing boundary normalization, inverse decuple dictionary, Rains genuine-gluing comparison, sorted spectra, mixed A2, pure corner criterion and canonical-functor arguments remain. This iteration is not an independent re-audit of every retained theorem."
+  },
+  "remaining": [
+    "Analyze actual boundary-wall strata outside the normalized common open, without extending the present comparison beyond its hypotheses.",
+    "Consolidate the publication narrative and eliminate unnecessary duplicated comparison/corner proofs across separate current papers while retaining all valid mathematics.",
+    "Check relative coefficient/helix reconstruction, base change and marked heart descent.",
+    "Complete the relation to all unchanged printed AOU conventions when that exact presentation is needed.",
+    "Complete novelty comparison with the full Rains 2025 monograph and external independent review; original elliptic affine-generator matrices remain uncomputed."
+  ],
+  "primary_sources_this_iteration": [
+    {
+      "id": "arXiv:2404.00175v1",
+      "locations": "(4.7), (4.9), Section 7 including Lemma 7.4 and the following AS construction, (8.4)-(8.7).",
+      "verification": "Primary HTML read for potential-from-relations, standard AS realization, and classical coefficient comparison. Earlier Section 9 normalization is retained, not freshly fully re-audited."
+    },
+    {
+      "id": "arXiv:2508.04986v1",
+      "locations": "Definition 3.1, (3.9)-(3.10), standard projective very strong helix, Lemma 6.2.",
+      "verification": "Primary PDF text and relevant page screenshots inspected. This supplies the standard AS helix input, not a claim that every full strong collection is very strong."
+    },
+    {
+      "id": "arXiv:2305.02837v1",
+      "title": "Elliptic Cauchy matrices",
+      "authors": "V. Prokofev, A. Zabrodin",
+      "locations": "(1.7), (2.1).",
+      "verification": "Primary PDF text and the Frobenius determinant page image inspected. Cited as known elliptic Cauchy theory."
+    },
+    {
+      "id": "arXiv:math/0212182v4",
+      "title": "Noncommutative Proj and coherent algebras",
+      "author": "A. Polishchuk",
+      "locations": "Introduction and Theorem 2.4, including the reconstruction and inverse functor.",
+      "verification": "Primary PDF text checked. Web screenshot attempts failed with Cache miss; no source-page image inspection claimed."
+    },
+    {
+      "id": "doi:10.1006/aima.1994.1087",
+      "title": "Noncommutative projective schemes",
+      "locations": "Artin-Zhang Theorem 4.5 as the cited reconstruction theorem.",
+      "verification": "Publisher bibliography/abstract and primary mathematical restatements checked. Original full article retrieval failed. The manuscript also uses the directly inspected Polishchuk reconstruction and supplies the graded-ideal noetherian argument."
+    },
+    {
+      "id": "arXiv:2504.16187",
+      "verification": "Bibliography/abstract only. Full-text retrieval still failed; no exhaustive monograph novelty audit claimed."
+    }
+  ],
+  "checks": {
+    "full_manuscript_LuaLaTeX": "PASS",
+    "pdf_pages": 46,
+    "all_final_page_images_inspected": true,
+    "undefined_references_or_citations": false,
+    "missing_glyph_warnings": false,
+    "overfull_or_underfull_boxes": false,
+    "harmless_warning": "Legacy ltjsarticle mathematical font command \\rm notice.",
+    "labels": 120,
+    "bibliography_entries": 15,
+    "all_seven_programs_executed": true,
+    "shared_checker_tags": "Some unchanged scripts retain their own earlier version tags; all were executed on the current v24 source tree.",
+    "new_elliptic_checks": {
+      "field_prime": 1009,
+      "curve": "y^2=x^3-x+1",
+      "curve_point_count": 1024,
+      "regular_six_point_configurations": 24,
+      "L0_values_per_configuration": 3,
+      "accepted_function_field_relation_identities": 684,
+      "verification_method": "Miller functions for actual sections; relation coefficients solved at evaluation points and then verified by exact cross-multiplication in the function field. Not evaluation-only or floating-point tests.",
+      "all_27_coefficient_zero_conditions_checked": true,
+      "actual_L1_embedding_row_column_gauge_match": true,
+      "L0_independence_checked": true,
+      "forced_walls": [
+        "one front plus two last points",
+        "two front plus one last point",
+        "first triple",
+        "six-point conic"
+      ],
+      "finite_field_tests_prove_complex_geometry_or_noetherianity": false
+    },
+    "other_checks_rerun": {
+      "mixed_A2_cases": 40000,
+      "root_chamber_runs": 576,
+      "sorted_integer_lists": 240,
+      "six_point_permutations": 720,
+      "boundary_K0_vectors": 1587,
+      "boundary_shift_inverse_tests": 325,
+      "universal_six_point_syzygies": 6,
+      "integer_polynomial_variables": 12,
+      "independent_QQ_and_mod_1000003_corner_Hilbert": [
+        8,
+        21,
+        33,
+        38,
+        33,
+        21,
+        8,
+        0
+      ]
+    },
+    "isolated_reproduction": {
+      "pages": 46,
+      "all_text_pages_identical": true,
+      "all_rendered_pages_pixel_identical": true,
+      "render_scale": 1.1,
+      "all_seven_outputs_identical": true,
+      "source_and_code_identical": true,
+      "layout_reference_errors": [],
+      "all_json_calculation_outputs_identical": true
+    },
+    "original_elliptic_affine_action_matrices_computed": false
+  },
+  "git_blob_sha1": {
+    "computations/verify_cubic_heart_numerics.py": "53fec082f8814f3dca2c3be0803c2c4fff6de0d4",
+    "computations/verify_four_hearts.py": "97081e9887f14fe50e365fa009f9e7db6a279ba2",
+    "computations/verify_four_hearts_boundary.py": "396eca30ce3928363f8b9affda1ba7d6cf433d57",
+    "computations/verify_four_hearts_chambers.py": "a82e600c1a2d15d89331ffa08373969ed558a6cf",
+    "computations/verify_four_hearts_corner.py": "eda177b6595d4e467eae6bc4c2e6b1719d2fef3e",
+    "computations/verify_four_hearts_elliptic.py": "c41d19259c001544dfd851998cd40acc8095ad17",
+    "computations/verify_four_hearts_sorted.py": "6b8c3f6eab41d66760841287ff9cd318305c4572",
+    "papers/nc_del_pezzo_hearts.tex": "120f81a9f6e499b2f751147e73ca156ee9a87e03",
+    "papers/sections/four_hearts_as.tex": "208f715720b4dea3c10341b012aff9e3425a2ad7",
+    "papers/sections/four_hearts_boundary_data.tex": "dd11ad427ce0d5e61a8e1d39dd7bcd1999dabbc8",
+    "papers/sections/four_hearts_canonical_comparison.tex": "42b70611bf24a6130b8bec73e504447a11ba4dc3",
+    "papers/sections/four_hearts_corner_locus.tex": "c8e86167816e5d144c8043a64bbfb161c397964a",
+    "papers/sections/four_hearts_elliptic_coefficients.tex": "a1c4f83e688a9b8135ccb8a0e341e1874e9b1c41",
+    "papers/sections/four_hearts_examples.tex": "520d62cd4d8dc56a7b37563edd91f6285f199a24",
+    "papers/sections/four_hearts_foundations.tex": "0ecfabc952d88038f94071c5a55f8166684f3258",
+    "papers/sections/four_hearts_geometric.tex": "89b436034cf928f577e54ec4e9628ce28e81e942",
+    "papers/sections/four_hearts_root_chambers.tex": "64587b5eebf89cb6b2c96c24299e41e71ab376c5",
+    "research/four_hearts_plan.md": "78b29c05f5ccda212839a27fdeb9d972aeb01b52",
+    "research/heart_comparison.md": "634564b55f43b18d598c45b8a06876bae4ca201c"
+  },
+  "external_independent_peer_review": false,
+  "machine_formalization": false,
+  "exhaustive_novelty_search": false,
+  "persistence": {
+    "canonical": "GitHub main",
+    "local_source_state": "Hashes identify the executed and typeset local sources. Successful remote blob writes and final main-ref arrival are checked separately.",
+    "Library_upload_performed": false,
+    "PDF_tracked_in_Git": false,
+    "chat_attachments": "Current PDF and clean continuation ZIP only; no separate Library upload."
+  },
+  "reproduction": [
+    "python3 computations/verify_cubic_heart_numerics.py",
+    "python3 computations/verify_four_hearts.py",
+    "python3 computations/verify_four_hearts_corner.py",
+    "python3 computations/verify_four_hearts_chambers.py",
+    "python3 computations/verify_four_hearts_sorted.py",
+    "python3 computations/verify_four_hearts_boundary.py",
+    "python3 computations/verify_four_hearts_elliptic.py",
+    "latexmk -lualatex -outdir=build papers/nc_del_pezzo_hearts.tex"
+  ]
+}

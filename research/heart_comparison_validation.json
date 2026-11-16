@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-15",
+  "version": "hearts-v1",
+  "base_commit": "1ad19296a37a5de056a062c9bd33ed0c385773c2",
+  "scope": "general nc del Pezzo heart comparison; cubic surfaces first",
+  "proof_checks": {
+    "status": "proofs written and checked in this session",
+    "items": [
+      "amplitude-one HRS torsion pair and shift signs",
+      "ample orbit uniqueness with explicit higher Ext hypothesis",
+      "Euler positivity for tau-fixed objects",
+      "idempotent corner equivalence with stated noetherian and bimodule finiteness"
+    ],
+    "independent_external_review": false,
+    "novelty_confirmed": false
+  },
+  "computation": {
+    "command": "python3 computations/verify_cubic_heart_numerics.py",
+    "exit_code": 0,
+    "exact_rational_arithmetic": true,
+    "total_euler_dimension": 45,
+    "root_count": 72,
+    "antiserre_matches_twist": true,
+    "anticanonical_square": 3,
+    "anticanonical_euler_values_n_0_to_8": [
+      1,
+      4,
+      10,
+      19,
+      31,
+      46,
+      64,
+      85,
+      109
+    ],
+    "not_proved": [
+      "effectivity",
+      "noncommutative strongness",
+      "t-exactness",
+      "nonzero kernel delta_* on a specific resonance wall"
+    ]
+  },
+  "latex": {
+    "command": "latexmk papers/nc_del_pezzo_hearts.tex",
+    "exit_code": 0,
+    "pages": 7,
+    "missing_references": [],
+    "duplicate_labels": [],
+    "missing_bibitems": [],
+    "overfull_warnings": [],
+    "all_pages_rendered_and_visually_inspected": true
+  },
+  "primary_sources": {
+    "parsed_text_checked": [
+      "math/9809116v1 Lemma9.1.5 Definition11.1.2 Theorem11.1.3 Chapter12 Remark12.0.5",
+      "2404.00175v1 section9 Lemma9.2 Theorem9.4 and (9.44) paragraph",
+      "2508.04986v1 Definitions1.1,3.1 section6",
+      "1907.11301v1 Introduction section4",
+      "2107.13540v2 section4",
+      "1804.05629v2 TheoremsA,B"
+    ],
+    "page_images_checked": [
+      "2508.04986v1",
+      "1804.05629v2"
+    ],
+    "page_image_fetch_failed": [
+      "2404.00175v1",
+      "math/9809116v1",
+      "1907.11301v1",
+      "2107.13540v2"
+    ],
+    "failure_reason": "web screenshot Cache miss; parsed primary text was available",
+    "entire_external_proofs_independently_reaudited": false
+  },
+  "previous_assets": {
+    "existing_papers_and_computations_preserved": true,
+    "old_dp1_strong_comparison_used_as_input": false,
+    "old_scripts_rerun": false,
+    "concurrent_updates_preserved": [
+      "Serre-derived homological dimension 2",
+      "exceptional-object common definition and pre-weak distinction",
+      "Fermat membership in two Pym components and exact script"
+    ]
+  },
+  "sha256": {
+    "papers/nc_del_pezzo_hearts.tex": "87571970e3ad8c817803b32f386f876d309fe3fdf5dd91707cfcc089c94217f5",
+    "computations/verify_cubic_heart_numerics.py": "e62692dce86a910f83da86b8e87172fd094210fad6b22e3209f519d25a133321",
+    "research/heart_comparison.md": "d46bf896395bd8dc1beba2d0d8f67e62a6764125fda6b847ff30c8e3bff598d4"
+  }
+}

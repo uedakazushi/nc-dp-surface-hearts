@@ -1,0 +1,379 @@
+\section{反標準Euler標数によるheartの選択}\label{sec:rootchambers}
+ADE型のspherical対象とWeyl反射，および単純tiltによる隣接heartの記述は既知の機構である．
+Kleinian特異点についてはBridgeland \cite[\S2, Lemma 3.5]{BridgelandKleinian}を参照されたい．
+本節の目的は，その機構を反標準比較へ適用し，\emph{指定構造対象のEuler標数}が
+実際の標的heartをどのように選ぶかを明らかにすることである．
+内部の$\Db(\cZ)$をambient導来部分圏と同一視する必要はなく，zigzagの形式性も仮定しない．
+一般のlength heartの単純tiltが再びlengthとなる条件は\cite[Theorem 2.7]{BCPW}で扱われている．
+ここでは2-spherical・単純辺という仮定から必要な有限長性を直接証明する．
+幾何学的適用には第\ref{sec:A2}節と同じgenuine楕円gluing・非torsionの仮定を用いる．
+
+\subsection{反標準側の有限次元heart}
+$\cD_{\cZ}\subset\Db(\AR)$を，旧heartでの全cohomologyが$\cZ$に属する対象の充満三角部分圏とする．
+定理\ref{thm:derived}の自然な$\Phi$を用い，$A=R/(g-1)$とする．
+以下の$\operatorname{mod}_{\rm fd}A$は有限次元加群の\emph{abel圏}であり，
+その内在的有界導来圏を$\cD_{\cZ}$と同定しているのではない．
+
+\begin{lemma}\label{lem:targetfiniteheart}
+$\Phi$は$\cD_{\cZ}$を，境界非交叉かつcohomologyが有限次元$A$加群に対応する
+標的の充満三角部分圏へ同値に写す．従って$\cD_{\cZ}$には二つの有界heart
+\[
+ \cZ,\qquad \cK=\Phi^{-1}(\operatorname{mod}_{\rm fd}A)
+\]
+があり，$\cZ\subset D^{[0,1]}_{\cK}$である．
+この部分圏でSerre関手は自然に$[2]$となり，
+$m(X)=\chi(e,X)$は$0\ne X\in\cK$で正整数となる．
+\end{lemma}
+\begin{proof}
+境界triangleの自然な射$\theta\to\mathrm{id}$は$\cD_{\cZ}$上で同型となる．
+$\Phi$はこの射を中心元$g$に送るので，像のcohomologyは$g$可逆である．
+各$M\in\cZ$について$\Ext^j(e,s^nM)$は$n$に関して周期的で有限次元だから，
+像の二つのcohomologyは有限次元$A$加群となる．有界拡大により全$\cD_{\cZ}$で同様である．
+
+逆に有限次元$A$加群は$k[g]$上有限自由な非負次数格子から$\qgr R$の対象を与える．
+その逆像$X$には$\theta X\simeq X$が自然な境界射から従う．$\theta$は旧heartにexactなので
+全$H^i(X)$も境界非交叉である．$\theta$の数値作用で$c_1$はrank倍の$K_X$だけ変わるから，
+$K_X^2>0$の下でそのrankは零．Rainsの次元関数のrank-zero部分は次元高々1なので
+$H^i(X)\in\cZ$となる．これは有限次元cohomologyを持つ標的の有界対象にも拡張される．
+従って両t構造はこの充満部分圏へ制限される．
+$\theta\simeq\mathrm{id}$からSerre関手は$[2]$．
+中心局所化の導来随伴を$\pi R$と有限次元$U$に適用すると
+$\RHom(\pi R,U)=\RHom_A(A,U)=U$であり，$m(\Phi^{-1}U)=\dim_k U>0$を得る．
+\end{proof}
+
+\subsection{全heartのずれは境界非交叉部分で検出される}
+\begin{lemma}[中心元の全射性と有限次元局所化]\label{lem:g-surjection}
+$U\in\qgr R$について，境界への通常の制限$i_R^*U$が零なら，
+$g:U(-1)\to U$は同型であり，$U$は有限次元$A=R/(g-1)$加群から来る．
+\end{lemma}
+\begin{proof}
+有限生成の次数付き代表$M$を取る．$i_R^*U=0$なら$M/gM$は有限次元なので，
+$n\gg0$で$g:M_{n-1}\to M_n$は全射である．有限非負整数$\dim M_n$はやがて単調非増加となり，
+従って定数になる．十分高い次数では$g$は同型となり，その核も有限次元である．
+ゆえに$g$は$\qgr R$で同型で，$\varinjlim(M_n,g)$は有限次元．
+この極限が$(M[g^{-1}])_0$であり，強次数付き環による局所化が所要の$A$加群を与える．
+\end{proof}
+
+\begin{theorem}[全heartの差を検出する負指数単純根]\label{thm:globaldefect}
+定理\ref{thm:derived}，\ref{thm:globaltilt}のgenuine楕円gluingで$q$は非torsionとする．
+全Rains heartのtorsionfree部分$\cF=\ker H^0\Phi$は$\cZ$に含まれる．
+従って次の三条件は同値である：
+\[
+ \Phi\text{ はt-exact}
+ \quad\Longleftrightarrow\quad(e,s)\text{ はAZ-ample}
+ \quad\Longleftrightarrow\quad
+ \chi(e,S)>0\text{ for every simple }S\in\cZ.
+\]
+特にこの範囲では，t-exactnessの失敗は実在する負指数の境界非交叉単純根によって必ず検出される．
+\end{theorem}
+\begin{proof}
+定理\ref{thm:derived}の構成は$\Phi i_{q*}\simeq i_{R*}$を与えるので，左随伴の一意性から
+$Li_R^*\Phi\simeq Li_q^*$となる．$M\in\cF$を$\Phi M=U[-1]$と書く．
+旧heartでは境界の押出しがexactかつfaithfulであり\cite[\S5冒頭]{Filtered}，
+境界triangleと$\theta$のexactnessから$Li_q^*$は振幅$[-1,0]$を持つ．
+標的の$Li_R^*$も中心正則元の長さ1の解消から同じ振幅を持つため，
+$Li_q^*M\simeq Li_R^*U[-1]$は次数0だけにcohomologyを持つ．
+特に$H^0(Li_R^*U)=0$である．補題\ref{lem:g-surjection}から$Li_R^*U=0$となり，
+$U$は有限次元$A$加群となる．補題\ref{lem:targetfiniteheart}より$M\in\cZ$である．
+
+$\cZ$の単純対象はtorsion分解によって$\cT$か$\cF$の一方に入る．
+そのEuler値はそれぞれ正，負であって零ではない．
+$\cF\ne0$なら，その非零対象の$\cZ$での単純部分対象も$\cF$に入り，負指数を持つ．
+逆に負指数単純があれば$\cF\ne0$である．t-exactnessと$\cF=0$の同値を用いる．
+$t$-exactならpointedな同値が標準ample pairを運ぶのでAZ-ampleである．
+逆に非零$M\in\cF\subset\cZ$では$\Hom(e,s^nM)=0$が全$n$で成り立ち，AZ生成性に反する．
+\end{proof}
+\begin{remark}
+ここで得た逆向きの含意は，指定genuine gluing，非torsion，既知の導来比較と振幅を使う．
+数値的共鳴の有無だけを判定しているのではなく，\emph{実在する向き付き単純根}を全て調べる条件である．
+対象の構成やこれらの仮定を外した一般の非可換曲面への主張ではない．
+\end{remark}
+
+\subsection{全ての部分対象・商によるtorsion pairの認識}
+\begin{proposition}[Euler標数によるtorsion pairの完全な記述]\label{prop:numericaltorsion}
+$\cZ$上の反標準torsion pairは
+\[
+\begin{split}
+ \cT\cap\cZ&=\{M:\ m(Q)>0\text{ for every nonzero quotient }Q\text{ of }M\},\\
+ \cF\cap\cZ&=\{M:\ m(N)<0\text{ for every nonzero subobject }N\text{ of }M\}
+\end{split}
+\]
+である．零対象に対する条件は空条件とする．
+\end{proposition}
+\begin{proof}
+非零$T\in\cT\cap\cZ$では$\Phi T$が非零有限次元加群なので$m(T)>0$．
+非零$F\in\cF\cap\cZ$では$\Phi F=U[-1]$で$m(F)=-\dim U<0$．
+$\cT$は商に，$\cF$は部分対象に閉じるため，それぞれ表示した条件を満たす．
+逆に$0\to T\to M\to F\to0$をtorsion分解とすれば，商の条件は$F\ne0$を排除し，
+部分対象の条件は$T\ne0$を排除する．
+\end{proof}
+$m(M)$の符号だけでは不十分である．混合$A_2$の$P,Q$が同じEuler標数を持つ例は，
+上の全商・全部分対象の条件を全対象の符号へ置き換えられないことを示す．
+
+\subsection{有限ADE型における単純tiltの有限手順}
+まず一般のExt有限な三角圏$\cD_0$でSerre関手が$[2]$である場合を考える．
+その有界有限長heart $\cH$の単純対象を$S_1,\ldots,S_r$とし，
+全て2-sphericalで，異なる単純の$\Ext^1$が有限ADE図式の隣接数に等しいと仮定する．
+$\alpha_i=[S_i]$，$(\alpha_i,\alpha_j)=-\chi(S_i,S_j)$を負定値根形式とする．
+
+\begin{lemma}[一つの単純対象でのtilt]\label{lem:simpletilt}
+頂点$j$について
+$\cF_j=\add(S_j)$，$\cT_j=\{M:\Hom(M,S_j)=0\}$とすると，$(\cT_j,\cF_j)$はtorsion pairである．
+$\cH'=\langle S_j[1],\cT_j\rangle$は有限長heartで，その単純対象は
+\[
+ S_j[1],\qquad
+ P_i\ (i\text{ が }j\text{ に隣接}),\qquad
+ S_i\ (i\ne j\text{ が }j\text{ に非隣接})
+\]
+である．ここで$P_i$は非分裂拡大$0\to S_j\to P_i\to S_i\to0$．
+新しい単純根は$s_j(\alpha_i)$であり，$s_j(v)=v+(v,\alpha_j)\alpha_j$とする．
+新しい単純も2-sphericalで，同じADE図式を持つ．
+\end{lemma}
+\begin{proof}
+$\Ext^1(S_j,S_j)=0$なので，最大の$S_j$-半単純商への評価射
+$M\twoheadrightarrow S_j^{\oplus\dim\Hom(M,S_j)}$の核は$\cT_j$に入る．
+これがtorsion分解を与える．新heartの候補は表示した通りで，隣接$i$については
+新heartで$0\to P_i\to S_i\to S_j[1]\to0$となる．
+
+有限長性を確かめる．$M\in\cT_j$の旧heartでの単純商を$S_i$とすると$i\ne j$である．
+核$K$のtorsion部分を$T_j(K)$とし，$E=M/T_j(K)$と置く．
+$0\to S_j^{\oplus b}\to E\to S_i\to0$であり，$\Hom(E,S_j)=0$から
+$k^b\hookrightarrow\Ext^1(S_i,S_j)$を得る．従って$b=0$，または$i$が隣接して$b=1$の非分裂拡大だけである．
+旧lengthによる帰納法と上の新heartの短完全列により，$M$は表示した候補で有限filtrationを持つ．
+全新heartもそのようなfiltrationを持つ．
+
+候補間のHomは異なる二対象で零，同じ対象で$k$である．
+例えば$\Hom(P_i,S_j)=0$は非零拡大類によるconnecting mapから従い，
+$\Hom(P_i,S_j[1])=0$はSerre双対性とEuler形式から得る．
+異なる$P_i,P_k$間では，$P_k$の部分対象$S_j$と商$S_k$へのHomを用いれば零となる．
+従って候補は本当に全単純対象である．その根類は表示した反射で，反射はEuler形式を保つ．
+Serre双対性とHomの計算から各自己Ext$^1$は零，cross Ext$^1$は元の隣接数となる．
+\end{proof}
+
+\begin{theorem}[反標準heartのEuler chamber認識]\label{thm:Eulerchamber}
+$\cH\subset\cD_0$を上の有限ADE型heartとし，もう一つの有界heart$\cK$について
+$\cH\subset D^{[0,1]}_{\cK}$とする．加法的関数$m:K_0(\cD_0)\to\mathbb Z$が
+全ての非零$U\in\cK$で$m(U)>0$を満たすと仮定する．
+このとき次の有限手順は$\cK$を回復する．
+\begin{enumerate}
+\item 現在の単純のうち$m(S_j)<0$のものを一つ選ぶ．
+\item 補題\ref{lem:simpletilt}の$\langle S_j[1],\cT_j\rangle$へ移る．
+\item 負の単純がなくなるまで繰り返す．
+\end{enumerate}
+手順は初期正根系$\mathcal R_+$について
+\[
+ N(m)=\#\{\alpha\in\mathcal R_+:m(\alpha)<0\}
+\]
+回で終了する．終端heartは選択順序に依存せず$\cK$であり，その単純根系は
+正根系$\{\alpha:m(\alpha)>0\}$の単純根系に等しい．
+特に$m$は全ての根で非零であることが従う．
+\end{theorem}
+\begin{proof}
+現在のheartの単純$S$には，振幅1の比較からtorsion分解がある．単純性により
+$S\in\cK$または$S\in\cK[-1]$のいずれかであり，その$m$はそれぞれ正または負である．
+従って$m(S)=0$は起こらない．負の$S_j$を選ぶと$S_j[1]\in\cK$であるから，
+新heartも$D^{[0,1]}_{\cK}$に入る．補題により有限長性とADE条件も保たれる．
+
+現在の正根系を単純反射$s_j$で反射すると，正根の集合は$\alpha_j$だけを
+$-\alpha_j$に入れ替えたものとなる．その$m$は負から正へ変わるので，負の正根の数は正確に1減る．
+この数は非負整数であるため手順は停止する．全単純の$m$が正となったとき，
+それらは$\cK$に入り，新heartの有限長性から新heart全体が$\cK$に含まれる．
+同じ三角圏の有界heartの包含は一致を意味するので，終端は$\cK$である．
+終端の各正根は単純根の非負整数結合で$m>0$となり，全根での非零性も従う．
+最後に，正根系を指定するregular線形汎関数のchamberは一意なので単純根系も一意である．
+対象としての終端heartの独立性は，根類の一致だけでなく，既に示した$\cK$との一致による．
+\end{proof}
+\begin{remark}
+これは一般のWeyl反射や単純tiltを新しく導入する定理ではない．
+本稿では特に$\cH=\cZ$，$m=\chi(e,-)$，$\cK=\Phi^{-1}(\operatorname{mod}_{\rm fd}A)$に適用し，
+\emph{反標準比較が指定する}heartと，そこでの有限次元単純加群の次元を決める．
+得られた根類$\beta_i$に対応する単純加群の次元は$m(\beta_i)$である．
+異なる経路が同じheartに到達することと，それらの合成自己同値が自然に同型であることは別であり，後者は主張しない．
+またこれは固定圏におけるEuler汎関数によるheartの選択であり，
+楕円パラメータの族での全ての壁越えや安定性空間全体の記述ではない．
+\end{remark}
+
+\subsection{局所的な反射手順の全heartへの延長}
+\begin{lemma}[境界非交叉単純の有限ADE性]\label{lem:finiteADEautomatic}
+定理\ref{thm:globaldefect}の設定では，$\cZ$の単純対象は有限個で，
+その根類は線形独立な有限ADE単純根系をなす．空集合も許す．
+\end{lemma}
+\begin{proof}
+単純$S$に対して$\theta S=S$であり，$\End(S)=\Ext^2(S,S)=k$．
+$c_1(S)=\alpha\ne0$，$H\alpha=0$と負定値性，Euler形式の偶奇から
+$0<-\alpha^2=2-\dim\Ext^1(S,S)\le2$，従って$\alpha^2=-2$である．
+同根の異なる単純はHomとExt$^2$が零なのにEuler値が2となって矛盾する．
+負定値格子には長さ2の根が有限個しかないので，単純も有限個である．
+異なる二根の交点はExt$^1$の次元に等しく非負．
+反対根は有効錐のpointednessで排除されるので，交点は0か1である．
+
+根類が有理係数の線形関係を持つとする．正負の係数を分けて$x=y$と書けば，
+支持が異なるため$x\cdot y\ge0$，従って$x^2\ge0$となる．
+負定値性から$x=0$であるが，非自明な正係数の有効類の和が零であることは
+有効錐のpointednessに反する．片側しかない関係も同様に排除される．
+従って根類は独立であり，対角2，非対角0または$-1$の正定値Cartan行列を持つ．
+有限型の分類からADE型である．
+\end{proof}
+
+\begin{theorem}[全Rains heartの有限単純tilt分解]\label{thm:globalADEtilts}
+定理\ref{thm:globaldefect}の範囲で，定理\ref{thm:Eulerchamber}の負指数単純tiltは
+全Rains heart上に延長できる．初期$\cZ$の正根系を$\mathcal R_+$とすると，
+$\#\{\alpha\in\mathcal R_+:m(\alpha)<0\}$回で全反標準heartへ到達する．
+単純対象がない場合は初めから両heartは一致する．
+\end{theorem}
+\begin{proof}
+$\cZ$がSerre部分圏なので，その単純対象は全heartでも単純である．
+$\Hom$の有限性と$\Ext^1(S_j,S_j)=0$から，全対象に対する最大$S_j$-半単純商を用いて
+$(\ker\Hom(-,S_j),\add S_j)$というtorsion pairを全heart上で構成できる．
+負指数なら$S_j[1]$は標的heartに属すから，tilt後も振幅$[0,1]$を保つ．
+
+現在の境界非交叉Serre部分圏を$\cZ'$とする．新heartの短完全列の旧cohomologyを取ると，
+次数$-1$の項は全て$\add S_j\subset\cZ'$に入る．従って旧$\cZ'$のSerre性から，
+$\cD_{\cZ}$と新heartとの交わりもSerre部分圏である．その制限は補題\ref{lem:simpletilt}のheartである．
+新しいtorsionfree部分の対象$X$を，旧cohomologyのtriangle
+$H^{-1}(X)[1]\to X\to H^0(X)$で記述する．
+$H^{-1}(X)[1]$は標的heartに属し，$H^0(X)$の標的cohomologyは負次数にないため，
+$H^{-1}(X)[1]\hookrightarrow H^0_{\rm target}(X)=0$となる．
+よって$X$は旧heartにも属し，旧torsionfree部分の対象である．
+従って各段階の残るtorsionfree部分は$\cD_{\cZ}$の中にある．
+
+有限ADE性は補題\ref{lem:finiteADEautomatic}で得られる．局所的な手順が標的の有限次元heartに
+到達すると，残るtorsionfree部分は零になる．命題\ref{prop:hrs}により全heartも一致する．
+回数は定理\ref{thm:Eulerchamber}から従う．
+\end{proof}
+この有限分解は一回のHRS tiltという全体記述を，有限個のspherical単純による操作へ細分する．
+中間heartを別に指定したblowdown表示のRains heartと同一視する必要はない．
+
+\subsection{最大共鳴の単純対象}
+
+\begin{proposition}[全単純根が実在する場合の網羅性]\label{prop:maximalrootexhaustion}
+$\cZ$の根格子が有限ADE型で，選んだ全単純根$\alpha_i$に対する
+既約境界非交叉sheafが実在すると仮定する．このときそれらが$\cZ$の全単純対象であり，
+同根の単純は同型を除き一意である．
+\end{proposition}
+\begin{proof}
+任意の単純$M\in\cZ$は根類を持つ．実際，$D=c_1(M)\ne0$は$H^\perp$にあり，
+負定値性，Riemann--Rochの偶奇，Serre双対性から
+$0<-D^2=2-\dim\Ext^1(M,M)\le2$となるので$D^2=-2$である．
+負根が有効なら，その反数が実在単純根の非負和として有効になり，
+有効錐のpointedness \cite[Proposition 7.19]{Rains}に反する．
+非単純正根$\gamma=\sum c_i\alpha_i$では
+$-2=\gamma^2=\sum c_i(\gamma,\alpha_i)$だから，ある$i$で$(\gamma,\alpha_i)<0$．
+しかし異なる単純間のExt$^1$の次元はこの交点に等しいため不可能である．
+同根の異なる単純も，HomとExt$^2$が零なのにEuler値が2となって矛盾する．
+\end{proof}
+
+\subsection{単純根の実在入力と整数倍点族の完全な次元表}
+\begin{lemma}[Rainsの単純根存在結果の適用]\label{lem:Rains-simple-existence}
+滑らかな楕円境界を持つ指定Rains blowdown表示で，$\alpha$をその向き付き単純根とする．
+$q$が非torsionで，ある整数$m$について$\rho(\alpha)q^m=\OO_E$なら，
+境界非交叉の既約純一次元sheaf $S_\alpha$で
+$c_1(S_\alpha)=\alpha$，$\chi(e,S_\alpha)=m$となるものが存在する．
+本稿のnef・正次数の範囲では，これは単純であり同型を除き一意である．
+\end{lemma}
+\begin{proof}
+存在はRainsの既知結果を適用する．\cite[\S4, pp.~34--35]{Filtered}は，
+指定blowdownの単純根が$q$の冪へのrestrictionを持つとき有効となることと，
+対応する$(-2)$類のpure sheafに対するdeterminant条件を記述している．
+\cite[\S11, p.~141, Proposition 11.23の直前]{Rains}では，
+\emph{有効単純根そのもの}の類に対し，そのdeterminant条件を満たすEuler標数で
+既約sheafが存在し，境界と交わらないことが明記されている．
+Proposition 11.23のnef・fundamental chamberの主張を単純根に誤用しているのではない．
+本稿の規約でrank-zero類のrestriction determinantは$\rho(\alpha)q^m$である．
+従って入力の仮定を満たす．単純性は補題\ref{lem:offboundary}，一意性は
+同根の異なる単純間でEuler値2となる矛盾による．
+\end{proof}
+\begin{remark}
+これは任意の数値的共鳴根に無条件にsheafを割り当てる主張ではない．
+\emph{固定したRains heartのblowdown単純根}であることを追加して既知の存在結果を使っている．
+以下の整数倍点族では，各単純根についてこの条件を個別に確認する．
+\end{remark}
+
+\begin{theorem}[整数倍点族：整列した差による全単純の次元]\label{thm:sorted-spectrum}
+$E\subset\mathbb P^2$のflexを原点$o$とし，$q\in E$を非torsionとする．
+$3\le r\le8$，相異なる正整数$N_1,\ldots,N_r$に対して$p_i=N_iq$と置く．
+$S=\operatorname{Bl}_{p_1,\ldots,p_r}\mathbb P^2$と，この順序のblowdownによるRains heartを取る．
+$q$のPicard類は$\OO_E(q-o)$であり，共鳴の符号は\eqref{eq:resonance}に従う．
+このとき$S$はgenuine del Pezzoであり，境界非交叉heartの全単純根は
+\[
+ \alpha_0=h-e_1-e_2-e_3,\qquad \alpha_i=e_i-e_{i+1}\quad(1\le i<r)
+\]
+である．対応するsheafは全て実在し，その指数は
+$(N_1+N_2+N_3,N_2-N_1,\ldots,N_r-N_{r-1})$である．
+
+$N_{\pi(1)}<\cdots<N_{\pi(r)}$となる並べ替えを$\pi$とする．
+$A=R/(g-1)$の有限次元単純加群は同型を除き正確に$r$個で，その根類と次元は
+\begin{align*}
+ \beta_0&=h-e_{\pi(1)}-e_{\pi(2)}-e_{\pi(3)},
+ &\dim V_0&=N_{\pi(1)}+N_{\pi(2)}+N_{\pi(3)},\\
+ \beta_i&=e_{\pi(i)}-e_{\pi(i+1)},
+ &\dim V_i&=N_{\pi(i+1)}-N_{\pi(i)}\quad(1\le i<r).
+\end{align*}
+全Rains heartから反標準heartへの負単純tiltの回数は
+\[
+ \operatorname{inv}(N)=\#\{(i,j):i<j,\ N_i>N_j\}
+\]
+である．特に両heartが一致することと$N_1<\cdots<N_r$は同値である．
+\end{theorem}
+\begin{proof}
+$q$が非torsionなので点は相異なる．blow-up後の滑らかな反標準曲線の類$H$はnefで，
+$H^2=9-r>0$である．$H^\perp$の根を$ah-\sum b_ie_i$と書くと
+$\sum b_i=3a$，$\sum b_i^2=a^2+2$．$a\ge0$の根は差根，三点の和を引く直線類，
+六点の和を引くconic類，および$r=8$で一つの係数が2・残りが1の三次曲線類だけである．
+実際Cauchy--Schwarzで$(9-r)a^2\le2r$，かつ
+$\sum b_i(b_i-1)=a^2-3a+2$を使えば$a\le3$とこの列挙を得る．
+可能性$a=4,r=8$では右辺6を一つの3または三つの2で分配しても$\sum b_i=12$に届かず排除される．
+
+restrictionは$\rho(ah-\sum b_ie_i)=q^{-\sum b_iN_i}$である．
+差根の指数は相異なる二整数の差，$a>0$の根の指数は正整数の正係数和なので零にならない．
+もし$H$がampleでなければ，nef・bigとNakai--Moishezonから$HC=0$の既約曲線がある．
+Hodge指数定理とadjunctionより$C^2=-2$で，境界と交わらずrestrictionが自明となり矛盾する．
+よって$S$はgenuineである．全ての表示した単純根は$q$の整数冪にrestrictionするため，
+補題\ref{lem:Rains-simple-existence}を\emph{同じblowdown表示}で各根に適用する．
+命題\ref{prop:maximalrootexhaustion}が全単純の網羅性を与える．
+
+正根のうち負指数を持つものは差根$e_i-e_j$ $(i<j,N_i>N_j)$だけである．
+負の隣接差を選ぶ単純反射は隣接二整数の交換であり，$\alpha_0$の指数は常に
+現在の先頭三整数の和だから正である．従って隣接逆転を解消する整列が
+定理\ref{thm:Eulerchamber}の手順となり，終端の単純根と正指数は表示したものになる．
+補題\ref{lem:targetfiniteheart}がこれらを全有限次元単純加群に対応させる．
+定理\ref{thm:globalADEtilts}から同じ回数で全heartも一致する．
+初期が整列済みのときだけ負の単純がないので，最後の同値も従う．
+\end{proof}
+
+\begin{corollary}[同じpointed導来圏内の異なるRains hearts]\label{cor:permuted-hearts}
+上の無順序点集合を固定すると，その$r!$通りの順序から得るRains heartsは，
+同じ$\cD_q$と同じ$e$の中で相異なる．反標準環$R(e,s)$は共通であり，
+この$r!$個のうち反標準heartと一致するのは整数を昇順に並べたものだけである．
+\end{corollary}
+\begin{proof}
+可換blow-up $S$は点の順序によらず，gluing\eqref{eq:glue}は$(S,E,q)$と$e$から定まる．
+従って導来圏と構造対象，Serre関手，反標準環は共通に固定できる．
+一方，異なる二順序には前後関係が逆になる点の対がある．一方のheartでは$e_i-e_j$が
+隣接単純根の正和として有効で，他方ではその反数が有効である．
+もし両heartが同じなら有効錐のpointednessに反する．最後は定理\ref{thm:sorted-spectrum}による．
+\end{proof}
+
+\begin{corollary}[六点の具体例]\label{cor:E6spectrum}
+$(N_1,\ldots,N_6)=(1,3,2,5,7,11)$では，全六単純根sheafが実在し，
+一回の$\alpha_2$-tiltで全反標準heartへ移る．全有限次元単純の根類と次元は
+\[
+\begin{array}{c|rrrrrr}
+\text{根類}&\alpha_0&\alpha_1+\alpha_2&-\alpha_2&\alpha_3+\alpha_2&\alpha_4&\alpha_5\\\hline
+\text{次元}&6&1&1&2&2&4
+\end{array}
+\]
+であり，一次元characterは正確に二つである．同じ無順序六点集合は同じpointed導来圏内に
+$6!=720$個の相異なるRains heartsを与える．
+\end{corollary}
+\begin{proof}
+整列は$(1,2,3,5,7,11)$で，逆転は一つだけである．前二結果を適用する．
+\end{proof}
+\begin{remark}[共鳴とheartの不一致は同義ではない]
+この族では全根が数値的に共鳴しているが，整列した順序のRains heartは反標準heartと一致し，
+$(e,s)$はAZ-ampleである．非整列順序では少なくとも一つの負指数単純があり，AZ-ampleでない．
+従って最大の数値的共鳴とheartの一致は両立する．この主張はheartの\emph{同じ導来圏内での位置}についてであり，
+構造対象を忘れた抽象的abel同値の全分類ではない．
+単純加群の根類・次元は決定したが，元の楕円生成元の作用行列や全アフィン環の表示は未計算である．
+既知のRains存在結果とWeyl反射を適用した帰結として扱い，有限次元表現論一般の新発見とは主張しない．
+\end{remark}

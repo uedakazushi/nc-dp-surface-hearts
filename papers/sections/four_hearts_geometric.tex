@@ -1,0 +1,313 @@
+\section{VdB heartとRains heart：blow-up表示の同定}\label{sec:VdBRains}
+\subsection{blow-downからのt構造の認識}
+Rains \cite[Lemma 4.9, Proposition 4.17]{Rains}はVdB blow-up
+$\alpha:\widetilde X\to X$について，$X$とblow-up中心を含む可換divisorがGorensteinなら
+$R\alpha_*$が\emph{pseudo-canonical}であることを示す．本稿で必要な内容は
+\begin{equation}\label{eq:pseudocanonical}
+M\in D^{\ge0}(\widetilde X)
+\quad\Longleftrightarrow\quad
+R\alpha_*\theta_{\widetilde X}^{\ell}M\in D^{\ge0}(X)
+\quad(\ell\in\mathbb Z)
+\end{equation}
+という非負部分の認識である．初期heartとblow-down関手およびSerre作用を固定すれば，
+右辺はt構造を一意に決める．
+
+\begin{theorem}[同じblow-upデータに対する一致]\label{thm:RV}
+VdBとRainsの二つの表示に共通の初期heartを取り，有限回の各blow-upについて，
+中心，gluing bimodule，blow-down関手を同定する．各段階で
+\eqref{eq:pseudocanonical}の適用条件が成り立つとする．
+これらの同定から得るdg同値はt-exactで，$\AV\simeq\AR$を与える．
+構造対象も同じラベルの対象として同定している場合，この同値はpointedである．
+\end{theorem}
+\begin{proof}
+一段階について，基底のt-exact同値を$E$，上のdg同値を$F$とし，
+$R\alpha_{\mathrm R*}F\simeq E R\alpha_{\mathrm V*}$を用いる．
+Serre関手の一意性から$F\theta_{\mathrm V}\simeq\theta_{\mathrm R}F$である．
+従って\eqref{eq:pseudocanonical}の右辺は$F$で保存され，非負部分が同定される．
+直交性から非正部分も同定されるので$F$はt-exact．初期heartから帰納する．
+構造対象の保存はt-exactnessからでなく，指定したgluingラベルの同定から従う．
+\end{proof}
+\begin{remark}
+Rains \cite[Theorem 4.10, Proposition 4.13, Theorem 4.30]{Rains}は
+VdB blow-upのsemiorthogonal decompositionとgluingを用いる．従って同じ構成を
+この二通りに記述した場合には上の仮定を満たす．しかし，独立に選んだ
+blowdown構造の比較，異なるパラメータ表示の照合，途中でsection modelに置き換える操作は，
+同じデータという言葉だけで済ませられない．
+\end{remark}
+
+\subsection{section modelへの移行は別の操作}
+VdB \cite[\S11.1]{VdB}の図式を
+\[
+X_j\xleftarrow{\alpha_j}\widetilde X_j\xrightarrow{\delta_j}X_{j+1}
+\]
+とする．$\alpha_j$はblow-up，$\delta_j$はsection-algebra modelへの比較である．
+Definition 11.1.2の一般位置条件を，同論文で固定した平面埋込みに関する
+$(\sigma p_i)$へ課すと，Theorem 11.1.3より$R\delta_{j*}$と$L\delta_j^*$は逆同値で，
+heart上の振幅は$[0,1]$と$[-1,0]$．coherent有界部分への制限にはLemma 9.1.5も用いる．
+命題\ref{prop:hrs}から
+\[
+\cT_j=\ker R^1\delta_{j*},\qquad \cF_j=\ker\delta_{j*},\qquad
+(L\delta_j^*)(\coh X_{j+1})=\langle\cF_j[1],\cT_j\rangle.
+\]
+$\cF_j=0$のとき，かつそのときに限り，この比較はabel同値である．
+
+三次曲面では$X_7=\operatorname{Proj}F$である．VdBのChapter 12の表示$F=P/(C_3)$は，
+Theorem 11.1.3の一般位置条件を仮定せずにも構成される．
+従って超曲面表示の存在からその点での導来同値を結論してはいけない．
+同書Remark 12.0.5も，raw blow-upとsection modelが非可換の場合に一般には一致しないことを区別する．
+六段の比較の合成を，対象・関手の照合なしに一回のtiltと呼ぶこともしない．
+
+\section{Rains heartと反標準heartの導来比較}\label{sec:Rac}
+\subsection{genuine楕円gluingと既知入力}
+$S$を滑らかな可換del Pezzo曲面で$-K_S$がampleなものとし，
+$E\in|-K_S|$を滑らかな楕円曲線，$q\in\Pic^0(E)$とする．
+$\cB=\OO_S^\perp\subset\Perf(S)$にexceptional object $e$を
+\begin{equation}\label{eq:glue}
+\RHom(e,M)=0,\qquad \RHom(M,e)=\RHom_E(Li^*M,q)
+\quad(M\in\cB)
+\end{equation}
+でglueしたdg圏を$\cD_q$とする．Rainsの構成から得るheartを$\AR$とし，
+$\cD_q=\Db(\AR)$とする．これは任意の抽象的gluingにheartの存在を仮定するものではなく，
+\cite[Theorem 4.30, \S5]{Rains}と\cite[\S4]{Filtered}の構成を指定したものである．
+その境界関手$F_q$と右随伴$i_{q*}$は
+\[
+F_q(e)=\OO_E,\quad F_q|_{\cB}=Li^*(-)\otimes q^{-1},\quad
+\theta X\longrightarrow X\longrightarrow i_{q*}F_qX\longrightarrow\theta X[1]
+\]
+を満たす．$s=\theta^{-1}$はheartを保ち，$F_qs=\Psi F_q$で，
+$\Psi$は境界の平行移動と次数$d=(-K_S)^2$の線束によるtensor積の合成である．
+
+Rains \cite[Proposition 5.1]{Filtered}を$e$へ適用すると
+\begin{equation}\label{eq:ring}
+R=\bigoplus_{n\ge0}\Hom(e,s^ne),\quad g\in R_1\text{ は中心正則},\quad
+R/gR=B(E,L,\sigma),\quad\deg L=d>0.
+\end{equation}
+ここで$B(E,L,\sigma)$はtwisted homogeneous coordinate ringである．
+$R$は$A=R/(g-1)$のRees環であり，$\operatorname{gr}_{(g)}R=B(E,L,\sigma)[g]$．
+固定次数での$g$進filtrationは有限なので，整域性と左右noetherian性は商から持ち上がる．
+$\sigma$が無限位数なら\cite[Proposition 2.4]{RSS}により$\chi$条件と有限cohomological dimensionを得る．
+この命題は$\deg L=1$も許す．有限位数なら$B(E,L,\sigma)$はskew Laurent環の部分環としてPIであり，
+\cite[Theorems 5.13, 5.1(1), 4.5]{YZ}を順に用いると同じ有限性を得る．
+ここで必要なのは$\pi R(a)$からのExtの有界性で，標的の有限大域次元を先取りしてはいない．
+
+\begin{lemma}[orbit間のExt]\label{lem:orbit}
+すべての整数$a,b$に対し，sourceの$s^ae,s^be$とtargetの$\pi R(a),\pi R(b)$の双方で
+\begin{equation}\label{eq:orbit}
+\Ext^j(-,-)=
+\begin{cases}
+R_{b-a}&j=0,\ b\ge a,\\
+R_{a-b-1}^*&j=2,\ b<a,\\
+0&\text{その他}
+\end{cases}
+\end{equation}
+となる．targetの次数2のpairingは境界$H^1(E,\OO_E)$へのtraceで定まる．
+\end{lemma}
+\begin{proof}
+sourceでは$e$のexceptionalityと境界triangleから始め，
+正次数の楕円線束の$H^1$消滅で帰納する．$g$の単射性とSerre双対性が負のtwistを処理する．
+targetの消滅とtrace pairingは\cite[Corollary 3.8とその証明]{Filtered}である．
+Homの同定が自然な$R_n\to\Hom(\pi R,\pi R(n))$であることは，
+$g$の短完全列に対する切断の列と$n=0$での$\End(\pi R)=k$から帰納して確認する．
+\end{proof}
+
+\subsection{orbit生成，trace，飽和性}
+\begin{theorem}[指定した自然導来切断の同値]\label{thm:derived}
+上のgenuine楕円gluingに対し
+\[
+\Phi=\pi\mathbf R\Gamma_*:\cD_q\xrightarrow{\sim}\Db(\qgr R),
+\qquad (\mathbf R\Gamma_*X)_n=\RHom(e,s^nX)
+\]
+はdg同値である．$\Phi(e)=\pi R$，$\Phi s\simeq(1)\Phi$を満たし，
+$\qgr R$のhomological dimensionは2である．$q$と$\sigma$の位数に制限はない．
+\end{theorem}
+\begin{proof}
+\textit{第一段階：Ind圏での生成．}
+$X\in\Ind(\cD_q)$がすべての$s^ne$に右直交するとする．
+$\theta X$も同じ条件を満たすので，境界triangleと随伴性から
+\[
+\RHom_E(\Psi^n\OO_E,F_qX)=0\quad(n\in\mathbb Z)
+\]
+となる．正次数のtwisted line bundlesは$D_{\mathrm{qc}}(E)$をcompact生成するから$F_qX=0$．
+さらに$\RHom(e,X)=0$より$X\in\Ind(\cB)$．対応する$G\in D_{\mathrm{qc}}(S)$は
+$R\Gamma(S,G)=0$，$Li^*G=0$を満たす．$U=S\setminus E$はaffineである．
+$j:U\hookrightarrow S$に対しCartier divisorの局所化から
+\[
+G\simeq\operatorname*{hocolim}_{n}G(nE)\simeq Rj_*j^*G.
+\]
+affine上の大域切断の保守性より$G=0$，従って$X=0$．これでorbitはInd圏でcompact生成し，
+compact objectsは$\cD_q=\thick\{s^ne:n\in\mathbb Z\}$となる．
+
+\textit{第二段階：関手と完全忠実性．}
+Rains heartのInd圏のinjective resolutionを取り，exactな$s$の作用をstrictifyして
+右$R$作用つき$\mathbf R\Gamma_*$を構成する．まず$D(\QGr R)$への関手である．
+\eqref{eq:orbit}より$\Phi(s^ae)=\pi R(a)$で，高次cohomologyは有限内部次数にのみ残って$\pi$で消える．
+thick生成により全対象の像は$\Db(\qgr R)$へ入る．
+境界の$V\in\coh E$については$R\Gamma(E,\Psi^nV)$となり，Serre消滅により
+$\Phi(i_{q*}V)$は通常の境界包含$\coh E\simeq\qgr(R/gR)\to\qgr R$の像である．
+この同定は短完全列を保存する．
+
+非零の$u\in H^1(E,\OO_E)$を$\OO_E$の自己拡大で表す．境界へ押し出し，
+$e\to i_{q*}\OO_E$で引き戻し，境界triangleのconnecting mapを取ると
+$\Ext^2(e,\theta e)$の非零元を得る．$e$のexceptionalityから
+$H^1(E,\OO_E)\simeq\Ext^2(e,\theta e)$である．targetでも同じ議論が成り立ち，
+$\Phi$は$u$を同じ$u$へ送る．従ってtraceの写像は非零．
+全shiftとYoneda積に対する自然性から，orbit間の次数2の写像は次数0の同型の双対となる．
+残る次数は\eqref{eq:orbit}で消えるので，orbit間のRHomはquasi-isomorphism．
+両変数でthick closureを取れば$\Phi$の完全忠実性が従う．
+
+\textit{第三段階：本質的全射性．}
+$\cB$は$\Perf(S)$のadmissible部分圏でsmooth properである．gluing moduleは
+pseudo-perfectであり，smoothnessからperfectとなる．従って\cite[Theorems 3.18, 3.25]{Orlov}より
+$\cD_q$はsmooth properかつ飽和的である．任意の$Y\in\Db(\qgr R)$に対し
+$X\mapsto\RHom(\Phi X,Y)$は，環の有限性とorbit生成からpseudo-perfect moduleとなり，
+sourceの対象で表現される．こうして右随伴$\Phi^!$を得る．
+counitのcone $K$はすべての$\pi R(a)$に右直交する．
+標的の標準ample pair，$\chi$と有限cohomological dimensionを使い，有限個の$H^iK$へ
+同時にSerre消滅を適用すると，非零cohomologyがあれば高いtwistの非零大域切断を得て矛盾する．
+よって$K=0$であり$\Phi$は本質的全射．
+
+同値でSerre関手を運ぶとtarget上で$(-1)[2]$となる．$(-1)$はheartを保つので
+Extは次数2を超えて消える．$\Ext^2(\pi R,\pi R(-1))=k$からhomological dimensionはちょうど2である．
+\end{proof}
+\begin{remark}
+この証明は共鳴により元のheartのAZ amplenessが失敗しても働く．
+ただし$S\setminus E$がaffineであることを本質的に使う．
+weak del Pezzo，特異楕円境界，非局所自由gluingにそのまま適用はしない．
+また全$q$で同値という表現は，各$q$のsourceと対応するtargetの比較を意味する．
+\end{remark}
+
+\subsection{全heartの一回のtilt}
+\begin{theorem}\label{thm:globaltilt}
+定理\ref{thm:derived}の設定で$H=-K_X$がnefなRains heartを取る．
+全$M\in\AR$に対し$\Phi(M)\in D^{[0,1]}(\AAC)$であり，
+\[
+\cT=\ker H^1\Phi,\quad\cF=\ker H^0\Phi,\quad
+\Phi^{-1}(\AAC)=\langle\cF[1],\cT\rangle.
+\]
+\end{theorem}
+\begin{proof}
+Rains \cite[Theorem 9.10]{Rains}によるline bundlesの生成性を用い，
+$\bigoplus_j L_j\twoheadrightarrow M$を取る．Serre双対性から
+\[
+\Ext^2(e,s^nM)=\Hom(M,\theta^{n+1}e)^*.
+\]
+このHomは$\bigoplus_j\Hom(L_j,\theta^{n+1}e)$へ単射する．
+非零射があれば\cite[Corollary 10.12]{Rains}により
+$(n+1)K_X-c_1(L_j)$が有効だが，その$H$との交点は
+$-(n+1)d-Hc_1(L_j)<0$ $(n\gg0)$でありnef性に反する．
+従って次数2のcohomologyは有限内部次数にしかなく，$\pi$で消える．
+負次数と次数$>2$はheart性とhomological dimensionで消える．命題\ref{prop:hrs}を適用する．
+\end{proof}
+\begin{remark}
+$\cT,\cF$は$H^j\Phi$によって定義される．境界外でない一般の対象について，
+これを生の$\Ext^j(e,M)$の消滅と同一視してはならない．
+$\Phi$のt-exactnessは正確に$\cF=0$と同値である．
+t-exactならpointed性により$(e,s)$はAZ-ampleとなる．逆向きの認識には，
+例えば命題\ref{prop:unique}の高次消滅条件も確認すれば十分である．
+\end{remark}
+
+\section{共鳴，数値的ampleness，AZ ampleness}\label{sec:resonance}
+\subsection{共鳴の向きと実在条件}
+古典的avatarの根格子$K_S^\perp$の根を$\alpha^2=-2$，$\alpha K_S=0$で定める．
+$\rho(\alpha)=\OO_E(\alpha)$と書き，rank-zeroの類について
+\begin{equation}\label{eq:resonance}
+Li^*M=0\quad\Longrightarrow\quad \rho(\alpha)\otimes q^m\simeq\OO_E,
+\qquad\alpha=c_1(M),\quad m=\chi(e,M)
+\end{equation}
+となる向きに$q$を取る．$q$が非torsionなら$m$は一意である．
+これはrestrictionのdeterminantの条件であり，特定のheartのsheafの存在とは別である．
+特に$\alpha$と$-\alpha$を入れ替えるだけで，実在sheafの指数を自由に反転することはできない．
+
+Rainsの数値的ample coneは有効divisor錐の双対の内部である\cite[\S4]{Filtered}．
+有効根$\alpha$があれば$H\alpha=0$なので$H$はこの意味ではampleでない．
+以下では，そのことと指定pair $(e,s)$のAZ amplenessの失敗を別に証明する．
+
+\begin{theorem}[既約根sheafの符号別Ext]\label{thm:sign}
+境界非交叉の既約純一次元root sheaf $M$が実在するとする．$m=\chi(e,M)$なら全$n\in\mathbb Z$で
+\[
+\dim\Hom(e,s^nM)=\max(m,0),\quad
+\dim\Ext^1(e,s^nM)=\max(-m,0),\quad\Ext^2(e,s^nM)=0.
+\]
+$M$は2-sphericalであり，自然導来切断の像は
+\[
+\Phi(M)\simeq
+\begin{cases}
+V_m & m>0,\\ 0&m=0,\\V_{-m}[-1]&m<0,
+\end{cases}
+\]
+ただし$V_{|m|}$は境界外の$|m|$次元$A=R/(g-1)$加群に対応する対象である．
+\end{theorem}
+\begin{proof}
+境界triangleから$\theta M\to M$は同型なので$s^nM\simeq M$．
+line bundleから一次元以下のsheafへのExt$^2$は\cite[Corollary 7.23]{Rains}で消える．
+$m\le0$で非零$e\to M$があれば，像$I$は$c_1(I)=\alpha$を持ち，余核$T$は零次元．
+$I$は$e$の商なので\cite[Corollary 10.16]{Rains}より
+$\chi(e,I)\ge-\alpha(\alpha+K_X)/2=1$．零次元$T$のEuler値は非負なので$m\ge1$となり矛盾する．
+従ってこの場合$h^0=0$，$h^1=-m$である．
+
+$m>0$ではRainsの反変導来双対を使う．純一次元sheafの双対は
+$\mathbf R\mathrm{ad}(M)=N[-1]$の形で，$N$も双対曲面の既約純一次元境界外根sheafである
+\cite[Corollaries 5.9, 7.26, 7.30, 7.31]{Rains}．双対構造line bundleを$e^{\mathrm{ad}}$とすると
+\[
+\Ext^j(e^{\mathrm{ad}},N)\simeq\Ext^{j+1}(M,e)
+\simeq\Ext^{1-j}(e,M)^*\quad(j=0,1).
+\]
+従って$\chi(e^{\mathrm{ad}},N)=-m$．前段の議論を双対側の指定line bundleへ適用して
+$h^1(e,M)=0$，$h^0(e,M)=m$を得る．
+
+既約性と純粋性から非零自己射は単射で，同じ数値類の間の単射は同型である
+\cite[Corollary 7.7]{Rains}．従って$\End(M)=k$．Serre双対性と
+$\chi(M,M)=-\alpha^2=2$から自己Extは次数0,2で$k$，その他で零．
+最後に$g$は$M$上で可逆に作用するから，非零の次数付きExt加群は
+$k[g]$上有限自由で，局所化の次数0部分が所要の有限次元$A$加群となる．
+\end{proof}
+
+\begin{corollary}\label{cor:negative}
+$m<0$の上記$M$が存在すれば$(e,s)$はRains heartでAZ-ampleでなく，$\Phi$はt-exactでない．
+$\Phi$でtransportした反標準heartはRains heartと一致せず，両者の標準pointed abel圏の同値もない．
+定理\ref{thm:derived}の範囲では，それでも導来同値は成立する．
+\end{corollary}
+\begin{proof}
+$\Hom(e,s^nM)=0$が全$n$で成り立つためAZ生成性に反する．
+$\Phi(M)=V[-1]$は非零であり，標準heartに属さない．pointed abel同値はample pairを保存する．
+最後の主張は定理\ref{thm:derived}による．
+\end{proof}
+\begin{remark}[三つの非同値な条件]
+数値的共鳴，実在する根sheaf，AZ amplenessの失敗は同義語でない．
+正指数の個々の根sheafは$\cT$に入り，それだけではAZ失敗を検出しない．
+負指数の根sheafが見つからないことだけから$\cF=0$とも結論しない．
+またheartの非一致は指定した同値の下での主張であり，構造対象を忘れた任意のabel同値の不存在ではない．
+\end{remark}
+
+\subsection{稠密性と零指数の境界}
+\begin{proposition}\label{prop:density}
+滑らかな平面三次$E$，非torsion $q$と，一般の五点$p_1,p_2,p_4,p_5,p_6\in E$を固定する．
+$L=\OO_E(1)$とし，$p_3^{\varepsilon}(n)$を
+\[
+\OO_E(p_3^{\varepsilon}(n))=L(-p_1-p_2)\otimes q^{-\varepsilon n},
+\qquad n\ge1,\quad\varepsilon=\pm1
+\]
+で定める．各符号で有限個を除き六点は一般位置であり，
+$h-e_1-e_2-e_3$の指数は$m=-\varepsilon n$となる．
+各符号の点列は$E$にZariski稠密である．既約sheaf存在結果が適用される範囲で，
+負指数の列はAZ失敗の稠密な例を与える．
+\end{proposition}
+\begin{proof}
+$\Pic^1(E)\simeq E$より点は一意で，$q$の無限位数性から相異なる．
+固定五点に対し，三点共線または六点conicの条件を生む追加点は有限個である．
+残る無限集合は曲線上稠密で，restrictionの計算が指数を与える．
+\end{proof}
+\begin{proposition}\label{prop:zeroroot}
+$S$がgenuineで$E\in|-K_S|$が滑らかなら，非零根$\alpha$について
+$\OO_E(\alpha)\not\simeq\OO_E$である．
+\end{proposition}
+\begin{proof}
+$H=-K_S$のamplenessから$H^0(\pm\alpha)=0$．
+$\chi(\alpha-H)=0$，$H^0(\alpha-H)=H^2(\alpha-H)=0$なので$H^1(\alpha-H)=0$．
+$0\to\OO_S(\alpha-H)\to\OO_S(\alpha)\to\OO_E(\alpha)\to0$から
+$H^0(E,\OO_E(\alpha))=0$となる．
+\end{proof}
+弱del Pezzoの$(-2)$曲線$D$では，対照的に$i_*\OO_D(-1)$が全反標準orbitに直交し，
+反標準収縮で導来的に消える．これは$m=0$の現象であり，非零負指数のshiftと区別する．
+実際，$H|_D=\OO_D$なので全$n$で$R\Gamma(D,\OO_D(-1)\otimes\OO_D(nH))=0$である．
+

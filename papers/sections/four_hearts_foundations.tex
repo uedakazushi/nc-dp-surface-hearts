@@ -1,0 +1,246 @@
+\section{序論：四つの構成と三つの比較問題}\label{sec:intro}
+滑らかな可換del Pezzo曲面では，点のblow-up，反標準環，例外列から作るhelixは
+いずれも同じ圏$\coh S$を回復する．非可換化すると，この一致には二つの障害が現れる．
+第一に，同じ導来圏の中で標準的なheartが変わり得る．第二に，導来同値が存在しても，
+構造対象$\OO$をどの対象へ送るかが自動的には決まらない．
+本稿では次の三つを分ける：abel圏の構成，指定された導来同値，その同値のt-exactnessである．
+構造対象・反Serre作用・境界restriction・標識の保存はさらに別に確認する．
+
+名称は構成の由来を表す．\emph{VdB heart}はVan den Berghの実際のblow-upで得る
+coherent sheaf圏，\emph{Rains heart}はRainsのgluingとblowdown表示で指定するt構造のheart，
+\emph{anticanonical heart}は指定対象の反標準環の$\qgr$，
+\emph{AS heart}はArtin--Schelter正則$\mathbb Z$-代数の$\qgr$である．
+四名称が四つの相異なる圏を意味するわけではない．特に同じblow-up表示を用いる場合の
+VdB--Rains一致と，VdBのsection modelとの比較は混同してはならない．
+
+\subsection{主結果の見取り図}
+本稿の比較は次の形を取る．各矢の仮定は後の節で明記する．
+\begin{equation}\label{eq:overview}
+\begin{tikzcd}[column sep=large,row sep=large]
+\AV \arrow[r,"\text{同じblow-up表示}","\simeq"'] & \AR
+\arrow[d,phantom,"\text{HRS tilt}" description] \\
+\AAS \arrow[r,"\text{有限corner条件}","\simeq"'] & \AAC
+\end{tikzcd}
+\end{equation}
+右側の縦の表示はabel同値の矢ではない．指定した導来同値で同じ三角圏に入れたとき，
+一方のheartが他方のHRS tiltになることを表す．下側の横矢は条件付きであり，
+任意のAS表示に存在する同値ではない．
+
+\begin{theorem}[比較定理の要約]\label{thm:summary}
+以下の各主張を，それぞれの適用範囲で得る．
+\begin{enumerate}
+\item 同じ初期heart，blow-up中心，gluing bimodule，blow-down関手を同定した
+VdB表示とRains表示では，誘導される導来同値はt-exactである
+（定理\ref{thm:RV}）．
+\item 滑らかなgenuine可換del Pezzo $S$，滑らかな$E\in|-K_S|$，
+$q\in\Pic^0(E)$からのRains gluingでは，自然な関手
+$\Phi:\Db(\AR)\simeq\Db(\AAC)$がある．$H=-K$がnefなRains heartに対し
+\[
+\Phi^{-1}(\AAC)=\langle\cF[1],\cT\rangle,
+\quad \cT=\ker H^1\Phi,\quad\cF=\ker H^0\Phi
+\]
+である（定理\ref{thm:derived}，\ref{thm:globaltilt}）．
+\item 境界非交叉の既約根sheaf $M$が実在し，$m=\chi(\OO,M)<0$なら，
+$(\OO,\Sfun^{-1}[2])$はRains heartでAZ-ampleでない．自然な$\Phi$はt-exactでないが，
+(2)の範囲では依然として導来同値である（系\ref{cor:negative}）．
+\item AS helixをfoldした代数$B$と構造頂点$p$が
+命題\ref{prop:corner}の有限性条件を満たし，$pBp$が指定した反標準環であるとする．
+自然な$\AAS\to\AAC$がabel同値となる必要十分条件は
+$\dim_k B/BpB<\infty$である（系\ref{cor:ASac}）．
+\end{enumerate}
+\end{theorem}
+さらに三次曲面型の標準noetherian周期表示では，(4)の有限性条件と指定AOU同値のt-exactnessを
+四交比の十一の非零条件で判定する（定理\ref{thm:AOUexactlocus}）．
+係数トーラス上の一致開集合は，古典的六点モジュライと四次元トーラスの積となる
+（系\ref{cor:coefficientopen}）．これは係数空間の記述であり，全点のAS正則性を主張しない．
+
+二つの追加的な接続を重視する．第一に，VdBの最後のsection-model関手は，
+構造対象と反Serre作用を保つことから内在的な反標準導来切断と自然に同定される
+（定理\ref{thm:VdBcanonical}）．従って同じ最終blow-upのRains実現では，
+比較関手を別の仮定として与えずに四者を接続できる（系\ref{cor:fourfunctors}）．
+第二に，境界非交叉部分のtorsion pairは全ての部分対象・商のEuler標数で決まり，
+有限ADE型では負指数の単純tiltを有限回繰り返すと指定された反標準heartに到達する
+（命題\ref{prop:numericaltorsion}，定理\ref{thm:Eulerchamber}）．
+根類だけの比較でなく，実際のheartの一致を証明する点が重要である．
+
+第(1)項はRainsの既知のt構造の記述の適用である．第(4)項は一般のcorner理論を
+構造対象つき比較へ適用した判定法である．第(2)，(3)項は本研究の楕円gluingと共鳴の
+結果をまとめたもので，必要な証明を本稿に収める．
+\emph{全四heartの存在・一致・相対降下を一括して主張する定理ではない．}
+
+さらに実際のrestriction条件\eqref{eq:two-nontrivial}を満たすAOU領域では，
+最後の二つのmutationが対象を変えないことから
+$E_0\simeq\pi F$を証明し，AS側の構造対象と反標準環を同定する
+（定理\ref{thm:AOU-pointed}，系\ref{cor:AOU-ring}）．
+これにより，corner有限性を確認した範囲ではAOUの指定関手自体のt-exactnessも得る
+（系\ref{cor:AOU-texact}）．
+
+境界の規約は比較の一部である．第\ref{sec:boundarydata}節では，VdBの右加群shiftから
+実際のOrlov restrictionを運び，$L=L_1$，$q=L_0L_1^{-1}$という共通辞書を得る．
+印刷された別のshift規約と混在させず，明示した三条件の開集合で規格化した
+AOU型同値$\Psi_+$を構成する（定理\ref{thm:right-dictionary}，系\ref{cor:normalized-pointed}）．
+これにより，単に復元の候補を与えるだけでなく，指定構成でどの候補を使うかを決める．
+なお共通の境界dg模型の同定と，標準heartのt-exactな同定は区別する．
+
+
+本稿の係数条件を実際の共通領域へ結び付ける中心結果は
+第\ref{sec:ellipticcoefficients}節である．正規化decupleのpotentialを全係数で計算し，
+二系列の係数比を$L_1$による\emph{入力六点}の射影座標と同定する．
+その結果，十一条件はこの六点の一般位置と同値となる．
+さらにpointedなvery strong helixを標的のample pairから再構成することで，
+規格化共通領域では右noetherian性を導き，$\Psi_+$がabel同値に制限されることを得る
+（定理\ref{thm:normalized-abelian}）．
+従ってAS--反標準の一致と，共鳴に伴う順序付きRains heartのtiltを同じデータで比較できる．
+
+\subsection{先行研究と本稿の位置}
+Van den Bergh \cite{VdB}は非可換blow-upを構成し，section algebraへの比較を
+一般位置条件の下で導来同値とした．Rains \cite{Rains,Filtered}はそのblow-upの
+導来圏とt構造をgluingで記述し，effective rootと数値的なnef/ample coneを解析した．
+その「ample」はeffective coneによる数値的概念であり，指定pairのAZ amplenessと
+定義上同じではない．Rainsの2025年のmonograph \cite{RainsBook}は関連する先行稿を統合するが，
+本稿の定理番号は実際に照合した2019年稿・2022年稿に従う．monographとの全番号対応は未確認である．
+
+Abdelgadir--Okawa--Ueda \cite{AOU}は三次曲面型AS代数を構成し，
+十分一般な楕円六点データについてVdBのsection modelとの導来比較を与えた．
+Okawa--Ueda \cite{OU}はこのAS構成をdel Pezzo型へ拡張する．
+これらを，raw blow-up heartとの無条件なabel同値とは読まない．
+HRS tiltのrealizationが一般には同値でないことは\cite{CHZ}で詳しく論じられている．
+本稿では既知の導来同値からtiltを記述する場合と，抽象的にtiltを作る場合を区別する．
+
+VdBの\S11.2は既に境界非交叉対象の有限長性と単純対象数を扱う．
+またADE型のheartとWeyl反射はKleinian特異点の安定性条件で既知であり
+\cite{BridgelandKleinian}，単純tiltがlength heartを保つ一般条件は\cite{BCPW}で研究されている．
+本稿はそれらの機構の発見を主張せず，反標準Euler関数による\emph{標的heartの選択}と，
+VdB・Rains・AOUの\emph{指定関手}への適用を区別して述べる．
+
+本稿の目的は，これらの構成を指定関手・構造対象・仮定つきで一つの比較体系にすることである．
+既知のblow-up定理，HRS対応，AS定義自体を新しい結果とはしない．
+AOUの構造対象の同定は，同論文のmutation列，境界上のadmissibility，
+例外対のrestriction比較から導く明示的な帰結である．これをAOUの導来同値定理そのものの
+新証明とはしない．本研究の組合せによる主張の網羅的新規性調査と外部独立査読は未了である．
+elliptic Cauchy行列とそのdeterminant公式は既知\cite{EllipticCauchy}であり，
+本稿の追加点は，実際のdecupleの関係係数と元の六点の幾何の同定，およびheart比較への適用である．
+また，境界作用を復元する数値的整合性検査を第\ref{sec:boundarydata}節に置く．
+AOU v1の複数の表示を同じ境界同定で読むと非torsionの場合に不整合が生じるため，
+本稿では右加群規約から運んだ実際のtupleと$\Psi_+$を明示して使う．
+未変更の全印刷座標への翻訳を確定したという意味ではない．
+
+\section{記法，realization，反標準環}\label{sec:setup}
+基礎体は$k=\mathbb C$とし，圏は$k$-線形とする．導来比較には適合するdg enhancementを用いる．
+$\cD$は冪等完備で，使用するRHomの全cohomologyは有限次元とする．
+$\cH\subset\cD$が有界heartであるだけでは，realization
+$\operatorname{real}_{\cH}:\Db(\cH)\to\cD$が同値とは限らない．
+同値となる場合を本稿では\emph{derived type}と呼ぶ．
+
+Serre関手を$\Sfun$，$\theta=\Sfun[-2]$，$s=\theta^{-1}=\Sfun^{-1}[2]$と書く．
+$s$を単にAS代数の次数1 shiftと同一視しない．一般の$\mathbb Z$-代数には
+一周期的なshiftの指定自体がなく，helixの一周期は複数頂点を通ることがある．
+$s$がheartを両方向で保つなら
+\[
+\Ext^i_{\cH}(M,N)=\Hom_{\cD}(N,s^{-1}M[2-i])^*=0\quad(i>2)
+\]
+なので，derived typeの$\cH$のhomological dimensionは高々2である．
+$\OO$がexceptionalなら$\Ext^2(\OO,s^{-1}\OO)=k$であり，ちょうど2となる．
+
+\begin{definition}[構造対象つき比較]
+$(\cH,\OO,s)$の間の\emph{pointed同値}とは，構造対象の同型と$s$との自然な両立同型を
+指定した同値をいう．境界restrictionやmarkingの保存は，必要な箇所で別に指定する．
+\end{definition}
+構造対象を$e=\OO$と書き，右加群の規約で
+\[
+R=R(e,s)=\bigoplus_{n\ge0}\Hom(e,s^ne),
+\qquad ab=s^{\deg b}(a)\circ b
+\]
+と置く．局所有限右noetherian性を確認した範囲で
+$\AAC=\qgr R=\gr R/(\text{有限次元加群})$と定める．
+$\AR$と$\AAC$を同じ三角圏のheartと呼ぶには，まず$\Phi$を構成してtransportする必要がある．
+
+\begin{definition}[AZ ample pair]
+noetherian abel圏のpair $(e,s)$がAZ-ampleであるとは，任意の対象が
+有限個の$s^{-n}e$（$n>0$）の直和の商であり，任意の全射$M\twoheadrightarrow N$に対して
+$\Hom(e,s^nM)\to\Hom(e,s^nN)$が$n\gg0$で全射となることをいう\cite{AZ}．
+\end{definition}
+高い全Extの消滅をこの二条件だけから無条件に推論しない．
+またhelixの全頂点による生成性と，一つの頂点の$s$-orbitによる生成性は別である．
+
+\section{比較の一般論：振幅1，ample orbit，corner}\label{sec:formal}
+\subsection{振幅1の同値とHRS tilt}
+\begin{proposition}\label{prop:hrs}
+$F:\Db(\cA)\simeq\Db(\cB)$をenhancementと両立する同値，$G=F^{-1}$とし，
+$F(\cA)\subset D^{[0,1]}(\cB)$とする．このとき
+\[
+\cT=\ker H^1F,\qquad\cF=\ker H^0F
+\]
+は$\cA$上のtorsion pairであり，
+\[
+G(\cB)=\{X:H^{-1}_{\cA}X\in\cF,\ H^0_{\cA}X\in\cT,
+\ H^i_{\cA}X=0\ (i\ne-1,0)\}=\langle\cF[1],\cT\rangle.
+\]
+これはderived typeのheartである．$F$がt-exactであることと$\cF=0$は同値である．
+\end{proposition}
+\begin{proof}
+有界t構造のaisleを有限拡大とshiftで記述すると，振幅仮定と直交性から
+$G(\cB)\subset D^{[-1,0]}(\cA)$を得る．
+$M\in\cA$，$B_i=H^i(FM)$に対しtruncation triangleへ$G$を施すと
+$GB_0\to M\to GB_1[-1]$となる．長完全列から
+$H^{-1}_{\cA}(GB_0)=H^0_{\cA}(GB_1)=0$．よって
+\[
+0\longrightarrow GB_0\longrightarrow M\longrightarrow
+H^{-1}_{\cA}(GB_1)\longrightarrow0
+\]
+は$\cT$と$\cF$への分解である．$T\in\cT,U\in\cF$では
+$FT\in\cB$，$FU\in\cB[-1]$なので$\Hom(T,U)=0$．
+逆に二つのcohomologyが表示条件を満たす$X$は$FX\in\cB$となり，heartの式を得る．
+このheartのrealizationは$G$を通して標準の$\Db(\cB)$と同定されるため同値である．
+$\cF=0$ならtorsion分解から$\cT=\cA$で，両heartは一致する．逆は明らか．
+\end{proof}
+\begin{remark}
+$\cF\ne0$の対象は，$F$で消えるのでなく$H^1(FM)[-1]\ne0$になる．
+抽象的なtorsion pairからHRS heartを作るだけではderived type性は従わない\cite{CHZ}．
+\end{remark}
+
+\subsection{反標準orbitによるheartの一意性}
+\begin{proposition}\label{prop:unique}
+$\cH\subset\cD$はderived typeの有界heart，$s$は$\cH$を両方向で保ち，
+$(e,s)$はAZ-ampleとする．さらに各$M\in\cH$について，すべての$p>0$に共通の閾値で
+$\Ext^p(e,s^nM)=0$ $(n\gg0)$を仮定する．このとき
+\[
+\cH=\{X\in\cD:\Hom(e,s^nX[i])=0\quad(i\ne0,\ n\gg0)\}.
+\]
+従ってこの条件を満たすheartは固定した$(\cD,e,s)$に対し高々一つである．
+\end{proposition}
+\begin{proof}
+有限個の$H^j_{\cH}X$に高次消滅を同時に適用し，hyper-Ext spectral sequenceを退化させると
+$\Hom(e,s^nX[i])=\Hom(e,s^nH^i_{\cH}X)$となる．
+非零$M$について右辺がすべての十分大きい$n$で零となることは，任意に大きい$N$で
+$s^NM$を負twistの有限直和から生成するAZ条件に反する．従って指定した消滅は
+$H^i_{\cH}X=0$ $(i\ne0)$と同値である．
+\end{proof}
+\begin{corollary}\label{cor:ampleexact}
+二つのheartが命題\ref{prop:unique}の条件を満たすなら，pointed導来同値はt-exactである．
+同じ条件のheartの非零$s$-固定対象$M$は$\chi(e,M)>0$を満たす．
+$s^rM\simeq M$なら少なくとも$\sum_{a=0}^{r-1}\chi(e,s^aM)>0$である．
+\end{corollary}
+\begin{proof}
+第一の主張はheartの認識式による．固定対象では高次Extが消え，
+$\chi(e,M)=\dim\Hom(e,M)$となる．この値が零なら全orbitからのHomが零となってAZ生成性に反する．
+周期対象には$\bigoplus_{a=0}^{r-1}s^aM$を用いる．
+\end{proof}
+
+\subsection{idempotent cornerの判定}
+\begin{proposition}\label{prop:corner}
+$B$は局所有限右noetherian非負次数付き代数，$p\in B_0$はidempotentとする．
+$R=pBp$が右noetherian，$Bp$が右$R$有限生成，$pB$が左$R$有限生成であると仮定する．
+自然な$(-)p:\qgr B\to\qgr R$が同値である必要十分条件は$\dim_k B/BpB<\infty$である．
+\end{proposition}
+\begin{proof}
+$Bp$の有限生成性から$Mp$は有限生成であり，$(-)p$はexactかつ有限次元加群を保つ．
+左随伴$L(N)=N\otimes_RpB$は有限生成加群を有限生成加群に送り，
+$pB$の左有限生成性から有限次元加群も有限次元に送る．
+$B/BpB$が有限次元なら，counit $Mp\otimes_RpB\to M$の核・余核は$p$で消される．
+それらは右noetherian性により有限生成の$B/BpB$加群なので有限次元である．
+$L$を短完全列へ施した際の左端の核も同じ議論で有限次元となり，$L$は商圏上exactとなる．
+$(N\otimes_RpB)p=N$とcounitが逆同値を与える．
+逆に$(-)p$が同値なら$\pi(B/BpB)$は零に送られるので零であり，有限生成性から有限次元である．
+\end{proof}
+

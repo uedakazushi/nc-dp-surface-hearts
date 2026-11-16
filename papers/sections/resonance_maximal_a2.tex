@@ -1,0 +1,239 @@
+\section{全根共鳴の稠密性と実在する混合$A_2$部分系}
+\label{sec:maximal-resonance-a2}
+これまでの共鳴の稠密性を強め，一つの滑らかなcubic avatar上で
+$E_6$の全根が数値的に共鳴し，そのRains heartで
+正指数と負指数の\emph{異なる単純根sheafが同時に実在する}例を与える．
+数値的な根共鳴と，特定の向きの既約sheafのeffectivityは区別する．
+
+$E\subset\mathbb P^2$を滑らかな平面三次とし，変曲点$o\in E$
+を群法の原点とする．$h|_E=\mathcal O_E(3o)$である．
+非torsionの$q\in E\simeq\Pic^0(E)$を固定する．
+六点$p_1,\ldots,p_6\in E$のblow-upについて
+\[
+ \Lambda=K_S^\perp\simeq E_6,\quad
+ \rho:\Lambda\longrightarrow\Pic^0(E),\quad
+ \rho(ah-\textstyle\sum_i b_ie_i)
+  =\mathcal O_E(3ao-\textstyle\sum_i b_ip_i)
+\]
+とする．$\rho(\alpha)\in\langle q\rangle$なら，
+$\rho(\alpha)=q^{-m(\alpha)}$という整数$m(\alpha)$は，
+$q$が非torsionなので一意である．
+本節の「全根共鳴」は，$\Lambda$中の72根すべてで
+この整数が存在することを意味する．
+
+\begin{theorem}[全$E_6$根の共鳴チャートの整数表示]
+\label{thm:maximal-resonance}
+$E_6$の単純根を
+\[
+ \alpha_0=h-e_1-e_2-e_3,\qquad
+ \alpha_i=e_i-e_{i+1}\quad(1\le i\le5)
+\]
+とする．次は同値である：
+\begin{enumerate}
+\item 72根すべての$\rho(\alpha)$が$\langle q\rangle$に入る．
+\item 六単純根すべての$\rho(\alpha_i)$が$\langle q\rangle$に入る．
+\item 整数$m_0,\ldots,m_5$が存在し，
+\begin{equation}\label{eq:maximal-param}
+ 3p_1=(m_0-2m_1-m_2)q,\qquad
+ p_i=p_1+\Bigl(\sum_{j=1}^{i-1}m_j\Bigr)q
+ \quad(2\le i\le6)
+\end{equation}
+となる．
+\end{enumerate}
+このとき$m(\alpha_i)=m_i$であり，
+$\alpha=\sum c_i\alpha_i$では$m(\alpha)=\sum c_im_i$である．
+整数六組を固定すれば，式\eqref{eq:maximal-param}の
+$p_1$には$3$-torsionによる九つの選択肢がある．
+
+さらに，六点が相異なり一般位置にあることと，
+\[
+ m(\alpha)\ne0 \qquad
+ (\alpha\text{ は$E_6$の任意の根})
+\]
+とは同値である．従って全根共鳴のgenuine cubic locusは
+$E_6$の根超平面を避けるregularな整数六組に対応する．
+\end{theorem}
+\begin{proof}
+単純根は格子$\Lambda$の基底だから(i)と(ii)は同値．
+$\rho(\alpha_i)=p_i-p_{i+1}=-m_iq$より
+$p_{i+1}=p_i+m_iq$．
+$\rho(\alpha_0)=3o-p_1-p_2-p_3=-m_0q$を合わせると
+\eqref{eq:maximal-param}が出る．逆も直ちに確かめられる．
+$[3]:E\to E$は次数九の有限エタール射なので，
+最初の式の解は九個ある．
+
+根は
+\[
+\begin{gathered}
+\pm(e_i-e_j)\ (i<j),\qquad
+\pm(h-e_i-e_j-e_k)\ (i<j<k),\\
+\pm(2h-\textstyle\sum_{i=1}^6e_i)
+\end{gathered}
+\]
+の$30+40+2=72$個である．
+これらの制限が自明になるのは，それぞれ
+二点の一致，三点の共線性，六点が一つのconicに乗ることに
+正確に対応する（群法の原点$o$を変曲点に取ったため）．
+$\rho(\alpha)=q^{-m(\alpha)}$かつ$q$は非torsionなので，
+$\rho(\alpha)=\mathcal O_E$と$m(\alpha)=0$は同値．
+これは六点の一般位置条件に等しい．
+\end{proof}
+
+\begin{corollary}[全72根の同時共鳴はZariski稠密]
+\label{cor:maximal-dense}
+非torsionの$q\in E$を固定する．六つの相異なる
+\emph{正整数}$N_i$を取り$p_i=N_iq$とする．
+この六点は常に一般位置にあり，$72$根が全て
+非零Euler指数で共鳴する．
+このように得られる六点配置は$E^6$のZariski稠密部分集合をなす．
+さらに$N_1<N_3<N_2$を課しても稠密である．
+\end{corollary}
+\begin{proof}
+$N_i$が相異なるので二点は一致しない．
+三点が共線なら$(N_i+N_j+N_k)q=o$，
+六点がconic上なら$(\sum_iN_i)q=o$になる．
+いずれも正整数の和と$q$の無限位数性に矛盾する．
+全根の制限は
+\[
+ \rho(ah-\sum b_ie_i)=
+ q^{-\sum b_iN_i}
+\]
+である．
+$\{nq:n\ge1\}$は楕円曲線$E$上の無限集合だから
+Zariski稠密．その六重直積で対角を除いた集合も
+$E^6$に稠密である．
+整数の大小制約$N_1<N_3<N_2$を課す場合，
+$N_1=u$，$N_3=u+v$，$N_2=u+v+w$
+（$u,v,w$は任意の正整数）と置けばよい．
+群準同型
+\[
+ E^3\longrightarrow E^3,\qquad
+ (x,y,z)\longmapsto(x,x+y+z,x+y)
+\]
+を定める整数行列の行列式は$-1$なので，
+これは代数群の自己同型である．
+正整数倍の三重直積の稠密性はこの自己同型で保存される．
+独立の正整数倍$N_4q,N_5q,N_6q$を付け，
+一致点の対角を除けば，制約付き集合も$E^6$に稠密である．
+\end{proof}
+
+\begin{proposition}[実在する正負の単純根sheaf]
+\label{prop:actual-mixed-a2}
+\[
+ (N_1,\ldots,N_6)=(1,3,2,5,7,11),\qquad p_i=N_iq
+\]
+とする．六単純根のEuler指数は
+\[
+ (m_0,m_1,m_2,m_3,m_4,m_5)=(6,2,-1,3,2,4).
+\]
+特に
+\[
+ \alpha=e_1-e_2,\qquad\beta=e_2-e_3,\qquad
+ m(\alpha)=2,\quad m(\beta)=-1,\quad
+ \alpha\cdot\beta=1.
+\]
+Rains\cite[\S4, (4.14)--(4.15)]{RainsFiltered}の
+simple-root effectivity判定と
+\cite[\S9,\S11]{RainsBirational}の既約sheafの存在を
+このsmooth elliptic chartに適用すると，同じRains heartに
+境界非交叉の既約root sheaf
+$M_\alpha,M_\beta$が存在する．それらについて
+\[
+ \dim\Ext^1(M_\alpha,M_\beta)=1,\quad
+ \dim V^0(M_\alpha)=2,\quad
+ \dim V^1(M_\beta)=1.
+\]
+またこの性質を保ち$N_1<N_3<N_2$とする全根共鳴点の集合も
+同じ六点配置chartでZariski稠密である．
+\end{proposition}
+\begin{proof}
+単純根指数は$h|_E=3o$と点の差から計算される．
+全ての単純根の制限は$\langle q\rangle$にあるので，
+Rainsのeffectivity判定によりこれらは有効である．
+$E$は滑らかで$\alpha\cdot E=0$なので，
+有効な単純根はformal $(-2)$-curveとして
+境界と交わらない既約純一次元sheafで実現される．
+無限位数の$q$のため$M_\alpha,M_\beta$のEuler指数は
+上記の値に一意に固定される．
+前節の命題\ref{prop:root-intersection}および
+定理\ref{thm:sign}からExtと$V^j$の次元が従う．
+最後は系\ref{cor:maximal-dense}による．
+\end{proof}
+
+\begin{proposition}[二段混合拡大全体での非消失]
+\label{prop:a2-directsum}
+命題\ref{prop:actual-mixed-a2}の二sheafを固定する．
+$a\ge1,b\ge0$とし，任意の拡大
+\[
+0\longrightarrow M_\beta^{\oplus b}\longrightarrow M
+ \longrightarrow M_\alpha^{\oplus a}\longrightarrow0
+\]
+を取る．$\Ext^1(M_\alpha,M_\beta)\simeq k$の生成元が
+定める$A=R/(g-1)$加群写像を
+$d:V_\alpha\to V_\beta$とする．
+拡大類に対応する行列$T\in\operatorname{Mat}_{b\times a}(k)$の
+connecting morphismは$d\otimes T$であり，
+$r=\operatorname{rank}(d)\operatorname{rank}(T)$と置けば
+\[
+\boxed{
+\dim V^0(M)=2a-r,\quad
+\dim V^1(M)=b-r,\quad
+r\le\min(a,b).}
+\]
+特に$a\ge1$なら$\dim V^0(M)\ge a>0$なので
+自然な反標準導来切断はこの二段拡大を消さない．
+$b=2a$では$\chi(e,M)=0$だが，依然として
+$\Phi(M)\ne0$である．
+\end{proposition}
+\begin{proof}
+直和とYoneda積の自然性により
+\[
+\Ext^1(M_\alpha^{\oplus a},M_\beta^{\oplus b})
+ \cong\operatorname{Mat}_{b\times a}(k),
+\]
+対応するconnecting morphismは$k$-線型空間上
+Kronecker積$d\otimes T$である．そのrankは積となり，
+$d$は二次元から一次元への射だから$\operatorname{rank}(d)\le1$．
+前節の六項完全列
+\eqref{eq:offboundary-six}に代入して次元公式を得る．
+\end{proof}
+
+\begin{corollary}[全$q$導来同値に対する明示的な検査条件]
+\label{cor:a2-ff}
+同じ例で自然な導来切断$\Phi$が
+$M_\alpha,M_\beta$の間の$\Ext^1$で完全忠実なら
+\[
+ \dim\Hom_A(V_\alpha,V_\beta)=1
+\]
+である．従って二次元表現$V_\alpha$は
+一次元表現$V_\beta$を商に持ち，単純$A$加群ではない．
+そのとき非分裂拡大のconnecting morphismはrank$1$で，
+$(\dim V^0(M),\dim V^1(M))=(1,0)$となる．
+\end{corollary}
+\begin{proof}
+前節の系\ref{cor:affine-ext-test}による．
+$\dim V_\beta=1$だから非零$A$準同型は全射である．
+$\Ext^1$の生成元は完全忠実性の下で非零の
+$\Hom_A$へ写るから，connecting morphismのrankは$1$．
+\end{proof}
+
+\begin{remark}[有理数上の検算例]
+\label{rem:a2-rational-witness}
+\[
+ E:\ y^2z=x^3-xz^2+z^3,\quad o=(0:1:0),\quad
+ q=(0:1:1)
+\]
+とする．楕円曲線の二倍公式で
+$2q=(\frac14:-\frac78:1)$である．
+Nagell--Lutzの定理により$q$は無限位数である：
+有限位数なら$2q$も有理torsionで整数座標を持つはずだが
+$\frac14$は整数でない．
+$N=(1,3,2,5,7,11)$の六点について
+20通りの三点行列式と六点のconic評価行列式が
+全て非零であり，72根の共鳴指数も全て非零であることを
+\texttt{computations/verify\_resonance\_maximal\_a2.py}
+により\emph{有理数の厳密演算}で検算した．
+このコードは$A$の表現行列や$d$のrankを
+計算するものではなく，Rainsのsheaf存在を
+数値実験で置き換えてはいない．
+\end{remark}

@@ -1,0 +1,295 @@
+\section{境界外のsheafと拡大によるcohomologyの相殺}
+\label{sec:offboundary-extensions}
+本節は既約根sheafに限らない．既知入力は
+Rainsの境界triangle \eqref{eq:boundarytriangle}，
+$1$次元以下のsheafへの$\Ext^2$消滅
+\cite[Corollary 7.23]{RainsBirational}，および
+中心正則元$g$を持つ反標準環の仮定である．
+$\mathcal Z$をRains heartの中で
+\[
+ \mathcal Z=\{M\in\mathcal A_{\mathrm R}:
+    \dim M\le1,\ Li^*M\simeq0\}
+\]
+と置く．$R$は右noetherianであり，必要な$\chi$条件により
+$\Phi=\pi\mathbf R\Gamma_*$を該当対象に定義できると仮定する．
+$A=R/(g-1)\cong (R[g^{-1}])_0$と書く．
+ここで$\pi$は有限次元次数付き加群によるSerre商である．
+
+\begin{theorem}[境界外のsheafに対する二項振幅と長完全列]
+\label{thm:offboundary-amplitude}
+$\mathcal Z$は拡大に閉じたexact categoryである．
+任意の$M\in\mathcal Z$について次が成立する：
+\begin{enumerate}
+\item 自然な$\theta M\to M$は同型である．従って
+$\tau^nM\simeq M$で，全$n\in\mathbb Z$について
+$\Ext^j(e,\tau^n M)=0$ $(j\notin\{0,1\})$．
+\item
+\[
+ N^j(M)=\bigoplus_{n\ge0}\Ext^j(e,\tau^nM)
+ \qquad(j=0,1)
+\]
+は次数付き右$R$加群で，$g$による乗法は全次数で同型である．
+特に$k[g]$加群として有限生成freeで，そのrankは
+$h^j(M)=\dim_k\Ext^j(e,M)$．
+\[
+ V^j(M)=(N^j(M)[g^{-1}])_0\in\operatorname{mod}_{fd}A,
+ \qquad \dim_kV^j(M)=h^j(M)
+\]
+であり，$H^j(\Phi M)\simeq\pi N^j(M)$．
+従って自然な導来切断のcohomologyは次数$0,1$だけで，
+どちらも反標準境界$g=0$の外にある．
+\item 任意の短完全列$0\to M_1\to M_2\to M_3\to0$
+（$M_i\in\mathcal Z$）から，有限次元右$A$加群の
+自然な完全列
+\begin{equation}\label{eq:offboundary-six}
+0\to V^0(M_1)\to V^0(M_2)\to V^0(M_3)
+\xrightarrow{\delta} V^1(M_1)
+\to V^1(M_2)\to V^1(M_3)\to0
+\end{equation}
+を得る．この$\delta$はextension classのconnecting morphismで，
+$A$-線型である．
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Rainsのdimension filtrationは短完全列に関し安定である．
+また$Li^*$はexact triangulated functorなので
+両端の制限が零なら中間項の制限も零となる．
+従って$\mathcal Z$は拡大に閉じる．
+
+境界triangle \eqref{eq:boundarytriangle}と$Li^*M=0$から
+自然な$\theta M\to M$が同型となる．
+$\theta$，$\tau$はheart上でexactなので，全twistも
+$1$次元以下のsheafとなる．
+負のExtは二つのheart対象間で消え，Rainsの
+\cite[Corollary 7.23]{RainsBirational}で$\Ext^2$が消える．
+この曲面のcohomological dimensionは高々$2$だから，
+(1)が従う．
+
+境界triangleの$\theta\to\mathrm{id}$から得られる
+次数$1$の中心元$g$は$M$上で同型であり，
+$\Ext^j(e,\tau^nM)\to\Ext^j(e,\tau^{n+1}M)$に
+同型を誘導する．有限次元性により
+$N^j(M)\simeq k[g]\otimes_k\Ext^j(e,M)$
+が$k[g]$加群として成り立つ（$R$作用はこの分解で
+単純になるとは主張しない）．
+ゆえに$\pi N^j$は非零なら境界外の対象で，
+dehomogenizationは$A$の有限次元加群$V^j$を与える．
+$\Phi M$のcohomologyの同定は$\pi$のexactnessと
+$\mathbf R\Gamma_*$の定義による．
+
+短完全列の$\tau^n$-twistに$\RHom(e,-)$を適用すると
+cohomologyは次数$0,1$だけなので六項完全列になる．
+これを全$n\ge0$で直和し，中心元$g$で局所化した後
+次数$0$を取る．局所化と次数$0$の抽出はこの
+graded-moduleのクラスでexactであり，
+自然性によりconnecting morphismは$A$-線型となる．
+\end{proof}
+
+\begin{corollary}[拡大に閉じた正・負の部分圏]
+\label{cor:offboundary-sign-exact}
+\[
+ \mathcal Z_+=\{M\in\mathcal Z:\Ext^1(e,M)=0\},\qquad
+ \mathcal Z_-=\{M\in\mathcal Z:\Hom(e,M)=0\}
+\]
+はともに拡大に閉じる．
+$\Phi(\mathcal Z_+)$はanticanonical heartの次数$0$に，
+$\Phi(\mathcal Z_-)$はその$[-1]$ shiftに含まれる．
+$V^0:\mathcal Z_+\to\operatorname{mod}_{fd}A$，
+$V^1:\mathcal Z_-\to\operatorname{mod}_{fd}A$
+はそれぞれ短完全列を保つ．
+特に正指数（負指数）の既約根sheafの任意の有限回の
+拡大は$\mathcal Z_+$（$\mathcal Z_-$）に入る．
+\end{corollary}
+\begin{proof}
+$\Ext^1$，$\Hom$の各々の消滅は
+\eqref{eq:offboundary-six}で拡大に関して閉じる．
+定理\ref{thm:sign}により各既約根sheafは指定部分圏に属する．
+長完全列の端の項が零なら残る三項は短完全列となる．
+\end{proof}
+
+\begin{proposition}[正負の混合拡大と相殺]
+\label{prop:mixed-sign-cancellation}
+$m_+>0$，$m_-<0$を持つ境界外既約根sheaf
+$M_+\in\mathcal Z_+$，$M_-\in\mathcal Z_-$が同じ
+Rains heartに実在すると仮定する．
+$0\to M_-\to M\to M_+\to0$という拡大を取る．
+この拡大が誘導する$A$-線型写像
+\[
+ \delta_M:V^0(M_+)\longrightarrow V^1(M_-)
+\]
+のrankを$r$とすると，
+\begin{equation}\label{eq:mixed-ranks}
+ \dim_kV^0(M)=m_+-r,\qquad
+ \dim_kV^1(M)=-m_--r .
+\end{equation}
+特に$m_+=-m_->0$の場合，$\delta_M$が同型なら
+$\Phi(M)=0$である．
+従って$\Phi$が$\mathcal Z$上で保守的なら，
+非零の混合拡大に対するそのような同型
+$\delta_M$は存在しない．
+同じ結論は$\Phi$が全導来圏の同値であるなら必ず成立する．
+\end{proposition}
+\begin{proof}
+\eqref{eq:offboundary-six}に
+$V^0(M_-)=V^1(M_+)=0$を代入すると
+\[
+0\to V^0(M)\to V^0(M_+)
+\xrightarrow{\delta_M}V^1(M_-)\to V^1(M)\to0
+\]
+となり，\eqref{eq:mixed-ranks}が従う．
+$\delta_M$が同型なら$N^0(M),N^1(M)$は
+次数$0$の局所化が零であるが，$g$は各次数において
+同型なので両方零であり，$\Phi(M)=0$である．
+$M$は$M_-$を非零部分対象とするため非零である．
+\end{proof}
+
+\begin{remark}[Euler標数だけでは検出できない]
+一般の$M\in\mathcal Z$に対して
+\[
+ \chi(e,M)=\dim V^0(M)-\dim V^1(M)
+\]
+であるが，$\chi(e,M)=0$から$\Phi(M)=0$は従わない．
+正負の拡大類によるconnecting morphism
+$\delta_M$のrankを指定して初めて
+反標準切断のcohomologyが決まる．
+$\mathcal Z_+,\mathcal Z_-$が$\mathcal Z$全体の
+torsion pairになるとは証明していない．
+\end{remark}
+
+\begin{proposition}[根系からの共鳴交叉制約]
+\label{prop:root-intersection}
+Rains heartに境界に制限して零となる
+異なる二つの既約純一次元根sheaf$M_\alpha,M_\beta$が
+存在し，第一Chern類を$\alpha\ne\beta$とする．
+すると
+\[
+ \Hom(M_\alpha,M_\beta)=\Ext^2(M_\alpha,M_\beta)=0,
+ \qquad
+ \dim_k\Ext^1(M_\alpha,M_\beta)=\alpha\cdot\beta.
+\]
+従って$\alpha\cdot\beta<0$ならそのような二対象は
+同じRains heartには同時に存在できず，
+$\alpha\cdot\beta=0$なら双方の向きの$\Ext^1$が零である．
+$\alpha\cdot\beta=1$なら$\Ext^1$は一次元である．
+\end{proposition}
+\begin{proof}
+非零な$M_\alpha\to M_\beta$の像$I$は，
+$M_\beta$の純一次元性から一次元である．
+$M_\alpha$の既約性より，核が一次元なら
+その第一Chern類は$\alpha$となり，
+像は零次元となって矛盾する．
+核が零次元なら$M_\alpha$の純一次元性から零である．
+従って写像は単射で，像の第一Chern類は$\alpha$である．
+他方，$M_\beta$の既約性から非零部分sheafの第一Chern類は
+$\beta$である．ゆえに$\alpha=\beta$となり矛盾する．
+
+$\theta M_\alpha\simeq M_\alpha$であるから，
+Serre双対により
+$\Ext^2(M_\alpha,M_\beta)
+ \simeq\Hom(M_\beta,\theta M_\alpha)^*=0$．
+Rains\cite[Corollary 7.13, (7.4)]{RainsBirational}の
+rank-zero Euler形式は
+$\chi(M_\alpha,M_\beta)=-\alpha\cdot\beta$であり，
+残る$\Ext^1$の次元は$\alpha\cdot\beta$となる．
+\end{proof}
+
+\begin{corollary}[導来完全忠実性に対する有限次元表現テスト]
+\label{cor:affine-ext-test}
+定理\ref{thm:offboundary-amplitude}の自然な導来切断$\Phi$が
+二つの境界外既約根sheaf$M_+,M_-$（指数$m_+>0$，
+$m_-<0$）の間の$\Ext^1$で完全忠実ならば，
+対応する有限次元$A$加群$V_+$，$V_-$について
+\[
+\Ext^1_X(M_+,M_-)
+ \xrightarrow{\;\sim\;}\Hom_A(V_+,V_-)
+\]
+が成り立つ．$\alpha_+=c_1(M_+)\ne c_1(M_-)=\alpha_-$なら
+\[
+\boxed{\dim_k\Hom_A(V_+,V_-)=\alpha_+\cdot\alpha_- .}
+\]
+従って右辺の次元がこれと異なるなら，
+$\Phi$はその二対象の間で完全忠実ではない．
+\end{corollary}
+\begin{proof}
+$\Phi(M_+)\simeq V_+$，$\Phi(M_-)\simeq V_-[-1]$
+である（$V_\pm$は境界外の有限支持対象として見る）．
+したがって
+\[
+\Hom_{\Db(\qgr R)}(\Phi M_+,\Phi M_-[1])
+ =\Hom_{\qgr R}(V_+,V_-)=\Hom_A(V_+,V_-).
+\]
+最後の同型は，$g$が各$V_\pm$上で可逆であり，
+その次数付き表示が$k[g]$に関して有限自由であることから，
+局所化がこの二対象間の$\Hom$を保存するためである．
+$\Ext^1_X(M_+,M_-)$は左辺へ$\Phi$が誘導する空間であり，
+完全忠実性を仮定すると同型となる．
+命題\ref{prop:root-intersection}を使えば次元式を得る．
+この写像は命題\ref{prop:mixed-sign-cancellation}の
+$\delta_M$のextension classによる線型写像そのものである．
+\end{proof}
+
+\begin{proposition}[根の和による反対指数の同時共鳴排除]
+\label{prop:root-sum-exclusion}
+古典的avatar$S$がgenuine del Pezzoで，
+滑らかな反標準楕円曲線$E$を持つとする．
+二つの根$\alpha,\beta$に
+\[
+ \mathcal O_E(\alpha)\otimes q^{m_\alpha}\simeq\mathcal O_E,
+ \qquad
+ \mathcal O_E(\beta)\otimes q^{m_\beta}\simeq\mathcal O_E
+\]
+という共鳴があるとする．もし$\alpha\cdot\beta=1$なら，
+$m_\alpha+m_\beta=0$は不可能である．
+特に，隣接する$A_2$部分根系の根に対する
+指数$+r$と$-r$の共鳴は同時には起こらない．
+\end{proposition}
+\begin{proof}
+$\gamma=\alpha+\beta$は
+$\gamma^2=-2-2+2=-2$，$H\cdot\gamma=0$を
+満たすから再び根である．
+$m_\alpha+m_\beta=0$なら二つの共鳴式の積から
+$\mathcal O_E(\gamma)\simeq\mathcal O_E$となる．
+しかしgenuine del Pezzoについての
+命題\ref{prop:zero-index}は任意の根の
+$E$への制限が非自明であることを示している．
+従って矛盾する．
+\end{proof}
+
+\begin{remark}[完全な相殺を探すときの制限]
+異なる根sheafの間の非自明な拡大は，
+上の命題から$\alpha\cdot\beta>0$を必要とする．
+特に最も単純な$\alpha\cdot\beta=1$の場合，
+指数が互いに反対で次元も等しいような混合拡大は，
+genuine classical avatarではそもそも同時共鳴できない．
+これは$\delta_M$の同型による導来的消失が
+genuineな族に現れないことの\emph{完全な証明ではない}．
+別のroot対や非既約対象を排除できていないためである．
+\end{remark}
+
+\begin{remark}[古典的な$(-2)$曲線上の完全な相殺]
+\label{ex:euler-cancellation}
+滑らかな弱del Pezzo $S$に$(-2)$曲線
+$i:D\simeq\mathbb P^1\hookrightarrow S$があり，
+反標準曲線$E$は$D$と交わらないとする．
+$H=-K_S$の$D$への制限は自明である．
+$\mathbb P^1$のEuler完全列
+\[
+0\to\mathcal O_D(-2)\xrightarrow{(-y,x)}
+ \mathcal O_D(-1)^{\oplus2}
+ \xrightarrow{(x,y)}\mathcal O_D\to0
+\]
+を$i_*$で送る．左端を$M_-$，右端を$M_+$
+とすると$\chi(M_-)=-1$，$\chi(M_+)=1$である．
+中間項$M=i_*\mathcal O_D(-1)^{\oplus2}$は非零だが
+\[
+\RHom_S(\mathcal O_S(nH),M)
+ \simeq\mathbf R\Gamma(D,\mathcal O_D(-1)^{\oplus2})=0
+ \quad(n\in\mathbb Z).
+\]
+したがって$\delta_M:k\to k$は同型で，
+反標準導来切断は$M$を零に送る．
+これは前の根壁の導来情報消失を
+「正負指数の拡大の完全な相殺」として説明する
+古典的な模型である．\emph{この例はweak avatarの例であり，
+genuine非可換曲面で同じ拡大が存在するという主張ではない．}
+\end{remark}

@@ -1,0 +1,190 @@
+\section{根sheafのEuler指数とcohomological degree}
+\label{sec:sign-trichotomy}
+Rainsの$\mathrm{ad}$は，一般に同じ非可換曲面の自己双対ではなく，
+反対側の双対曲面$X^{\mathrm{ad}}$への反変導来同値である．
+構造line bundle $e$はその双対$e^{\mathrm{ad}}=\mathrm{ad}(e)$へ移る．
+既知の双対性
+\[
+ \mathbf R\mathrm{ad}_X:
+ D^b(\mathcal A_{\mathrm R})^{\mathrm{op}}
+ \xrightarrow{\sim}D^b(\mathcal A_{\mathrm R}^{\mathrm{ad}})
+\]
+とその二重双対を使う\cite[\S5, Corollary 5.9]{RainsBirational}．
+
+\begin{lemma}[純一次元の双対と指数反転]
+\label{lem:root-dual}
+$M$を境界に制限して零となる既約な純一次元sheafとする．
+$N=R^1\mathrm{ad}_X(M)$は双対曲面上の既約な純一次元sheafで，
+\[
+ \mathbf R\mathrm{ad}_X M\simeq N[-1],\quad
+ R^1\mathrm{ad}_{X^{\mathrm{ad}}}N\simeq M,\quad
+ c_1(N)=c_1(M),\quad \chi(e^{\mathrm{ad}},N)=-\chi(e,M).
+\]
+$M$上で自然な$\theta M\to M$が同型なら，
+$N$上でも自然な$\theta^{\mathrm{ad}}N\to N$が同型である．
+とくに，根sheafは双対でも根sheafになる．
+\end{lemma}
+\begin{proof}
+Rains\cite[Corollaries 7.26, 7.30, 7.31]{RainsBirational}
+によれば純一次元sheafでは$\mathrm{ad}$の導来cohomologyが
+次数1だけにあり，その二重双対は元のsheafを復元する．
+これにより$N$も純一次元である．
+既約性はgenericな一次元support上の単純加群性に関する性質であり，
+genericでの双対によって保たれる．
+自然な境界triangleの双対は，双対側の境界triangleに一致するため，
+自然変換が$M$上で可逆なら$N$上でも可逆である．
+K群では$[\mathbf R\mathrm{ad}M]=-[N]$である．
+Rains\cite[Proposition 7.16]{RainsBirational}の公式
+$c_1(\mathbf R\mathrm{ad}M)=-c_1(M)$，
+$\chi(\mathbf R\mathrm{ad}M)=\chi(M)$を使えば
+$c_1(N)=c_1(M)$，$\chi(N)=-\chi(M)$となる．
+ここで$\chi(N)=\chi(e^{\mathrm{ad}},N)$である．
+\end{proof}
+
+\begin{lemma}[零以下のEuler指数ではglobal sectionがない]
+\label{lem:no-section}
+$M$を根$\alpha^2=-2$を第一Chern類とする既約な純一次元sheafとする．
+$m=\chi(e,M)\le0$なら$\Hom(e,M)=0$．
+\end{lemma}
+\begin{proof}
+非零の$f:e\to M$があるとし，その像を$I$とする．
+$M$の既約性は「任意の非零部分sheafが同じ第一Chern類を持つ」
+ことであって，$f$が全射であることを意味しない
+\cite[\S11, pp.~138--140]{RainsBirational}．
+$I\ne0$だから$c_1(I)=\alpha$であり，商$T=M/I$は
+零または零次元である．
+$I$は$e$の商であるため，
+Rains\cite[Corollary 10.16]{RainsBirational}の不等式
+\[
+ \chi(e,I)\ge-\tfrac12\alpha(\alpha+K_X)=1
+\]
+が適用できる．
+一方，零次元sheafのEuler標数は非負
+\cite[Proposition 7.6]{RainsBirational}なので
+$\chi(e,M)=\chi(e,I)+\chi(e,T)\ge1$となり，
+$m\le0$に矛盾する．
+\end{proof}
+
+\begin{theorem}[resonance sheafの符号別Extの完全判定]
+\label{thm:sign}
+$M$は$\alpha^2=-2$，$(-K_X)\alpha=0$を満たす根の
+既約な純一次元sheafで，$Li^*M=0$とする．
+$m=\chi(e,M)\in\mathbb Z$について全ての$n\in\mathbb Z$で
+\[
+\boxed{
+\begin{aligned}
+\dim\Hom(e,\tau^nM)&=\max(m,0),\\
+\dim\Ext^1(e,\tau^nM)&=\max(-m,0),\\
+\Ext^2(e,\tau^nM)&=0.
+\end{aligned}}
+\]
+したがって自然な導来切断を$M$に適用すると，
+\begin{equation}\label{eq:trichotomy}
+ \Phi(M)=
+ \begin{cases}
+   \pi N_m,&m>0,\\
+   0,&m=0,\\
+   (\pi N_{-m})[-1],&m<0,
+ \end{cases}
+\end{equation}
+ただし$m\ne0$のとき$\pi N_{|m|}\in\qgr R$は
+境界$g=0$の外にある非零対象であり，
+$R/(g-1)$の$|m|$次元右加群に対応する．
+$m=0$のとき，$M$は非零であるが，全Serre orbitに
+導来的に右直交し，指定した反標準導来切断は$M$を零に送る．
+\end{theorem}
+\begin{proof}
+$Li^*M=0$なら境界triangleから自然な
+$\theta M\to M$が同型であり，$\tau^nM\simeq M$．
+line bundle $e$と一次元sheafに対する
+$\Ext^2(e,M)=0$は
+Rains\cite[Corollary 7.23]{RainsBirational}による．
+
+$m\le0$では補題\ref{lem:no-section}により
+$\Hom(e,M)=0$，Euler標数より$\dim\Ext^1(e,M)=-m$．
+特に$m=0$では全$\Ext$が零となる．
+
+$m>0$とする．双対$N=R^1\mathrm{ad}M$は
+補題\ref{lem:root-dual}により双対曲面上の
+負指数$-m<0$の既約根sheafで，境界にも制限して零である．
+従って$\Hom_{X^{\mathrm{ad}}}(e^{\mathrm{ad}},N)=0$，
+$\dim\Ext^1_{X^{\mathrm{ad}}}(e^{\mathrm{ad}},N)=m$．
+Rainsの反変導来双対とSerre双対性を合成すると
+\begin{equation}\label{eq:dual-ext}
+\begin{aligned}
+\Hom_X(e,M)
+ &\cong\Ext^1_{X^{\mathrm{ad}}}(e^{\mathrm{ad}},N)^*,\\
+\Ext^1_X(e,M)
+ &\cong\Hom_{X^{\mathrm{ad}}}(e^{\mathrm{ad}},N)^*.
+\end{aligned}
+\end{equation}
+実際$\mathbf R\mathrm{ad}_XM=N[-1]$なので
+\[
+ \Ext^{j}_{X^{\mathrm{ad}}}(e^{\mathrm{ad}},N)
+ \cong\Ext_X^{j+1}(M,e)
+ \cong\Ext_X^{1-j}(e,\theta M)^*
+\quad (j=0,1).
+\]
+これに$\theta M\simeq M$を代入すれば
+$\dim\Hom_X(e,M)=m$，$\Ext_X^1(e,M)=0$を得る．
+
+最後に$g$は$\theta\to\mathrm{id}$から生じる中心正則元で，
+$M$上で同型として作用するので，
+各次数の$\Hom$または$\Ext^1$の$g$による移行は同型．
+非零の次数付き$R$加群$N_{|m|}$は
+$k[g]$上有限生成で，各次数の次元が$|m|$，
+局所化の次数0部分は$|m|$次元の$R/(g-1)$右加群になる．
+非零cohomologyが一つの次数に集中しているので
+\eqref{eq:trichotomy}が従う．
+\end{proof}
+
+\begin{proposition}[root sheafは2-spherical]
+\label{prop:spherical}
+定理\ref{thm:sign}の$M$は任意の$m$について
+\[
+\Ext^j(M,M)=
+\begin{cases}k&j=0,2,\\0&j\ne0,2.\end{cases}
+\]
+特に$\theta M\simeq M$の下で$2$-spherical objectである．
+\end{proposition}
+\begin{proof}
+$M$の非零自己準同型の像は既約性により
+第一Chern類$\alpha$を持つ．
+核が非零なら零次元であり，$M$の純一次元性に反する．
+よって自己準同型は単射であり，その余核は零次元．
+自己射なので余核の数値類は零，Rains
+\cite[Proposition 7.6]{RainsBirational}から余核も零．
+従って$\End(M)$は有限次元の斜体で，$k=\mathbb C$だから
+$\End(M)=k$．Serre双対により
+$\Ext^2(M,M)=\End(M)^*=k$．
+Rains\cite[Corollary 7.13]{RainsBirational}のEuler形式で
+$\chi(M,M)=-\alpha^2=2$となるので$\Ext^1(M,M)=0$．
+\end{proof}
+
+\begin{corollary}[pointedなheart非一致と導来切断の限界]
+\label{cor:pointed-sign}
+$m<0$の既約根sheafがあると，Rains heartの$(e,\tau)$は
+AZ-ampleでない．標準pair$(\pi R,(1))$がAZ-ampleなら
+$(\mathcal A_{\mathrm R},e,\tau)$と
+$(\qgr R,\pi R,(1))$はpointed abel圏として同値でない．
+さらに指定した自然な$\Phi$は$m<0$で$t$-exactでなく，
+$m=0$で保守的でない．
+$m>0$の個々の根sheafの像はheartの次数0にあるが，
+そのことだけでは$\Phi$の全体の$t$-exactnessは従わない．
+\end{corollary}
+\begin{proof}
+$m<0$では非零$M$に対して全ての
+$\Hom(e,\tau^nM)$が零なので，AZの生成公理が失敗する．
+pointedなabel同値はample pairを保存する．
+後二者は\eqref{eq:trichotomy}から従う．
+\end{proof}
+\begin{remark}[先行する証明の訂正と範囲]
+「既約root sheafへの非零な構造sheafからの射は全射」
+という推論は正しくない．必要なのは
+像が同じ第一Chern類を持ち，商が零次元であることだけである．
+補題\ref{lem:no-section}がその正しい証明を与える．
+$m=0$の対象が実在することは共鳴の数値条件からは従わない．
+genuine del Pezzo avatarでは後述の命題により$m=0$の根共鳴はない．
+また指定した$\Phi$の非忠実性は，
+別の抽象的導来同値の不存在を意味しない．
+\end{remark}

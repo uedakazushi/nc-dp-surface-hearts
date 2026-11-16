@@ -1,0 +1,226 @@
+\section{非torsion境界外圏と混合\texorpdfstring{$A_2$}{A2}の完全判定}
+\label{sec:mixed-a2-category}
+本節は自然な導来切断の完全忠実性を仮定せず，混合根のconnecting mapを決定する．
+Rains\cite[Corollaries 7.7, 7.13, 7.15, Propositions 7.6, 7.32,
+Corollary 10.12, Proposition 10.13]{RainsBirational}と既存の符号別Extを入力とする．
+$H=-K_X$はnef，$H^2=d>0$，$q$は非torsion，構造line bundle $e$はexceptionalとする．
+$\Ext_X$は常にambientのRains heartで計算する．
+
+\subsection{境界外圏の有限長性}
+\begin{lemma}[零次元の境界外商の排除]
+\label{lem:offboundary-no-points}
+$Li^*M=0$なら，$M$の零次元商は零である．従って境界非交叉の
+既約純一次元sheafはRains heartの単純対象である．
+\end{lemma}
+\begin{proof}
+零次元商$M\twoheadrightarrow Z$には右完全性から$i^*Z=0$が従い，
+$\theta Z\to Z$は全射となる．両者の数値類は等しいので
+Rains Corollary 7.7により同型，従って$Li^*Z=0$である．
+一方$[Z]=\ell[\mathrm{pt}]$，$\ell=\chi(e,Z)\ge0$で，
+境界restrictionのdeterminantは$q^\ell$となる
+\cite[Proposition 7.6, Proposition 7.24直前]{RainsBirational}．
+非torsion性から$\ell=0$，ゆえに$Z=0$．既約純一次元sheafの
+非零部分対象の商は零次元なので単純性が従う．
+これは非torsion性と境界非交叉を使う証明であり，既約性だけから単純性を推論してはいない．
+\end{proof}
+
+\begin{proposition}[境界外Serre部分圏]
+\label{prop:offboundary-serre-length}
+$\mathcal Z=\{M:\dim M\le1,\ Li^*M=0\}$は有限長Serre部分圏であり，
+その単純対象は2-sphericalな境界非交叉根sheafである．
+最大共鳴で全単純根sheafが実在する場合，単純対象は
+定理\ref{thm:only-simple-irreducible}の$r=9-d$個に尽きる．
+\end{proposition}
+\begin{proof}
+$0\to N\to M\to Q\to0$，$M\in\mathcal Z$とする．
+nef性と加法性から$0=Hc_1(M)=Hc_1(N)+Hc_1(Q)$の両項は零．
+$i^*Q=0$なので$\theta Q\to Q$は全射であり，rank零と$K_Xc_1(Q)=0$から
+両者の数値類は同じ\cite[Corollary 7.15]{RainsBirational}．
+Corollary 7.7から同型となり，$Li^*Q=0$．自然性から$\theta N\to N$も同型．
+拡大閉性は境界triangleによる．
+非零零次元対象がないため，真の降鎖の逐次商はすべて一次元である．
+Rains Proposition 7.32のfinitely partitive性とnoetherian性から有限長となる．
+単純対象$S$の$D=c_1(S)\ne0$は$HD=0$を満たす．
+$H^\perp$の負定値性，Riemann--Rochの偶奇，$\theta S=S$とSerre双対性より
+\[
+0<-D^2=\chi(S,S)=2-\dim\Ext_X^1(S,S)\le2
+\]
+であり，$D^2$は偶数だから$D^2=-2$，$\Ext_X^1(S,S)=0$．
+最後は既存の単純根の排他性と一意性を使う．
+\end{proof}
+
+\subsection{任意の正負指数に対する最大rank}
+隣接する境界非交叉既約根sheafを$S_+,S_-$とし，
+\[
+\alpha=c_1(S_+),\quad\beta=c_1(S_-),\quad\alpha\beta=1,
+\qquad\chi(e,S_+)=p>0,\quad\chi(e,S_-)=-n<0
+\]
+とする．$\gamma=\alpha+\beta$は根である．非分裂拡大を
+\begin{equation}\label{eq:a2-two-extensions}
+0\to S_-\to P\to S_+\to0,\qquad
+0\to S_+\to Q\to S_-\to0
+\end{equation}
+と書く．両向きのExt$^1$は一次元なので各中間項は同型を除き一意である．
+
+\begin{theorem}[任意の正負指数のconnecting rank]
+\label{thm:a2-delta-rank}
+$P$のconnecting map$\delta:k^p\to k^n$は
+\[
+\boxed{\operatorname{rank}\delta=\min(p,n),\qquad
+ (\dim V^0(P),\dim V^1(P))=((p-n)_+,(n-p)_+)}
+\]
+を満たす．ここで$x_+=\max(x,0)$．
+$p>n$なら非零$e\to P$は全射で，核$L$はrank-one torsion-free，
+\[
+c_1(L)=-\gamma,\quad\chi(e,L)=1-p+n,\quad
+\chi(L,L)=3-2(p-n).
+\]
+$L$がline bundleとなることと$p-n=1$は同値である．
+特に$p=2,n=1$ではrankは1，$(h^0,h^1)=(1,0)$である．
+いずれにも導来完全忠実性を仮定しない．
+\end{theorem}
+\begin{proof}
+符号別Extから$\Hom(e,P)=\ker\delta$，$\Ext^1(e,P)=\operatorname{coker}\delta$．
+非零$f:e\to P$があるとする．$\Hom(e,S_-)=0$なので$P\to S_+$との合成は非零．
+$S_+$の単純性から全射である．像$I$と$S_-$の交わりは$0$か$S_-$であり，
+前者なら拡大を分裂させてしまう．従って$I=P$，すなわち$f$は全射．
+その核$L$はrank-one torsion-freeで$c_1(L)=-\gamma$である．
+Serre双対性とRains Corollary 10.12より
+\[
+\Ext^2(e,L)=\Hom(L,\theta e)^*=0:
+\quad H(c_1(\theta e)-c_1(L))=H(K_X+\gamma)=-d<0.
+\]
+ここでCorollary 10.12はrank-one torsion-free同士に適用でき，
+$L$をline bundleと仮定する必要はない．
+$e$のexceptionalityと$0\to L\to e\to P\to0$から$\Ext^1(e,P)=0$となる．
+
+$p>n$なら$\ker\delta\ne0$なので上の議論が適用でき，$\delta$は全射．
+$p\le n$なら$\Hom(e,P)\ne0$とすると$h^1(P)=0$になり，
+$0\ge p-n=\chi(e,P)=h^0(P)>0$となって矛盾する．
+従ってこの場合は$\delta$が単射．これで最大rankを得る．
+$p>n$の場合，Euler加法性とRiemann--Rochから表示した$L$の値を得る．
+Rains Proposition 10.13の等号条件$\chi(L,L)=1$により，
+line bundle条件は$p-n=1$と同値である．
+\end{proof}
+\begin{remark}[指数の釣合いと消失]
+$p=n$で上の二sheafが存在すれば，$P\ne0$なのに$\Phi(P)=0$となる．
+しかしgenuine smooth classical avatarでは$\gamma$が零指数の共鳴根となるため，
+この釣合いの場合自体が起こらない．一般の数値条件からこのsheafの実在を主張しない．
+\end{remark}
+
+\begin{corollary}[二段直和拡大]
+\label{cor:a2-rank-matrix-exact}
+$0\to S_-^{\oplus b}\to M\to S_+^{\oplus a}\to0$の拡大類を
+$T\in\operatorname{Mat}_{b\times a}(k)$，$t=\operatorname{rank}T$，$r=\min(p,n)$とすると
+\[
+\operatorname{rank}\delta_M=rt,\qquad
+\dim V^0(M)=pa-rt,\qquad\dim V^1(M)=nb-rt.
+\]
+$p=2,n=1$では$(2a-t,b-t)$となり，$a\ge1$ならEuler標数が零でも消失しない．
+\end{corollary}
+\begin{proof}
+Yoneda積の自然性から$\delta_M=\delta\otimes T$であり，rankは積となる．
+六項完全列を適用する．
+\end{proof}
+
+\subsection{有限長部分圏の全対象と局所torsion pair}
+\begin{theorem}[四つの直既約対象]
+\label{thm:a2-serre-category}
+$\mathcal C=\langle S_+,S_-\rangle_{\rm Serre}$は
+$\operatorname{mod}_{\rm fd}\Pi(A_2)$と同値であり，直既約は$S_+,S_-,P,Q$だけである．
+$P\oplus Q$はprojective generatorで，$\Pi(A_2)$は二頂点・両向き二矢と
+両方の長さ二の道を零とする関係を持つ次元4の代数である．
+\end{theorem}
+\begin{proof}
+非分裂性と単純性から，順序$(S_+,S_-,P,Q)$で
+\[
+(\dim\Hom(U,V))_{U,V}=
+\begin{pmatrix}1&0&0&1\\0&1&1&0\\1&0&1&1\\0&1&1&1\end{pmatrix}.
+\]
+例えば$\Hom(S_+,P)=\Hom(P,S_-)=0$は，connecting map
+$k\to\Ext_X^1(S_+,S_-)=k$が非零拡大類を送ることから従う．
+$\Hom(P,Q)=k$は$P\twoheadrightarrow S_+\hookrightarrow Q$で生成され，
+逆方向も同様で，両合成は零である．
+$\theta$が全対象で自然に恒等なので
+\[
+\dim\Ext_X^1(U,V)=\dim\Hom(U,V)+\dim\Hom(V,U)+c_1(U)c_1(V).
+\]
+上の表を代入すると，$S_+,S_-$間の両向きの一次元Ext以外は全て零となる．
+とくに$P,Q$から両単純へのExt$^1$は零．長さによる帰納法から
+$P,Q$は$\mathcal C$でprojectiveで，単純への全射を持つのでgeneratorとなる．
+そのEnd代数のHomと合成が上記の表示を与える．
+表現を$x:U_+\to U_-$，$y:U_-\to U_+$，$xy=yx=0$で書くと，
+$\operatorname{im}y\subset\ker x$，$\operatorname{im}x\subset\ker y$に適合する
+基底により，一方の矢のみ非零の一次元対と孤立一次元空間へ分解される．
+これが四つの直既約である．
+\end{proof}
+
+\begin{corollary}[全cohomologyと指数に応じた局所torsion pair]
+\label{cor:a2-torsion-pair}
+$\mathcal C$の直既約の$(h^0,h^1)$は
+\[
+S_+:(p,0),\quad S_-:(0,n),\quad P:((p-n)_+,(n-p)_+),\quad Q:(p,n).
+\]
+一般のquiver表現で$a=\dim U_+$，$b=\dim U_-$，$t=\operatorname{rank}x$なら
+\[
+h^0=pa-\min(p,n)t,\qquad h^1=nb-\min(p,n)t.
+\]
+$p>n$のとき$(\ker h^1,\ker h^0)=(\operatorname{add}(S_+,P),\operatorname{add}(S_-))$，
+$p<n$のとき$(\operatorname{add}(S_+),\operatorname{add}(S_-,P))$はtorsion pairである．
+$p\ne n$なら$\Phi$は非零対象を消さない．$p=n$の場合の核は$\operatorname{add}(P)$で，
+二つのkernel部分圏はtorsion pairにならない．
+\end{corollary}
+\begin{proof}
+$P$は最大rank定理，$Q$は逆向きの六項完全列から求まる．
+四つの直既約の重複度は順に
+$a-\operatorname{rank}x-\operatorname{rank}y$，
+$b-\operatorname{rank}x-\operatorname{rank}y$，
+$\operatorname{rank}x$，$\operatorname{rank}y$であり，直和して公式を得る．
+Hom表がtorsion pairの直交性を与え，$Q$の短完全列がtorsion分解を与える．
+他の直既約は片方の部分圏に属する．非消失および核の記述もこの表から従う．
+\end{proof}
+\begin{remark}
+$\chi(e,P)=\chi(e,Q)=p-n$だが，$Q$には二つのcohomological degreeが残る．
+非既約対象ではEuler指数の符号だけからheart内の位置を決定できない．
+また$\Ext_{\mathcal C}^{2j}(S_+,S_+)=k$ $(j\ge0)$とambientの
+$\Ext_X^{>2}=0$は異なる．従って$D^b(\mathcal C)\to D^b(\mathcal A_q)$は
+完全忠実でなく，このabel分類をambient三角圏の同定に読み替えない．
+\end{remark}
+
+\subsection{二次元表現の検査条件と導来比較への接続}
+$p=2,n=1$に戻り，$V_+=V^0(S_+)$，$V_-=V^1(S_-)$，$W=V^0(P)$とする．
+\begin{proposition}[単一Homテストの正確な範囲]
+\label{prop:a2-scalar-test}
+$0\to W\to V_+\xrightarrow{\delta}V_-\to0$は$A$加群の短完全列で，両端は一次元．
+$\dim\Hom_A(V_+,V_-)$は$V_+\simeq V_-^{\oplus2}$の場合のみ2，それ以外は1である．
+自然写像$\Ext_X^1(S_+,S_-)\to\Hom_A(V_+,V_-)$は常に単射である．
+\end{proposition}
+\begin{proof}
+六項完全列と最大rankから短完全列を得る．準同型空間は
+二次元の$\Hom_k(V_+,V_-)$の非零部分空間．独立な二準同型があれば
+それらを並べて$V_+\simeq V_-^2$を得る．拡大類の生成元が非零$\delta$に写るので単射性も従う．
+\end{proof}
+
+右加群を行ベクトルで表し，$W$を第一座標に取ると
+\[
+\rho(a)=\begin{pmatrix}\chi_W(a)&0\\\eta(a)&\chi_-(a)\end{pmatrix},\qquad
+\eta(ab)=\eta(a)\chi_W(b)+\chi_-(a)\eta(b).
+\]
+\begin{proposition}[導来完全忠実性の必要条件]
+\label{prop:a2-character-obstructions}
+$\Phi$が二根の生成する三角圏上で完全忠実なら，$W\not\simeq V_-$で，
+上の加群拡大は非分裂である．従って作用像は全三角行列代数である．
+\end{proposition}
+\begin{proof}
+$\Ext_X^1(P,S_-)=0$から完全忠実性の下で$\Hom_A(W,V_-)=0$．
+また非零包含$S_-\hookrightarrow P$は加群拡大の非零類へ移る．
+異なるcharacterと非分裂性により二つの対角冪等元と非零非対角成分を得る．
+\end{proof}
+\begin{remark}
+同じcharacterのJordan型は単一Hom次元1のテストには合格しても上の必要条件に反する．
+異なるcharacterでも分裂型なら非零sheaf射を消す．対象の非消失と射の忠実性は別である．
+ただし本稿のgenuine楕円gluingでは，次節の比較定理と
+定理\ref{thm:resonance-affine-triangular}により両方の必要条件が実際に成立する．
+残るのは元の$A$の生成元に対するcharacterと非対角係数の具体的な式であって，
+この範囲での分離・非分裂性の真偽ではない．
+\end{remark}

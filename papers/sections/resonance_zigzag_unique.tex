@@ -1,0 +1,271 @@
+\section{最大共鳴での既約根sheaf・zigzag Ext代数・二次障害}
+\label{sec:resonance-zigzag}
+本節では次数$d=1,\ldots,6$の最大共鳴点について，
+「数値的に共鳴するすべての根が既約sheafを与える」
+という誤った推論を排除し，実在するsheafのExt代数を
+明示的に決定する．
+先行研究からの入力は，Rains
+\cite[\S4, pp.~33--34]{RainsFiltered}のsimple-root
+effectivity判定と
+\cite[Definition 9.1, Proposition 7.19, \S11]{RainsBirational}
+の既約根sheafに関する結果である．
+根の零でないEuler指数の整数表示は
+定理\ref{thm:all-degree-maximal}により与えられている．
+
+次数$d=9-r$，$3\le r\le8$とし，
+単純根を
+\[
+\alpha_0=h-e_1-e_2-e_3,\qquad
+\alpha_i=e_i-e_{i+1}\quad(1\le i<r)
+\]
+とする．単純根が実効的で，境界に制限して零の
+既約純一次元sheaf $M_i$として実現される
+Rains型smooth elliptic heartを固定する．
+定理\ref{thm:all-degree-maximal}の
+\emph{全根共鳴}の例ではこの仮定が
+Rainsのsimple-root存在結果によって保証される．
+$\Delta$を単純根のなすDynkin図とする．
+
+\begin{theorem}[実在する既約根はちょうど単純根]
+\label{thm:only-simple-irreducible}
+$Li^*M=0$を満たす既約純一次元根sheaf $M$が
+同じRains heartに存在するとき，
+\[
+ c_1(M)\in\{\alpha_0,\ldots,\alpha_{r-1}\}
+\]
+である．逆に各$\alpha_i$は上の$M_i$で実現される．
+$q$が非torsionならば，境界非交叉の既約根sheafは
+各$\alpha_i$について同型を除き\emph{一つだけ}である．
+従って，数値的に共鳴している根の総数と
+実際の既約根sheafの同型類数は
+\[
+\begin{array}{c|rrrrrr}
+d&6&5&4&3&2&1\\\hline
+\#\text{数値的共鳴根}&8&20&40&72&126&240\\
+\#\text{既約根sheaf}&3&4&5&6&7&8
+\end{array}
+\]
+と異なる．
+\end{theorem}
+\begin{proof}
+根系の正根$\gamma$が単純根でないとする．
+$\gamma=\sum_{i=0}^{r-1}c_i\alpha_i$，
+$c_i\in\mathbb Z_{\ge0}$と書くと
+\[
+ -2=\gamma^2=\sum_i c_i(\gamma\cdot\alpha_i)
+\]
+なので，ある$c_i>0$について$\gamma\cdot\alpha_i<0$である．
+しかし既存の命題\ref{prop:root-intersection}によれば，
+異なる根類の境界非交叉既約根sheafが同時に存在するなら
+$\dim\Ext^1(M_\gamma,M_i)=\gamma\cdot\alpha_i\ge0$
+でなければならない．従って$\gamma$は不可能．
+
+負根$\gamma$については$-\gamma$が正根であり，
+有効な$\alpha_i$の非負整数和なので$-\gamma$は有効である．
+もし$M_\gamma$が存在すれば$\gamma$も有効だから，
+Rains\cite[Proposition 7.19]{RainsBirational}の
+「$D$と$-D$がともに有効なら$D=0$」に反する．
+従って単純正根だけが残る．
+
+一意性を証明する．$c_1(M)=c_1(N)=\alpha_i$で
+$Li^*M=Li^*N=0$なら，
+restriction determinantの式\eqref{eq:resonance}と
+$q$の非torsion性から
+$\chi(e,M)=\chi(e,N)$である．
+従って$[M]=[N]$ in $K_0^{\mathrm{num}}$で，
+Rains\cite[Corollary 7.13]{RainsBirational}により
+$\chi(M,N)=-\alpha_i^2=2$．
+$\theta M\simeq M,\theta N\simeq N$なので，
+もし両向きの$\Hom$が零ならSerre双対性で両向きの
+$\Ext^2$も零となり，$\chi(M,N)=-\dim\Ext^1(M,N)\le0$
+となって矛盾する．従っていずれかの向きに非零射がある．
+既約性と純一次元性により，非零射のkernelは零である：
+もし非零kernelがあれば同じChern類を持ち，
+像は零次元となってtargetの純一次元性に反する．
+両者の数値類が同じなので，
+Rains\cite[Corollary 7.7]{RainsBirational}から
+単射は同型である．
+\end{proof}
+
+\begin{theorem}[Dynkin zigzag Ext代数]
+\label{thm:zigzag-ext}
+$T=\bigoplus_{i=0}^{r-1}M_i$と置く．
+$\operatorname{Ext}^{\bullet}_{\mathcal A_{\mathrm R}}(T,T)$は
+次の明示的なgraded algebra $Z_\Delta$と同型である．
+\begin{enumerate}
+\item 次数$0$には各頂点の冪等元$1_i$が一個ずつある．
+\item 次数$1$には$\Delta$の各辺$i-j$に対して
+両向きの矢$a_{ij}$，$a_{ji}$が各一個ある．
+次数$2$には各頂点に一個のloop $z_i$がある．
+\item 異なる頂点へ向かう長さ二の道の積は零．
+各辺$i-j$の往復積は
+$a_{ij}a_{ji}=c_{ij}z_i$，
+$a_{ji}a_{ij}=c_{ji}z_j$（$c_{ij},c_{ji}\ne0$）である．
+頂点基底と矢をrescaleすれば通常のzigzag関係式にできる．
+\item 次数$>2$の積はすべて零．孤立頂点（$A_1$成分）
+も次数$2$の$z_i$を持つ．
+\end{enumerate}
+従って$\#V(\Delta)=r$，$\#E(\Delta)=s$とすると
+\[
+\dim_k\operatorname{Ext}^{\bullet}(T,T)=2r+2s
+=\begin{cases}
+8,&d=6,\\
+14,18,22,26,30,&d=5,4,3,2,1\text{ の順}.
+\end{cases}
+\]
+これはまず\emph{次数付きYoneda積}の同定である．
+dgおよびminimal $A_\infty$模型の形式性については，
+以下でLiu--Wangの既知定理を用いて判定する．
+\end{theorem}
+\begin{proof}
+定理\ref{thm:sign}と命題\ref{prop:spherical}によれば
+$\Ext^0(M_i,M_i)=\Ext^2(M_i,M_i)=k$，
+$\Ext^1(M_i,M_i)=0$．
+異なる$i,j$については
+命題\ref{prop:root-intersection}より
+\[
+\Ext^0(M_i,M_j)=\Ext^2(M_i,M_j)=0,\qquad
+\dim\Ext^1(M_i,M_j)=\alpha_i\cdot\alpha_j,
+\]
+これは隣接頂点で$1$，それ以外で$0$である．
+高次Extは滑らかなRains heartのhomological dimension $2$
+から消える．$\theta\to\mathrm{id}$は全$M_i$上で同型だから，
+これらが生成する部分三角圏ではSerre関手が自然に$[2]$となる．
+よってSerre traceは
+\[
+\Ext^1(M_i,M_j)\otimes\Ext^1(M_j,M_i)
+\longrightarrow \Ext^2(M_i,M_i)\xrightarrow{\operatorname{tr}} k
+\]
+を完全な双線型pairingにする．
+各辺で往復積が非零となり，
+二つの異なる頂点間の$\Ext^2$消滅から
+非往復の長さ二の積は零である．
+全頂点に次数二の一次元空間が一つずつあるため，
+$\Delta$が木（$A_2+A_1$では森）であることを用い
+矢とloopの基底をrescaleすれば
+各頂点で往復積が同じloopとなる．
+以上がzigzag代数の表示である．次数別の次元は
+$r,2s,r$なので合計$2r+2s$となる．
+\end{proof}
+
+\begin{corollary}[二次Kuranishi障害のpreprojective型表示]
+\label{cor:zigzag-quadratic}
+$T=\bigoplus_iM_i$の一次変形を
+$x=\sum_{i-j}x_{ij}a_{ij}\in\Ext^1(T,T)$
+と書く．その二次Kuranishi障害
+$m_2(x,x)\in\Ext^2(T,T)$は，適切な非零定数$c_{ij}$を用い
+\[
+m_2(x,x)=\sum_i
+\left(\sum_{j\sim i}c_{ij}x_{ij}x_{ji}\right)z_i
+\]
+である．$\Delta$が森なので，この二次障害の消滅条件は
+\[
+\boxed{x_{ij}x_{ji}=0\qquad(\{i,j\}\in E(\Delta))}
+\]
+と\emph{イデアルとしても}同値である．
+従って二次障害方程式で定まるスキーム（gauge商を取る前）は
+$2^s$個の座標線型空間の合併で，その各々は次元$s$である．
+$d=3$の$E_6$なら$s=5$なので$32$成分となる．
+ここまでは一次Yoneda積から得る二次方程式の計算である．
+高次障害が追加されないことは次の定理によって従う．
+\end{corollary}
+\begin{proof}
+次数二のYoneda積は前定理の往復積以外は零なので
+最初の表示を得る．
+任意の葉$i$について次数二の係数方程式は
+$c_{ij}x_{ij}x_{ji}=0$ただ一つであり$c_{ij}\ne0$．
+従ってその辺積は障害イデアルに属する．
+この辺の項を隣の頂点$j$の方程式から取り去って
+森の残りのグラフで帰納的に繰り返す．
+よって障害イデアルは
+$(x_{ij}x_{ji}:\{i,j\}\in E(\Delta))$に等しい．
+これは互いに異なる変数対を使う平方自由単項式のイデアルで，
+各辺から一方の矢を零にする$2^s$個の座標部分空間を
+既約成分とし，各成分では残りの矢が$s$個自由である．
+\end{proof}
+
+\begin{theorem}[根配置のdg形式性と形式変形の二次完全性]
+\label{thm:zigzag-formal}
+基礎体が標数$0$で，$\Delta$が上の
+$A_2+A_1,A_4,D_5,E_6,E_7,E_8$のいずれかなら，
+$T=\bigoplus_i M_i$の導来自己準同型dg代数は
+\[
+\boxed{\mathbf R\operatorname{End}_{\mathcal A_{\mathrm R}}(T)
+ \ \simeq_{A_\infty}\ Z_\Delta}
+\]
+として形式的である．従って\emph{固定した}Rainsの
+enhanced導来圏の中で$T$の形式的変形を考え，
+各直和因子の標識を固定したMaurer--Cartanの
+framedパラメータ空間では，
+\[
+\boxed{
+ \widehat{\mathcal O}_{\rm MC}
+ \cong
+ k[\![x_{ij},x_{ji}:\{i,j\}\in E(\Delta)]\!]/
+      (x_{ij}x_{ji}:\{i,j\}\in E(\Delta)).
+}
+\]
+よって高次$A_\infty$障害による追加の切断はなく，
+この形式的スキームは$2^{s}$個の
+$s$次元formal座標部分空間の合併である
+（$s=\#E(\Delta)$）．
+特にcubic $E_6$では$32$個の$5$次元formal分枝を持つ．
+\end{theorem}
+\begin{proof}
+Liu--Wang\cite[Theorem~1.1]{LiuWangZigzag}は，
+標数$0$における連結ADE Dynkin木の
+\emph{path-length graded} zigzag代数が
+intrinsically formalであることを示す．
+ここで$Z_\Delta$のpath lengthは先のExtの
+cohomological degree $0,1,2$に一致している．
+Kadeishviliのminimal模型定理により
+$\mathbf R\operatorname{End}(T)$の最小$A_\infty$模型は
+その$\Ext^\bullet$上に取れるので，
+前定理とLiu--Wangを合わせると全ての高次
+$m_n$ $(n\ge3)$は$A_\infty$準同型で消せる．
+
+$d=6$の$A_2+A_1$では両連結成分間の
+全$\Ext^\bullet$が零なので，minimal模型は
+成分ごとに直和へ分離する．
+$A_2$にはLiu--Wangを使い，孤立$A_1$の
+$\Ext^\bullet=k\oplus kz$（$\deg z=2$，$z^2=0$）
+については，strictly unitalな$m_n$ $(n\ge3)$は
+正の次数の入力しか持たないと出力次数が
+$2n+2-n=n+2>2$になり，次数の理由で零となる．
+よってこの場合も形式的である．
+
+Framedな変形のMaurer--Cartan元は
+$\Ext^1(T,T)\widehat\otimes\mathfrak m$に属する
+$x=\sum x_{ij}a_{ij}$であり，
+形式性から方程式は$m_2(x,x)=0$だけで足りる．
+前系の葉からの帰納法でその定義イデアルは
+$(x_{ij}x_{ji})$そのものとなる．
+従って表示した完成環とformal分枝数を得る．
+各直和因子の標識を忘れた変形の群oidは
+対角の冪等元に対応するgauge群の作用で
+さらに商を取るべきであり，ここでは扱わない．
+\end{proof}
+\begin{remark}[形式性が与えないもの]
+この定理はRainsの\emph{固定された}dg圏における
+$T$の形式的変形の記述である．
+Rains曲面や楕円境界のパラメータを動かす
+相対変形，anticanonical heartの全体，
+$A=R/(g-1)$の有限次元表現のモジュライ，
+および混合根のconnecting map$\delta$の
+具体的rankは，この形式性からは決定しない．
+\end{remark}
+
+\begin{remark}[導来比較を監査する新しい有限モデル]
+特にcubicの最大共鳴で実在する$6$個の単純根sheafの
+graded Yoneda algebraは次元$22$の$E_6$ zigzagである．
+Rains--anticanonicalの指定した導来切断が完全忠実かを調べるには，
+このgraded algebraの積だけでなく，
+$\mathbf R\operatorname{Hom}(e,T)$の$A_\infty$-module構造，
+とりわけ正負隣接根間の
+$\operatorname{Ext}^1$から誘導される
+$V_\alpha\to V_\beta$のconnecting morphismを決定する必要がある．
+ここでの形式性は上の定理で確立したが，
+このことだけでは$\delta$のrankは決まらない．
+具体的な$A$加群の作用行列とnatural functorの
+$A_\infty$-module構造の計算が独立に必要である．
+\end{remark}

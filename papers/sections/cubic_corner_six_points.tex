@@ -1,0 +1,148 @@
+\section{四交比 corner の完全判定と六点配置による十分性}
+\label{sec:six-point-classification}
+本節では，前節までに証明した十一の必要条件が十分でもあることを示す．
+その鍵は，四交比トーラスを\emph{標識付き可換三次曲面の六点配置空間}と同定することである．
+以下，基礎体は標数0の代数閉体とし，十八の係数$w_{1bc},w_{2bc}$はすべて非零とする．
+
+\begin{theorem}[corner有限性の必要十分条件]
+\label{thm:general-position-iff}
+$B(w)=\operatorname{Jac}(\widetilde Q,W(w))$，$e=e_{A_0}$，
+$C(w)=B(w)/B(w)eB(w)$と置く．
+$Q=(q_{bc})$，$q_{bc}=w_{2bc}/w_{1bc}$とすると，次は同値である．
+\begin{enumerate}
+\item $\dim_kC(w)<\infty$．
+\item $Q$の九つの$2\times2$小行列式がすべて非零であり，
+$\det Q\ne0$かつ$\det Q^{\langle-1\rangle}\ne0$である．
+\item $P=(Q^{\langle-1\rangle})^{\mathsf t}$の三つの列$p_1,p_2,p_3$と，
+座標点$p_4=(1:0:0),p_5=(0:1:0),p_6=(0:0:1)$が，
+$\mathbb P^2$の一般位置の六点をなす．
+\end{enumerate}
+従って，四交比トーラスにおける有限corner locusは，
+\emph{正確に}前節の十一のdivisorの補集合である．
+この開集合は，六点の順序を保つ標識付き可換三次曲面のモジュライ
+$M_{\mathrm{cubic}}$と自然に同型になる．
+\end{theorem}
+\begin{proof}
+(i)$\Rightarrow$(ii)は定理\ref{thm:torus}と
+命題\ref{prop:two-determinants}による．
+(ii)$\Leftrightarrow$(iii)を示す．$P$の各成分は$q_{bc}^{-1}\ne0$であり，
+その$2\times2$小行列式は，添字と非零係数を除けば
+$Q$の対応する小行列式と等しい．さらに
+$\det P=\det Q^{\langle-1\rangle}$である．従って(ii)のうち
+九小行列式と後者の行列式は，順に「可動点二つと座標点一つが非共線」
+「可動点三つが非共線」を表す．非零成分は「可動点一つと座標点二つが非共線」を表す．
+座標点三つはもとより非共線である．
+
+残る条件は六点が一つの二次曲線上にないことである．
+座標三点を通るconicの方程式は
+$\alpha X_1X_2+\beta X_2X_3+\gamma X_3X_1=0$
+であり，可動点$p_i=(P_{0i}:P_{1i}:P_{2i})$への評価行列は
+\[
+ M_{i\bullet}=(P_{0i}P_{1i},P_{1i}P_{2i},P_{2i}P_{0i})
+ =(P_{0i}P_{1i}P_{2i})
+ (P_{2i}^{-1},P_{0i}^{-1},P_{1i}^{-1}).
+\]
+すべての因子が非零なので$\det M\ne0$は
+$\det\bigl((P^{\langle-1\rangle})^{\mathsf t}\bigr)=\det Q\ne0$
+と同値である．これで(ii)$\Leftrightarrow$(iii)を得る．
+
+最後に(iii)$\Rightarrow$(i)を証明する．
+$S=\operatorname{Bl}_{p_1,\ldots,p_6}\mathbb P^2$は滑らかな可換三次曲面で，
+$H=-K_S$はampleである．AOU\cite[\S\S4,8，特に(4.1)，(4.7)，(4.9)，(8.4)--(8.7)]{AOU}
+の九線束$E_v$とそのrolled-up helix代数を取る．
+その幾何学的potentialの二つの関係系列は，基底を適切に規格化すると
+\begin{equation}\label{eq:geometric-relations}
+ w^{\mathrm{geo}}_{1bc}=P_{cb},\qquad
+ w^{\mathrm{geo}}_{2bc}=1\qquad(0\le b,c\le2)
+\end{equation}
+となる．これは次の初等的な式からも直接確認できる．
+$u_b=(P_{0b}P_{1b},P_{1b}P_{2b},P_{2b}P_{0b})$，
+$L_{b,c}(X)=\det[p_{b+1},p_{c+4},X]$とし，
+$D_b(X)=(u_{b+1}\times u_{b+2})\cdot
+(X_1X_2,X_2X_3,X_3X_1)$（添字を$3$で読む）とする．
+$D_b$は$p_{b+1}$以外の五点を通るconicである．
+また$M_b(X)=\det[p_{b+2},p_{b+3},X]$と書くと，
+行列式の展開により全ての$c$について
+\begin{equation}\label{eq:six-point-identities}
+ \sum_{b=0}^2P_{cb}D_b(X)L_{b,c}(X)=0,\qquad
+ \sum_{b=0}^2M_b(X)L_{b,c}(X)=0
+\end{equation}
+が成立する．各関係空間はAOU(4.2)により一次元であるため，
+\eqref{eq:six-point-identities}が\eqref{eq:geometric-relations}を与える．
+これらの多項式恒等式は独立の整数係数による厳密検算コードにも収めた．
+
+\eqref{eq:geometric-relations}より，その二系列の比は
+$w^{\mathrm{geo}}_{2bc}/w^{\mathrm{geo}}_{1bc}
+=P_{cb}^{-1}=q_{bc}$である．
+元の二系列と幾何学的二系列は各矢$y_{bc}$の非零rescalingで一致する．
+残りの$w_{0bc}$は頂点$A_0$を除いた商$C$に影響しないから，
+\[
+ C(w)\simeq C\bigl(w^{\mathrm{geo}}\bigr)
+\]
+が道長次数付き代数として成り立つ．
+
+幾何学的代数については，AOU(4.9)により
+\begin{equation}\label{eq:geometric-rolled-orbit}
+ B\bigl(w^{\mathrm{geo}}\bigr)
+ \simeq\bigoplus_{v,v'}\bigoplus_{n\ge0}
+ \operatorname{Hom}_S(E_v,E_{v'}(nH))
+\end{equation}
+がcut次数付き代数として成立し，$e=e_{0,0}$に対応する線束は
+$E_{0,0}=\mathcal O_S$である．
+任意の$v$について$m\gg0$を固定すれば
+$E_v^\vee(mH)$は大域生成される．評価写像の核を$K_v$として
+\[
+ 0\longrightarrow K_v\longrightarrow
+ H^0(S,E_v^\vee(mH))\otimes\mathcal O_S
+ \longrightarrow E_v^\vee(mH)\longrightarrow0
+\]
+を取る．これを$E_{v'}((n-m)H)$でtensorし，
+Serre消滅$H^1(S,K_v\otimes E_{v'}((n-m)H))=0$（$n\gg0$）を使うと，
+乗法写像
+\begin{equation}\label{eq:serre-factorization}
+ H^0(S,E_v^\vee(mH))\otimes
+ H^0(S,E_{v'}((n-m)H))
+ \twoheadrightarrow
+ \operatorname{Hom}_S(E_v,E_{v'}(nH))
+\end{equation}
+が全射となる．左辺の積は必ず
+$E_v\to\mathcal O_S(mH)\to E_{v'}(nH)$という，
+構造頂点$e$を通る経路に対応する．頂点は有限個なので全ての$v,v'$に共通の
+十分大きい$N$を取れば，
+$B_n\subset BeB$（$n\ge N$）が従う．
+cut次数零は有限次元で，各斉次成分も有限次元であるから，
+$\dim_kC\bigl(w^{\mathrm{geo}}\bigr)<\infty$となる．
+これで(i)が証明された．
+
+最後に，標識付き六点のmoduliで座標三点$p_4,p_5,p_6$を固定すると，
+残る自由度は$P$の各列のスカラーと座標三点を保つ対角$\mathrm{PGL}_3$で割ることである．
+この商はちょうど$Q$の行・列rescaling商であり，
+$P=(Q^{\langle-1\rangle})^{\mathsf t}$およびその逆は
+全成分非零のトーラス上で正則だから，主張した開集合の同型が得られる．
+\end{proof}
+
+\begin{corollary}[AS heart と anticanonical heart の一致領域]
+\label{cor:complete-as-ac}
+十八係数非零の係数チャートで，標準AOU型のfolding，
+反Serre作用のcut shiftとの同定，必要なnoetherian性を満たすAS対象に限る．
+このとき自然なcorner restrictionが
+\[
+ \mathcal A_{\mathrm{AS}}\xrightarrow{\sim}
+ \mathcal A_{\mathrm{ac}}=\qgr R(\mathcal O,\tau)
+\]
+という構造対象・反Serre作用と両立するabel同値であることと，
+定理\ref{thm:general-position-iff}の十一条件は同値である．
+\end{corollary}
+\begin{proof}
+定理\ref{thm:general-position-iff}と命題\ref{prop:corner}，
+式\eqref{eq:orbit}を適用する．
+\end{proof}
+
+\begin{remark}
+定理\ref{thm:general-position-iff}は，\emph{元の27係数potential全体が}
+可換三次曲面から生じると主張するものではない．
+$w_{0bc}$は任意でよく，幾何学的潜在係数と一致させる必要はない．
+同定しているのは$A_0$除去後のcorner商である．
+また，十一条件に違反した場合に任意の別のabel同値・導来同値が存在しないという主張でもない．
+Rains heart，VdB heartとの比較は依然として独立の課題である．
+\end{remark}

@@ -1,0 +1,174 @@
+\section{一般位置における一様な消滅次数は七である}
+\label{sec:uniform-c7}
+本節は定理\ref{thm:general-position-iff}の有限次元性を定量化する．
+次数とは特に指定しない限り道長次数を指し，cut次数と区別する．
+有限体における既存の計算は証明の入力にしない．
+
+\begin{theorem}[最良の一様消滅次数]\label{thm:uniform-c7}
+標数零の代数閉体上，十八の係数$w_{1bc},w_{2bc}$が非零であり，
+$Q=(w_{2bc}/w_{1bc})$とする．次は同値である：
+\begin{enumerate}
+\item $Q$の九つの$2\times2$小行列式，$\det Q$，
+$\det Q^{\langle-1\rangle}$がすべて非零．
+\item $C(w)=B(w)/B(w)e_{A_0}B(w)$が有限次元．
+\item 道長次数七の成分$C(w)_7$が零．
+\end{enumerate}
+これらの条件の下で$C(w)_n=0$ $(n\ge7)$，
+一方$\dim_kC(w)_6\ge8$である．従って四交比トーラス上
+\[
+ U=U_7=\{\Delta_{11}\ne0\},
+\]
+かつ七は最良の一様消滅次数である．$\Delta_{11}$は
+十一の禁止divisorの定義多項式の積を表す．
+\end{theorem}
+\begin{proof}
+(iii)$\Rightarrow$(ii)は$C$が矢と頂点で生成されることから従い，
+(ii)$\Rightarrow$(i)は既存の必要条件である．
+定理\ref{thm:general-position-iff}で六点を復元し，
+$S=\operatorname{Bl}_{p_1,\ldots,p_6}\mathbb P^2$と置く．
+$h$を直線の引き戻し，$e_i$を六つの例外曲線とし，
+\[
+\begin{aligned}
+H&=3h-\sum_{i=1}^6e_i=-K_S, &
+D_1&=-2h+\sum_{i=1}^6e_i,\\
+D_2&=-h+e_1+e_2+e_3, &
+q_j&=2h-\sum_{r\ne j}e_r \quad(4\le j\le6).
+\end{aligned}
+\]
+$q_j$は五点を通るconicの真の変換で，
+$q_j^2=-1$，$H\cdot q_j=1$．三blockの線束は
+$\mathcal O(D_a)$ $(a=1,2)$，$\mathcal O(e_i)$ $(1\le i\le3)$，
+$\mathcal O(h-e_j)$ $(4\le j\le6)$と，
+構造頂点$A_0$の$\mathcal O_S$である．
+AOU\cite[(4.9)]{AOU}の幾何的rolled-up helix代数を使う．
+道長七の始点・終点は三種類（二十一組）だけであり，
+対応する切断は
+\[
+\begin{array}{c|c|c}
+\text{始点と終点}&\text{組数}&\text{対応するdivisor}\\\hline
+ A_a\to B_i\ (a=1,2;\ 1\le i\le3)&6&2H+e_i-D_a\\
+ B_i\to C_j\ (1\le i\le3;\ 4\le j\le6)&9&2H+h-e_i-e_j\\
+ C_j\to A_a\ (4\le j\le6;\ a=1,2)&6&3H+D_a-h+e_j .
+\end{array}
+\]
+それぞれの全切断が途中で$\mathcal O_S(mH)$を通ることを示す．
+
+まず，四つの線束
+\[
+\begin{aligned}
+L^-_1&=H-D_1=5h-2\sum e_r,&
+L^-_2&=H-D_2=4h-2(e_1+e_2+e_3)-(e_4+e_5+e_6),\\
+L^+_1&=H+D_1=h,&
+L^+_2&=H+D_2=2h-e_4-e_5-e_6
+\end{aligned}
+\]
+は，いずれも六本の互いに素な$(-1)$曲線を縮約する
+$S\to\mathbb P^2$の直線束である．
+実際，$L^-_1$は$q_1,\ldots,q_6$，
+$L^-_2$は$h-e_1-e_2,h-e_1-e_3,h-e_2-e_3,q_4,q_5,q_6$，
+$L^+_1$は$e_1,\ldots,e_6$，
+$L^+_2$は$e_1,e_2,e_3,h-e_4-e_5,h-e_4-e_6,h-e_5-e_6$
+を縮約する．従って$h^0(L_a^\pm)=3$．
+$L^-_a\cdot e_i=2$ $(i\le3)$，
+$L^+_a\cdot q_j=2$ $(j\ge4)$であり，
+これらの$(-1)$曲線は縮約されず，平面の滑らかなconicへ
+同型に写る．したがって
+\begin{equation}\label{eq:c7-conic-restriction}
+H^0(L^-_a)\xrightarrow{\sim}H^0(e_i,\mathcal O_{e_i}(2)),
+\qquad
+H^0(L^+_a)\xrightarrow{\sim}H^0(q_j,\mathcal O_{q_j}(2))
+\end{equation}
+は同型である．
+
+\paragraph{$A_a\to B_i$（六組）．}
+$N=2H+e_i-D_a$について
+\[
+0\to\mathcal O(2H-D_a)\to\mathcal O(N)
+\to\mathcal O_{e_i}(2)\to0 .
+\]
+$3H-D_a$はampleなので
+$H^1(2H-D_a)=0$（Kodaira消滅）．
+左端の切断は$A_a\to\mathcal O(2H)\to B_i(2H)$を経由する．
+$H^1(H)=0$から$H^0(H+e_i)\to H^0(e_i,\mathcal O_{e_i})$
+は全射である．式\eqref{eq:c7-conic-restriction}を併用すると，
+$A_a\to\mathcal O(H)\to B_i(2H)$を経由する切断は
+$H^0(e_i,\mathcal O_{e_i}(2))$全体に制限される．
+従って二種類の積が$H^0(N)$を張る．
+
+\paragraph{$B_i\to C_j$（九組）．}
+$L=h-e_j$はbase-point-free pencilである．
+$3H-e_i-h+e_j$はnefかつbigである．
+実際，二十七本の$(-1)$曲線との交点はすべて非負で，
+自己交点は八である（del Pezzoの錐定理を用いる）．
+Kawamata--Viehweg消滅で$H^1(2H-e_i-h+e_j)=0$．
+pencilの評価列を$\mathcal O(2H-e_i)$でtensorして
+\[
+H^0(2H-e_i)\otimes H^0(h-e_j)
+\twoheadrightarrow H^0(2H+h-e_i-e_j)
+\]
+を得る．右辺は全て$B_i\to\mathcal O(2H)\to C_j(2H)$を経由する．
+
+\paragraph{$C_j\to A_a$（六組）．}
+$N=3H+D_a-h+e_j=2H+D_a+q_j$とする．
+$3H+D_a$はampleだから$H^1(2H+D_a)=0$で，
+\[
+0\to\mathcal O(2H+D_a)\to\mathcal O(N)
+\to\mathcal O_{q_j}(2)\to0
+\]
+は切断について右端まで全射である．左端は
+$q_j$の定義切断を掛けた
+$C_j\to\mathcal O(H)\to A_a(3H)$の積で張られる．
+$H^1(H)=0$と$(H+q_j)\cdot q_j=0$から
+$H^0(H+q_j)\to H^0(q_j,\mathcal O_{q_j})$が全射である．
+式\eqref{eq:c7-conic-restriction}より
+$H^0(H+D_a)\to H^0(q_j,\mathcal O_{q_j}(2))$は同型．
+従って$C_j\to\mathcal O(2H)\to A_a(3H)$の積は
+右端の全切断を張り，先の積と合わせて$H^0(N)$を生成する．
+
+以上より，全二十一組で道長七の全元が$BeB$に属し，
+$C_7=0$である．
+
+\paragraph{道長六が残ること．}
+八頂点$A_1,A_2,B_1,B_2,B_3,C_4,C_5,C_6$の
+各対角の道長六の全空間は
+$H^0(2H)$で，Riemann--RochとKodaira消滅により次元十．
+$A_a$では$H\cdot D_a=0$と$H$のamplenessから
+$H^0(\pm D_a)=0$である．
+従って構造頂点を経由する積は$\mathcal O(H)$経由に限られ，
+\[
+H^0(H-D_a)\otimes H^0(H+D_a)\longrightarrow H^0(2H)
+\]
+の像の次元は高々$3\cdot3=9$である．
+$B_i$では$B_i\to\mathcal O$はなく，
+$\mathcal O(H)$経由の積を$e_i$へ制限すると
+$H^0(H-e_i)$の高々二次元の像となる．
+$\mathcal O(2H)$経由の積は$e_i$上で零．
+一方，$H^1(2H-e_i)=0$から$H^0(2H)$は
+$H^0(e_i,\mathcal O_{e_i}(2))$（三次元）へ全射．
+$C_j$では$C_j\to\mathcal O$はなく，
+$\mathcal O(H)$経由の積は$q_j$上で零，
+$\mathcal O(2H)$経由の積を$q_j$へ制限すると
+$H^0(h-e_j)$の高々二次元の像となる．
+$H^1(2H-q_j)=H^1(H+h-e_j)=0$なので
+$H^0(2H)$は$H^0(q_j,\mathcal O_{q_j}(2))$（三次元）へ全射．
+従って八頂点の対角商は各々非零で，
+$\dim C_6\ge8$．
+\end{proof}
+
+\begin{corollary}[道長七の関係行列の根基]\label{cor:c7-radical}
+$\Lambda=k[a^{\pm1},b^{\pm1},c^{\pm1},d^{\pm1}]$とし，
+規格化したpotentialの道長七のJacobi関係行列を$M_7$，
+その列数（六千八百四）の最大小行列式のイデアルを$I_7$とする．
+このとき
+\[
+\sqrt{I_7}=\sqrt{(\Delta_{11})}\qquad\text{in }\Lambda .
+\]
+\end{corollary}
+\begin{proof}
+定理\ref{thm:uniform-c7}より，
+$M_7$の列full rank locusは$\{\Delta_{11}\ne0\}$に等しい．
+従って$V(I_7)=V(\Delta_{11})$であり，
+Laurent多項式環上のHilbert Nullstellensatzによって根基が一致する．
+これは根基の等式であり，非被約scheme構造や個々のminorの
+因数分解を述べていない．
+\end{proof}

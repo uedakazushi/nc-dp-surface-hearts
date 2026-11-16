@@ -1,0 +1,119 @@
+\section{行列式で検出する追加の無限次元障害}
+\label{sec:ranktwo-obstructions}
+前節の九つの二次小行列式条件だけでは，corner の有限次元性に
+十分ではない．$w_{1bc}\ne0$ を仮定し，矢 $y_{bc}$ の rescaling により
+$w_{1bc}=1$ として，$w_{2bc}=q_{bc}$ を記す．
+\emph{成分ごとの逆数}からなる行列を
+\[
+ Q=(q_{bc})_{0\le b,c\le2},\qquad
+ Q^{\langle-1\rangle}=(q_{bc}^{-1})_{0\le b,c\le2}
+\]
+と書く．後者は通常の逆行列 $Q^{-1}$ ではない．
+
+\begin{proposition}[二つの行列式障害]\label{prop:two-determinants}
+全ての $q_{bc}\in k^\times$ とする．もし
+\[
+ \det Q=0\quad\text{または}\quad
+ \det Q^{\langle-1\rangle}=0,
+\]
+ならば $C(w)=B(w)/B(w)e_{A_0}B(w)$ は無限次元である．
+従って $C(w)$ の有限次元性には，前節の九つの小行列式の
+非零性に加えて，上の二つの行列式の非零性が必要である．
+これら二つは九条件からは従わない．
+\end{proposition}
+\begin{proof}
+まず $\det Q=0$ を仮定する．$Q$ を
+\[
+ Q=UV,\quad U\in M_{3\times2}(k),\quad V\in M_{2\times3}(k)
+\]
+と分解できる．$0\ne h\in\ker U^{\mathsf t}$ および
+$0\ne k\in\ker V$ を選ぶ．それぞれが非零なので，
+$h_bk_c\ne0$ となる $b,c$ が存在する．
+$u_b$ を $U$ の第 $b$ 行，$v_c$ を $V$ の第 $c$ 列とする．
+
+$k[t]$ 上の quiver 表現を
+\[
+ A_1=k[t]^2,\quad A_2=k[t],\quad B_b=C_c=k[t]
+\]
+とし，矢の写像を
+\begin{equation}\label{eq:ranktwo-representation}
+ x_{1b}=t u_b,\quad z_{c1}=-t v_c,\qquad
+ x_{2b}=z_{c2}=t,\quad y_{bc}=t h_bk_c
+\end{equation}
+で定める．$x_{1b}$ は行ベクトル，$z_{c1}$ は列ベクトルである．
+$y_{bc}$ に関する Jacobi 関係は
+\[
+ x_{1b}z_{c1}+q_{bc}x_{2b}z_{c2}
+ =t^2(-u_bv_c+q_{bc})=0.
+\]
+$x_{1b},z_{c1}$ に関する関係はそれぞれ
+$Vk=0$ と $h^{\mathsf t}U=0$ に帰着する．
+$x_{2b},z_{c2}$ に関する関係は $Qk=0$ と
+$h^{\mathsf t}Q=0$ に帰着する．
+従って \eqref{eq:ranktwo-representation} は全ての Jacobi 関係を満たす．
+しかも $A_2$ に基点を持つ三角閉路
+\[
+ z_{c2}y_{bc}x_{2b}:A_2\longrightarrow A_2
+\]
+の像は $t^3h_bk_c\ne0$ であり，その任意の冪の像も非零である．
+よって $C(w)$ に非零元が無限に存在し，無限次元となる．
+ここで $k[t]$ は表示の標的であり，有限次元の quiver 表現を
+仮定していない．
+
+次に $\det Q^{\langle-1\rangle}=0$ とする．
+頂点 $A_1,A_2$ および対応する $x,z$ を交換すると，
+残る二系列の potential 係数は $(q_{bc},1)$ となる．
+各 $y_{bc}$ を非零スカラーで rescale して第一系列を1に戻せば，
+新しい比行列は $Q^{\langle-1\rangle}$ である．
+この操作は頂点を入れ替えた graded quiver の同型なので，
+前半を適用できる．
+\end{proof}
+
+\begin{corollary}[四交比座標での十一の必要条件]
+\label{cor:eleven}
+\[
+ Q\sim
+ \begin{pmatrix}1&1&1\\1&a&b\\1&c&d\end{pmatrix}
+ \qquad(a,b,c,d\in k^\times)
+\]
+と規格化する．$C(w)$ が有限次元ならば，前節の九つの二次小行列式が
+全て非零であり，さらに
+\begin{equation}\label{eq:two-extra-polynomials}
+ (a-1)(d-1)-(b-1)(c-1)\ne0,\qquad
+ bc(1-a)(1-d)-ad(1-b)(1-c)\ne0
+\end{equation}
+が必要である．
+\end{corollary}
+\begin{proof}
+最初の式は $\det Q$ である．第二の式は
+$abcd\det Q^{\langle-1\rangle}$ に等しい．
+前節の定理と命題\ref{prop:two-determinants}を適用する．
+\end{proof}
+
+\begin{remark}[九つの小行列式だけでは不十分]
+\label{ex:ranktwo}
+\[
+ Q_0=\begin{pmatrix}3&4&5\\5&6&7\\7&8&9\end{pmatrix},\quad
+ Q_1=2520Q_0^{\langle-1\rangle}
+ =\begin{pmatrix}840&630&504\\504&420&360\\360&315&280\end{pmatrix}.
+\]
+両方とも9つの $2\times2$ 小行列式は全て非零である．
+一方，
+\[
+ \det Q_0=0,\quad
+ \det Q_0^{\langle-1\rangle}=\frac1{198450},\qquad
+ \det Q_1=80640,\quad
+ \det Q_1^{\langle-1\rangle}=0.
+\]
+従って，両方とも $C$ は無限次元である．これらの厳密な有理数演算と
+式\eqref{eq:ranktwo-representation}の全 Jacobi 関係の検査は
+\texttt{computations/verify\_cubic\_corner\_rank2.py}で再現できる．
+\end{remark}
+
+\begin{remark}[有限体での探索と限界]
+十一の非零条件の十分性は，次節の定理\ref{thm:general-position-iff}で六点配置との同定によって証明する．
+規格化した四交比トーラスを $\mathbb F_7$ 上で全探索すると，
+十一の条件を満たす80点すべてで $C_7=0$ になる．
+これは有限体の有限個の点に関する独立検算である．標数0の十分性は次節の幾何学的証明に依存し，この有限体計算に依存しない．
+同じスクリプトのオプション \texttt{--scan-f7} で再現できる．
+\end{remark}

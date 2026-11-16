@@ -1,0 +1,197 @@
+\section{一般位置六点における corner の Hilbert 関数の一様性}
+\label{sec:hilbert-constant}
+\begin{theorem}[corner の完全な Hilbert 関数]\label{thm:hilbert-constant}
+標数零の代数閉体上，十八の係数 $w_{1bc},w_{2bc}$ が非零で，
+定理\ref{thm:general-position-iff}の十一の非零条件を満たすとする．
+$C=B/BeB$ に道長 grading を入れると，六点配置には依存せず
+\[
+ \boxed{H_C(t)=8+21t+33t^2+38t^3+33t^4+21t^5+8t^6,\qquad
+       \dim_k C=162.}
+\]
+特に定理\ref{thm:uniform-c7}の $\dim C_6\ge8$ は等号であり，
+$C_0,\ldots,C_6$ の次元跳びは一般位置 locus に存在しない．
+この結論は $B$ 全体が AS 正則であることを仮定しない．
+\end{theorem}
+
+\begin{proof}
+まず定理\ref{thm:general-position-iff}により，
+$C$ を一般位置の六点を吹き上げた滑らかな可換三次曲面 $S$ の
+rolled-up helix 代数の同じ idempotent 商として計算できる．
+既存の記号を保ち，$H=-K_S$，
+\[
+\begin{gathered}
+ D_1=-2h+\sum_{r=1}^6e_r,\qquad D_2=-h+e_1+e_2+e_3,\\
+ A_0=\mathcal O_S,\quad A_a=\mathcal O_S(D_a)\ (a=1,2),\quad
+ B_i=\mathcal O_S(e_i)\ (1\le i\le3),\\
+ C_j=\mathcal O_S(G_j),\qquad G_j=h-e_j\ (4\le j\le6),\qquad
+ q_j=H-G_j=2h-\sum_{r\ne j}e_r.
+\end{gathered}
+\]
+ここで $q_j$ は五点を通る conic の真の変換である $(-1)$ 曲線の類を表す．
+$A,B,C$ の三 block にレベル $0,1,2$ を与えると，
+道長 $n$ の始点 $s$，終点 $t$ の全 Hom は，
+AOU\cite[(4.1), (4.9)]{AOU}の同定により
+\begin{equation}\label{eq:hilbert-block}
+ B_n(s,t)=H^0\!\left(S,\mathcal O_S\left(
+ \left\lfloor\frac{\ell(s)+n}{3}\right\rfloor H+E_t-E_s\right)\right)
+ \quad(\ell(t)\equiv\ell(s)+n\pmod3),
+\end{equation}
+ただし $E_{A_a}=D_a$，$E_{B_i}=e_i$，$E_{C_j}=G_j$ である．
+AOU の helix の acyclicity と曲面の Riemann--Roch
+$\chi(\mathcal O(D))=1+D(D+H)/2$ を使うと，
+$e=A_0$ を除く八頂点の全 Hom の各次数の合計は次の表の中央左列になる．
+\[
+\begin{array}{c|rrrrrrrr}
+\text{道長 }n&0&1&2&3&4&5&6&7\\\hline
+\dim B_n\text{（八頂点間）}&8&21&42&74&105&147&206&252\\
+\dim (BeB)_n\text{（同上）}&0&0&9&36&72&126&198&252\\
+\dim C_n&8&21&33&38&33&21&8&0
+\end{array}
+\]
+以下では中央右列，すなわち構造頂点を\emph{途中で経由する}
+積の像の次元を各次数について証明する．
+多重経由があるときは，すべての経由位置に対応する像の和を取る．
+
+必要な切断数を列挙する（$a=1,2$，$i=1,2,3$，$j=4,5,6$）：
+\begin{equation}\label{eq:hilbert-basic-h0}
+\begin{gathered}
+ h^0(H)=4,\quad h^0(2H)=10,\quad h^0(H\pm D_a)=3,\\
+ h^0(H-e_i)=2,\quad h^0(H+e_i)=5,\quad h^0(2H-e_i)=7,\\
+ h^0(G_j)=2,\quad h^0(q_j)=1,\quad
+ h^0(H+G_j)=7,\quad h^0(H+q_j)=5.
+\end{gathered}
+\end{equation}
+$H-e_i$ と $G_j$ は base-point-free pencil である．
+$H\pm D_a$ は定理\ref{thm:uniform-c7}で使った平面への blow-down 線束である．
+
+\paragraph{道長二と三．}
+道長二では $C_j\to B_i$ の九組のみが $e$ を経由し，
+その像は $H^0(q_j)H^0(e_i)$ の一次元である．合計九次元．
+道長三では $A_a\to A_b$ に経由射はなく，
+$B_i\to B_k$ と $C_j\to C_k$ の九組ずつで，
+それぞれ $H^0(H-e_i)H^0(e_k)$ および
+$H^0(q_j)H^0(G_k)$ が二次元の像を与える．合計三十六次元．
+
+\paragraph{道長四．}
+全二十一組の全 Hom はそれぞれ五次元である．
+$A_a\to B_i$（六組）では $H^0(H-D_a)H^0(e_i)$ の三次元が経由する．
+$B_i\to C_j$（九組）では
+$H^0(H-e_i)H^0(G_j)$ が経由する．後者の pencil trick の核は
+$H^0(q_j-e_i)$ であり，これは零である．実際 $q_j\cdot e_i=1$ と
+$q_j^2=-1$ から，そのような effective divisor は $q_j$ を成分として含むが，
+差は $-e_i$ となって effective でない．従って積の像は四次元．
+$C_j\to A_a$（六組）では $H^0(q_j)H^0(H+D_a)$ の三次元が経由する．
+この三種類を加えると $6\cdot3+9\cdot4+6\cdot3=72$ である．
+
+\paragraph{道長五．}
+全二十一組の全 Hom はそれぞれ七次元である．
+$A_a\to C_j$（六組）では
+$H^0(H-D_a)H^0(G_j)$ の像を取る．$G_j$ の pencil trick の核は
+$H^0(H-D_a-G_j)$ であり，零である．
+$a=1$ なら $H-D_1-G_j=2q_j-e_j$ で，
+$q_j$ との交点数は $-2$ だから $q_j$ が二重の固定成分となり，
+残りが $-e_j$ となって矛盾する．$a=2$ なら
+$H-D_2-G_j=3h-2(e_1+e_2+e_3)-\sum_{r=4,r\ne j}^6e_r$．
+これは互いに素な三本の $(-1)$ 曲線
+$h-e_1-e_2$，$h-e_1-e_3$，$h-e_2-e_3$ とそれぞれ交点数 $-1$ であり，
+三本を引くと $-\sum_{r=4,r\ne j}^6 e_r$ となり effective でない．
+よって積の像は $3\cdot2=6$ 次元．
+$B_i\to A_a$（六組）では
+$H^0(H-e_i)H^0(H+D_a)$ の像を取る．$H-e_i$ の pencil trick の核は
+$H^0(D_a+e_i)=0$（$h$ との交点が負）なので六次元．
+$C_j\to B_i$（九組）は $e$ を二通りの位置で経由し，
+$H^0(H+q_j+e_i)$ の中で
+\[
+ q_j\,H^0(H+e_i)+e_i\,H^0(H+q_j)
+\]
+を得る．ここで曲線の記号はその定義切断を掛ける作用も表す．
+二つの部分空間は共に五次元であり，$q_j$ と $e_i$ に共通成分がないので
+交叉は $q_je_i\,H^0(H)$ の四次元である．よって和は六次元．
+従って経由射の合計は $(6+6+9)\cdot6=126$ 次元である．
+
+\paragraph{道長六：$A_a\to A_b$（四組）．}
+この場合の経由射は一種類で，次の積の像である：
+\begin{equation}\label{eq:two-blowdowns-injection}
+ H^0(H-D_a)\otimes H^0(H+D_b)
+ \longrightarrow H^0(2H+D_b-D_a).
+\end{equation}
+この積写像が全ての $a,b=1,2$ に対して単射であることを示す．
+$L=H-D_a$，$M=H+D_b$ とする．いずれも $S\to\mathbb P^2$ の
+blow-down を定め，切断空間は三次元である．
+$L$ が縮約する六本の $(-1)$ 曲線のうち，$M\cdot E=2$ となる曲線は
+$a=b$ で六本，$a\ne b$ で三本（後者は $q_4,q_5,q_6$）ある．
+$L$ により縮約されるそれら三本の像は $\mathbb P^2$ で非共線である．
+もし共線なら，その直線の真の変換は $H$ と交点零の有効曲線となり，
+$H$ の ampleness に矛盾する．
+一方，$M\cdot E=2$ なら，$M$ による blow-down は $E$ を
+滑らかな平面 conic に同型に写す．したがって
+\[
+ H^0(M)\xrightarrow{\sim}H^0(E,M|_E)\simeq H^0(\mathbb P^1,\mathcal O(2))
+\]
+である．
+仮に \eqref{eq:two-blowdowns-injection} の核に $\sum_{u=1}^3s_u\otimes t_u$
+（$s_u$ は $H^0(L)$ の基底）があれば，三本の曲線への制限から
+$\sum_{u=1}^3s_u(p_E)t_u=0$ が $H^0(M)$ で成り立つ．
+三つの $p_E$ が非共線なので，三つの評価汎関数は独立であり，
+全ての $t_u$ が零である．これで積写像の単射性が従う．
+従って全ての四組で経由射の像は九次元である．
+
+\paragraph{道長六：$B_i\to B_k$（九組）．}
+$H^0(H-e_i)H^0(H+e_k)$ の像は，
+$H-e_i$ の pencil trick と $h^0(e_i+e_k)=1$ より九次元である．
+$i\ne k$ では全 Hom が九次元なのでこれで終わる．
+$i=k$ のときは二番目の経由位置から $e_i\,H^0(2H-e_i)$ も得られるが，
+$H^0(H-e_i)H^0(H)\twoheadrightarrow H^0(2H-e_i)$ が成立する．
+実際，pencil trick の核は $H^0(e_i)$ の一次元で，
+$2\cdot4-1=7=h^0(2H-e_i)$ だからである．
+従って二番目の積は最初の像に含まれ，九次元のままである．
+
+\paragraph{道長六：$C_j\to C_k$（九組）．}
+$H^0(H+q_j)H^0(G_k)$ の像は，$G_k$ の pencil trick と
+$h^0(q_j+q_k)=1$ より九次元である．
+$j\ne k$ では全 Hom が九次元なのでこれで終わる．
+$j=k$ の場合，もう一つの経由位置から $q_j\,H^0(H+G_j)$ も得るが，
+$H^0(H)H^0(G_j)\twoheadrightarrow H^0(H+G_j)$ が成立する．
+実際，pencil trick の核は $H^0(q_j)$ の一次元で，
+$4\cdot2-1=7=h^0(H+G_j)$ である．
+従って後者の積も先の九次元の像に含まれる．
+
+以上より道長六の経由射の次元は
+$(4+9+9)\cdot9=198$ である．
+表中の全 Hom の次元 $206$ との差は八であり，$\dim C_6=8$ が従う．
+道長七以降の消滅は定理\ref{thm:uniform-c7}による．
+表を合計して Hilbert 関数と $\dim C=162$ を得る．
+\end{proof}
+
+\begin{corollary}[162次元 algebra の有限平坦族]
+\label{cor:flat-corner-162}
+標数零の代数閉体 $k$ 上の四交比トーラスにおける十一条件の補開集合
+$U=\{\Delta_{11}\ne0\}$ 上，規格化した universal quiver potential の
+$e_{A_0}$-corner 商を $\mathcal C_U$ とする．このとき
+$\mathcal C_U$ は階数 $162$ の有限局所自由な
+$\mathcal O_U$-代数で，その道長斉次部分は順に
+\[
+ (8,21,33,38,33,21,8)
+\]
+の階数を持ち，道長七以上は零である．任意の $U$ 上の基底変更と可換する．
+\end{corollary}
+\begin{proof}
+各道長 $n$ の成分は有限個の道を基底とする自明ベクトル束を，
+全ての $u(\partial W)v$ からなる有限個の関係によって割った
+有限表示 $\mathcal O_U$ 加群である．
+定理\ref{thm:hilbert-constant}より $0\le n\le6$ では
+全幾何学的ファイバーの次元が一定であるから，
+対応する関係行列は一定階数を持ち，商は局所自由で基底変更と可換する．
+$n=7$ では全ファイバーが零なので，Nakayamaの補題で
+$\mathcal C_{U,7}=0$．頂点と矢による生成性から高次数も零になる．
+有限個の斉次部分を足し合わせて主張を得る．
+\end{proof}
+
+\begin{remark}[結果の対象範囲]\label{rem:hilbert-status}
+証明は四交比の十一条件による一般位置六点の再構成と，
+可換三次曲面の幾何学的 rolled-up helix の Hom 同定に基づく．
+$w_{0bc}$ は $C$ に影響しないので任意でよい．
+しかし $27$ 係数の任意の potential が AS-regular/noetherian であること，
+Rains heart や VdB heart と同一であること，導来圏の全域での同値は
+ここからは結論しない．
+\end{remark}

@@ -1,6 +1,6 @@
 # 四つのheartの比較：現行研究ノート
 
-2026-11-16 / hearts-v26（数学本文）・hearts-strategy-v4（現行方針）。最初に `00_research_plan.md` と `research/current_assessment.md` を読む。現行原稿は `papers/nc_del_pezzo_hearts.tex` と依存section、検証状態は `research/four_hearts_validation.json`。証明が本文にある事項は所在と入力を示し、全文を重複させない。GitHub mainが正本で、保存成功時にはLibraryへ別途アップロードしない。
+2026-11-16 / hearts-v28（数学本文）・hearts-strategy-v6（現行方針）。最初に `00_research_plan.md` と `research/current_assessment.md` を読む。現行原稿は `papers/dp-hearts.tex` と依存section、検証状態は `research/four_hearts_validation.json`。証明が本文にある事項は所在と入力を示し、全文を重複させない。GitHub mainが正本で、保存成功時にはLibraryへ別途アップロードしない。
 
 ## 現在の中心結果と再開点
 
@@ -84,9 +84,9 @@ pi=Ni q、相異なる正整数、3≤r≤8では全根指数非零でgenuine。
 
 混合A2の非分裂P:0→S−→P→S+→0はrank delta=min(p,n)、cohomology=((p−n)+,(n−p)+)。逆拡大Qは(p,n)。Serre部分圏はmod_fd Pi(A2)で四直既約。指数2,−1では反標準側の異なるcharacter W,Uと非分裂2次元Vを得て、逆拡大V'を合わせA/Ann(V⊕V')=Pi(A2)。この商はhomological epimorphismでない。一般E型の有限次元加群圏をPi(E)と同定していない。
 
-`cubic_heart_corner.tex` は十一条件、一様C7=0、C6非零、Hilbert値(8,21,33,38,33,21,8)、総次元162を保持する。本比較稿は有限性の証明を自立して含むが、一様Hilbert関数の詳細は別稿に残す。道長と反標準cut次数はell=3cut+block(end)−block(start)で区別する。
+`dp-hearts2.tex` は十一条件、一様C7=0、C6非零、Hilbert値(8,21,33,38,33,21,8)、総次元162を保持する。本比較稿は有限性の証明を自立して含むが、一様Hilbert関数の詳細は別稿に残す。道長と反標準cut次数はell=3cut+block(end)−block(start)で区別する。
 
-`nc_del_pezzo_resonance_hearts.tex` は全次数最大数値共鳴、E[3]九選択、zigzag形式性と固定dg圏のframed分枝を保持する。cubicの32個の5次元formal分枝は曲面モジュライ成分ではない。weak(-2)曲線のEuler零の導来的消失は、非零負指数が[−1]に残る現象とは違う。
+`dp-hearts2.tex` は全次数最大数値共鳴、E[3]九選択、zigzag形式性と固定dg圏のframed分枝を保持する。cubicの32個の5次元formal分枝は曲面モジュライ成分ではない。weak(-2)曲線のEuler零の導来的消失は、非零負指数が[−1]に残る現象とは違う。
 
 ## 先行研究・検証上の限界
 

@@ -1,10 +1,10 @@
 # Rains resonance と anticanonical heart：研究継続ノート
 
-2026-11-16 / resonance-hearts-v8（数学本文）・hearts-strategy-v2（現行方針）。最初に `00_research_plan.md` を読む。現行原稿は `papers/nc_del_pezzo_resonance_hearts.tex`、証明はそこからinputされる七つのsectionにある。中心は `resonance_mixed_a2_category.tex` と `resonance_global_heart.tex`。GitHub mainが正本であり、保存成功時はLibraryへ保存しない。一般原則と保存許可は上位方針に記す。
+2026-11-16 / hearts2-v1（数学本文）・hearts-strategy-v6（現行方針）。最初に `00_research_plan.md` を読む。現行原稿は `papers/dp-hearts2.tex`、符号別Ext・混合拡大・zigzag形式変形は第2論文からinputされるsectionにあり、自然導来比較とADE普遍有限商は第1論文にある。GitHub mainが正本であり、保存成功時はLibraryへ保存しない。一般原則と保存許可は上位方針に記す。
 
 ## 1. 現在の到達点と再開の核心
 
-**指定genuine楕円gluingの導来比較は点検済みの入力となった。** 滑らかな可換genuine del Pezzo S、滑らかなE∈|−K_S|、q∈Pic0(E)からのRains gluingに対し、自然なΦ=πRΓ*はDb(Rains heart)≃Db(qgr R)。証明は本リポジトリの `papers/sections/resonance_global_heart.tex`、定理 `thm:resonance-global-comparison` に自立して記載されている。orbitのInd生成、境界traceの非零性、有限/無限位数双方の環の有限性、source飽和性を入力ごとに区別する。今回の主要論証点検と一次資料の確認範囲は `research/current_assessment.md` を参照する。独立の外部査読や機械形式化とは区別する。
+**指定genuine楕円gluingの導来比較は点検済みの入力となった。** 滑らかな可換genuine del Pezzo S、滑らかなE∈|−K_S|、q∈Pic0(E)からのRains gluingに対し、自然なΦ=πRΓ*はDb(Rains heart)≃Db(qgr R)。証明は第1論文 `papers/dp-hearts.tex` の `four_hearts_geometric.tex`（定理 `thm:derived`）に自立して記載されている。orbitのInd生成、境界traceの非零性、有限/無限位数双方の環の有限性、source飽和性を入力ごとに区別する。今回の主要論証点検と一次資料の確認範囲は `research/current_assessment.md` を参照する。独立の外部査読や機械形式化とは区別する。
 
 **全heartの比較**：この範囲で全Rains heart上のΦの振幅は[0,1]。T=ker H1Φ、F=ker H0Φはtorsion pairで、反標準heartを戻すと〈F[1],T〉となる。q非torsionなら境界外Serre部分圏Zにも制限し、T∩Z=ker Ext1(e,−)、F∩Z=ker Hom(e,−)。全任意nc del Pezzo、weak avatar、特異境界や非局所自由gluingに拡張したわけではない。
 
@@ -54,7 +54,7 @@ q非torsionでは境界外sheafの零次元商はない。商Zにi^*Z=0が従い
 
 相異なる正整数N_iの倍点p_i=N_iqでは全根指数が非零。d=6,…,1の根系はA2+A1,A4,D5,E6,E7,E8、根数8,20,40,72,126,240。各E^rでZariski denseであり、N1<N3<N2を課してもdense。全ncモジュライの全成分に対する主張ではない。大小制約の密度は整数行列式−1のE³自己同型(u,v,w)→(u,u+v+w,u+v)から得る。
 
-根の分類はΣb_i=3a、Σb_i²=a²+2による。a=0は差根、a=1は三点、a=2は六点、r=8ではa=3の(2,1,…,1)型もある。Cauchy–Schwarzで|a|≤4、b(b−1)≥0からa=4は不可能。正aの指数は正係数和、差根e_i−e_jの指数はN_j−N_i。滑らかな反標準曲線の存在からHnef・big、非ampleなら有効(-2)曲線がEに制限して自明となり矛盾する。完全証明は `resonance_maximal_a2.tex`、`resonance_maximal_all_degrees.tex`。
+根の分類はΣb_i=3a、Σb_i²=a²+2による。a=0は差根、a=1は三点、a=2は六点、r=8ではa=3の(2,1,…,1)型もある。Cauchy–Schwarzで|a|≤4、b(b−1)≥0からa=4は不可能。正aの指数は正係数和、差根e_i−e_jの指数はN_j−N_i。滑らかな反標準曲線の存在からHnef・big、非ampleなら有効(-2)曲線がEに制限して自明となり矛盾する。完全証明は第1論文の `four_hearts_maximal_density.tex`。混合$A_2$の実在例と二段拡大は第2論文の `dp_hearts2_mixed_a2_examples.tex`。
 
 具体例N=(1,3,2,5,7,11)、単純根指数(6,2,−1,3,2,4)、alpha=e1−e2は+2、beta=e2−e3は−1、交点1。Rainsの入力により同じheartに両sheafが実在する。全72根の数値共鳴を全72向きの既約sheafの存在と混同しない。有理数例E:y²=x³−x+1、q=(0,1)では2q=(1/4,−7/8)によりNagell–Lutzで非torsion。20個の三点行列式とconic行列式、72根指数の非零性は既存の厳密算術証明書にある。
 
@@ -82,7 +82,7 @@ p>nでは(T,F)=(add(S+,P),add(S−))、p<nでは(add(S+),add(S−,P))。p≠nな
 
 ## 7. 導来比較の監査と全heartのtilt
 
-`resonance_global_heart.tex` に完全な論証を置く。監査の要点は以下。
+第1論文の `four_hearts_geometric.tex` と `four_hearts_examples.tex` に完全な論証を置く。監査の要点は以下。
 
 - RainsのgluingはB=O_S^perpにeを付け、RHom(M,e)=RHom_E(Li*M,q)、Fq|B=Li*(−)⊗q^−1、Fq(e)=O_E。S genuineかつE smoothが範囲。
 - R=gのRees環は中央正則元と楕円THCR商を持つ。gr_gR=B[g]から整域・左右noetherian。σ無限位数ではRSS Prop2.4がdegL≥1で適用可能。有限位数ではBがPI、YZ Th5.13→5.1(1)→4.5でbalanced dualizing、chi、有限local cdを得る。target全体のsmoothnessは前提にしない。
@@ -109,6 +109,6 @@ Rains 2019：arXiv:1907.11301v1、Theorem4.30と§5のgluing/heart、§7の数�
 再現：
 
     python3 computations/verify_resonance_mixed_a2.py
-    latexmk papers/nc_del_pezzo_resonance_hearts.tex
+    latexmk papers/dp-hearts2.tex
 
 混合A2検算は厳密有理数で40,000通り（正指数和17,500、負指数和17,500、balanced仮想場合5,000）、Hom/Euler/Ext、四次元商の行列積、各三角像の次元3、commutant次元4、局所反射を確認する。今回これを含む全20コードの再実行に成功した。sheaf存在と導来比較は数学的証明であって計算証明ではない。不足部品を補完して全文組版を実施した。以前の個別driverの組版状態は `research/resonance_hearts_validation.json`、今回の状態は研究評価に記す。独立査読・網羅的新規性調査は未実施。現行の検証範囲は `research/current_assessment.md` を参照する。

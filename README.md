@@ -1,45 +1,32 @@
 # 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-16 / hearts-strategy-v4。Rains・Van den Bergh・Artin–Schelter・反標準heartを、指定された構造対象と自然関手を保って比較する研究。GitHub mainが正本。
+2026-11-17 / hearts-strategy-v6。GitHub `main` を正本とする。
 
-**最初に [研究方針](00_research_plan.md) を読む。** [現状評価・優先順位・一次資料と検証範囲](research/current_assessment.md) に今回の調査をまとめた。
+**研究の再開では最初に [研究方針](00_research_plan.md) を読む。** [研究ノート（比較）](research/heart_comparison.md) / [共鳴](research/resonance_hearts.md) / [corner](research/cubic_corner.md) / [零指数根壁](research/resonance_walls.md)。
 
-## 中心課題
+## 現行の二論文
 
-反標準heartの認識と、実在する境界外根のEuler標数によるheart選択を、公表できる主定理にまとめる。主論文には全ADE根圏のabel圏同定と、元のアフィン代数A=R/(g−1)の全有限次元表現を支配する商の証明を追加した。十一因子が消える古典的退化の壁と、一般位置内の非零指数共鳴を分ける。
+- **[第1論文 dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v28）：Rains/VdB/AS/反標準heartのpointedな比較、HRS・ADE単純tilt、規格化theta potentialと六点復元、全ADE根圏と普遍有限商、表現stack、次数1--6の最大共鳴Zariski稠密性、零指数壁の古典的収縮と標準弱gluingのorbit核。
+- **[第2論文 dp-hearts2.tex](papers/dp-hearts2.tex)**（hearts2-v1）：第1論文に完全な詳細を収録していない根sheafの符号別Ext・相殺・混合A2の精密計算、ADE zigzag形式変形、cubicの一頂点cornerの十一条件の必要十分性、六点配置との対応、162次元一様Hilbert関数・平坦族、有理数上の計算証明。
 
-## 現行の原稿と研究ノート
+第1論文で証明した全次数の最大共鳴と零指数壁について、第2論文は必要な前提だけを簡潔に再掲する。2論文は別々にLuaLaTeXで組版できる構成とし、数学的詳細は両論文からinputされる`papers/sections/`に保持する。過去の3つのdriverは現行論文ではない。
 
-- [四つのheart](papers/nc_del_pezzo_hearts.tex)：自然導来比較、全heartのHRS/ADE tilt、規格化AS比較、actual楕円係数、元六点の復元。
-- [Rains共鳴](papers/nc_del_pezzo_resonance_hearts.tex)：符号別Ext、混合A2、最大共鳴、四次元アフィン商。
-- [Cubic corner](papers/cubic_heart_corner.tex)：四交比、十一条件、六点一般位置、Hilbert関数、有限平坦162次元族と古典根壁。
+## 数学的な状態
 
-主論文は反標準heartの認識・Euler選択・ADE有限商・単根例を集約する。普遍商の一般次元公式とFrobenius判定、非被約基底を含む固定曲面の古典的表現stackも記述する。共鳴稿とcorner稿は有効な証明を保持した補助原稿として扱い、3本の独立した完成論文とは数えない。
+指定genuine smooth elliptic gluingにおける比較と、標準弱楕円gluingの零指数orbit核を区別する。形式変形の32分枝は曲面モジュライの32成分を意味しない。162次元cornerとADE普遍アフィン商は異なる代数。全potentialのAS性・weak gluingのdg商と反標準qgrの同値・曲面族のheart降下は一般に未証明。詳しい仮定と証明所在・次の課題は研究方針を参照する。
 
-[比較ノート](research/heart_comparison.md) / [共鳴ノート](research/resonance_hearts.md) / [cornerノート](research/cubic_corner.md) / [実施方針](research/four_hearts_plan.md) / [Codex指示](AGENTS.md)
+## 再現
 
-## 確実性と再現
+リポジトリrootで次を実行する。
 
-原稿にある証明、今回点検した主要論証、有限計算、未証明目標を区別する。全heartの無条件一致、全potentialのAS性、相対stack降下は主張しない。従来の各validationは個別成果の証明・検算範囲を記したもので、今回の実行範囲は研究評価を参照する。
+```sh
+bash scripts/cloud_setup.sh
+bash scripts/check.sh all
+bash scripts/check.sh tex
+```
 
-    python3 -m pip install -r requirements.txt
-    python3 computations/verify_four_hearts.py
-    python3 computations/verify_resonance_mixed_a2.py
-    python3 computations/verify_cubic_corner.py
-    latexmk papers/nc_del_pezzo_hearts.tex
-    latexmk papers/nc_del_pezzo_resonance_hearts.tex
-    latexmk papers/cubic_heart_corner.tex
-
-2026-11-16に全20検算を実行して成功。3主原稿をLuaLaTeXで組版し、参照と引用の整合を点検する。今回の確認範囲は研究評価と [公表稿の検証記録](research/publication_validation.json) に記載する。Python3/SymPyとLuaLaTeX・LuaTeX-ja・latexmkを用い、PDF・Synctex・ログはbuild/へ再生成する。
-
-## 独立して継続する関連研究
-
-[H3分類](https://github.com/uedakazushi/nc-cubic-moduli) /
-[次数1モジュライ](https://github.com/uedakazushi/nc-dp1-moduli) /
-[nc三次三様体](https://github.com/uedakazushi/nc-cubic-threefold-moduli)
-
-本研究の結果とこれらの研究固有の主張を混同せず、実際に外部結果へ依存する際は固定commitと仮定を示す。
+`bash scripts/check.sh tex` は`papers/dp-hearts.tex`、`papers/dp-hearts2.tex` の2本を組版する。`build/`、PDF・同期TeX・auxなどの中間物はGit追跡しない。今回の再編については [検証範囲](research/two_papers_validation.json) を参照。以前の3driverによる組版記録を、新2driverの組版成功として扱わない。
 
 ## Cloud Codex
 
-セットアップ・検算とCodex Cloud環境の登録方法は [Cloud Codex手順](docs/CLOUD_CODEX.md) を参照。研究指示は [AGENTS.md](AGENTS.md)、現在の研究優先順位は [00_research_plan.md](00_research_plan.md) にある。
+[実行環境手順](docs/CLOUD_CODEX.md) と [Codex指示](AGENTS.md) を参照。一般にmainに直接fast-forward保存し、PR・GitHub Actions・force pushを使わない。

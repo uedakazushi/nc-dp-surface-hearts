@@ -20,7 +20,7 @@ case "$mode" in
     ;;
   tex)
     command -v latexmk >/dev/null || { echo 'latexmk not installed' >&2; exit 1; }
-    for paper in papers/nc_del_pezzo_hearts.tex papers/nc_del_pezzo_resonance_hearts.tex papers/cubic_heart_corner.tex; do
+    for paper in papers/dp-hearts.tex papers/dp-hearts2.tex; do
       printf 'Typesetting %s\n' "$paper"
       latexmk -lualatex "$paper"
     done

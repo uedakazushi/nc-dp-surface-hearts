@@ -1,19 +1,19 @@
 # Cubic corner の有限性と4交比：現行研究ノート
 
-2026-11-16 / corner-v7（数学本文）・hearts-strategy-v2（現行方針）。最初に `00_research_plan.md` を読み、証明は `papers/cubic_heart_corner.tex` の定理 `thm:general-position-iff` とその依存箇所を読む。全次数のheart比較は `research/heart_comparison.md` にある。
+2026-11-16 / hearts2-v1（数学本文）・hearts-strategy-v6（現行方針）。最初に `00_research_plan.md` を読み、証明は `papers/dp-hearts2.tex` の定理 `thm:general-position-iff` とその依存箇所を読む。全次数のheart比較は `research/heart_comparison.md` にある。
 
 ## 古典的根壁と anticanonical heart の障害
 
 **証明済み**：11 divisorは10個の共線性根 h-e_i-e_j-e_k とconic根 2h-sum e_i。一般壁の六点blowup Sは弱dP3、対応(-2)曲線 E を反標準射fがA1点へ収縮。F=i_*O_E(-1)は2-sphericalで、全nについてRHom(O_S(n(-K_S)),F)=0、Rf_*F=0。coh Sでは反標準AZ ampleが失敗し、qgr anticanonical ring=coh XだがDb(coh S)とDb(coh X)は導来非同値（特異点の剰余体の非有界Ext）。任意次数の弱dPで(-2)曲線がある場合にも同じ障害が成立する。**これは古典的blowupの結果であり、非可換Rains/VdB/AS heartの壁特殊化の証明ではない。**
 
-**厳密な一壁例**：Q0=[[1,1,1],[1,2,2],[1,3,4]]で9個のminorのうち1個のみ0、detQ=1、det成分逆数Q=1/24。六点は(1:1:1),(2:1:1),(12:4:3)と三座標点で共線3点はp1,p2,p4だけ。反標準三次のnodeは[0:0:1:1]、局所Hessian det=-2304。多項式恒等式を有理数で厳密検証。証明`papers/sections/cubic_corner_root_walls.tex`、再現`computations/verify_cubic_root_wall.py`。
+**厳密な一壁例**：Q0=[[1,1,1],[1,2,2],[1,3,4]]で9個のminorのうち1個のみ0、detQ=1、det成分逆数Q=1/24。六点は(1:1:1),(2:1:1),(12:4:3)と三座標点で共線3点はp1,p2,p4だけ。反標準三次のnodeは[0:0:1:1]、局所Hessian det=-2304。多項式恒等式を有理数で厳密検証。証明`papers/sections/four_hearts_zero_walls.tex`（第1論文）、再現`computations/verify_cubic_root_wall.py`。
 
 **一次資料**：AOU arXiv:2404.00175v1 §§1,4,8は六点係数を定義。弱dPの反標準収縮はDolgachev, *Classical Algebraic Geometry*, Thm 8.3.2とBlanc–Lamy, Proc. LMS 105(2012), Introduction/§4。幾何学的事実と新規の具体的対応・spherical計算を区別し、新規性の全面調査・独立査読は未実施。
 
 ## 現行の完全 Hilbert 関数定理と有限平坦族
 
 **証明済み（標数0・十八係数非零・十一条件）**：道長 graded の商 C=B/BeB は六点配置に依存せず Hilbert 級数
-`H_C(t)=8+21t+33t^2+38t^3+33t^4+21t^5+8t^6`、総次元 `162`。前回の下界 `dim C_6>=8` は等号。一般位置 locus で次数 0..6 の次元跳びは存在しない。完全証明は `papers/sections/cubic_corner_hilbert_series.tex`（`papers/cubic_heart_corner.tex` に input）。
+`H_C(t)=8+21t+33t^2+38t^3+33t^4+21t^5+8t^6`、総次元 `162`。前回の下界 `dim C_6>=8` は等号。一般位置 locus で次数 0..6 の次元跳びは存在しない。完全証明は `papers/sections/cubic_corner_hilbert_series.tex`（`papers/dp-hearts2.tex` に input）。
 
 AOU(4.9)の可換 cubic の九線束間のHomと、e=A0を経由する積の像を個別に計算した。八頂点間の全Homの次数別次元は(8,21,42,74,105,147,206,252)、経由部分の次元は(0,0,9,36,72,126,198,252)。次数2..5は例外曲線の定義切断とbase-point-free pencil trickで計算。次数6のA_a→A_bに必要な3×3の積写像の単射性は、一方のblowdownで縮約され、他方で滑らかなconicに写る非共線な3曲線への制限で証明する。B_i→B_kとC_j→C_kの2つの経由位置の像の包含もpencil trickで証明する。次元計算はPicard格子のRR（AOU helixのacyclicityを使用）による。
 
@@ -23,7 +23,7 @@ AOU(4.9)の可換 cubic の九線束間のHomと、e=A0を経由する積の像�
 
 ## 現行の一様次数定理
 
-**証明済み（標数0・18係数非零）**：四交比の11非零条件と `dim C<∞` と `C_7=0` は同値であり、11条件が成立するとき `dim C_6>=8`。従って `U=U_7={Δ11≠0}`、七が最良の一様消滅次数。証明は `papers/sections/cubic_corner_uniform_cutoff.tex`（現行 `papers/cubic_heart_corner.tex` に `\\input`）。AOU(4.9)の滑らかな可換 cubic の線束モデルを用い、道長7の21ブロックを A_a→B_i（6）、B_i→C_j（9）、C_j→A_a（6）に分け、blow-down線束のconic制限・basepoint-free pencil trick・Kodaira/Kawamata--Viehweg消滅により全て `A0` を経由することを示した。対角道長6の八頂点には各1次元以上の商が残る。これは既存のF7全探索からの推論ではない。有限行列 `M_7` の最大小行列式イデアルの根基は四交比Laurent環で `rad(Δ11)` と一致（scheme構造までは主張しない）。
+**証明済み（標数0・18係数非零）**：四交比の11非零条件と `dim C<∞` と `C_7=0` は同値であり、11条件が成立するとき `dim C_6>=8`。従って `U=U_7={Δ11≠0}`、七が最良の一様消滅次数。証明は `papers/sections/cubic_corner_uniform_cutoff.tex`（現行 `papers/dp-hearts2.tex` に `\\input`）。AOU(4.9)の滑らかな可換 cubic の線束モデルを用い、道長7の21ブロックを A_a→B_i（6）、B_i→C_j（9）、C_j→A_a（6）に分け、blow-down線束のconic制限・basepoint-free pencil trick・Kodaira/Kawamata--Viehweg消滅により全て `A0` を経由することを示した。対角道長6の八頂点には各1次元以上の商が残る。これは既存のF7全探索からの推論ではない。有限行列 `M_7` の最大小行列式イデアルの根基は四交比Laurent環で `rad(Δ11)` と一致（scheme構造までは主張しない）。
 
 数値仮定は `computations/verify_cubic_corner_c7_geometry.py` で27本の(-1)曲線との交点、四つのblow-down line class、13個のKV nef/big入力を厳密な整数計算で検査した。これは線束の乗法の代数的証明とは別。今回の全文組版は環境側のformat・LaTeX/LuaTeX-ja欠落で未完了。計算成功とPDF生成・画像点検は区別する。
 
@@ -63,4 +63,4 @@ AOU型AS helixとのfolding、Serre inverse shift、orbit algebraの飽和、お
 
 本稿で未解決とされていた構造対象の同定は、規格化同一データの範囲では四heart稿に結果がある。独立な表示の比較、相対化、全intrinsic cubicへの拡張はそこからは従わない。全体の優先順位・先行研究・今回の検証範囲は [current_assessment.md](current_assessment.md) と [全体方針](../00_research_plan.md) に従う。
 
-一次資料はAOU §4（4.1,4.9）、§8（8.1,8.4-8.9）と OU arXiv:2508.04986。定理の新規性・初出は未確認。証明記載、整数検算、LuaLaTeX組版は区別する。再現は `python3 computations/verify_cubic_six_points.py`、`python3 computations/verify_cubic_corner_c7_geometry.py`、`python3 computations/verify_cubic_corner_hilbert.py`、`latexmk papers/cubic_heart_corner.tex`。推奨の現行名は Rains heart, VdB heart, AS heart, anticanonical heart。
+一次資料はAOU §4（4.1,4.9）、§8（8.1,8.4-8.9）と OU arXiv:2508.04986。定理の新規性・初出は未確認。証明記載、整数検算、LuaLaTeX組版は区別する。再現は `python3 computations/verify_cubic_six_points.py`、`python3 computations/verify_cubic_corner_c7_geometry.py`、`python3 computations/verify_cubic_corner_hilbert.py`、`latexmk papers/dp-hearts2.tex`。推奨の現行名は Rains heart, VdB heart, AS heart, anticanonical heart。

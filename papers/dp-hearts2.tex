@@ -1,0 +1,106 @@
+\RequirePackage{fix-cm}
+\documentclass[11pt,a4paper]{ltjsarticle}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[haranoaji]{luatexja-preset}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{bookmark}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\OO}{\mathcal O}\newcommand{\cA}{\mathcal A}\newcommand{\cB}{\mathcal B}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Perf}{Perf}
+\DeclareMathOperator{\RHom}{RHom}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\qgr}{qgr}
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Jac}{Jac}
+\newcommand{\Db}{D^b}
+\title{非可換del Pezzo曲面のheart：共鳴根の拡大と三次曲面corner\\
+\large 符号別Ext・形式変形・有限次元代数の完全判定}
+\author{}
+\date{2026年11月17日\qquad 公表準備稿 hearts2-v1}
+\hypersetup{pdftitle={非可換del Pezzo曲面の共鳴heartと三次曲面corner}}
+\begin{document}
+\maketitle
+\begin{abstract}
+本稿は主論文\texttt{dp-hearts.tex}の自然heart比較と全ADE有限商を背景に，そこに詳細を収録しなかった二つの方向を研究する．
+第一にRains共鳴における根sheafの符号別Ext，正負の拡大の最大rank，混合$A_2$の対象と表現，最大共鳴点でのADE zigzag自己Extと固定dg圏内のframed形式変形を解析する．
+第二に三次曲面型rolled-up quiverの一頂点除去商について，四交比トーラス上の十一条件による有限次元性の必要十分判定，六点配置との同型，一様Hilbert関数と階数162の有限平坦族，厳密な有理数計算証明書を与える．
+最大共鳴の全次数でのZariski稠密性，零指数壁の収縮と非可換弱gluingのorbit核，規格化AS heartの自然比較は主論文で証明しているので，本稿では必要な入力だけを再掲する．
+基礎的なzigzag形式性やgeometric helixの既知結果と，本研究固有の拡大・corner計算の寄与を区別する．
+\end{abstract}
+\tableofcontents
+
+\part{Rains共鳴の符号別Ext・混合拡大と形式変形}
+\input{papers/sections/dp_hearts2_resonance_body.tex}
+
+\part{三次曲面の一頂点cornerと六点配置}
+\input{papers/sections/dp_hearts2_corner_body.tex}
+
+\begin{thebibliography}{99}
+
+\bibitem{RainsBirational}
+E.~M.~Rains, \emph{The birational geometry of noncommutative surfaces},
+arXiv:1907.11301v1, Theorem 4.30, \S7, Theorem 9.10,
+Corollaries 10.12, 10.16, Proposition 10.13, \S11.
+\url{https://arxiv.org/abs/1907.11301}.
+\bibitem{RainsFiltered}
+E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
+arXiv:2107.13540v2 (2022), Corollary 3.8, \S4, Proposition 5.1.
+\url{https://arxiv.org/abs/2107.13540}.
+\bibitem{LiuWangZigzag} J.~Liu and Z.~Wang,
+\emph{$A_\infty$-deformations of zigzag algebras via Ginzburg dg algebras},
+J. Algebra 677 (2025), 360--371, Theorem 1.1; arXiv:2301.06757v3.
+\url{https://arxiv.org/abs/2301.06757}.
+\bibitem{AZ} M.~Artin, J.~J.~Zhang, \emph{Noncommutative projective schemes},
+Adv. Math. 109 (1994), 228--287.
+\bibitem{RSSResonance} D.~Rogalski, S.~J.~Sierra, J.~T.~Stafford,
+\emph{Noncommutative Blowups of Elliptic Algebras},
+arXiv:1308.2216v2 (2015), Proposition 2.4.
+\url{https://arxiv.org/abs/1308.2216}.
+\bibitem{YZResonance} A.~Yekutieli, J.~J.~Zhang,
+\emph{Rings with Auslander Dualizing Complexes},
+J. Algebra 213 (1999), 1--51, Theorems 4.5, 5.1(1), 5.13;
+arXiv:math/9804005v3. \url{https://arxiv.org/abs/math/9804005}.
+\bibitem{OrlovResonance} D.~Orlov,
+\emph{Smooth and proper noncommutative schemes and gluing of DG categories},
+arXiv:1402.7364v5 (2015), Theorems 3.18, 3.25, Corollary 3.19.
+\url{https://arxiv.org/abs/1402.7364}.
+
+\bibitem{AOU} T.~Abdelgadir, S.~Okawa, K.~Ueda,
+\emph{Compact moduli of marked noncommutative cubic surfaces},
+arXiv:2404.00175v1 (2024), \S\S3--4, 9.
+\url{https://arxiv.org/abs/2404.00175}.
+\bibitem{OU} S.~Okawa, K.~Ueda,
+\emph{Marked Artin--Schelter surfaces of del Pezzo types},
+arXiv:2508.04986v1 (2025), Definitions 1.1, 5.2 and \S6.
+\url{https://arxiv.org/abs/2508.04986}.
+\bibitem{VdB} M.~Van den Bergh,
+\emph{Blowing up of non-commutative smooth surfaces},
+Mem. Amer. Math. Soc. 154 (2001), no.~734;
+arXiv:math/9809116v1, Theorems 9.1.9, 11.1.3.
+\url{https://arxiv.org/abs/math/9809116}.
+\bibitem{BlancLamy} J.~Blanc, S.~Lamy,
+\emph{Weak Fano threefolds obtained by blowing-up a space curve and construction of Sarkisov links},
+Proc. London Math. Soc. (3) 105 (2012), 1047--1075, Introduction and \S4.
+\url{https://doi.org/10.1112/plms/pds023}.
+\bibitem{Dolgachev} I.~V.~Dolgachev,
+\emph{Classical Algebraic Geometry: A Modern View},
+Cambridge University Press (2012), Theorems 8.3.2 and 8.3.4.
+\bibitem{Hearts} 本研究，\emph{非可換del Pezzo曲面のheart比較}，
+\texttt{papers/dp-hearts.tex}，2026年11月17日．
+HRS表示と一般corner判定の現行証明．本稿は有限生成性を道長判定から導き，完全Hilbert関数を記述する．
+
+\end{thebibliography}
+\end{document}

@@ -1,6 +1,6 @@
 # 非可換del Pezzo曲面の共通内在的枠組みとheart比較
 
-2026-11-16 / framework-v2。本書は独立研究間の背景辞書であり、現行の優先順位は `00_research_plan.md` と `research/current_assessment.md` に従う。本研究の主要比較の証明はローカルの3主原稿にある。以下の別研究の結果は背景参照であり、今回その数学的証明を独立再検証したものではない。外部ファイルの存在を確認した固定commitへ参照を更新してある。H3分類・次数1固有モジュライ・nc三次三様体を本研究へ再統合しない。
+2026-11-16 / framework-v2。本書は独立研究間の背景辞書であり、現行の優先順位は `00_research_plan.md` と `research/current_assessment.md` に従う。本研究の主要比較の証明はローカルの2原稿にある。以下の別研究の結果は背景参照であり、今回その数学的証明を独立再検証したものではない。外部ファイルの存在を確認した固定commitへ参照を更新してある。H3分類・次数1固有モジュライ・nc三次三様体を本研究へ再統合しない。
 
 ## 金沢型量子FermatとOUのAS surfaceの厳密な差
 
@@ -12,7 +12,7 @@
 
 Rains、Van den Bergh raw blow-up、AS helix、反標準qgrの四構成について、存在、realization Db(heart)→Tの同値、指定同値のt-exactness、構造対象・反Serre・境界restriction・rank・marking、族の降下を分離する。数値的non-amplenessをAZ失敗や導来変化と同一視しない。
 
-cubicではVdBの振幅1同値からT=ker R¹δ_*、U=ker δ_*による一回のHRS tiltを得る。heart一致はU=0に帰着する。AOU Theorem 9.4の左辺はqgr Fであり、AS qgrとの導来比較を与える。本研究では規格化したactual mutation列の下で構造対象を同定し、指定されたfull very strong AS実現に対してt-exact性を証明している。範囲は `papers/nc_del_pezzo_hearts.tex` の `thm:AOU-pointed`、`thm:normalized-abelian` と `research/heart_comparison.md` を参照する。未変更の印刷tupleと独立なblowdown表示への無条件延長は含まない。
+cubicではVdBの振幅1同値からT=ker R¹δ_*、U=ker δ_*による一回のHRS tiltを得る。heart一致はU=0に帰着する。AOU Theorem 9.4の左辺はqgr Fであり、AS qgrとの導来比較を与える。本研究では規格化したactual mutation列の下で構造対象を同定し、指定されたfull very strong AS実現に対してt-exact性を証明している。範囲は `papers/dp-hearts.tex` の `thm:AOU-pointed`、`thm:normalized-abelian` と `research/heart_comparison.md` を参照する。未変更の印刷tupleと独立なblowdown表示への無条件延長は含まない。
 
 ## heart 比較の名称
 
@@ -54,7 +54,7 @@ Gabriel–Krull rank-one torsion-freeとn≥0のHilbert数値により負次数�
 
 ## 各論文の役割
 
-- `papers/nc_del_pezzo_hearts.tex`：全次数のheart比較問題とcubicにおけるHRS・orbit・corner判定。
+- `papers/dp-hearts.tex`：全次数のheart比較問題とcubicにおけるHRS・orbit・corner判定。
 - [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)：d=3。標準正規境界の認識定理と量子Fermat反例。
 - [三次曲面のambientとモジュライ](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/cubic_surface_ambient_moduli.tex)：d=3。モジュライ成分・marked potentialとの比較。
 - [次数1の内在的構造とモジュライ](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/nc_del_pezzo_degree1_moduli.tex)：d=1。内在的rank、weighted sextic、pointed dg族、avatar。
@@ -63,7 +63,7 @@ Gabriel–Krull rank-one torsion-freeとn≥0のHilbert数値により負次数�
 
 ## 論理的状態
 
-既存の各論文に記載された証明と、全てのintrinsic対象の網羅性、全モジュライの代数性・既約成分性、heartを保つ標識忘却の大域同値は区別する。次数1の特異楕円境界での導来比較、次数3の正規一次境界の一般存在はいずれも未解決。既存稿の証明記載と今回の点検を区別する。本研究の指定genuine gluingの比較証明は `papers/sections/resonance_global_heart.tex` と四heart稿に自立して収録する。外部研究の未検証主張を暗黙の入力にしない。
+既存の各論文に記載された証明と、全てのintrinsic対象の網羅性、全モジュライの代数性・既約成分性、heartを保つ標識忘却の大域同値は区別する。次数1の特異楕円境界での導来比較、次数3の正規一次境界の一般存在はいずれも未解決。既存稿の証明記載と今回の点検を区別する。本研究の指定genuine gluingの比較証明は第1論文 `papers/dp-hearts.tex` の `four_hearts_geometric.tex` に自立して収録する。外部研究の未検証主張を暗黙の入力にしない。
 
 ## 量子Fermat ambientの所属成分
 

@@ -1,0 +1,86 @@
+{
+  "date_JST": "2026-11-17",
+  "structure_version": "hearts-v28 / hearts2-v1",
+  "strategy_version": "hearts-strategy-v6",
+  "canonical_repo": "uedakazushi/nc-dp-surface-hearts",
+  "canonical_branch": "main",
+  "current_documents": [
+    {
+      "file": "papers/dp-hearts.tex",
+      "role": "Natural pointed hearts, HRS/ADE, theta geometry, universal affine quotient, maximal density and zero-index dg-orbit kernels.",
+      "status": "Main source retained from hearts-v27; only driver path and version changed."
+    },
+    {
+      "file": "papers/dp-hearts2.tex",
+      "role": "Uncovered resonance Ext/extension/formal deformation and cubic quiver corner finite/flat geometry, including original detailed proofs.",
+      "status": "New standalone combined driver, using existing proofs plus reorganized context and mixed A2 example."
+    }
+  ],
+  "current_sources": [
+    "papers/sections/dp_hearts2_resonance_body.tex",
+    "papers/sections/dp_hearts2_corner_body.tex",
+    "papers/sections/dp_hearts2_mixed_a2_examples.tex"
+  ],
+  "scope": {
+    "primary_math": "No changes to the mathematical proof content of the main paper; renamed and retitled with same section inputs.",
+    "companion": "Uncovered sign Ext, connecting maps, mixed A2 examples, zigzag deformation, cubic eleven-factor discriminant, six-point moduli, Hilbert function, finite flat 162-dimensional algebra family, exact rational certificates. The duplicated maximal-density and weak-wall detailed sections are now provided only in the main paper.",
+    "reference_policy": "Maximal-density and zero-index-wall proofs live in the main paper; companion provides minimal statements or explicit source citations, not another full copy. The natural Rains comparison and full ADE quotient are also cited from main."
+  },
+  "source_integrity": {
+    "root_paper_drivers": 2,
+    "companion_label_count": 81,
+    "companion_internal_reference_count": 72,
+    "companion_citation_count": 43,
+    "companion_bibliography_entries": 13,
+    "companion_missing_labels": [],
+    "companion_duplicate_labels": [],
+    "companion_missing_citation_keys": [],
+    "companion_missing_inputs": [],
+    "result": "PASS in static staging analysis",
+    "main_label_count": 158,
+    "main_internal_reference_count": 232,
+    "main_citation_count": 92,
+    "main_bibliography_entries": 28,
+    "main_missing_labels": [],
+    "main_duplicate_labels": [],
+    "main_missing_citation_keys": [],
+    "main_missing_inputs": [],
+    "all_25_section_sources_used_by_current_drivers": true,
+    "all_root_drivers": [
+      "papers/dp-hearts.tex",
+      "papers/dp-hearts2.tex"
+    ]
+  },
+  "typesetting": {
+    "dp_hearts": "NOT RUN on new driver",
+    "dp_hearts2": "NOT RUN on new driver",
+    "previous_validation": "Earlier successful builds of 3 retired drivers do NOT establish a build of these 2 drivers."
+  },
+  "computation": {
+    "new_scripts_added": 0,
+    "existing_scripts_rerun": "NOT RUN on this reorganization",
+    "mathematical_computations_unchanged": true,
+    "exact_check_of_unchanged_source": {
+      "script": "computations/verify_density_zero_walls.py",
+      "git_blob": "fdcab772602640a1cc1f12f7215076efe11b164d",
+      "result": "PASS",
+      "positive_integer_lists": 240,
+      "order_matrix_tests": 72,
+      "nonzero_theta_forms": 27,
+      "node_hessian_determinant": -2304,
+      "scope": "These arithmetic checks do not prove categorical results or verify LuaLaTeX."
+    }
+  },
+  "limitations": [
+    "Primary-source novelty and external proof audit were not repeated.",
+    "Full LuaLaTeX builds and PDF inspection of both renamed/merged drivers remain to be executed in the configured Codex environment.",
+    "Old driver filenames are removed from the current tree; the remaining mathematical source sections feed the 2 current drivers.",
+    "Generated PDFs, aux/log/cache, and archived old copies are not tracked.",
+    "GitHub commit creation and remote head verification are recorded separately."
+  ],
+  "reproduce": [
+    "bash scripts/check.sh all",
+    "bash scripts/check.sh tex"
+  ],
+  "persistence": "GitHub main is canonical; Library upload only if GitHub push fails."
+}

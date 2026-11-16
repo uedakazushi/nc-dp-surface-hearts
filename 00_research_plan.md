@@ -1,6 +1,6 @@
 # 研究方針：反標準heart・最大共鳴・零指数根壁
 
-2026-11-17 / hearts-strategy-v5。再開時は本書を最初に読む。現行主論文は `papers/nc_del_pezzo_hearts.tex`（hearts-v27）。GitHub mainが正本であり、リポジトリ全体が再開に必要な現行一式となる。新しい証明と未解決点の案内は `research/resonance_walls.md`、今回の検証範囲は `research/resonance_walls_validation.json`。
+2026-11-17 / hearts-strategy-v6。再開時は本書を最初に読む。現行第1論文は `papers/dp-hearts.tex`（hearts-v28）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本であり、リポジトリ全体が再開に必要な現行一式となる。新しい証明と未解決点の案内は `research/resonance_walls.md`、今回の検証範囲は `research/resonance_walls_validation.json`。
 
 ## 恒常的な原則と保存許可
 
@@ -13,6 +13,13 @@
 ノートは現在有効な着想・例・反例・計算・障害・文献比較を整理し、作業日誌にしない。本文の証明を重複転記せず参照先を示す。再開に必要な情報を会話だけに残さない。現行bundleは方針・ノート・論文と最小限のソース・文献情報・計算・証明書・再現手順から自己完結させ、旧版・旧ZIP・バックアップ・変更履歴・外部文献PDF・中間物・キャッシュを収録しない。再取得が難しい入力と必要な証明書は保持する。
 
 研究区切りの承諾不要Library保存は一般原則として許可済み。ただし本研究の個別指示は **GitHub mainを正本とし、保存成功時はLibraryへ重複保存せず、失敗時だけ緊急避難に使う** ことである。既存Libraryファイルは無断削除しない。mainへ通常のfast-forward保存を行い、force push・PR・GitHub Actionsを使わない。並行更新を失わないよう保存前にheadを確認する。PDF・ZIPはGit追跡せず生成する。生成・証明点検・計算・組版・commit・remote確認を別の状態として報告し、背景での自動継続は約束しない。
+
+## 現行の二論文と達成基準
+
+- `papers/dp-hearts.tex`：自然比較、HRS/Euler選択、AS・VdB、ADE有限商・表現族、最大共鳴稠密性、零指数根壁の核。定理の仮定と証明を保った主論文。
+- `papers/dp-hearts2.tex`：主論文に完全な詳細を収録していない符号別Ext、混合A2、ADE zigzag形式変形、cubic cornerの完全Hilbert関数と平坦族・計算証明。必要な背景には主論文を引用し、二重の証明を極力避ける。
+
+2本は独立に組版するが研究の論理上は第2論文が第1論文の結果を利用する。2本とも公表価値を確認した上で投稿を検討する。旧3driverは削除し、残りのsourceは現行の2driverに必要なものを優先する。重要な数学・証明の削除による軽量化はしない。
 
 ## 現在の目標と変更理由
 
@@ -36,13 +43,13 @@
 | coherent反標準導来切断の全核 | `prop:weak-coherent-kernel`。有界性と次数付きExtの有限生成性などの追加仮定付き。 |
 | dg商とDb(qgr R)の同値、壁上のAS比較、相対収縮 | 未解決。主論文末尾の将来の課題に明記。 |
 
-162次元cornerの一様Hilbert関数・有限平坦族は `cubic_heart_corner.tex` に完全証明を保持する。共鳴補助稿の形式変形・zigzag・混合A2の詳細も保持する。重複の整理のために未移管の有効な内容を削らない。
+162次元cornerの一様Hilbert関数・有限平坦族と、共鳴の形式変形・zigzag・混合A2の詳細は、統合した `papers/dp-hearts2.tex` に完全証明を保持する。重複の整理のために未移管の有効な内容を削らない。
 
 ## 次に着手する課題
 
 ### 1. 新しい核同定の独立点検と全文再組版
 
-Rainsの一般有理曲面gluing (4.4)–(4.7)、正次数の境界orbitによる検出、反標準収縮の射影公式を順に点検する。genuine性を用いずに済む箇所と、弱del Pezzo・滑らかな境界・固定gluingを必要とする箇所を明示する。主論文全体を `latexmk -lualatex papers/nc_del_pezzo_hearts.tex` で再組版し、新しい参照と既存節の連結を確認する。今回の組版は追加二節の抜粋に限る。
+Rainsの一般有理曲面gluing (4.4)–(4.7)、正次数の境界orbitによる検出、反標準収縮の射影公式を順に点検する。genuine性を用いずに済む箇所と、弱del Pezzo・滑らかな境界・固定gluingを必要とする箇所を明示する。主論文全体を `latexmk -lualatex papers/dp-hearts.tex` で再組版し、新しい参照と既存節の連結を確認する。旧版での追加二節の抜粋組版を記録しているが、今回の二論文再編の全文組版は未実施。
 
 ### 2. coherent収縮へ進むための最初の補題
 
@@ -66,9 +73,9 @@ Rainsの一般有理曲面gluing (4.4)–(4.7)、正次数の境界orbitによ�
 python3 -m pip install -r requirements.txt
 python3 computations/verify_density_zero_walls.py
 bash scripts/check.sh all
-latexmk -lualatex papers/nc_del_pezzo_hearts.tex
+latexmk -lualatex papers/dp-hearts.tex
 ```
 
-検算コードは新しい一つを加えて21本となる。今回実行したのは新コードで、既存20本は再実行していない。追加二節はLuaLaTeXで10ページの抜粋として組版し全ページを画像点検した。更新後の主論文全体と補助2稿の再組版は未実施。旧validationのv26全文組版記録をv27の成功として扱わない。現行の検証境界は `research/resonance_walls_validation.json` にある。
+検算コードは新しい一つを加えて21本となる。今回実行したのは新コードで、既存20本は再実行していない。hearts-v28の追加二節は10ページの抜粋で組版済み。今回のhearts-v28とhearts2-v1の全文組版は未実施。旧validationのv26全文組版記録をv27の成功として扱わない。二論文再編の検証境界は `research/two_papers_validation.json`、零壁研究の記録は `research/resonance_walls_validation.json` にある。
 
 H3分類・次数1固有モジュライ・nc三次三様体は各別リポジトリの正本で継続し、ここへ再統合しない。必要な外部研究は固定commitと仮定を記して参照する。

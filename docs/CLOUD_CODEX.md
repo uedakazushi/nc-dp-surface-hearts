@@ -14,7 +14,7 @@ ChatGPT/Codexで **Work in > Cloud > Select environment > Create environment** �
 
 Setup検査が完了したら Publish し、新しいCloudタスクで以下を開始する。
 
-> `AGENTS.md` と `00_research_plan.md` を読み、P0→P1を優先して研究を進めてください。まず `bash scripts/check.sh fast` を実行し、既存の主定理の仮定・一次資料・具体例の適用を点検してください。区切りで変更を検算・commitし、権限があればmainにfast-forward pushしてください。PR、GitHub Actions、force pushを使わず、全ADE有限商の本文証明を独立点検し、未計算の生成元の行列表示や外部査読と区別してください。
+> `AGENTS.md` と `00_research_plan.md` を読み、まず二論文の組版と本文の定理・引用を点検し、その後P0→P1を優先して研究を進めてください。まず `bash scripts/check.sh fast` を実行し、既存の主定理の仮定・一次資料・具体例の適用を点検してください。区切りで変更を検算・commitし、権限があればmainにfast-forward pushしてください。PR、GitHub Actions、force pushを使わず、全ADE有限商の本文証明を独立点検し、未計算の生成元の行列表示や外部査読と区別してください。
 
 ## 端末での検証コマンド
 
@@ -22,7 +22,7 @@ Setup検査が完了したら Publish し、新しいCloudタスクで以下を�
 bash scripts/cloud_setup.sh  # 環境作成時の一回
 bash scripts/check.sh fast    # 日常的な小さなcheckpoint
 bash scripts/check.sh all     # 全20本のPython検算
-bash scripts/check.sh tex     # 3つのLuaLaTeX主原稿
+bash scripts/check.sh tex     # 2つのLuaLaTeX論文
 bash scripts/check.sh full    # all + tex
 ```
 

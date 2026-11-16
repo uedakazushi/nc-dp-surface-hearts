@@ -1,35 +1,3 @@
-\RequirePackage{fix-cm}
-\documentclass[11pt,a4paper]{ltjsarticle}
-\usepackage[margin=24mm]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
-\usepackage[haranoaji]{luatexja-preset}
-\usepackage[unicode,hidelinks]{hyperref}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{proposition}[theorem]{命題}
-\newtheorem{lemma}[theorem]{補題}
-\newtheorem{corollary}[theorem]{系}
-\theoremstyle{definition}\newtheorem{remark}[theorem]{注意}
-\renewcommand{\proofname}{証明}
-\newcommand{\OO}{\mathcal O}\newcommand{\cA}{\mathcal A}\newcommand{\cB}{\mathcal B}
-\DeclareMathOperator{\qgr}{qgr}\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{\Ext}{Ext}
-\DeclareMathOperator{\Jac}{Jac}\DeclareMathOperator{\Spec}{Spec}
-\title{三次曲面のAS heartとanticanonical heartの一致開集合\\\large 一頂点cornerの有限判定と有理数上の証明書}
-\author{}
-\date{2026年11月16日\quad corner-v8}
-\begin{document}\maketitle
-\begin{abstract}
-三つの三頂点blockを持つcubicのrolled-up quiverについて，構造対象に対応する
-頂点のcornerがAS heart全体を再構成する条件を有限次元商で判定する．
-反標準周期のcut gradingと計算用の道長gradingを区別する．
-商の一つの道長成分の消滅は全高次数消滅を強制し，対応する条件はpotential係数空間の開条件となる．
-六つの有理点からpotentialを明示構成し，頂点を除いた商のHilbert関数
-$(8,21,33,38,33,21,8,0,\ldots)$を有理数上で検証する．
-従って7次の有限行列で定まる非空開集合が得られる．さらに18係数を四交比に還元し，九つの小行列式と二つの行列式の非零性がcorner有限次元性の必要十分条件になることを証明する．この開集合を標識付き可換三次曲面の六点配置空間と明示的に同定する．さらに道長七の商が一様に零となることと，全 Hilbert 関数が $8+21t+33t^2+38t^3+33t^4+21t^5+8t^6$ に固定されることを証明する．開集合上に階数 $162$ の有限局所自由な代数族が得られる．
-この開集合のnoetherian AS領域では，標準helixの構造対象から作った反標準環の
-$qgr$とAS heartは自然にabel同値となる．任意のpotentialのAS正則性，
-VdB heart・Rains heartとの全域一致，別の導来同値の不存在は主張しない．
-\end{abstract}
-
 \section{対象・grading・既知入力}
 基礎体は標数0の代数閉体とする．頂点を
 $A_a,B_b,C_c$ ($0\le a,b,c\le2$)，矢を
@@ -245,7 +213,7 @@ heartの非一致や導来非同値を結論しない．
 \input{papers/sections/cubic_corner_six_points.tex}
 \input{papers/sections/cubic_corner_uniform_cutoff.tex}
 \input{papers/sections/cubic_corner_hilbert_series.tex}
-\input{papers/sections/cubic_corner_root_walls.tex}
+\paragraph{根壁との関係．}十一判別因子上の古典的収縮と弱楕円gluingの核については主論文\cite{Hearts}を参照する．
 \section{非空性の明示的な証明書}
 \subsection{六点からpotentialを復元する}
 次の点を$\mathbb P^2$に取る：
@@ -324,7 +292,7 @@ $C$は道長1で生成されるので$C_7=0$から全高次数が零となり，
 従って標識を保つ商にも同じ開条件が降りる．
 
 \section{HRS比較を進める符号判定}
-前稿の振幅1比較を$F:D^b(\cA)\simeq D^b(\cB)$と書き，
+主論文\cite{Hearts}の振幅1比較を$F:D^b(\cA)\simeq D^b(\cB)$と書き，
 $F(\cA)\subset D^{[0,1]}(\cB)$，$F^{-1}(\cB)\subset D^{[-1,0]}(\cA)$とする．
 $(T,U)=(\ker H^1F,\ker H^0F)$はtorsion pairである．
 その理由を記す．$M\in\cA$について$B_i=H^iFM$とし，truncation triangleを
@@ -370,29 +338,3 @@ AOU \S9のmutation後の先頭対象がVdB模型の$\pi F$と同一であるか�
 Rains heartとVdB heart（後者はliteral blow-upに由来する），共鳴ごとのtorsion pair，特異境界は引き続き比較する．
 数値的共鳴の稠密性から，これらの導来非同値の密度を推論してはいけない．
 
-\begin{thebibliography}{9}
-\bibitem{AOU} T.~Abdelgadir, S.~Okawa, K.~Ueda,
-\emph{Compact moduli of marked noncommutative cubic surfaces},
-arXiv:2404.00175v1 (2024), \S\S3--4, 9.
-\url{https://arxiv.org/abs/2404.00175}.
-\bibitem{OU} S.~Okawa, K.~Ueda,
-\emph{Marked Artin--Schelter surfaces of del Pezzo types},
-arXiv:2508.04986v1 (2025), Definitions 1.1, 5.2 and \S6.
-\url{https://arxiv.org/abs/2508.04986}.
-\bibitem{VdB} M.~Van den Bergh,
-\emph{Blowing up of non-commutative smooth surfaces},
-Mem. Amer. Math. Soc. 154 (2001), no.~734;
-arXiv:math/9809116v1, Theorems 9.1.9, 11.1.3.
-\url{https://arxiv.org/abs/math/9809116}.
-\bibitem{BlancLamy} J.~Blanc, S.~Lamy,
-\emph{Weak Fano threefolds obtained by blowing-up a space curve and construction of Sarkisov links},
-Proc. London Math. Soc. (3) 105 (2012), 1047--1075, Introduction and \S4.
-\url{https://doi.org/10.1112/plms/pds023}.
-\bibitem{Dolgachev} I.~V.~Dolgachev,
-\emph{Classical Algebraic Geometry: A Modern View},
-Cambridge University Press (2012), Theorems 8.3.2 and 8.3.4.
-\bibitem{Hearts} 本研究，\emph{非可換del Pezzo曲面のheart比較}，
-\texttt{papers/nc\_del\_pezzo\_hearts.tex}，2026年11月15日．
-HRS表示と一般corner判定の現行証明．本稿は有限生成性を道長判定から導く．
-\end{thebibliography}
-\end{document}

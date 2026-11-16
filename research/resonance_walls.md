@@ -1,6 +1,6 @@
 # 最大共鳴と零指数壁：現在の知識
 
-2026-11-17 / hearts-v27。最初に `../00_research_plan.md` を読む。完全な証明は主論文の `four_hearts_maximal_density.tex` と `four_hearts_zero_walls.tex` にあり、ここでは依存関係・障害・次の着手を記す。以前の `current_assessment.md` と個別validationはv26までの実施範囲であり、今回の状態は `resonance_walls_validation.json` を参照する。
+2026-11-17 / hearts-v28。最初に `../00_research_plan.md` を読む。完全な証明は主論文の `four_hearts_maximal_density.tex` と `four_hearts_zero_walls.tex` にあり、ここでは依存関係・障害・次の着手を記す。以前の `current_assessment.md` と個別validationはv26までの実施範囲であり、今回の状態は `resonance_walls_validation.json` を参照する。
 
 ## 1. 最大共鳴
 
@@ -67,4 +67,4 @@ K_C,qの指定heart内の位置、perverse heart、局所・完成代数、AS実
 
 ## 再現
 
-`python3 computations/verify_density_zero_walls.py` は根列挙、240の整数列、72の順序行列、零壁のQ線型条件、27theta引数、三次恒等式とHessianを厳密計算する。稠密性・sheaf存在・dg同値の証明を計算で代替しない。主論文はリポジトリrootから `latexmk -lualatex papers/nc_del_pezzo_hearts.tex`。今回の抜粋10ページと全文未組版の区別はvalidationに記す。
+`python3 computations/verify_density_zero_walls.py` は根列挙、240の整数列、72の順序行列、零壁のQ線型条件、27theta引数、三次恒等式とHessianを厳密計算する。稠密性・sheaf存在・dg同値の証明を計算で代替しない。主論文はリポジトリrootから `latexmk -lualatex papers/dp-hearts.tex`。今回の抜粋10ページと全文未組版の区別はvalidationに記す。

@@ -1,10 +1,10 @@
 # 四heart比較の実施方針
 
-2026-11-17 / hearts-strategy-v5。恒常原則と研究全体の達成基準は `../00_research_plan.md`。現在の数学本文はhearts-v27。最大共鳴と零指数壁の知識は `resonance_walls.md`、今回の検証は `resonance_walls_validation.json` を参照する。
+2026-11-17 / hearts-strategy-v6。恒常原則と研究全体の達成基準は `../00_research_plan.md`。現在の数学本文はhearts-v28。最大共鳴と零指数壁の知識は `resonance_walls.md`、今回の検証は `resonance_walls_validation.json` を参照する。
 
 ## 中心結果の構成
 
-自然反標準導来比較 → Euler標数によるheart選択 → 規格化AS比較・actual theta係数と元六点 → 最大共鳴の稠密性と零指数壁 → 混合A2・全ADE有限商・具体例、という主題を保つ。既存の中心結果と有効な証明は削らない。cornerの完全Hilbert関数と共鳴の形式変形は補助原稿に保持する。
+自然反標準導来比較 → Euler標数によるheart選択 → 規格化AS比較・actual theta係数と元六点 → 最大共鳴の稠密性と零指数壁 → 混合A2・全ADE有限商・具体例、という主題を保つ。既存の中心結果と有効な証明は削らない。cornerの完全Hilbert関数と共鳴の形式変形は `papers/dp-hearts2.tex` に保持する。
 
 ## 現在有効な入力
 

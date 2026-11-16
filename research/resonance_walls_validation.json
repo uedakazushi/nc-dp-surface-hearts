@@ -1,11 +1,12 @@
 {
   "date_JST": "2026-11-17",
-  "main_version": "hearts-v29",
+  "main_version": "hearts-v30",
   "current_validation": "research/two_papers_validation.json",
   "density_and_zero_wall_proofs": "Retained in the main paper.",
   "coherent_finiteness": "Proved for the specified standard weak elliptic gluing for every q; no extra finite-generation and boundedness assumptions remain in that setting.",
   "quotient_description": "Identified as the gluing over the classical singular anticanonical model using BKS Theorem 2.14.",
   "remaining_qgr_comparison": "Full faithfulness and essential surjectivity of the induced functor remain unproved for general nontrivial q.",
   "numerical_checks_this_pass": "Existing density/zero-wall scripts unchanged and not rerun.",
-  "proof_verification": "Written and internally checked, not independently peer reviewed or formally verified."
+  "proof_verification": "Internally verified mathematical argument and 20-page LuaLaTeX excerpt; no independent peer review or formal verification.",
+  "high_ext_result": "Bbar/(Bbar∩Perf Sbar)≃D_sg(Sbar); for all q and n≥3 the images of ideal sheaves at Du Val points have Ext dimensions 4 delta_ij. Tate complete intersection resolution is known input."
 }

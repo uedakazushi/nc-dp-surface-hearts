@@ -1,25 +1,30 @@
 {
   "date_JST": "2026-11-17",
-  "main_version": "hearts-v29",
+  "main_version": "hearts-v30",
   "companion_version": "hearts2-v1 (unchanged)",
-  "strategy_version": "hearts-strategy-v7",
-  "base_commit": "26f5bea126dc69be1df186327122af5e64969ba2",
+  "strategy_version": "hearts-strategy-v8",
+  "base_commit": "93c1e30b476e5ec5ab49da18e6c90934031a02cb",
   "canonical_branch": "main",
   "proof_status": "New weak-gluing proofs written and internally checked. Not independently peer reviewed or formally verified; no exhaustive novelty claim.",
   "new_results_within_specified_setup": [
     "All q, smooth rational weak del Pezzo S and smooth anticanonical E: R_q is left and right noetherian; graded Ext modules of every object are finitely generated and cohomologically bounded.",
     "Construction of the natural coherent dg functor Phi_q:D_q to Db(qgr R_q), with kernel equal to the complete anticanonical orbit-null category and iota_q ker Rf_*.",
     "The dg quotient is a gluing of O_(Sbar)^perp in Db(coh Sbar) and an exceptional object, with boundary module RHom_E(Li^*(-),q).",
-    "For non-genuine S, the quotient has an object with nonzero self-Ext in infinitely many degrees and is not proper; this is not transferred to the unproved qgr identification."
+    "For non-genuine S, the quotient has an object with nonzero self-Ext in infinitely many degrees and is not proper; this is not transferred to the unproved qgr identification.",
+    "For all q, the common Bbar=O_(Sbar)^perp has quotient Bbar/(Bbar∩Perf Sbar) equivalent to Orlov's D_sg(Sbar), by the evaluation projection.",
+    "For singular Du Val points xi, images Ji,q of ideal sheaves satisfy dim Hom(Ji,q,Jj,q[n]) = 4 delta_ij for n>=3, for every q."
   ],
   "primary_inputs_checked": {
     "Rains": "2107.13540v2 section 4 equations (4.4)-(4.7), Proposition 5.1 and equation (5.3).",
     "Keeler": "math/9912051v2 Theorem 1.2(1),(2); covers both finite- and infinite-order translations.",
-    "BKS": "1801.08286v1 Theorem 2.14 and section 2F; projective map, geometric fibres of dimension at most one, Rf_*O=O."
+    "BKS": "1801.08286v1 Theorem 2.14 and section 2F; projective map, geometric fibres of dimension at most one, Rf_*O=O.",
+    "Orlov": "arXiv:math/0302304v2, D_sg=Db(coh)/Perf.",
+    "Tate": "John Tate, Illinois J. Math. 1 (1957), 14-27, minimal resolution of complete intersections; corroborated by Stacks Project Tag 09PF and algebraic series calculation."
   },
   "not_proved": [
     "For general nontrivial q, the induced singular-gluing functor to Db(qgr R_q) is fully faithful and essentially surjective.",
-    "Wall AS comparison, placement of contraction objects in specified hearts, local completed algebra, and relative descent."
+    "Wall AS comparison, placement of contraction objects in specified hearts, local completed algebra, and relative descent.",
+    "The common-component singularity quotient does not imply an intrinsic singularity-category identification for the entire noncommutative gluing or any equivalence with Db(qgr R_q)."
   ],
   "source_files_git_blobs": {
     "papers/dp-hearts.tex": "fe613c5fbb7664facb5b81fbaaa4678a89379a85",
@@ -29,11 +34,11 @@
   },
   "local_and_github_source_blobs_match": true,
   "typesetting": {
-    "scope": "Excerpt of the rewritten foundations, zero-wall section, new coherent-contraction section, and main bibliography; not the complete main paper.",
+    "scope": "20-page excerpt (foundations, zero walls, coherent contraction, and Du Val singularity section), not the complete main manuscript.",
     "engine": "LuaLaTeX / LuaTeX-ja",
-    "pages": 18,
+    "pages": 20,
     "status": "PASS",
-    "pdf_sha256": "4249ab0145e4a4f7ba16421379eacdd004567582ee07d0885544d040c32aaad9",
+    "pdf_sha256": null,
     "all_pages_layout_images_inspected": true,
     "undefined_internal_refs_or_citations": false,
     "overfull_or_underfull": false,
@@ -43,7 +48,7 @@
     "companion_full_compile": "NOT RUN"
   },
   "static_checks": {
-    "modified_section_label_count": 34,
+    "modified_section_label_count": 36,
     "duplicate_labels_in_modified_sections": [],
     "unresolved_citation_keys_in_modified_sections": [],
     "external_main_reference_count_in_modified_sections": 26,
@@ -53,7 +58,18 @@
   "computations": {
     "new_numerical_proof_claims": false,
     "existing_21_scripts_rerun": false,
-    "note": "The new general statements are mathematical proofs, not numerical experiments. Existing computational assets were not changed."
+    "note": "The new general statements are mathematical proofs, not numerical experiments. Existing computational assets were not changed.",
+    "exact_Tate_series_coefficients": [
+      1,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
   },
   "limitations": [
     "Full-main and companion builds and all-script reruns remain to be performed in the complete repository checkout.",

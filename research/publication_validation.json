@@ -1,11 +1,11 @@
 {
   "date_JST": "2026-11-17",
   "main": "papers/dp-hearts.tex",
-  "main_version": "hearts-v29",
+  "main_version": "hearts-v30",
   "companion": "papers/dp-hearts2.tex",
   "companion_version": "hearts2-v1",
   "current_validation": "research/two_papers_validation.json",
   "publication_status": "Research draft with new proofs and a rewritten introduction. Not submitted; no independent peer-review or exhaustive novelty certification.",
-  "current_typesetting_scope": "18-page excerpt of the modified foundations, zero-wall and coherent-contraction sections. Full manuscript builds not run in this pass.",
+  "current_typesetting_scope": "20-page excerpt containing revised foundations, zero walls, coherent contraction and new Du Val singularity section. Full builds of both manuscripts not run.",
   "instruction": "Use current_validation for actual checks and limits; do not transfer earlier three-driver build results to the current two-driver manuscripts."
 }

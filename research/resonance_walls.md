@@ -1,6 +1,6 @@
 # 最大共鳴・零指数壁・coherent収縮
 
-2026-11-17 / hearts-v29。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
+2026-11-17 / hearts-v30。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
 
 ## 最大共鳴の現在の知識
 
@@ -40,6 +40,19 @@ Bbar=O_Sbar^perpについてB/Nf≃Bbar。fは境界近傍で同型なのでLi*G
 
 Sが非genuineなら、特異点xのideal I_xはRΓI_x=0でBbarに入る。Gorenstein次元2と0→I_x→O→k(x)→0からj>2でExt^j(I_x,I_x)=Ext^j(k(x),k(x))。したがってQqには全qで無限高次自己Extがあり、properでなくsourceDqと抽象的にも同値でない。まだ同定していないDb(qgrR_q)の性質として述べてはいけない。
 
+## 古典的特異性圏とDu Val点の高次Ext
+
+`four_hearts_duval_singularity.tex` の `prop:duval-singularity-quotient` では、O_Sbarがexceptionalかつperfectなので、評価triangleによる射影P(G)=Cone(RΓ(G)⊗O→G)がperfectを保つことから、
+Bbar/(Bbar∩Perf Sbar)≃D_sg(Sbar) を証明する。全qに共通の充満部分圏だけの部分商であり、Dbar_q全体の特異性圏を同定したわけではない。
+
+Du Val点x_iのideal I_iはRΓ(I_i)=0からBbarに入り、任意のqで像J_i,qを持つ。局所Gorenstein双対性と二つの短完全列から n≥3 で
+Ext^n(I_i,I_i)≃Ext^n(k(x_i),k(x_i))、異なる点間はExt^n(I_i,I_j)=0となる。
+Du Valの局所環は埋込次元3、余次元1のhypersurfaceで、Tateの最小自由解消による
+P_k(t)=(1+t)^3/(1-t²)=1+3t+4t²+4t³+...
+から高次次元4δijを得る。これらは局所の既知公式と指定gluingの完全忠実性の帰結で、新規性は別途文献照合が必要。
+
+主要一次資料：Orlov, *Triangulated categories of singularities and D-branes in Landau–Ginzburg models*, Proc. Steklov Inst. Math. 246 (2004), 227–248, arXiv:math/0302304v2。Tate, *Homology of Noetherian rings and local rings*, Illinois J. Math. 1 (1957), 14–27。Tate解消の手順は Stacks Project §23.6 (Tag 09PF) にもある。
+
 ## 再発を避けるべき誤った推論
 
 内部次数の下有界性なしにはN/gN有限生成からN有限生成は従わない。例えばk[g,g^−1]はgによる商が零だがk[g]上有限生成でない。新証明のNは非負内部次数である。次数0の境界列の左端を零とみなさず、正次数の単射と有限な補正を使う。g進還元の有限性は固定全次数を保つ同次生成元に対して使う。
@@ -58,4 +71,4 @@ Sが非genuineなら、特異点xのideal I_xはRΓI_x=0でBbarに入る。Goren
 - Dolgachev, *Classical Algebraic Geometry II*, author draft 2025-08-10, Theorem8.3.2と§8.3.2；Drinfeld math/0210114v7, §§1.2–1.3,1.6；Seidel–Thomas math/0001043v2, Propositions2.10,2.12–2.13。既存の零壁入力。
 - Donovan–Wemyss, *Noncommutative enhancements of contractions*, Adv.Math.344(2019),99–136。与えられた幾何学的収縮を出発点とする点を区別する。
 
-今回の新しい証明は内部点検済み。一次資料の関連定理・証明を読んだが、PDF screenshotはCache missで失敗したものがあり、全引用ページの画像確認とはしない。網羅的新規性、独立査読、形式化は未実施。改稿3節を18ページ抜粋としてLuaLaTeX組版し全ページのレイアウトを確認した。全文組版・既存21計算の再実行は今回未実施。再開時の全文検証は `bash scripts/check.sh all` と `bash scripts/check.sh tex`。
+今回の新しい証明は内部点検済み。一次資料の関連定理・証明を読んだが、PDF screenshotはCache missで失敗したものがあり、全引用ページの画像確認とはしない。網羅的新規性、独立査読、形式化は未実施。改稿4節を20ページ抜粋としてLuaLaTeX組版し全ページのレイアウトを確認した。全文組版・既存21計算の再実行は今回未実施。再開時の全文検証は `bash scripts/check.sh all` と `bash scripts/check.sh tex`。

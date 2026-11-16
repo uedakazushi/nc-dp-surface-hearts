@@ -1,6 +1,6 @@
 # 四heart比較とcoherent収縮の実施方針
 
-2026-11-17 / hearts-strategy-v7。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v29）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
+2026-11-17 / hearts-strategy-v8。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v30）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
 
 ## 現在の公表構成
 
@@ -12,10 +12,14 @@
 
 残るのは一般qのDbar_q→Db(qgrR)の全RHom比較と全射性。A1特異点のideal I_xがO^perpに入り、高次Extが無限に残ることを使って局所模型を作る。genuineのInd-orbit生成の論証を弱領域へそのまま適用せず、核と非perfect対象を明示して扱う。
 
+## 局所特異性の次の具体的検査
+
+`four_hearts_duval_singularity.tex` ではBbarの特異性商と高次Ext次元4δijを証明した。A1壁で反標準qgr側に対応する対象を構成し、Yoneda積・2周期性と商からの全RHom写像を比較する。次元一致は完全忠実性を意味しないため、積と高次構造の一致も検査する。
+
 ## 最優先の点検
 
 degree0補正、右R作用、g進filtrationの固定全次数での有限性、dg代数のgood truncationを確認する。BKSの幾何学的仮定を確認する。次に全文を組版し、既存のADE形式性→abel圏復元と特殊共鳴族のAS入力を独立監査する。二論文の証明状態と参照先を揃え、一般qのqgr比較・壁上heart・AS実現・相対化を完成扱いしない。
 
 ## 検証と保存
 
-今回のLuaLaTeX確認は改稿3節の18ページ抜粋のみで、全ページのレイアウトを画像確認した。全文・第2論文の組版および21検算の再実行は未実施。詳細は `two_papers_validation.json`。共有mainを確認して通常のfast-forwardで保存し、PDF・ZIP・中間物は追跡しない。
+今回のLuaLaTeX確認は改稿4節の20ページ抜粋のみで、全ページのレイアウトを画像確認した。全文・第2論文の組版および21検算の再実行は未実施。詳細は `two_papers_validation.json`。共有mainを確認して通常のfast-forwardで保存し、PDF・ZIP・中間物は追跡しない。

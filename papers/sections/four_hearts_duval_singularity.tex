@@ -1,0 +1,93 @@
+\section{Du Val特異性圏と高次Ext}\label{sec:duval-singular-core}
+\begin{proposition}[特異性圏の共通な部分商]\label{prop:duval-singularity-quotient}
+$\overline{\cB}=\OO_{\overline S}^{\perp}\subset\Db(\coh\overline S)$，
+$\overline{\cB}_{\mathrm{perf}}=\overline{\cB}\cap\Perf(\overline S)$と置く．
+各$\overline{\cD}_q$に共通に充満埋込みされた$\overline{\cB}$について，
+\[
+\boxed{
+\overline{\cB}/\overline{\cB}_{\mathrm{perf}}
+\ \simeq\ D_{\mathrm{sg}}(\overline S)
+:=\Db(\coh\overline S)/\Perf(\overline S).}
+\]
+従って，この\emph{指定された共通部分圏の部分商}は全$q$で同じ
+古典的Du Val特異性圏を回復する．
+\end{proposition}
+\begin{proof}
+$\OO_{\overline S}$はexceptionalかつperfectである．
+任意の$G\in\Db(\coh\overline S)$に対する評価triangle
+\[
+R\Gamma(\overline S,G)\otimes_k\OO_{\overline S}
+\longrightarrow G\longrightarrow P(G)\longrightarrow
+\]
+では$P(G)\in\overline{\cB}$であり，$G\in\overline{\cB}$なら
+$P(G)\simeq G$となる．$G$がperfectなら，評価の両端がperfectなので
+$P(G)$もperfectである．
+したがって$P$は$\Db(\coh\overline S)/\Perf(\overline S)$から
+$\overline{\cB}/\overline{\cB}_{\mathrm{perf}}$への関手を誘導する．
+逆向きは包含から誘導され，評価triangleの左端がperfectであることから
+両合成は恒等関手に自然同型となる．
+この定義での特異性圏はOrlov\cite{OrlovSingularity}の既知の概念である．
+\end{proof}
+\begin{remark}
+本命題は$\overline{\cB}$という充満部分圏の\emph{特定の部分商}を同定する．
+$\overline{\cD}_q$全体に固有のperfect部分圏や非可換特異性圏を定義し，
+その全体を$D_{\mathrm{sg}}(\overline S)$と同定したわけではない．
+また特異性圏のADE型の分類そのものを新しい結果としていない．
+\end{remark}
+
+\begin{theorem}[Du Val点の高次Extの一様性]\label{thm:duval-high-ext}
+$\overline S$の相異なる特異点を$x_1,\ldots,x_r$とし，
+各$x_i$のideal sheafを$I_i=I_{x_i}$と書く．
+$R\Gamma(\overline S,I_i)=0$より$I_i\in\overline{\cB}$であり，
+その$\overline{\cD}_q$での像を$J_{i,q}$とする．
+標準弱楕円gluingの任意の$q$と全$n\ge3$について
+\[
+\boxed{\dim_k\Hom_{\overline{\cD}_q}(J_{i,q},J_{j,q}[n])
+ =4\,\delta_{ij}.}
+\]
+従ってこの高次Extの次元は$q$およびDu ValのADE型に依存せず，
+特異点の個数$r$に応じた$r$個の互いに高次直交する対象を与える．
+\end{theorem}
+\begin{proof}
+$R\Gamma(I_i)=0$は$\overline S$が有理特異点を持つ有理曲面であることと，
+$0\to I_i\to\OO_{\overline S}\to k(x_i)\to0$から従う．
+$\overline{\cB}\hookrightarrow\overline{\cD}_q$は完全忠実だから，
+計算は$\Db(\coh\overline S)$内で行えばよい．
+
+まず$i=j$とする．上の短完全列に二つの変数で$\RHom$を施し，
+$\RHom(\OO_{\overline S},I_i)=0$および
+$\Ext_{\overline S}^a(k(x_i),\OO_{\overline S})=0$ $(a>2)$を使うと
+\[
+ \Ext^n_{\overline S}(I_i,I_i)
+ \simeq\Ext^{n+1}_{\overline S}(k(x_i),I_i)
+ \simeq\Ext^n_{\overline S}(k(x_i),k(x_i))
+ \qquad(n\ge3)
+\]
+となる．後者は特異点$x_i$の局所環でのExtと一致する．
+Du Val点の完備局所環は
+$A_i=k[[u,v,w]]/(f)$（$f$は原点に線型項を持たない非零非単元）という
+二次元の埋込余次元1のhypersurfaceである．
+Tateの最小自由解消\cite{TateResolution}から
+\[
+ \sum_{n\ge0}\dim_k\Ext^n_{A_i}(k,k)t^n
+ =\frac{(1+t)^3}{1-t^2}
+ =1+3t+4t^2+4t^3+\cdots
+\]
+を得るので，$n\ge3$で次元は常に4である．
+
+$i\ne j$なら$I_j$は$x_i$の近傍で$\OO_{\overline S}$に等しい．
+同じ短完全列と$R\Gamma(I_j)=0$から
+$\Ext^n(I_i,I_j)\simeq\Ext^{n+1}(k(x_i),I_j)$であり，
+右辺は$\Ext^{n+1}(k(x_i),\OO_{\overline S})=0$ $(n\ge3)$に等しい．
+これで結論を得る．
+\end{proof}
+\begin{remark}[局所特異点型と高次Extの限界]
+上の一様な次元4だけでは$A_1,D_4,E_6$などの型は区別できない．
+元の$\overline{\cB}$に含まれる全Yoneda積・2周期構造，
+および$q$によって変わり得るexceptional対象とのgluing moduleを
+合わせて比較する必要がある．
+本定理のTate解消と局所Gorenstein双対性は既知入力であり，
+新たに計算したのはこれらが$\overline{\cD}_q$で全$q$に残るという帰結である．
+また$q\ne\OO_E$における$\Db(\qgr R_q)$の高次Extを計算したとは主張しない．
+\end{remark}
+

@@ -1,6 +1,6 @@
 # 研究方針：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v7。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v29）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
+2026-11-17 / hearts-strategy-v8。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v30）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
 
 ## 恒常的な研究原則と保存許可
 
@@ -32,6 +32,17 @@
 いずれも新しい本文証明を内部点検した状態であり、独立査読・形式化・網羅的新規性確認ではない。境界切断のnoetherian性はKeeler、古典的局所化はBondal–Kapranov–Schechtmanの既知定理である。既知一般論自体を新規定理としない。
 
 既存のgenuine導来比較・Euler選択・全ADE有限商・表現スキーム・theta係数・最大共鳴稠密性は保持している。今回これらの全証明を再監査したものではない。零指数壁の実在spherical対象・twistの不可視性と有理数および楕円関数の明示例も保持する。
+
+## Du Val局所特異性に関する到達点
+
+第1論文の `four_hearts_duval_singularity.tex` では、古典的な特異モデルの共通部分圏 Bbar=O_Sbar^perp に対し
+Bbar/(Bbar∩Perf(Sbar)) ≃ D_sg(Sbar) を証明した（`prop:duval-singularity-quotient`）。
+Du Val点 x_i のideal sheafの像 J_{i,q} は、どのgluingパラメータ q でも
+dim Hom(J_{i,q},J_{j,q}[n])=4δ_ij (n≥3) を満たす（`thm:duval-high-ext`）。
+証明は評価triangle、局所Gorenstein双対性とTateの既知のhypersurface最小解消に基づく。
+
+これは構成した特異gluingの共通部分商・高次Extの結果であり、一般qのDb(qgr R_q)を同定する結果ではない。
+次の価値ある課題は、A1壁でこの高次ExtのYoneda積・2周期構造と、反標準qgr側の像を比較することである。次元だけではADE型を区別できない。
 
 ## 未解決の核心
 
@@ -65,4 +76,4 @@ bash scripts/check.sh all
 bash scripts/check.sh tex
 ```
 
-全文の組版対象はdp-hearts.texとdp-hearts2.texの2本。今回実施したのは改稿した序論・零壁・coherent収縮の抜粋（18ページ）のLuaLaTeX組版と全ページのレイアウト画像確認、抜粋内の参照・文献キー点検である。主論文全文・第2論文の組版と既存21検算の再実行は未実施。本文中の新しい一般定理は計算で証明したものではない。GitHub側のソース更新とローカル抜粋の検証を区別し、詳細は `research/two_papers_validation.json` を読む。
+全文の組版対象はdp-hearts.texとdp-hearts2.texの2本。今回実施したのは改稿した序論・零壁・coherent収縮の抜粋（20ページ）のLuaLaTeX組版と全ページのレイアウト画像確認、抜粋内の参照・文献キー点検である。主論文全文・第2論文の組版と既存21検算の再実行は未実施。本文中の新しい一般定理は計算で証明したものではない。GitHub側のソース更新とローカル抜粋の検証を区別し、詳細は `research/two_papers_validation.json` を読む。

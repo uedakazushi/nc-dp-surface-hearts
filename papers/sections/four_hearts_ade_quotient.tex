@@ -1,0 +1,149 @@
+\section{ADE根圏とアフィン代数の普遍有限商}\label{sec:ADEquotient}
+本節では定理\ref{thm:globaldefect}の設定を保ち，基礎体を$\mathbb C$とする．
+有限長Serre圏$\cZ$の実在単純根の図式を$\Gamma$と書く．
+形式性そのものはEtg\"u--Lekili，Lekili--Ueda，Liu--Wangの既知結果である
+\cite[Theorem 1.1]{LiuWangZigzag}．以下では，この入力を無shift拡大閉包に適用し，
+さらに\emph{元の}環$A=R/(g-1)$の作用へ戻す．
+
+\subsection{形式的Ext模型からabel圏へ}
+\begin{lemma}[無shift拡大閉包の認識]\label{lem:formal-ADE-heart}
+enhanced三角圏の有界有限長heart $\cH$が有限個の単純$S_i$を持つとする．
+そのambient Ext代数は，有限ADE森$\Gamma$のzigzag代数で，
+各$S_i$は2-sphericalとする．このとき
+\[
+ \cH\simeq\operatorname{mod}_{\rm fd}\Pi(\Gamma).
+\]
+ここで$\Pi(\Gamma)$は通常のDynkin preprojective代数，
+$A_1$成分の代数は$k$とする．同値は$S_i$を頂点単純へ送る．
+\end{lemma}
+\begin{proof}
+半単純環$k^{\Gamma_0}$上で単位と冪等元を保つminimal $A_\infty$模型を取る．
+標数0のADE形式性により，これは高次積が零のzigzag模型へ移せる．
+孤立$A_1$では正次数入力の高次積は出力次数が2を超えるため零である．
+成分間の全Extは零なので，この操作は連結成分ごとに行える．
+
+heartの各対象は単純の有限拡大であり，逆に無shift単純の有限拡大はheartに入る．
+従って，enhancement内の無shift twisted objectの圏が$\cH$を与える．
+これはKellerの拡大閉包の記述\cite[\S\S6.5, 7.5, 7.7]{KellerAinf}の適用であり，
+$\Db(\cH)$のambient圏への完全忠実性を要求しない．
+対象は$\bigoplus_i V_i\otimes S_i$上の次数1の上三角行列$\delta$で，
+各辺の両向きに線型写像$X_{ij}:V_i\to V_j$を持つ．
+Maurer--Cartan方程式は$\delta^2=0$で，頂点$i$では
+\[
+ \sum_{j\sim i}c_{ij}X_{ji}X_{ij}=0\quad(c_{ij}\ne0)
+\]
+となる．木の葉からloopと矢の基底を順に選ぶと，
+各辺の両端で係数が逆符号になるよう規格化できる．
+これは$\Pi(\Gamma)$の関係式である．異なる端点を持つ長さ二の積は
+ambient Ext$^2$が零なので追加の関係を課さない．
+
+Dynkin $\Pi(\Gamma)$は有限次元で，矢イデアルは冪零である．
+従って任意の有限次元表現に組成列を選べば，全矢はその列に関して厳密上三角になり，
+上記twisted objectを与える．逆にtwisted objectは同じ関係を満たす表現を与える．
+次数0の射は頂点ごとの線型写像$f_i$であり，閉条件は
+$f_jX_{ij}=X'_{ij}f_i$である．負次数の射は存在しないため，
+次数0の射をさらにhomotopyで割る必要はない．
+従ってHomも通常のintertwinerと一致し，得られる同値はabel同値である．
+\end{proof}
+
+\begin{theorem}[二つの境界外heartのabel模型]\label{thm:ADE-abelian}
+定理\ref{thm:globaldefect}のgenuine・非torsionの範囲で
+\[
+ \cZ\simeq\operatorname{mod}_{\rm fd}\Pi(\Gamma),\qquad
+ \cK=\Phi^{-1}(\operatorname{mod}_{\rm fd}A)
+       \simeq\operatorname{mod}_{\rm fd}\Pi(\Gamma).
+\]
+両同値は一般に$\Phi|_{\cZ}$から得られる同じ同値ではない．
+標的の単純根を$\beta_i$とすると，その$A$加群としての次元は
+$m_i=\chi(e,\beta_i)>0$である．
+\end{theorem}
+\begin{proof}
+補題\ref{lem:finiteADEautomatic}により$\cZ$の単純は有限ADE配置をなす．
+境界非交叉部分でSerre関手は$[2]$である．単純間のHom，
+Euler形式，Serre双対性から，Extは次数0,2で各頂点に$k$，
+次数1で各辺に両向き一個となる．往復のYoneda積はSerre pairingの完全性により非零で，
+それ以外の長さ二の積は零である．森上での基底変更によりzigzag模型を得る．
+補題\ref{lem:formal-ADE-heart}を適用する．
+
+定理\ref{thm:Eulerchamber}の有限tilt後のheartは$\cK$そのものであり，
+その単純も同じADE図式の2-spherical配置をなす．
+同じ補題を\emph{この新しい単純配置へ別に}適用して第二の同値を得る．
+次元は補題\ref{lem:targetfiniteheart}の$m(U)=\dim U$による．
+\end{proof}
+
+\subsection{忘却関手が指定する実際の商}
+\begin{lemma}[有限な加群圏の普遍商]\label{lem:finite-fibre-quotient}
+$A$を単位的$k$代数，$\Lambda$を有限次元basic $k$代数とし，
+$E:\operatorname{mod}_{\rm fd}\Lambda\simeq\operatorname{mod}_{\rm fd}A$
+を$k$線型abel同値とする．$U$は右$A$加群の通常の忘却関手とする．
+頂点単純$L_i$と右projective cover $P_i$に対し
+\[
+ m_i=\dim_k UE(L_i),\qquad P=\bigoplus_i P_i^{\oplus m_i}
+\]
+と置く．このとき$UE\simeq\Hom_\Lambda(P,-)$であり，
+$G=E(P)$，$I=\Ann_A(G)$について
+\[
+ I=\bigcap_{M\in\operatorname{mod}_{\rm fd}A}\Ann_A(M),\qquad
+ A/I\simeq\End_\Lambda(P).
+\]
+同型は忘却関手の表現同型を選んだものとし，環の積は射の合成とする．
+特に全有限次元$A$加群は$A/I$を経由する．
+\end{lemma}
+\begin{proof}
+有限次元加群圏上の右完全線型関手は，有限自由presentationに適用することで
+$UE(M)\simeq M\otimes_\Lambda Q$，$Q=UE(\Lambda)$と書ける．
+ここで$\Lambda$の左作用は左乗法の像である．$UE$はexactなので，有限次元左加群$Q$は
+flat，従ってprojectiveである．その$\Lambda$双対から
+$UE\simeq\Hom_\Lambda(P,-)$というprojective表現を得る．
+単純に適用すれば各直既約projectiveの重複度はちょうど$m_i$である．
+全$m_i$は正なので$P$，従って$G$はそれぞれの有限次元加群圏のprojective generatorである．
+
+任意の有限次元$A$加群$M$は$G$の有限直和の商だから，$I$は全$M$を消す．
+逆包含は$M=G$から従う．$B=A/I$は有限次元ベクトル空間$G$上の作用像なので有限次元で，
+$\operatorname{mod}_{\rm fd}A=\operatorname{mod}_{\rm fd}B$である．
+特に$G$は$B$上のprojective generatorでもある．
+
+$D=\End_\Lambda(P)\simeq\End_A(G)=\End_B(G)$とする．
+表現同型を$P$に適用すると$UG\simeq D$であり，
+$\End_A(G)$の作用はこの同定で$D$の左正則作用となる．
+Moritaの二重中心化同型は
+\[
+ B^{\mathrm{op}}\simeq\End_{{}_D}(UG)
+       \simeq\End_{{}_D}(D)=D^{\mathrm{op}}
+\]
+を与える．従って$B\simeq D$である．
+右$A$作用による自然変換は$A^{\mathrm{op}}\to\operatorname{Nat}(U,U)$であり，
+Yonedaによる$\operatorname{Nat}(\Hom(P,-),\Hom(P,-))=D^{\mathrm{op}}$と整合する．
+このため結論の環は$D$であって$D^{\mathrm{op}}$ではない．
+\end{proof}
+
+\begin{corollary}[反標準アフィン代数の全有限次元表現]\label{cor:ADE-affine-quotient}
+定理\ref{thm:ADE-abelian}で$\Gamma$が空でなければ，
+右$\Pi(\Gamma)$-projective coverを$P_i$として
+\[
+ \boxed{A/I\simeq
+ \End_{\Pi(\Gamma)}\!\left(\bigoplus_iP_i^{\oplus m_i}\right),
+ \quad m_i=\chi(e,\beta_i).}
+\]
+$I$は全有限次元表現の共通annihilatorであり，任意の有限次元商のkernelに含まれる．
+従って全有限次元商は$A/I$の商である．$\Gamma$が空なら有限次元加群は零のみで，$I=A$と読む．
+\end{corollary}
+\begin{proof}
+定理\ref{thm:ADE-abelian}の標的heartの同値に前補題を適用する．
+有限次元商の右正則表現にも$I$が零作用するため，最後の普遍性を得る．
+\end{proof}
+これは有限次元表現だけを支配する商であり，$A$自体の有限次元性を意味しない．
+また$B(W)/B(W)pB(W)$という162次元の頂点除去商とも異なる．
+特に全$m_i=1$のときには$P=\Pi(\Gamma)$で$A/I\simeq\Pi(\Gamma)$となるが，
+一般の次元ベクトルでは非basicなMorita代表となる．
+混合$A_2$の指数$+2,-1$では標的単純の次元は$(1,1)$で，既存の四次元商を回復する．
+
+\begin{remark}[既知入力と具体性の範囲]
+形式性と拡大閉包の復元は既知理論である．本節の帰結は，
+指定反標準比較のEuler次元を使って，その理論が\emph{元の}$A$のどのMorita代表を選ぶかを定める点にある．
+商写像は$G$への実際の作用で定まり，楕円生成元ごとの行列式表示は必要としない．
+それらの行列を計算したとは主張しない．
+内在的$\Db(\operatorname{mod}\Pi(\Gamma))$は一般にambient部分圏とは異なり，
+この結果から高次Extの一致や全heartの分類を推論しない．
+Dynkin torsion classのWeyl群による分類自体はMizuno\cite{Mizuno}の既知結果である．
+\end{remark}

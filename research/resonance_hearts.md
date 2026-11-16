@@ -12,7 +12,7 @@
 
 **指数+2/−1のアフィン作用**：二つの一次元加群W,Uは異なるcharacterを持ち、0→W→V→U→0は非分裂。二次元Vへの作用像は全三角行列代数。逆向き非分裂拡大V'を合わせるとA/Ann(V⊕V')≃Π(A2)という四次元商を得る。二つの新単純の根類はalpha+beta,−betaで、局所Weyl反射に対応する。
 
-**次の新規構造目標**は、全ADE境界外Serre圏Zのabel圏をmod Π(Γ)へ同定し、反標準側の元のA=R/(g−1)の有限商を幾何学的に認識すること。既存formal zigzagのenhanced拡大閉包とpreprojective関係を照合する。既存Euler tiltで得る反標準側Kにも別に同じ議論を適用し、Kの実際の忘却関手の単純次元からprojective generatorとannihilatorを構成する。混合共鳴ではΦ|Zはt-exactでないため、Zのabel同定をそのままKへ運ばない。これは未証明の目標であり、Ext-quiverだけから結論しない。詳細な達成基準は全体方針P2と研究評価に記した。
+**ADE構造結果の本文証明**は主論文の `four_hearts_ade_quotient.tex` に集約した。ZとEuler tilt後のKへ別々に形式性と無shift twisted拡大閉包の復元を適用し、両者をmod Π(Γ)と同定する。実際の忘却関手をP=⊕P_i^{m_i}で表現し、Gに対応する右A加群の共通annihilator IからA/I≃End_Π(P)を得る。全有限次元表現がこの商を経由する。作用像の全射性はMorita二重中心化で証明し、Ext-quiverの一致だけには依存しない。一般的な形式性・復元・Morita理論は既知入力である。独立査読と関連文献の網羅的監査は未実施。
 
 全heartの差がZに集中すること、Euler標数によるtorsion pair、有限ADE単純tiltと整数倍点族の全単純次元は、四heart稿のfour_hearts_root_chambers.texに既に証明がある。新しい課題として反復せず、公表の中心成果へ統合する。
 
@@ -109,4 +109,4 @@ Rains 2019：arXiv:1907.11301v1、Theorem4.30と§5のgluing/heart、§7の数�
     python3 computations/verify_resonance_mixed_a2.py
     latexmk papers/nc_del_pezzo_resonance_hearts.tex
 
-混合A2検算は厳密有理数で40,000通り（正指数和17,500、負指数和17,500、balanced仮想場合5,000）、Hom/Euler/Ext、四次元商の行列積、各三角像の次元3、commutant次元4、局所反射を確認する。今回これを含む全19コードの再実行に成功した。sheaf存在と導来比較は数学的証明であって計算証明ではない。全文組版は環境のLuaLaTeX format・LaTeX本文・LuaTeX-ja欠落で未完了。以前の個別driverの組版状態は `research/resonance_hearts_validation.json` にあるが、今回のPDF生成・画像点検を意味しない。独立査読・網羅的新規性調査は未実施。現行の検証範囲は `research/current_assessment.md` を参照する。
+混合A2検算は厳密有理数で40,000通り（正指数和17,500、負指数和17,500、balanced仮想場合5,000）、Hom/Euler/Ext、四次元商の行列積、各三角像の次元3、commutant次元4、局所反射を確認する。今回これを含む全20コードの再実行に成功した。sheaf存在と導来比較は数学的証明であって計算証明ではない。不足部品を補完して全文組版を実施した。以前の個別driverの組版状態は `research/resonance_hearts_validation.json`、今回の状態は研究評価に記す。独立査読・網羅的新規性調査は未実施。現行の検証範囲は `research/current_assessment.md` を参照する。

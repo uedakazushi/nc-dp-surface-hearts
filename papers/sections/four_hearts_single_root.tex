@@ -1,0 +1,84 @@
+\section{一つの負指数根を持つ明示的な三次曲面配置}\label{sec:single-root}
+有限体で根を探索することなく，他の\emph{全整数指数}の共鳴を排除できる例を与える．
+楕円曲線$E=\mathbb C/(\mathbb Z+i\mathbb Z)$の原点を$o$とし，
+$L_1=\OO_E(3o)$で平面三次として埋め込む．以下の実数は$E$での類を表す：
+\[
+ q=\sqrt2,\quad x=\sqrt3,\quad y=\sqrt5,
+ \quad z=\sqrt7,\quad w=\sqrt{11},\quad v=\sqrt{13}.
+\]
+$q$に対応する次数0線束も$q$と書き，
+\begin{equation}\label{eq:single-root-points}
+ (p_1,\ldots,p_6)=(x,y,-x-y-q,z,w,v),\qquad L_0=L_1q
+\end{equation}
+とする．$1,\sqrt2,\sqrt3,\sqrt5,\sqrt7,\sqrt{11},\sqrt{13}$は$\mathbb Q$上線型独立である．
+実際，これらを含む多重二次体の各平方根の符号を変える自己同型へのcharacter射影を使えばよい．
+従って$q,x,y,z,w,v$の整数関係が$E$で零になることはない．
+
+\begin{proposition}[共鳴根の完全な排除と一回のtilt]\label{prop:single-root-complete}
+式\eqref{eq:single-root-points}の六点は相異なり，$L_1$一般位置にある．
+古典的avatarはgenuine del Pezzoで，整数指数で共鳴する根は
+$\pm\alpha_0$，$\alpha_0=h-e_1-e_2-e_3$だけである．
+指定順序のRains heartでは$\alpha_0$が唯一の境界外単純根で，指数は$-1$である．
+その根sheaf $S$は実在し，$\Phi S=V[-1]$，$\dim V=1$となる．
+全heartのtorsionfree部分は$\add S$で，
+\[
+ \Phi^{-1}(\AAC)=\langle S[1],\ker\Hom(-,S)\rangle,
+ \qquad A/I\simeq k.
+\]
+\end{proposition}
+\begin{proof}
+相異性は整数独立性から従う．根$\alpha=ah-\sum_i b_ie_i$について
+$\rho(\alpha)=\OO_E(-\sum_i b_ip_i)$である．
+$\rho(\alpha)q^m=\OO_E$なら独立性から
+\[
+ b_1=b_2=b_3=b,\quad b_4=b_5=b_6=0,\quad m=-b.
+\]
+根の条件$\sum b_i=3a$，$\sum b_i^2-a^2=2$を代入すると$a=b=\pm1$となる．
+従って根は$\pm\alpha_0$のみであり，いずれも指数は零でない．
+特に差根のrestrictionは非自明で，三点共線と六点conicも起こらない．
+従って六点は一般位置にあり，avatarはgenuineである．
+
+$\alpha_0$は固定blowdownの単純根なので補題\ref{lem:Rains-simple-existence}を適用できる．
+その指数は$p_1+p_2+p_3=-q$から$-1$となる．
+他の境界外単純は根類を持ち，共鳴条件を満たすから，存在すれば$-\alpha_0$である．
+有効錐のpointednessがこれを排除する．$\Ext^1(S,S)=0$なので$\cZ=\add S$である．
+定理\ref{thm:globaldefect}から$\cF\subset\cZ$，定理\ref{thm:sign}から$S\in\cF$で，
+$\cF=\add S$となる．torsion部分は$\ker\Hom(-,S)$であり，表示した一回のtiltを得る．
+系\ref{cor:ADE-affine-quotient}で$\Gamma=A_1$，$m_1=1$を使えば$A/I=k$である．
+\end{proof}
+
+\subsection{同じデータでのpotentialとAS比較の入力}
+この例では$X=-q$，$Y=z+w+v$，$\ell_0=q$，$\ell_1=0$であるから
+\[
+ u=-2q,\qquad t=-(z+w+v).
+\]
+いずれも$u,t,u-t$は非零で，条件$(U_+)$を満たす．
+$b=q/3$，$\sigma=t_b$とすれば$\sigma^*L_0=L_1$であり，
+$\sigma p_i$の$L_0$一般位置は$p_i$の$L_1$一般位置と同値である．
+従って規格化したmutationとVdB比較の有限な幾何条件は全て確認できる．
+定理\ref{thm:theta-potential}の\emph{同じ入力データ}による全potentialは
+\[
+ W_+=\sum_{a,b,c}\vartheta(y_c-x_b+t_a)
+ [\mathsf z_{ca}\mathsf y_{bc}\mathsf x_{ab}],\quad
+ (x_1,x_2,x_3)=(x,y,-x-y-q),\quad(y_1,y_2,y_3)=(z,w,v),
+\]
+ただし$(t_0,t_1,t_2)=(-2q,-z-w-v,0)$である．
+27係数は全て非零である：$a=0,2$では$z,w,v$のいずれかの係数が残り，
+$a=1$では残り二つの係数が残るため，thetaの引数は格子に入らない．
+係数比$Q_{bc}=\vartheta(y_c-x_b)/\vartheta(y_c-x_b-z-w-v)$から
+定理\ref{thm:original-six-points}によってこの入力六点そのものを復元する．
+十一因子は非零であり，対応する頂点除去商は162次元となる．
+
+\begin{corollary}[同じ配置でのASとRainsの比較]\label{cor:single-root-AS}
+この例の規格化AS heartは，指定された$\Psi_+$によって反標準heartと一致する．
+順序付きRains heartはそのheartと異なり，唯一の$S$での一回のtiltによって移る．
+\end{corollary}
+\begin{proof}
+上で相異性，一般位置，$(U_+)$を確認したので，
+命題\ref{prop:cubic-helix-input}によって指定AS実現のfull very strong helixとrolled-up同定を得る．
+定理\ref{thm:normalized-abelian}を適用する．
+Rains側の主張は命題\ref{prop:single-root-complete}による．
+\end{proof}
+この適用は，有限条件から全forward Ext消滅を直接推論するものではない．
+admissible decupleからのAOU--Okawa--Uedaの既知helix構成を介する．
+任意のpotentialやweak avatarへの拡張も意味しない．

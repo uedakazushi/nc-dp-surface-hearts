@@ -172,6 +172,32 @@ $L_1$一般位置でも起こり得るが構造頂点を除いたcornerには影
 次の命題は，有限cornerだけから一般のJacobi環のnoetherian性を導く主張ではない．
 \emph{既に存在する}pointed導来比較の中に，full very strong周期helixがあることを使う．
 
+\begin{proposition}[三次曲面の規格化構成でのhelix入力]\label{prop:cubic-helix-input}
+系\ref{cor:normalized-pointed}の三次曲面型構成では，
+相異なる六点，VdBの一般位置条件，条件$(U_+)$の下で，
+そこで指定したAS実現のfull very strong周期helixとrolled-up同定を得る．
+これは一般のpotentialへの存在定理ではなく，admissible decupleからの既知AS構成の適用である．
+\end{proposition}
+\begin{proof}
+命題\ref{prop:normalized-admissible}は，実際のrestrictionを持つ
+full exceptional collectionと，そのadmissible decupleを与える．
+AOU\cite[Lemma 7.4とその直後]{AOU}をこのdecupleに適用すると，
+そのspherical helixはacyclicである．
+Okawa--Ueda\cite[Definition 4, Theorem 5]{OUHelices}は，
+このspherical helixからdirected dg圏で持ち上げたexceptional helixもacyclicであることを示す．
+同論文のacyclic exceptional helixの定義は，全$i<j$に対する
+$\Hom^{k}(E_i,E_j)=0$ $(k\ne0)$で，OU\cite[Definition 3.1]{OU}のvery strongと同じである．
+従って，OUの一般tupleについての半連続性だけを用いる必要はない．
+
+系\ref{cor:normalized-pointed}の証明の通り，sourceのfull strong collectionの
+directed dg圏はこのdecupleのものと一致する．
+そのdg Yoneda同値はSerre関手も保存するので，周期作用は$s=\mathbb S^{-1}[2]$である．
+rolled-up代数は\cite[(18)--(22)]{OUHelices}の構成そのもので，
+AOU\cite[\S\S4.3--4.4, 7]{AOU}の関係式と双対矢によるpotential表示を取ると，
+定理\ref{thm:theta-potential}で計算した$W_+$の$B(W_+)$となる．
+この同定は同じ矢・関係式の基底を使い，構造頂点を保つ．
+\end{proof}
+
 \begin{proposition}[ample構造対象を含むhelix]\label{prop:ample-helix-noetherian}
 $\cH$はHom有限noetherian abel圏で，homological dimensionは有限$d$とする．
 $(e,s)$はAZ-ampleで，全coherent対象への高次Ext tailが消えるとする．

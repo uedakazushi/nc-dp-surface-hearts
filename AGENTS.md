@@ -1,12 +1,12 @@
 # Codex指示：反標準heartの認識と根圏
 
-2026-11-16 / hearts-strategy-v2。GitHub mainが正本。最初に00_research_plan.md、research/current_assessment.md、research/four_hearts_plan.mdを読み、必要な研究ノート・3主原稿・sectionへ進む。
+2026-11-16 / hearts-strategy-v3。GitHub mainが正本。最初に00_research_plan.md、research/current_assessment.md、research/four_hearts_plan.mdを読み、必要な研究ノート・3主原稿・sectionへ進む。
 
 ## 目標と優先順位
 
-数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性から研究全体の価値を最大化する。最優先は、指定構造対象・自然関手による反標準heartの認識と、実在する有限ADE根圏によるheart選択を公表可能な主定理へまとめること。次の新規構造目標は、全ADE根圏のabel圏同定と元のA=R/(g−1)の有限商である。00_research_plan.mdのP0→P1を先行し、P2の構造補題へ進む。零指数壁と相対化は後順位。
+数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性から研究全体の価値を最大化する。最優先は、指定構造対象・自然関手による反標準heartの認識と、実在する有限ADE根圏によるheart選択を公表可能な主定理へまとめること。全ADE根圏のabel圏同定と元のA=R/(g−1)の普遍有限商の本文証明を追加した。00_research_plan.mdのP0/P1/P2について引用と証明の独立点検を優先する。零指数壁と相対化は後順位。
 
-既に原稿に証明のあるEuler chamber選択、全heartの有限単純tilt分解、同じ最後のraw blow-upでのVdB関手同定、actual potentialと元六点の復元を未解決として再実行しない。全ADEのmod Π同定と実際のA作用は未証明の目標として扱う。
+既に原稿に証明のあるEuler chamber選択、全heartの有限単純tilt分解、同じ最後のraw blow-upでのVdB関手同定、actual potentialと元六点の復元を未解決として再実行しない。全ADEのmod Π同定と元のAの普遍有限商はfour_hearts_ade_quotient.texに本文証明を置いた。新しい論証の独立点検と生成元ごとの作用行列の未計算を区別する。
 
 ## 必須の区別
 
@@ -22,7 +22,7 @@
 
 研究区切りで原稿・ノート・方針・必要な検証資産を自己完結した現行版にする。約15分を保存checkpointの目安に、共有mainの更新を確認して通常のfast-forwardで直接保存し、remote SHAを照合する。PR・GitHub Actions・force pushは使わない。PDF・ZIP・中間物・キャッシュは追跡しない。GitHub保存失敗時のみ、許可済みのLibrary緊急保存を用いる。背景での自動継続は約束しない。
 
-今回の環境では19検算は成功したが、LuaLaTeXのformat・LaTeX本文・LuaTeX-jaが欠落して全文組版を実行できていない。原稿エラーとして扱わず、環境が整った時点で再組版する。
+今回の環境では全20検算が成功し、作業領域内のTeX部品補完で3稿を組版できた。詳細はresearch/current_assessment.md。環境部品はGit追跡せず、標準環境ではscripts/check.sh texを使う。
 
 ## Cloud Codex の実行方法
 

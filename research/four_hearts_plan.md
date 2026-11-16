@@ -1,6 +1,6 @@
 # 四heart比較の実施方針
 
-2026-11-16 / hearts-strategy-v2。全体方針と恒常原則は [00_research_plan.md](../00_research_plan.md)、根拠と今回の検証は [current_assessment.md](current_assessment.md)。本書は四heart比較の着手順を具体化する。原稿の数学本文はhearts-v24が現行。
+2026-11-16 / hearts-strategy-v3。全体方針と恒常原則は [00_research_plan.md](../00_research_plan.md)、根拠と今回の検証は [current_assessment.md](current_assessment.md)。本書は四heart比較の着手順を具体化する。原稿の数学本文はhearts-v25が現行。
 
 ## 公表の中心
 
@@ -28,9 +28,11 @@ x_b=p_b、y_c=p_(3+c)、X=Σx、Y=Σy、u=X−ell0、t=ell1−Yと置くと、�
 
 既存の整数倍点例(1,3,2,5,7,11)は単純次元(6,1,1,2,2,4)と一回のtiltを与える。これを同じactual ASデータ・比較関手まで結ぶ依存関係を確認する。説明用の単根例を加える場合は、固定blowdownの実在単純根を一つ指定し、非零指数・genuine条件・他根の排除・像のcohomological degreeを同時に確認する。単なる数値共鳴をsheafの存在とみなさない。
 
-## 新しい目標
+単根の明示例は `four_hearts_single_root.tex` にある。AOU Lemma 7.4とOkawa–Ueda (2020) Theorem 5を使う命題prop:cubic-helix-inputにより、三次曲面型の指定構成ではvery strong入力を照合した。一般tupleの半連続性を特殊族へ自動適用していない。
 
-1. 全ADEの境界外abel圏と元のA=R/(g−1)の有限商を記述する。手順と失敗時の判断は全体方針P2。既存のEuler chamber選択そのものは解決済みの入力である。
+## 次の点検と目標
+
+1. 全ADEの境界外abel圏と元のA=R/(g−1)の普遍有限商は `four_hearts_ade_quotient.tex` に本文証明を置いた。形式性・無shift拡大閉包・右作用・Morita二重中心化の独立点検を行う。一般的な既知機構を新規成果とはしない。
 2. 十一因子の零指数壁では、まずgenuine性・AS実現・very strong性・導来比較のどの仮定が失われるかを特定する。混合共線壁のgeneric pointを一つ選ぶ。既存の非零共鳴HRS tiltとは分ける。
 3. 相対kernel・底変更・heart降下は、上のpointwise定理を固定した後、根データが管理された底に限って開始する。
 
@@ -40,4 +42,4 @@ x_b=p_b、y_c=p_(3+c)、X=Σx、Y=Σy、u=X−ell0、t=ell1−Yと置くと、�
 
 主論文の構成は、自然比較 → heartの選択 → 規格化ASと楕円六点 → corner → 具体例を基本とする。cornerの一様Hilbert関数を含む有効な証明は保持し、重複する一般論と監査説明は整理する。共鳴別稿の独立性は新しい中心定理で判断する。
 
-再現は全体方針のコマンドに従う。今回の19本の検算成功と組版環境の欠落は研究評価に記した。有限体計算を複素非torsion条件やnoetherian性の証明と呼ばない。数学的重要性・正確性を優先し、生成・証明点検・計算・組版・保存を別々に報告する。GitHub mainへの通常保存、PDF非追跡、GitHub Actions不使用、保存失敗時のみLibraryへ緊急避難という恒常原則を守る。
+再現は全体方針のコマンドに従う。今回の20本の検算成功と3稿の全文組版の実施範囲は研究評価に記した。有限体計算を複素非torsion条件やnoetherian性の証明と呼ばない。数学的重要性・正確性を優先し、生成・証明点検・計算・組版・保存を別々に報告する。GitHub mainへの通常保存、PDF非追跡、GitHub Actions不使用、保存失敗時のみLibraryへ緊急避難という恒常原則を守る。

@@ -47,6 +47,25 @@ $(\OO,\Sfun^{-1}[2])$はRains heartでAZ-ampleでない．自然な$\Phi$はt-ex
 命題\ref{prop:corner}の有限性条件を満たし，$pBp$が指定した反標準環であるとする．
 自然な$\AAS\to\AAC$がabel同値となる必要十分条件は
 $\dim_k B/BpB<\infty$である（系\ref{cor:ASac}）．
+\item (2)で$q$が非torsionなら，全heartの差は境界非交叉の有限長Serre圏$\cZ$に集中する．
+その実在単純根の図式は有限ADE型であり，
+\[
+ \Phi\text{ がt-exact}\iff(e,s)\text{ がAZ-ample}
+ \iff\chi(e,S)>0\quad(\text{全ての実在単純 }S\in\cZ)
+\]
+となる．負指数単純を順次tiltする有限手順が標的heartを回復する
+（定理\ref{thm:globaldefect}，\ref{thm:Eulerchamber}，\ref{thm:globalADEtilts}）．
+\item 同じ範囲で，$\cZ$と標的の有限次元heartはそれぞれ
+$\operatorname{mod}_{\rm fd}\Pi(\Gamma)$とabel同値である．
+標的単純の次元を$m_i=\chi(e,\beta_i)>0$とすると，全有限次元$A$加群は
+\[
+ A/I\simeq\End_{\Pi(\Gamma)}(\bigoplus_iP_i^{\oplus m_i})
+\]
+を経由する（定理\ref{thm:ADE-abelian}，系\ref{cor:ADE-affine-quotient}）．
+\item 三次曲面型の規格化decupleでは，27個のtheta係数から入力の$L_1$六点を復元し，
+頂点除去cornerは$L_0$に依存しない．full very strong周期helixとrolled-up同定を
+備えたAS実現では，指定されたAS比較はt-exactである
+（定理\ref{thm:theta-potential}，\ref{thm:original-six-points}，\ref{thm:normalized-abelian}）．
 \end{enumerate}
 \end{theorem}
 さらに三次曲面型の標準noetherian周期表示では，(4)の有限性条件と指定AOU同値のt-exactnessを
@@ -97,8 +116,11 @@ Van den Bergh \cite{VdB}は非可換blow-upを構成し，section algebraへの�
 一般位置条件の下で導来同値とした．Rains \cite{Rains,Filtered}はそのblow-upの
 導来圏とt構造をgluingで記述し，effective rootと数値的なnef/ample coneを解析した．
 その「ample」はeffective coneによる数値的概念であり，指定pairのAZ amplenessと
-定義上同じではない．Rainsの2025年のmonograph \cite{RainsBook}は関連する先行稿を統合するが，
-本稿の定理番号は実際に照合した2019年稿・2022年稿に従う．monographとの全番号対応は未確認である．
+定義上同じではない．Rainsの2025年のmonograph \cite{RainsBook}も照合に用いる．
+旧稿のLemma 4.9，Proposition 4.17，Theorem 4.30，Theorem 9.10，Corollary 10.16は，
+同書v1のLemma 11.10，Proposition 11.19，Theorem 11.31，Theorem 16.10，Corollary 17.17に対応する．
+有効単純根の既約sheafの存在には同書Proposition 18.27直前の記述を用い，
+nef性を仮定する同命題そのものを$(-2)$単純根へ適用しない．
 
 Abdelgadir--Okawa--Ueda \cite{AOU}は三次曲面型AS代数を構成し，
 十分一般な楕円六点データについてVdBのsection modelとの導来比較を与えた．
@@ -112,6 +134,30 @@ VdBの\S11.2は既に境界非交叉対象の有限長性と単純対象数を�
 \cite{BridgelandKleinian}，単純tiltがlength heartを保つ一般条件は\cite{BCPW}で研究されている．
 本稿はそれらの機構の発見を主張せず，反標準Euler関数による\emph{標的heartの選択}と，
 VdB・Rains・AOUの\emph{指定関手}への適用を区別して述べる．
+
+ADE形式性\cite{LiuWangZigzag}と$A_\infty$模型による拡大閉包の復元\cite{KellerAinf}も既知入力である．
+本稿ではそれらを二つの実在heartへ別々に適用し，標的のEuler次元を用いて，
+元の$A$の全有限次元表現を支配する\emph{非basicな商}まで特定する．
+Dynkin torsion classのWeyl分類\cite{Mizuno}を新しい分類結果とはしない．
+また良い可換geometric helixの頂点除去商の有限性は既知一般論\cite{dTdVV}でも説明できる．
+corner側の具体的寄与は，入力六点への同定，$L_0$非依存，十一因子による正確な境界，
+一様Hilbert関数と162次元の平坦族，および指定heart比較への接続である．
+
+quantized del Pezzoとpreprojectiveの接続には，Etingof--Oblomkov--Rains
+\cite[\S\S1, 11]{EOR}のGDAHAとmultiplicative preprojectiveによる先行研究もある．
+同論文のアフィンdel Pezzo表示はnodalな境界を除いたものを含み，
+本稿は滑らかな楕円境界の指定gluingを扱う．
+本稿の$A$をそのGDAHAの球部分代数へ無条件に同一視せず，
+普遍有限商を与える一般的な拡大閉包・忘却関手の機構と，この幾何設定への適用を区別する．
+
+\subsection{仮定と結論の依存関係}
+自然導来比較とその振幅はgenuine avatarと滑らかな楕円境界を使い，$q$の位数は問わない．
+根による全heartの認識と有限商には，さらに$q$の非torsion性を使う．
+AS比較はfull very strong helixとrolled-up同定を入力とする別の結論である．
+これを一般のtupleに対するOUの双有理再構成から特殊共鳴点へ自動延長しない．
+第\ref{sec:single-root}節では一つの負指数根だけを持つ実際の配置を示し，
+整数倍点の$E_6$例とともに，抽象的な認識を実在対象で検出する．
+二つの境界外heartの同定と有限商の証明は第\ref{sec:ADEquotient}節にまとめる．
 
 本稿の目的は，これらの構成を指定関手・構造対象・仮定つきで一つの比較体系にすることである．
 既知のblow-up定理，HRS対応，AS定義自体を新しい結果とはしない．

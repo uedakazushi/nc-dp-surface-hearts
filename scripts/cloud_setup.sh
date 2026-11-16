@@ -14,7 +14,12 @@ if ! command -v lualatex >/dev/null || ! command -v latexmk >/dev/null || ! kpse
   fi
   if [ "$(id -u)" -eq 0 ]; then APT=(apt-get)
   elif command -v sudo >/dev/null; then APT=(sudo apt-get)
-  else echo 'Need root or sudo for TeX packages' >&2; exit 1; fi
+  else
+    bash scripts/cloud_tex_user.sh
+    source build/tex-user/env.sh
+    echo 'Setup complete with user-local TeX: bash scripts/check.sh fast'
+    exit 0
+  fi
   "${APT[@]}" update
   "${APT[@]}" install -y --no-install-recommends \
     texlive-luatex texlive-lang-japanese texlive-latex-extra \

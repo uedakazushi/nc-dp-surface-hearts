@@ -3,6 +3,7 @@ set -Eeuo pipefail
 cd "$(dirname "$0")/.."
 mode="${1:-fast}"
 mkdir -p build
+if [ -f build/tex-user/env.sh ]; then source build/tex-user/env.sh; fi
 PYTHON=python3
 if [ -x .venv/bin/python ]; then PYTHON=.venv/bin/python; fi
 case "$mode" in

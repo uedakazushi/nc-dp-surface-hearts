@@ -1,3 +1,4 @@
+\RequirePackage{fix-cm}
 \documentclass[11pt,a4paper]{ltjsarticle}
 \usepackage[margin=23mm]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
@@ -22,8 +23,8 @@
 \newcommand{\Db}{D^b}
 \title{Rains共鳴の稠密軌跡と反標準heart\\
 \large 根sheafの符号別Ext・大域HRS比較・混合$A_2$のアフィン商}
-\author{研究原稿：仮定・既知入力・未計算の係数を区別する}
-\date{2026年11月16日 \quad resonance-hearts-v8}
+\author{}
+\date{2026年11月16日 \quad resonance-hearts-v9}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -42,16 +43,17 @@ smooth elliptic boundaryからのgluingに限定して，既存の自然導来�
 この範囲では全Rains heartの像の振幅は$[0,1]$で，反標準heartは一回のHRS tiltで得られる．
 指数$+2,-1$の具体例では二つの一次元characterが異なり，対応する二次元加群は非分裂となる．
 両向きの拡大を合わせてアフィン環の四次元商$\Pi(A_2)$を構成する．
-特異境界・weak avatar・任意の非可換del Pezzoへの拡張，VdB/AS heartとの指定同定，
-および元の楕円生成元でのcharacterの数値式は未解決である．
+VdB/ASとの指定比較と全ADEの有限商は主論文に集約する．
+特異境界・weak avatarへの拡張と元の楕円生成元でのcharacterの数値式は扱わない．
 \end{abstract}
 
 \section{共鳴の規約と入力の範囲}
 Rainsの既知のeffective-root理論，境界triangleと反標準環の構成を入力とする．
 zigzagの形式性はLiu--Wangの既知定理であり，本研究の新定理として扱わない．
-全$q$の導来比較は別稿\texttt{dp1\_anticanonical\_models.tex}に既に証明があり，
+全$q$の導来比較は主論文\texttt{nc\_del\_pezzo\_hearts.tex}に証明があり，
 \S\ref{sec:resonance-global-heart}でorbit生成・trace・飽和性を改めて点検する．
-本稿の組合せによる新規性の網羅的調査および独立査読は未完了である．
+主論文ではさらに，全ADE境界外heartのpreprojective模型と，
+元の$A$の全有限次元表現を支配する商を扱う．本稿は符号別Extと混合拡大の補助原稿として読む．
 
 基礎体を$k=\mathbb C$とする．Rainsの意味のsmooth elliptic
 noncommutative del Pezzo $(\mathcal A_{\mathrm R},E)$に

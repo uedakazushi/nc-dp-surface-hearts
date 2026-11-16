@@ -34,11 +34,11 @@
 \DeclareMathOperator{\Ind}{Ind}\DeclareMathOperator{\thick}{thick}
 \DeclareMathOperator{\rk}{rk}\DeclareMathOperator{\add}{add}
 \DeclareMathOperator{\Ann}{Ann}
-\title{非可換del Pezzo曲面の四つのheart\\
-\large VdB・Rains・反標準・Artin--Schelter構成の比較}
+\title{非可換del Pezzo曲面の反標準heartと根圏\\
+\large 幾何学的認識・Euler選択・アフィン有限商}
 \author{}
-\date{2026年11月16日\qquad 公表準備稿 hearts-v24}
-\hypersetup{pdftitle={非可換del Pezzo曲面の四つのheart},pdfsubject={導来比較、HRS tilt、共鳴、反標準corner}}
+\date{2026年11月16日\qquad 公表準備稿 hearts-v25}
+\hypersetup{pdftitle={非可換del Pezzo曲面の反標準heartと根圏},pdfsubject={導来比較、HRS tilt、共鳴、反標準corner}}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -54,7 +54,11 @@ VdBの右加群規約で初期平面twistを運ぶと，Rainsの辞書は$L=L_1$
 noetherian性と十一因子の非消滅は独立の追加条件でなく結論となる．
 一方，順序付きRains heartは実在単純根のEuler標数で選ばれ，
 整数倍点族では整列による単純tiltで同じ反標準heartへ移る．
-未変更の文献座標への同一視，任意のpotentialのnoetherian性，相対heartの降下は主張しない．
+標数0・非torsionの範囲では，実在するADE根の拡大閉包と標的の有限次元heartを
+それぞれDynkin preprojective加群圏と同定する．標的単純のEuler次元を$m_i$とすると，
+元のアフィン代数の全有限次元表現は
+$\End_{\Pi(\Gamma)}(\bigoplus_iP_i^{m_i})$という一つの有限次元商を経由する．
+AS比較には指定されたfull very strong helixとrolled-up環の同定を入力とする．
 \end{abstract}
 \tableofcontents
 
@@ -86,7 +90,9 @@ E.~M.~Rains, \emph{Filtered deformations of elliptic algebras},
 \bibitem{RainsBook}
 E.~M.~Rains, \emph{The (noncommutative) geometry of difference equations},
 \href{https://arxiv.org/abs/2504.16187}{arXiv:2504.16187} (2025).
-本稿は書誌と概要を確認し，定理番号・仮定の照合には上記2019年稿を用いた．
+v1のLemma 11.10，Proposition 11.19，Theorem 11.31，Theorem 16.10，
+Corollary 17.17，およびProposition 18.27直前の有効単純根の存在記述を参照．
+旧稿の対応番号は序論に示す．
 \bibitem{AOU}
 T.~Abdelgadir, S.~Okawa, K.~Ueda,
 \emph{Compact moduli of marked noncommutative cubic surfaces},
@@ -97,6 +103,10 @@ T.~Abdelgadir, S.~Okawa, K.~Ueda,
 S.~Okawa, K.~Ueda, \emph{Marked Artin--Schelter surfaces of del Pezzo types},
 \href{https://arxiv.org/abs/2508.04986}{arXiv:2508.04986v1} (2025).
 使用箇所：Definitions 1.1, 3.1，\S6．
+\bibitem{OUHelices}
+S.~Okawa, K.~Ueda, \emph{AS-regular algebras from acyclic spherical helices},
+\href{https://arxiv.org/abs/2007.07620v1}{arXiv:2007.07620v1} (2020).
+使用箇所：Definitions 3, 4，Theorem 5，(18)--(22)．
 \bibitem{AZ}
 M.~Artin, J.~J.~Zhang, \emph{Noncommutative projective schemes},
 Adv. Math. \textbf{109} (1994), 228--287.
@@ -139,5 +149,28 @@ V.~Prokofev, A.~Zabrodin, \emph{Elliptic Cauchy matrices},
 A.~Polishchuk, \emph{Noncommutative Proj and coherent algebras},
 \href{https://arxiv.org/abs/math/0212182}{arXiv:math/0212182v4} (2004).
 使用箇所：Theorem 2.4とその証明（ample sequenceからのabel圏の再構成）．
+\bibitem{LiuWangZigzag}
+J.~Liu, Z.~Wang, \emph{$A_\infty$-deformations of zigzag algebras via Ginzburg dg algebras},
+\href{https://arxiv.org/abs/2301.06757v3}{arXiv:2301.06757v3} (2025).
+使用箇所：Theorem 1.1，\S4.3．形式性の先行結果は同論文のEtg\"u--Lekili，Lekili--Uedaへの帰属による．
+\bibitem{KellerAinf}
+B.~Keller, \emph{Introduction to $A$-infinity algebras and modules},
+Homology Homotopy Appl. \textbf{3} (2001), no.~1, 1--35;
+\href{https://arxiv.org/abs/math/9910179}{arXiv:math/9910179}.
+使用箇所：\S\S6.5, 7.5, 7.7（twisted objectsと拡大閉包）．
+\bibitem{Mizuno}
+Y.~Mizuno, \emph{Classifying $\tau$-tilting modules over preprojective algebras of Dynkin type},
+\href{https://arxiv.org/abs/1304.0667v3}{arXiv:1304.0667v3} (2013).
+使用箇所：Dynkin preprojectiveの有限次元性とtorsion classの既知分類．
+\bibitem{dTdVV}
+L.~de Thanhoffer de V\"olcsey, M.~Van den Bergh,
+\emph{Some new examples of non-degenerate quiver potentials},
+\href{https://arxiv.org/abs/1005.0808v3}{arXiv:1005.0808v3}.
+使用箇所：\S3，Theorem 4.2.1（geometric helixのrolled-up代数に関する既知一般論）．
+\bibitem{EOR}
+P.~Etingof, A.~Oblomkov, E.~Rains,
+\emph{Generalized double affine Hecke algebras of rank 1 and quantized Del Pezzo surfaces},
+\href{https://arxiv.org/abs/math/0406480v3}{arXiv:math/0406480v3} (2006).
+比較箇所：\S1（quantized del Pezzoと境界），\S11（preprojectiveとの接続）．
 \end{thebibliography}
 \end{document}

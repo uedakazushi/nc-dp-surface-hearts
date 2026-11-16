@@ -1,10 +1,10 @@
 # 現状評価：反標準heartの認識と次の構造定理
 
-2026-11-16（日本時間）/ hearts-assessment-v1。調査対象は [mainの基準commit a37b2cf](https://github.com/uedakazushi/nc-dp-surface-hearts/tree/a37b2cf23fedb62a24168f4d98633df222b0bf89)。本書は現在の研究判断・確認範囲を記す。方針は [00_research_plan.md](../00_research_plan.md) を優先し、作業履歴は蓄積しない。
+2026-11-16（日本時間）/ hearts-assessment-v2。今回の開始時点は [mainの基準commit fb73f71](https://github.com/uedakazushi/nc-dp-surface-hearts/tree/fb73f71f0f7b8508dfcbaa93b6b66207d5ced47a)。現行主稿はhearts-v25。本書は現在の研究判断・確認範囲を記す。方針は [00_research_plan.md](../00_research_plan.md) を優先し、作業履歴は蓄積しない。
 
 ## 総合判断
 
-この研究には、公表を狙える構造結果の核がある。特に価値が高いのは、自然反標準導来切断の標的heartを、構造対象と実在根のEuler標数から選び出し、その選択をactual楕円係数と三次曲面の六点配置へ接続する部分である。3本の原稿の独立性や全関連文献に対する新規性はまだ確定していない。
+この研究には、公表を狙える構造結果の核がある。特に価値が高いのは、自然反標準導来切断の標的heartを、構造対象と実在根のEuler標数から選び出し、その選択をactual楕円係数と三次曲面の六点配置へ接続する部分である。主論文に構造結果を集約し、共鳴稿とcorner稿を補助原稿として維持する。全関連文献に対する優先権の確定や独立査読の完了は主張しない。
 
 原稿には証明が多数あり、単なる実験結果の集積ではない。一方、既知理論からの帰結、指定AS実現などを入力とする比較、新たな未証明目標が混在し、古いノートでは解決済みの限定版が未解決として残っていた。最優先は、この状態を揃えて中心結果を公表可能な形にすることである。
 
@@ -104,17 +104,20 @@
 
 同様に、actual decupleの係数と元六点の復元、Euler chamber選択は既存成果として保持する。特別な共鳴族におけるAS入力の適用確認は、公表前の検証項目として切り離す。
 
-## 3. 次の新規構造目標の評価
+## 3. ADE構造結果と明示的単根例
 
-**未証明候補：全ADE根圏とアフィン有限商。**
+主論文の `four_hearts_ade_quotient.tex` に次の証明を追加した。これは本文証明と今回の自己点検の報告であり、外部独立査読の代用ではない。
 
-実在単純根の図式Γに対してZ≃mod Π(Γ)を示し、反標準側の有限次元加群圏を支配するAの有限商を得る。これは既存A2結果の自然な拡張であり、根の組合せと実際の楕円アフィン代数を結ぶため、元の生成元の長い係数式を先に増やすより価値が高いと判断する。
+- `lem:formal-ADE-heart`：ambientのformal ADE zigzag Ext模型にKellerの無shift twisted extension閉包を適用する。MC関係はpreprojective関係、次数0射はintertwiner、負次数射は零。Dynkinの矢イデアルの冪零性により全有限次元表現を回復する。
+- `thm:ADE-abelian`：有限ADE単純を持つZと、Euler tiltで得る標的Kを、それぞれ別にmod Π(Γ)と同定する。混合共鳴でΦ|Zをt-exactと仮定しない。Db(Z)のambientへの完全忠実性も使わない。
+- `lem:finite-fibre-quotient`：実際の忘却関手の有限自由presentationからprojective表現P=⊕P_i^{m_i}を得る。Gに対応する右A加群のannihilator Iは全有限次元表現の共通annihilatorとなる。B=A/I上のprojective generator GにMorita二重中心化を適用し、B≃End_Π(P)を得る。右作用が自然変換としてA^op→End(P)^opになる点も明示した。
+- `cor:ADE-affine-quotient`：全有限次元商はこの普遍有限商の商である。m_i=1のA2では四次元商を回復する。一般にはΠ自体ではなく非basicなMorita代表となる。
 
-具体的な証明入口は、既存のformal zigzag Ext代数のenhancedな生成部分圏で、無shift単純の有限拡大閉包をtwisted complexとして記述すること。次数1のMaurer–Cartan方程式がpreprojective関係となること、次数0射がintertwinerとなること、Dynkinの冪零性により対象が尽くされることを確認する。Ext-quiverの一致だけでは不十分である。
+既知の形式性・Keller復元・Morita補題そのものを独立の新規成果とはしない。幾何学的に指定されたEuler次元から元のAの作用像を定める接続が寄与候補である。楕円生成元ごとの行列・kernelの係数表示は未計算。162次元の頂点除去cornerとは別物である。
 
-混合共鳴ではΦ|Zは標的の有限次元heart Kへt-exactでない。既存Euler tiltによってKの単純も同じADE spherical配置を持つことを用い、同じ形式性とenhanced拡大閉包の議論をKにも適用してK≃mod Π(Γ)を別に同定する。その後、標的heartの実際の忘却関手をP=⊕P_i^{m_i}で表現し、対応A加群Gのannihilatorを用いてA/Iを認識する。全有限次元A加群がGの有限直和の商であることが鍵で、単なるfaithfulnessから作用像の全射性を推測しない。右加群の規約を固定してMorita代表を記述する。
+単根の明示例は `four_hearts_single_root.tex` にある。E=C/(Z+iZ)、q=√2、六点(√3,√5,−√3−√5−√2,√7,√11,√13)、L1=O(3o)、L0=L1qとする。1と六つの平方根のQ線型独立性から、共鳴する根は±(h−e1−e2−e3)のみ。固定blowdownで実在する唯一の単純は指数−1であり、全torsionfree部分はadd S、一回のtilt、普遍商A/I=kを得る。同じデータでu=−2q、t=−√7−√11−√13、全27theta係数は非零で、六点・十一条件・162次元cornerまで接続する。他の全整数指数の排除は整数独立性による証明であり、有限体での試行ではない。
 
-これはD^b(Z)がambientへ完全忠実に入ることを要求しない。既存A2でheart内部の高次Extがambient Extと異なることは、この区別が不可欠な反例である。162次元corner B/BeBと、Aの境界外有限商は別物である。
+三次曲面型の指定AS入力は `prop:cubic-helix-input` で照合した。AOU Lemma 7.4と直後のAS構成、Okawa–Ueda (2020) Definition 4/Theorem 5、同稿(18)–(22)を使う。acyclic exceptional helixの定義がOU (2025)のvery strongと一致し、同じdirected dg圏とSerre作用を使うため、特殊共鳴例へ一般tupleの半連続性を自動適用する必要はない。適用範囲は指定sheaf-normalized三次曲面構成であり、任意potentialへの主張ではない。
 
 ## 4. 一次文献の確認と新規性の境界
 
@@ -128,29 +131,28 @@
 | [Rains, Filtered deformations of elliptic algebras](https://arxiv.org/pdf/2107.13540v2) | §4 pp.34–35、Proposition 5.1 | 指定simple rootの有効化と共鳴軌跡の稠密性は既知。 |
 | [Rains, The (noncommutative) geometry of difference equations](https://arxiv.org/html/2504.16187v1) | 以下の対応箇所、§§11,12,16–18 | 2019稿の基盤を再編した2025 monographも引用・新規性監査の対象とする。 |
 | [de Thanhoffer de Völcsey–Van den Bergh, Some new examples of non-degenerate quiver potentials](https://arxiv.org/pdf/1005.0808v3) | §3冒頭、Theorem 4.2.1 | 可換geometric helixの良い点でのcorner有限性は一般論で説明できる。十一因子・具体的族・heartへの接続に寄与を集中する。 |
+| [Okawa–Ueda, AS-regular algebras from acyclic spherical helices](https://arxiv.org/html/2007.07620v1) | Definitions 3,4、Theorem 5、(18)–(22) | admissible decupleのAS構成からfull very strong周期helixとrolled-up環へ進む入力。2025稿の一般性だけに依存しない。 |
+| [Keller, Introduction to A-infinity algebras and modules](https://arxiv.org/abs/math/9910179) | §§6.5,7.5,7.7と証明 | 無shift有限拡大閉包の復元。heartの内在的高次Extをambientと同一視しない。 |
 | [Mizuno, Classifying τ-tilting modules over preprojective algebras of Dynkin type](https://arxiv.org/pdf/1304.0667v3) | Theorems 2.21, 2.30, 3.8, 4.1 | Dynkin preprojectiveのtorsion classesとWeyl群の分類は既知入力。 |
 | [Liu–Wang, A∞-deformations of zigzag algebras via Ginzburg dg algebras](https://arxiv.org/pdf/2301.06757v3) | Theorem 1.1、§3、Proposition 4.4 | 標数0のADE形式性とKoszul双対は既知。Etgü–Lekili、Lekili–Uedaの先行結果の帰属を保持する。 |
 | [Bousseau, Geometric helices on del Pezzo surfaces from tilting](https://arxiv.org/html/2603.22065v2) | Theorem 1.1、Corollary 1.2、Theorem 5.20 | 可換del Pezzoのgeometric helicesと完成反標準錐のNCCR mutationに既存結果がある。ncの指定heart比較と対象を区別する。v2に固定する。 |
 
 Rainsの2019稿と2025稿の関連番号は、Lemma 4.9→Lemma 11.10、Proposition 4.17→11.19、Proposition 4.24→11.25、Theorem 4.30→11.31、Lemma 5.7→12.7、Theorem 9.10→16.10、Corollary 10.16→17.17。有効simple root自身に対するirreducible sheafの存在は、2019 Proposition 11.23直前と2025 Proposition 18.27直前の記述を用いる。nef条件を課す後続命題そのものを(-2)単純根へ誤適用しない。
 
-全ADEのabel圏と元のAの有限商をこの設定で同時に記述した同一の結果は、今回確認した主要箇所では見つからなかった。これは未発見という状態であり、新規性確定ではない。Rains 2025の409頁全文を取得不能とする以前の記述は更新したが、全文の証明・関連研究の網羅的監査は未完了である。
+全ADEのabel圏と元のAの有限商をこの設定で同時に記述した同一の結果は、今回確認した主要箇所では見つからなかった。これは今回の検索で同一結果を確認していないという状態であり、新規性確定ではない。追加検索ではEtingof–Oblomkov–RainsのGDAHA/quantized del Pezzoとmultiplicative preprojectiveの接続、de Thanhoffer de Völcsey–Presottoのgeneralized preprojectiveを用いる別種の非可換del Pezzoも見つかった。本稿の滑らかな楕円境界とこれらの主対象の同一視は行っておらず、独立の比較課題である。Rains 2025の409頁全文を取得不能とする以前の記述は更新したが、全文の証明・関連研究の網羅的監査は未完了である。
 
-## 5. 公表の構成
+## 5. 公表の構成と残る判断
 
-主論文の中心を「反標準heartの認識と根による選択」に置く。cornerの正確な有限性判定・楕円係数・L0非依存は、その具体的な核としてまとめる。162次元族の全証明も保持し、公表先を一つに定める。
+主論文は「反標準heartの認識とEuler選択」を中心に、ADE普遍有限商を構造的な結論として集約する。単根の明示例と整数倍点E6例が、指定Rains heartとAS–反標準heartの違いを実在対象で示す。共鳴稿は符号別Extと混合拡大の技術的補助、corner稿は十一因子・Hilbert関数・162次元平坦族の技術的補助とする。3本の独立論文を完成したとは扱わない。
 
-共鳴別稿は、全ADE有限商など独立した中心定理が揃う場合に独立論文とする。そうでなければA2例と共鳴結果を主論文へ統合する。現段階で3論文を完成扱いにしない。相対降下・全境界分類・任意potentialのAS性を中心論文の完了条件に加えない。
+主張・証明・引用と再現資産を揃えた公表準備稿を作った。著者による最終的な証明確認、先行研究との差の評価、著者名・所属・謝辞・投稿先の確定、外部独立査読は未実施である。特に新しいADE論証は、形式性の冪等元を保つ模型と無shift拡大閉包の復元、Morita二重中心化の三箇所を優先して点検できる。採択・網羅的新規性・独立査読を保証する表現は用いない。
 
 ## 6. 今回の再現確認
 
-基準commitの全70ファイルを取得し、3主原稿と20の依存section、研究ノート、証明書、検算コードを確認した。
+- `bash scripts/check.sh fast` が成功し、その後 `bash scripts/check.sh all` で全20本が終了コード0。
+- 新しい `verify_ade_quotient.py` はA2/A3の道代数の全同次関係空間を有理数で計算し、Hilbert係数(2,2)と(3,4,3)、A3のCartan行列、重複度(1,2,3)の商の次元40を確認する。中央頂点で非零往復行列が相殺する例も検査する。E6の72根から単根例の±α0だけが共鳴することと27theta引数の非零性も厳密整数計算で確認する。
+- これらの計算は一般の形式性、sheaf存在、導来同値、複素非torsion性や新規性の証明を代替しない。単根例の独立性は本文の多重二次体の証明による。
+- LuaLaTeXの不足部品を作業領域内へ展開し、LuaLaTeX formatを生成した。Debian TeX Live 2024.20250309と整合するLuaTeX/LuaTeX-jaを使い、3主原稿を全文組版する。PDF・ログ・キャッシュはGitへ追跡しない。再生成可能なPDFはbuild/に置く。
+- input/include、label/ref/eqref、bibitem/citeと最終組版ログを点検する。具体的なページ数と残る組版警告は最終確認に従う。
 
-- computations/verify_*.pyの全19本をPython3で再実行し、全て終了コード0。
-- cornerの有限行列・Hilbert/交点計算、根の有限組合せ、混合A2の線形代数、有限体での楕円関係を含む。これらはsheaf存在・一般t-exact性・複素非torsion条件の証明を代替しない。
-- 3主原稿の再帰input/include、labelとref/eqref、bibitemとciteを静的点検し、欠落を検出しなかった。これは組版の確認とは別である。
-- latexmkによる3原稿の組版を試したが、この実行環境にlualatex.fmt、lualatex.ini、latex.ltx、ltjsarticle.cls、luatexja.styがなく、TeX本文処理の前に停止した。PDF生成・ページ画像検査は未実施。原稿のコンパイルエラーが判明したという意味ではない。
-- 過去のvalidationが記す組版・画像確認は、それぞれの当時の実施記録である。今回成功した組版として扱わない。
-- 今回の変更は研究方針・評価・再開用ノートの同期であり、新しい全ADE定理を証明したとは報告しない。
-
-大きなログや再生成可能な出力は現行研究資料へ追加しない。Gitに保持する原稿・コードと短い本評価から再現する。
+生成、証明の自己点検、有限計算、全文組版、Git commit/push、remote SHA照合は別々の操作であり、外部独立査読は実施していない。

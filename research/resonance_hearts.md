@@ -1,10 +1,10 @@
 # Rains resonance と anticanonical heart：研究継続ノート
 
-2026-11-16 / resonance-hearts-v8。最初に `00_research_plan.md` を読む。現行原稿は `papers/nc_del_pezzo_resonance_hearts.tex`、証明はそこからinputされる七つのsectionにある。中心は `resonance_mixed_a2_category.tex` と `resonance_global_heart.tex`。GitHub mainが正本であり、保存成功時はLibraryへ保存しない。一般原則と保存許可は上位方針に記す。
+2026-11-16 / resonance-hearts-v8（数学本文）・hearts-strategy-v2（現行方針）。最初に `00_research_plan.md` を読む。現行原稿は `papers/nc_del_pezzo_resonance_hearts.tex`、証明はそこからinputされる七つのsectionにある。中心は `resonance_mixed_a2_category.tex` と `resonance_global_heart.tex`。GitHub mainが正本であり、保存成功時はLibraryへ保存しない。一般原則と保存許可は上位方針に記す。
 
 ## 1. 現在の到達点と再開の核心
 
-**指定genuine楕円gluingの導来比較は点検済みの入力となった。** 滑らかな可換genuine del Pezzo S、滑らかなE∈|−K_S|、q∈Pic0(E)からのRains gluingに対し、自然なΦ=πRΓ*はDb(Rains heart)≃Db(qgr R)。これは[次数1の反標準モデル原稿](https://github.com/uedakazushi/nc-dp1-moduli/blob/main/papers/dp1_anticanonical_models.tex) の主張であり、今回orbitのInd生成、境界traceの非零性、有限/無限位数双方の環の有限性、source飽和性を一次資料と照合した。独立の外部査読や機械形式化とは区別する。
+**指定genuine楕円gluingの導来比較は点検済みの入力となった。** 滑らかな可換genuine del Pezzo S、滑らかなE∈|−K_S|、q∈Pic0(E)からのRains gluingに対し、自然なΦ=πRΓ*はDb(Rains heart)≃Db(qgr R)。証明は本リポジトリの `papers/sections/resonance_global_heart.tex`、定理 `thm:resonance-global-comparison` に自立して記載されている。orbitのInd生成、境界traceの非零性、有限/無限位数双方の環の有限性、source飽和性を入力ごとに区別する。今回の主要論証点検と一次資料の確認範囲は `research/current_assessment.md` を参照する。独立の外部査読や機械形式化とは区別する。
 
 **全heartの比較**：この範囲で全Rains heart上のΦの振幅は[0,1]。T=ker H1Φ、F=ker H0Φはtorsion pairで、反標準heartを戻すと〈F[1],T〉となる。q非torsionなら境界外Serre部分圏Zにも制限し、T∩Z=ker Ext1(e,−)、F∩Z=ker Hom(e,−)。全任意nc del Pezzo、weak avatar、特異境界や非局所自由gluingに拡張したわけではない。
 
@@ -12,7 +12,11 @@
 
 **指数+2/−1のアフィン作用**：二つの一次元加群W,Uは異なるcharacterを持ち、0→W→V→U→0は非分裂。二次元Vへの作用像は全三角行列代数。逆向き非分裂拡大V'を合わせるとA/Ann(V⊕V')≃Π(A2)という四次元商を得る。二つの新単純の根類はalpha+beta,−betaで、局所Weyl反射に対応する。
 
-**未解決の具体的着手**は、楕円データからA=R/(g−1)の生成元を固定し、この商写像の係数chi_W(a),chi_U(a),eta(a)を求めること。character分離や非分裂性の真偽を再び未解決としない。差分作用素模型または根sheafのHomへの作用から、各生成元の二つのcharacterと両拡大の非対角係数を求める。次の構造課題は全E6境界外圏のアフィン作用、VdB/AS heartとの指定同定、相対familyと退化境界である。
+**次の新規構造目標**は、全ADE境界外Serre圏Zのabel圏をmod Π(Γ)へ同定し、反標準側の元のA=R/(g−1)の有限商を幾何学的に認識すること。既存formal zigzagのenhanced拡大閉包とpreprojective関係を照合する。既存Euler tiltで得る反標準側Kにも別に同じ議論を適用し、Kの実際の忘却関手の単純次元からprojective generatorとannihilatorを構成する。混合共鳴ではΦ|Zはt-exactでないため、Zのabel同定をそのままKへ運ばない。これは未証明の目標であり、Ext-quiverだけから結論しない。詳細な達成基準は全体方針P2と研究評価に記した。
+
+全heartの差がZに集中すること、Euler標数によるtorsion pair、有限ADE単純tiltと整数倍点族の全単純次元は、四heart稿のfour_hearts_root_chambers.texに既に証明がある。新しい課題として反復せず、公表の中心成果へ統合する。
+
+元の楕円生成元のcharacter・cocycle・kernelの係数表示は、上の構造同定を優先した後で必要なA2/E6例について行う。character分離と非分裂性を未解決に戻さない。162次元のcorner B/BeBとAの根表現を支配する有限商は区別する。
 
 ## 2. 規約と符号別Ext
 
@@ -98,11 +102,11 @@ K群ではWの根はalpha+beta、Uの根は−betaで、s_beta(v)=v+(v beta)beta
 
 ## 9. 文献・再現・検証範囲
 
-Rains 2019：arXiv:1907.11301v1、Theorem4.30と§5のgluing/heart、§7の数値・次元、Theorem9.10のline生成、Cor10.12のrank1射、Prop10.13のline等号、§11の根sheaf。Rains 2022：arXiv:2107.13540v2、Cor3.8とtraceの証明、§4 (4.4),(4.7)とnef性、Prop5.1。RSS *Noncommutative Blowups of Elliptic Algebras*, arXiv:1308.2216v2, Prop2.4。YZ *Rings with Auslander Dualizing Complexes*, J.Algebra213 (1999)1–51, arXiv:math/9804005v3, Th4.5,5.1(1),5.13。Orlov *Smooth and proper noncommutative schemes and gluing of DG categories*, arXiv:1402.7364v5, Th3.18,3.25,Cor3.19。これらの関連一次本文を今回照合した。原典web PDF screenshotはCache missで取得できなかったため、画像確認したとはしない。Liu–Wangの既存形式性入力は今回再監査していない。
+Rains 2019：arXiv:1907.11301v1、Theorem4.30と§5のgluing/heart、§7の数値・次元、Theorem9.10のline生成、Cor10.12のrank1射、Prop10.13のline等号、§11の根sheaf。Rains 2022：arXiv:2107.13540v2、Cor3.8とtraceの証明、§4 (4.4),(4.7)とnef性、Prop5.1。RSS *Noncommutative Blowups of Elliptic Algebras*, arXiv:1308.2216v2, Prop2.4。YZ *Rings with Auslander Dualizing Complexes*, J.Algebra213 (1999)1–51, arXiv:math/9804005v3, Th4.5,5.1(1),5.13。Orlov *Smooth and proper noncommutative schemes and gluing of DG categories*, arXiv:1402.7364v5, Th3.18,3.25,Cor3.19。これらは現行の証明で用いる一次資料である。今回の照合範囲は `research/current_assessment.md` に明記した。Rains2025の対応箇所、Liu–Wang Theorem 1.1と§3/Proposition 4.4、Mizunoのtorsion/Weyl分類もそこで確認した。原典の全証明を今回独立再検証したとはしない。
 
 再現：
 
     python3 computations/verify_resonance_mixed_a2.py
     latexmk papers/nc_del_pezzo_resonance_hearts.tex
 
-新しい検算は厳密有理数で40,000通り（正指数和17,500、負指数和17,500、balanced仮想場合5,000）、Hom/Euler/Ext、四次元商の行列積、各三角像の次元3、commutant次元4、局所反射を確認した。sheaf存在と導来比較は数学的証明であって計算証明ではない。更新二節の独立driverをLuaLaTeXで9ページに組版し全ページを点検。主原稿全文の組版、旧四スクリプトの再実行、独立査読、網羅的新規性調査は今回未実施。詳細と保存されたsource hashは `research/resonance_hearts_validation.json`。
+混合A2検算は厳密有理数で40,000通り（正指数和17,500、負指数和17,500、balanced仮想場合5,000）、Hom/Euler/Ext、四次元商の行列積、各三角像の次元3、commutant次元4、局所反射を確認する。今回これを含む全19コードの再実行に成功した。sheaf存在と導来比較は数学的証明であって計算証明ではない。全文組版は環境のLuaLaTeX format・LaTeX本文・LuaTeX-ja欠落で未完了。以前の個別driverの組版状態は `research/resonance_hearts_validation.json` にあるが、今回のPDF生成・画像点検を意味しない。独立査読・網羅的新規性調査は未実施。現行の検証範囲は `research/current_assessment.md` を参照する。

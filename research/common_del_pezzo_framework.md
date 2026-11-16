@@ -1,10 +1,10 @@
 # 非可換del Pezzo曲面の共通内在的枠組みとheart比較
 
-2026-11-15 / hearts-v1。全次数のheart比較を上位課題とし、最初はcubic surfaceを研究する。次数1・3の既存研究を保持し、全次数の分類定理を主張しない。最初に `00_research_plan.md` と `research/heart_comparison.md` を読む。次数1の公表原稿は別の正本 `uedakazushi/nc-dp1-moduli` を参照する。
+2026-11-16 / framework-v2。本書は独立研究間の背景辞書であり、現行の優先順位は `00_research_plan.md` と `research/current_assessment.md` に従う。本研究の主要比較の証明はローカルの3主原稿にある。以下の別研究の結果は背景参照であり、今回その数学的証明を独立再検証したものではない。外部ファイルの存在を確認した固定commitへ参照を更新してある。H3分類・次数1固有モジュライ・nc三次三様体を本研究へ再統合しない。
 
 ## 金沢型量子FermatとOUのAS surfaceの厳密な差
 
-**証明済み**：金沢型量子Fermat cubicのA=qgr B/(t³+x³+y³+z³)は、OU arXiv:2508.04986 Definition 1.1のAS surfaceではない。現行の完全証明は `papers/quantum_fermat_not_as_surface.tex` の定理3.1。H=(mu3)^2の非退化な2-cocycle αを使い、古典Fermat cubic Xに対し Db(A)≃Db(coh^α[X/H]) という明示的なgraded Morita同値を構成する。捩れ付きorbifold HKRと固定楕円曲線2本から HH_-1=2, HH_0=5, HH_1=2 を得る。有限群の全9元と指標は `computations/verify_quantum_fermat_ou_sectors.py` と証明書で検算。OU AS surfaceなら有限なvery strong helix、従って完全強例外列がありHH_i(i≠0)=0なので矛盾する。
+**証明済み**：金沢型量子Fermat cubicのA=qgr B/(t³+x³+y³+z³)は、OU arXiv:2508.04986 Definition 1.1のAS surfaceではない。現行の完全証明は [量子FermatとAS surface](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/quantum_fermat_not_as_surface.tex) の定理3.1。H=(mu3)^2の非退化な2-cocycle αを使い、古典Fermat cubic Xに対し Db(A)≃Db(coh^α[X/H]) という明示的なgraded Morita同値を構成する。捩れ付きorbifold HKRと固定楕円曲線2本から HH_-1=2, HH_0=5, HH_1=2 を得る。有限群の全9元と指標は [量子Fermatの検算](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/computations/verify_quantum_fermat_ou_sectors.py) と証明書で検算。OU AS surfaceなら有限なvery strong helix、従って完全強例外列がありHH_i(i≠0)=0なので矛盾する。
 
 **意味**：反Serre作用がheartを保ち、AZ ampleで、gd2・exceptional O・Hilbert関数を満たすintrinsic weak cubicはOU AS surfaceであるとは限らない。量子Fermatはその明示的な反例。次数3の全weak moduliがOU/AOUのmarked locusのW(E6)商だけからなるという全域分類は成立しない。一方、可換三次曲面を含むOU部分の大域化、R13支配部分のgeneric同定は別問題として保持する。全weakモジュライの代数性は未証明。
 
@@ -12,7 +12,7 @@
 
 Rains、Van den Bergh raw blow-up、AS helix、反標準qgrの四構成について、存在、realization Db(heart)→Tの同値、指定同値のt-exactness、構造対象・反Serre・境界restriction・rank・marking、族の降下を分離する。数値的non-amplenessをAZ失敗や導来変化と同一視しない。
 
-cubicではVdBの振幅1同値からT=ker R¹δ_*、U=ker δ_*による一回のHRS tiltを得る。heart一致はU=0に帰着する。AOU Theorem 9.4の左辺はqgr Fであり、AS qgrとの導来比較を与える。t-exactnessと実際のmutation後の構造対象の同定は別課題。証明と判定補題は `papers/nc_del_pezzo_hearts.tex`、次の計算は `research/heart_comparison.md`。
+cubicではVdBの振幅1同値からT=ker R¹δ_*、U=ker δ_*による一回のHRS tiltを得る。heart一致はU=0に帰着する。AOU Theorem 9.4の左辺はqgr Fであり、AS qgrとの導来比較を与える。本研究では規格化したactual mutation列の下で構造対象を同定し、指定されたfull very strong AS実現に対してt-exact性を証明している。範囲は `papers/nc_del_pezzo_hearts.tex` の `thm:AOU-pointed`、`thm:normalized-abelian` と `research/heart_comparison.md` を参照する。未変更の印刷tupleと独立なblowdown表示への無条件延長は含まない。
 
 ## heart 比較の名称
 
@@ -55,16 +55,16 @@ Gabriel–Krull rank-one torsion-freeとn≥0のHilbert数値により負次数�
 ## 各論文の役割
 
 - `papers/nc_del_pezzo_hearts.tex`：全次数のheart比較問題とcubicにおけるHRS・orbit・corner判定。
-- `papers/weak_cubic_axioms.tex`：d=3。標準正規境界の認識定理と量子Fermat反例。
-- `papers/cubic_surface_ambient_moduli.tex`：d=3。モジュライ成分・marked potentialとの比較。
-- `papers/nc_del_pezzo_degree1_moduli.tex`：d=1。内在的rank、weighted sextic、pointed dg族、avatar。
-- [次数1反標準モデル](https://github.com/uedakazushi/nc-dp1-moduli/blob/main/papers/dp1_anticanonical_models.tex)：d=1。楕円領域の反標準qgrと共鳴、導来比較。
-- `papers/nc_cubic_threefold_moduli.tex`：3-fold。別の中心課題であり、研究・論文は独立維持。
+- [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)：d=3。標準正規境界の認識定理と量子Fermat反例。
+- [三次曲面のambientとモジュライ](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/cubic_surface_ambient_moduli.tex)：d=3。モジュライ成分・marked potentialとの比較。
+- [次数1の内在的構造とモジュライ](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/nc_del_pezzo_degree1_moduli.tex)：d=1。内在的rank、weighted sextic、pointed dg族、avatar。
+- [次数1反標準モデル](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/dp1_anticanonical_models.tex)：d=1。楕円領域の反標準qgrと共鳴、導来比較。
+- [非可換三次三様体](https://github.com/uedakazushi/nc-cubic-threefold-moduli/blob/cf880df5d0c53ff9a262ba8f4ba683d48adaf9d5/papers/nc_cubic_threefold_moduli.tex)：3-fold。別の中心課題であり、研究・論文は独立維持。
 
 ## 論理的状態
 
-既存の各論文に記載された証明と、全てのintrinsic対象の網羅性、全モジュライの代数性・既約成分性、heartを保つ標識忘却の大域同値は区別する。次数1の特異楕円境界での導来比較、次数3の正規一次境界の一般存在はいずれも未解決。既存稿の証明記載と今回の点検を区別する。新しいheart研究はdP1の強い導来比較を入力にせず、cubicの一次文献から始める。
+既存の各論文に記載された証明と、全てのintrinsic対象の網羅性、全モジュライの代数性・既約成分性、heartを保つ標識忘却の大域同値は区別する。次数1の特異楕円境界での導来比較、次数3の正規一次境界の一般存在はいずれも未解決。既存稿の証明記載と今回の点検を区別する。本研究の指定genuine gluingの比較証明は `papers/sections/resonance_global_heart.tex` と四heart稿に自立して収録する。外部研究の未検証主張を暗黙の入力にしない。
 
 ## 量子Fermat ambientの所属成分
 
-量子Fermat BはPymのgraded Calabi–Yauのskew-polynomial成分 L(1,1,1,1) の3-torsion特殊点であり、L(1,1,2)の関係式中の二次補正項Qをu^2 Qにする平坦退化のu=0にもなる。従って少なくとも二成分の交点に属する。一方、既存の四頂点正規直線returnの閉incidenceによりR(1,3)の閉包外。その他の成分との交叉は未解決。式と証明は papers/weak_cubic_axioms.tex。
+量子Fermat BはPymのgraded Calabi–Yauのskew-polynomial成分 L(1,1,1,1) の3-torsion特殊点であり、L(1,1,2)の関係式中の二次補正項Qをu^2 Qにする平坦退化のu=0にもなる。従って少なくとも二成分の交点に属する。一方、既存の四頂点正規直線returnの閉incidenceによりR(1,3)の閉包外。その他の成分との交叉は未解決。式と証明は [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)。

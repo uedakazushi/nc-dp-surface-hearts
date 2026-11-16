@@ -1,6 +1,6 @@
 # Cubic corner の有限性と4交比：現行研究ノート
 
-2026-11-15 / hearts-v8 / corner-v7。最初に `00_research_plan.md` を読み、証明は `papers/cubic_heart_corner.tex` の定理 `thm:general-position-iff` とその依存箇所を読む。全次数のheart比較は `research/heart_comparison.md` にある。
+2026-11-16 / corner-v7（数学本文）・hearts-strategy-v2（現行方針）。最初に `00_research_plan.md` を読み、証明は `papers/cubic_heart_corner.tex` の定理 `thm:general-position-iff` とその依存箇所を読む。全次数のheart比較は `research/heart_comparison.md` にある。
 
 ## 古典的根壁と anticanonical heart の障害
 
@@ -19,13 +19,13 @@ AOU(4.9)の可換 cubic の九線束間のHomと、e=A0を経由する積の像�
 
 **有限平坦性**：四交比トーラスの十一条件の補開集合 U 上で、universal quotient C_U は道長0..6の階数(8,21,33,38,33,21,8)の局所自由成分の直和で、全体として階数162の有限局所自由 O_U-代数となり、任意の基底変更と可換する。各道長の有限関係行列が全幾何学的fiberで一定階数なので従う。非可換potentialの全27係数のAS性、Rains heart・VdB heartとの比較は主張しない。
 
-**数値検算**：`computations/verify_cubic_corner_hilbert.py` は27本の(-1)曲線、4組のblow-down線束、RRによる各次数全Hom、経由部分の次元台帳を整数演算で検査する（積写像の一般的な単射・全射の証明はTeX）。一般位置の別の有理六点配置3組でも既存のJacobian消去を F_1000003 で実行し、同じ次数列を得た。追加部分を日本語LuaLaTeXで3ページ単独組版し、警告・見た目を確認。リポジトリ本稿全体の組版は今回未実施。
+**数値検算**：`computations/verify_cubic_corner_hilbert.py` は27本の(-1)曲線、4組のblow-down線束、RRによる各次数全Hom、経由部分の次元台帳を整数演算で検査する（積写像の一般的な単射・全射の証明はTeX）。一般位置の別の有理六点配置3組でも既存のJacobian消去を F_1000003 で実行し、同じ次数列を得た。今回の検算再実行は成功。本文の積写像の証明と数値検算の範囲は区別する。現行の組版状態は `research/current_assessment.md` を参照し、個別validationの以前の組版を今回の成功としない。
 
 ## 現行の一様次数定理
 
 **証明済み（標数0・18係数非零）**：四交比の11非零条件と `dim C<∞` と `C_7=0` は同値であり、11条件が成立するとき `dim C_6>=8`。従って `U=U_7={Δ11≠0}`、七が最良の一様消滅次数。証明は `papers/sections/cubic_corner_uniform_cutoff.tex`（現行 `papers/cubic_heart_corner.tex` に `\\input`）。AOU(4.9)の滑らかな可換 cubic の線束モデルを用い、道長7の21ブロックを A_a→B_i（6）、B_i→C_j（9）、C_j→A_a（6）に分け、blow-down線束のconic制限・basepoint-free pencil trick・Kodaira/Kawamata--Viehweg消滅により全て `A0` を経由することを示した。対角道長6の八頂点には各1次元以上の商が残る。これは既存のF7全探索からの推論ではない。有限行列 `M_7` の最大小行列式イデアルの根基は四交比Laurent環で `rad(Δ11)` と一致（scheme構造までは主張しない）。
 
-数値仮定は `computations/verify_cubic_corner_c7_geometry.py` で27本の(-1)曲線との交点、四つのblow-down line class、13個のKV nef/big入力を厳密な整数計算で検査した。これは線束の乗法の代数的証明とは別。LuaLaTeXで新規3ページの単独組版検査を実施したが、リポジトリ全文の再組版は未実施。
+数値仮定は `computations/verify_cubic_corner_c7_geometry.py` で27本の(-1)曲線との交点、四つのblow-down line class、13個のKV nef/big入力を厳密な整数計算で検査した。これは線束の乗法の代数的証明とは別。今回の全文組版は環境側のformat・LaTeX/LuaTeX-ja欠落で未完了。計算成功とPDF生成・画像点検は区別する。
 
 ## 現行定理（標数0・18係数非零）
 
@@ -45,7 +45,7 @@ AOU(4.9)はJac(Qtilde,Wgeo)=⊕_{v,v',n≥0}Hom_S(Ev,Ev'(nH))を同定する。H
 
 ## Heart比較への帰結と留保
 
-AOU型AS helixとのfolding、Serre inverse shift、orbit algebraの飽和、およびnoetherian性が成立する対象では、自然なrestriction qgr B_cut→qgr(eB_cut e)が同値 iff この11条件。右辺は構造対象Oからのanticanonical heart。よってAS heartとanticanonical heartがabel同値となる領域を、指定の自然関手に関して完全に決定した。11条件外で他のabel同値・導来同値が一切ないとは言わない。Rains heart/VdB heartとのpointedness、実際のAOU mutation後E0とπFの同定は未解決。
+AOU型AS helixとのfolding、Serre inverse shift、orbit algebraの飽和、およびnoetherian性が成立する対象では、自然なrestriction qgr B_cut→qgr(eB_cut e)が同値 iff この11条件。右辺は構造対象Oからのanticanonical heart。よってAS heartとanticanonical heartがabel同値となる領域を、指定の自然関手に関して完全に決定した。11条件外で他のabel同値・導来同値が一切ないとは言わない。規格化したactual AOUデータでは、構造対象のpointed同定とAS–反標準のt-exact性が四heart稿の `thm:AOU-pointed`・`thm:normalized-abelian` に、同じ最後のraw blow-upでのVdB関手同定が `thm:VdBcanonical` に記載されている。未変更の印刷tupleや独立なblowdown表示を含む無条件比較は未解決である。
 
 ## 補助定理と検算
 
@@ -53,10 +53,14 @@ AOU型AS helixとのfolding、Serre inverse shift、orbit algebraの飽和、お
 
 六点の幾何的同定は `computations/verify_cubic_six_points.py`（標準Pythonのみ）で、9個の自由な座標変数上の6本の普遍的整数多項式恒等式、3つの有理数例、F7の四交比トーラス1296点の全比較（一般位置は80点）を検査した。以前のC7=0の厳密計算（六点witnessでHilbert次元[8,21,33,38,33,21,8,0]、総次元162）、F7の80点すべてでC7=0という有限体観察も保持する。現在は一般位置で一様にC7=0が証明済みであり、以前の有限体結果は独立検算として保持する。
 
-## 次の核心
+## 現在の役割と次の核心
 
-1. **非可換AS locusと根壁**：古典的な11壁のspherical導来障害を確定した。次は各壁に非可換AS-regularが存在するか、Rains/VdB heartがspecializeするかを確かめる。古典的非同値から非可換全点の非同値を推論しない。
-2. **Rains/VdBとの実際の比較**：AOUのmutation後E0≅πFをobject levelで検証し、VdBの最後のδ_*に対するkernelと高次pushforwardを実在対象から計算する。自然同値のt-exactnessと別のderived同値を分離する。
-3. **一般次数とmoduli**：全intrinsic cubicを幾何的六点分枝と同一視せず、量子FermatなどOU AS型でない分枝を保持。dP1と他次数のheart比較へ必要十分条件の方法を移植する。
+本稿の十一条件・162次元族・元六点との同定は、四heart比較の具体的な中核として保持する。良い可換del Pezzoのgeometric helixで頂点除去商が有限次元になる一般論は、de Thanhoffer de Völcsey–Van den Bergh, [arXiv:1005.0808v3](https://arxiv.org/pdf/1005.0808v3), §3冒頭・Theorem 4.2.1にもある。本稿の寄与は正確な境界因子・四パラメータ族・Hilbert関数と自然heart比較への接続として検証する。
+
+1. **公表核との統合**：指定noetherian AS領域のcorner判定と、規格化共通領域での自動的な非消滅を区別する。一様消滅・平坦性の証明を保持し、同じ有限性証明の重複を整理する。
+2. **零指数壁の入力判定**：混合共線壁またはconic壁のgeneric pointを一つ選び、actual decupleのadmissibility、AS実現、very strong性、自然導来比較のどの仮定が残るかを調べる。古典的(-2)対象の消失を非零Rains共鳴のHRS tiltと同一視しない。
+3. **有限代数の区別**：この162次元cornerと、A=R/(g−1)の境界外有限表現を支配する未構成の全ADE有限商は別の代数である。対称Hilbert係数だけからselfinjectivityやpreprojectiveとの同型を推論しない。
+
+本稿で未解決とされていた構造対象の同定は、規格化同一データの範囲では四heart稿に結果がある。独立な表示の比較、相対化、全intrinsic cubicへの拡張はそこからは従わない。全体の優先順位・先行研究・今回の検証範囲は [current_assessment.md](current_assessment.md) と [全体方針](../00_research_plan.md) に従う。
 
 一次資料はAOU §4（4.1,4.9）、§8（8.1,8.4-8.9）と OU arXiv:2508.04986。定理の新規性・初出は未確認。証明記載、整数検算、LuaLaTeX組版は区別する。再現は `python3 computations/verify_cubic_six_points.py`、`python3 computations/verify_cubic_corner_c7_geometry.py`、`python3 computations/verify_cubic_corner_hilbert.py`、`latexmk papers/cubic_heart_corner.tex`。推奨の現行名は Rains heart, VdB heart, AS heart, anticanonical heart。

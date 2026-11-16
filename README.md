@@ -1,31 +1,41 @@
-# 非可換del Pezzo曲面のheart比較
+# 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-16。Rains、Van den Bergh、Artin–Schelter、反標準heartの比較と、Rains共鳴・cubic cornerを対象とする独立の研究リポジトリ。**最初に[研究方針](00_research_plan.md)を読む。** GitHub mainが現行の正本。
+2026-11-16 / hearts-strategy-v2。Rains・Van den Bergh・Artin–Schelter・反標準heartを、指定された構造対象と自然関手を保って比較する研究。GitHub mainが正本。
 
-## 公表用原稿
-- [非可換del Pezzo曲面の四つのheart](papers/nc_del_pezzo_hearts.tex) — 指定導来比較、AOUのt-exactness、十一非零条件・楕円係数と壁。
-- [Rains共鳴と反標準heart](papers/nc_del_pezzo_resonance_hearts.tex) — 符号別Ext、混合A2、HRS tiltとアフィン商。
-- [三次曲面のAS/反標準heartのcorner](papers/cubic_heart_corner.tex) — 四交比、六点一般位置、有限平坦162次元corner、根壁。
+**最初に [研究方針](00_research_plan.md) を読む。** [現状評価・優先順位・一次資料と検証範囲](research/current_assessment.md) に今回の調査をまとめた。
 
-[四heart研究ノート](research/heart_comparison.md) ／ [Rains共鳴ノート](research/resonance_hearts.md) ／ [cubic cornerノート](research/cubic_corner.md) ／ [Codex指示](AGENTS.md)。
+## 中心課題
 
-## 研究の状態
-指定の滑らかな楕円gluing・標準noetherian AS三block等、定理ごとに範囲が異なる。すべてのnoncommutative del Pezzo上で無条件なheart一致や相対stack降下を主張しない。最新の状態は `research/four_hearts_validation.json`、`research/resonance_hearts_validation.json`、`research/cubic_corner_validation.json` を参照。
+反標準heartの認識と、実在する境界外根のEuler標数によるheart選択を、公表できる主定理にまとめる。新しい構造目標は全ADE根圏のabel圏同定と、元のアフィン代数A=R/(g−1)の有限次元商である。十一因子が消える古典的退化の壁と、一般位置内の非零指数共鳴を分ける。
 
-## 再現
-```sh
-latexmk papers/nc_del_pezzo_hearts.tex
-latexmk papers/nc_del_pezzo_resonance_hearts.tex
-latexmk papers/cubic_heart_corner.tex
-python3 computations/verify_four_hearts.py
-python3 computations/verify_resonance_mixed_a2.py
-python3 computations/verify_cubic_corner.py
-```
-Python3（SymPy使用）、LuaLaTeX、latexmk。PDF・Synctex・ログはGitに追跡しない。今回の移管は既存原稿・証明・コードの保全であり、数学的証明の全面再監査ではない。
+## 現行の原稿と研究ノート
 
-## 関連する別研究
-- [H3分類](https://github.com/uedakazushi/nc-cubic-moduli)
-- [次数1 nc del Pezzoモジュライ](https://github.com/uedakazushi/nc-dp1-moduli)
-- [nc三次三様体とnc P4](https://github.com/uedakazushi/nc-cubic-threefold-moduli)
+- [四つのheart](papers/nc_del_pezzo_hearts.tex)：自然導来比較、全heartのHRS/ADE tilt、規格化AS比較、actual楕円係数、元六点の復元。
+- [Rains共鳴](papers/nc_del_pezzo_resonance_hearts.tex)：符号別Ext、混合A2、最大共鳴、四次元アフィン商。
+- [Cubic corner](papers/cubic_heart_corner.tex)：四交比、十一条件、六点一般位置、Hilbert関数、有限平坦162次元族と古典根壁。
 
-必要な外部結果は固定版と仮定を明記して利用する。
+これらは現行の研究原稿であり、3本の独立した公表論文が完成したことを意味しない。比較とcornerの統合、共鳴別稿の独立性を中心定理に基づいて判断する。
+
+[比較ノート](research/heart_comparison.md) / [共鳴ノート](research/resonance_hearts.md) / [cornerノート](research/cubic_corner.md) / [実施方針](research/four_hearts_plan.md) / [Codex指示](AGENTS.md)
+
+## 確実性と再現
+
+原稿にある証明、今回点検した主要論証、有限計算、未証明目標を区別する。全heartの無条件一致、全potentialのAS性、相対stack降下は主張しない。従来の各validationは個別成果の証明・検算範囲を記したもので、今回の実行範囲は研究評価を参照する。
+
+    python3 -m pip install -r requirements.txt
+    python3 computations/verify_four_hearts.py
+    python3 computations/verify_resonance_mixed_a2.py
+    python3 computations/verify_cubic_corner.py
+    latexmk papers/nc_del_pezzo_hearts.tex
+    latexmk papers/nc_del_pezzo_resonance_hearts.tex
+    latexmk papers/cubic_heart_corner.tex
+
+2026-11-16に全19検算を実行して成功。3主原稿のinput・label/ref・bibitem/citeに静的点検で欠落なし。全文組版はこの環境のLaTeX/LuaTeX-ja欠落で未完了。Python3/SymPyとLuaLaTeX・LuaTeX-ja・latexmkを用い、PDF・Synctex・ログはbuild/へ再生成する。
+
+## 独立して継続する関連研究
+
+[H3分類](https://github.com/uedakazushi/nc-cubic-moduli) /
+[次数1モジュライ](https://github.com/uedakazushi/nc-dp1-moduli) /
+[nc三次三様体](https://github.com/uedakazushi/nc-cubic-threefold-moduli)
+
+本研究の結果とこれらの研究固有の主張を混同せず、実際に外部結果へ依存する際は固定commitと仮定を示す。

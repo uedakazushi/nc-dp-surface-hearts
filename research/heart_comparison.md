@@ -1,10 +1,10 @@
 # 四つのheartの比較：現行研究ノート
 
-2026-11-16 / hearts-v24。最初に `research/four_hearts_plan.md` を読む。現行原稿は `papers/nc_del_pezzo_hearts.tex` と九つのsection、検証状態は `research/four_hearts_validation.json`。証明が本文にある事項は所在と入力を示し、全文を重複させない。GitHub mainが正本で、保存成功時にはLibraryへ別途アップロードしない。
+2026-11-16 / hearts-v24（数学本文）・hearts-strategy-v2（現行方針）。最初に `00_research_plan.md` と `research/current_assessment.md` を読む。現行原稿は `papers/nc_del_pezzo_hearts.tex` と九つのsection、検証状態は `research/four_hearts_validation.json`。証明が本文にある事項は所在と入力を示し、全文を重複させない。GitHub mainが正本で、保存成功時にはLibraryへ別途アップロードしない。
 
 ## 現在の中心結果と再開点
 
-`four_hearts_elliptic_coefficients.tex` でactual normalized decupleの全potential、十一条件の楕円表示、共通領域のnoetherian性と標準heart一致を証明した。以前の「potentialとnoetherian適用域を計算する」という課題はこの範囲では解決済み。次は一般位置外の実在する壁で、どの入力が残り、実際にどの対象・heartが変わるかを確認する。相対heartや全potentialへの拡張を先取りしない。
+`four_hearts_elliptic_coefficients.tex` でactual normalized decupleの全potential、十一条件の楕円表示、共通領域のnoetherian性と標準heart一致を証明した。以前の「potentialとnoetherian適用域を計算する」という課題はこの範囲では解決済み。現在の最優先は、自然反標準比較・Euler選択・規格化AS比較を公表の中心定理へまとめ、先行研究と特殊族への入力を照合すること。次の新規構造目標は全ADE根圏のabel圏同定と元のアフィン代数の有限商。一般位置外の零指数壁は、非零Rains共鳴と分けてどの入力が失われるかを調べる後順位課題である。相対heartや全potentialへの拡張を先取りしない。
 
 ## 規約と確実性の区別
 
@@ -80,8 +80,8 @@ pi=Ni q、相異なる正整数、3≤r≤8では全根指数非零でgenuine。
 
 ## 先行研究・検証上の限界
 
-今回の新規入力はAOU (4.7),§7の関係からpotentialへの構成、OU Definition3.1と(3.9)–(3.10)のvery strong標準helix、AZ Theorem4.5とPolishchuk math/0212182v4 Theorem2.4の再構成、Prokofev–Zabrodin 2305.02837v1 (1.7),(2.1)のelliptic Cauchy公式。AOUのprimary HTML、OUとPZの該当PDFページ画像、Polishchukの定理・証明本文を確認した。Polishchuk PDFのscreenshotはCache miss。AZ原典の全文PDFは取得できず、原典書誌、Polishchukと研究論文の定理再掲で照合し、必要なnoetherian部分の証明は本稿に明示した。
+現行の既知入力はAOU (4.7),§7の関係からpotentialへの構成、OU Definition3.1と(3.9)–(3.10)のvery strong標準helix、AZ Theorem4.5とPolishchuk math/0212182v4 Theorem2.4の再構成、Prokofev–Zabrodin 2305.02837v1 (1.7),(2.1)のelliptic Cauchy公式。必要なnoetherian部分の証明は本稿に明示した。AZ原典全文の直接照合は未完了であり、原典書誌とPolishchuk等による確認を区別する。今回の一次資料と適用範囲の確認は `research/current_assessment.md` を参照する。
 
-Rains2025 monographは今回も全文取得ができず、書誌・概要以上の全面照合を行っていない。外部独立査読、Lean等の形式化、網羅的新規性調査も未実施。今回保持した過去の全数学的証明を改めて独立再監査したという意味ではない。
+Rains2025 monographは一次HTML本文を取得し、2019稿の主要引用に対応する§§11–12・16–18の箇所を確認した。対応番号と適用範囲は `research/current_assessment.md` を参照。409頁全文の証明の独立検証、外部独立査読、Lean等の形式化、網羅的新規性調査は未実施。原稿の全数学的証明を改めて独立再監査したという意味ではない。
 
-新コードverify_four_hearts_elliptic.pyはF_1009上のy²=x³−x+1のMiller関数から実際のHom切断を作る。24一般位置六点×3つのL0と四壁を採用し、684個の関係を関数体で交差乗算して検証、L0独立性と射影座標とのgauge一致を確認した。有限体の点はtorsionであり、非torsion条件や複素圏の存在の証拠ではない。六つの旧コードも現行入力で再実行した。生成、全文組版、ページ画像点検、清浄ディレクトリでの再現、GitHub保存はvalidationで別々に報告する。
+新コードverify_four_hearts_elliptic.pyはF_1009上のy²=x³−x+1のMiller関数から実際のHom切断を作る。24一般位置六点×3つのL0と四壁を採用し、684個の関係を関数体で交差乗算して検証、L0独立性と射影座標とのgauge一致を確認した。有限体の点はtorsionであり、非torsion条件や複素圏の存在の証拠ではない。今回、全19検算を現行入力で再実行して成功した。TeX入力・参照の静的点検も成功。全文組版はこの環境のLuaLaTeX format・LaTeX本文・LuaTeX-jaの欠落で未完了であり、PDF生成・画像点検の成功とは報告しない。今回の実施範囲は `research/current_assessment.md`、各個別結果の以前の検証範囲はvalidationを参照する。

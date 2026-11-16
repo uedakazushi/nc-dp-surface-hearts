@@ -23,3 +23,11 @@
 研究区切りで原稿・ノート・方針・必要な検証資産を自己完結した現行版にする。約15分を保存checkpointの目安に、共有mainの更新を確認して通常のfast-forwardで直接保存し、remote SHAを照合する。PR・GitHub Actions・force pushは使わない。PDF・ZIP・中間物・キャッシュは追跡しない。GitHub保存失敗時のみ、許可済みのLibrary緊急保存を用いる。背景での自動継続は約束しない。
 
 今回の環境では19検算は成功したが、LuaLaTeXのformat・LaTeX本文・LuaTeX-jaが欠落して全文組版を実行できていない。原稿エラーとして扱わず、環境が整った時点で再組版する。
+
+## Cloud Codex の実行方法
+
+Cloud環境の初期化ではリポジトリrootから `bash scripts/cloud_setup.sh` を実行する。Debian/Ubuntuのaptとpipを使う（TeX Live日本語一式の初回導入は容量と時間を要する）。start時は `bash scripts/check.sh fast` で依存関係と研究コードを確認する。詳しくは `docs/CLOUD_CODEX.md`。
+
+- 研究の各区切りは `bash scripts/check.sh fast`、証明や計算を変更した時は該当する `computations/verify_*.py` と必要に応じ `bash scripts/check.sh all` を実行する。公表原稿の更新では `bash scripts/check.sh tex` で3本を組版し、全文検査が必要なら `bash scripts/check.sh full` とする。出力は `build/` に保存しGit追跡しない。
+- Codex Cloudのタスクは各々独立したcheckoutであり、`main`へのpush権限やnetworkは環境により異なる。変更をcommitする前に `git status --short` と `git fetch origin main` を確認する。mainが進んでいればその変更を安全に統合し、force pushせず通常のfast-forwardのみ。直接pushできなければcommitを保持し、ブロック理由を報告する。PRやGitHub Actionsへ自動的に切り替えない。
+- 一つの数学的補題・証明修正・整った計算チェックを最小作業単位とし、約15分をcheckpointの目安にする。作業を止める質問を増やさず、上位方針のP0→P1→P2へ自律的に進む。ただし未証明主張を完成扱いせず、外部ネットワーク・引用・セットアップ不能を正確に報告する。

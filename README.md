@@ -39,3 +39,7 @@
 [nc三次三様体](https://github.com/uedakazushi/nc-cubic-threefold-moduli)
 
 本研究の結果とこれらの研究固有の主張を混同せず、実際に外部結果へ依存する際は固定commitと仮定を示す。
+
+## Cloud Codex
+
+セットアップ・検算とCodex Cloud環境の登録方法は [Cloud Codex手順](docs/CLOUD_CODEX.md) を参照。研究指示は [AGENTS.md](AGENTS.md)、現在の研究優先順位は [00_research_plan.md](00_research_plan.md) にある。

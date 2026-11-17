@@ -1,10 +1,10 @@
 # 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-17 / hearts-strategy-v12。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
+2026-11-17 / hearts-strategy-v13。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
 
 ## 現行の二論文
 
-**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v34）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
+**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v35）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
 
 **[dp-hearts2.tex](papers/dp-hearts2.tex)**（hearts2-v1）は補完論文。符号別Ext・混合A2の精密計算・ADE zigzag形式変形、cubic cornerの十一条件、一様Hilbert関数、162次元平坦族と計算証明を保持する。
 
@@ -25,8 +25,18 @@
 反標準切断加群`M_n=d n(n+1)/2`、`H_R−H_M=1/(1-t)`。
 中心元`g`はM上正則で、境界`M/gM`は楕円曲線の`q^{-1}`を回復する。
 非自明qでは`Hom_grR(M,R)=0`であり、通常のideal埋込みは存在しない。
-一方`Hom_qgr(pi M,pi R)`および全高次Ext・導来同値は未同定である。
-重要な全比較の必要条件は`cor:duval-target-hom-obstruction`。
+## qgrでのHomの跳び（hearts-v35）
+
+`thm:duval-qgr-hom-vanishing`：
+非自明`q∈Pic0(E)`に対して、全`r≥0`で
+`Hom_qgrR(I_x,q,πR_q(-r))=0`を証明した。
+自明`q`では`r≥1`は零、`r=0`では次元1。
+`Hom_gr(M,R)=0`をそのまま転用せず、
+Serre商のHomのtail表示と、各tailの境界上の線束`q^-1`、
+中心元`g`による反復除法を使う。
+全比較が完全忠実なら、非自明`q`の
+`Ext^j_qgr(I_x,q,πR_q)=0`（`j≥1`）が必要。
+この正次数ExtとA1局所Yoneda積は未解決。
 
 ## orbit-perfect coreの新結果
 

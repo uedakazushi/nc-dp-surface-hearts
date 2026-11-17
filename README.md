@@ -1,10 +1,10 @@
 # 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-17 / hearts-strategy-v11。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
+2026-11-17 / hearts-strategy-v12。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
 
 ## 現行の二論文
 
-**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v33）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
+**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v34）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
 
 **[dp-hearts2.tex](papers/dp-hearts2.tex)**（hearts2-v1）は補完論文。符号別Ext・混合A2の精密計算・ADE zigzag形式変形、cubic cornerの十一条件、一様Hilbert関数、162次元平坦族と計算証明を保持する。
 
@@ -15,13 +15,18 @@
 主論文は、共通部分圏 `O_(Sbar)^perp` のperfect商がOrlovの `D_sg(Sbar)` を回復すること、および全Du Val点のideal sheafの高次Extが
 `dim Hom(J_i,q,J_j,q[n])=4δ_ij (n>=3)` を満たすことも証明する。非自明qの反標準qgrとの同値は依然として未解決。
 
-## 特異点idealの境界gluing
+## Du Val idealのqgr像・境界と直交性
 
-Du Val点のideal sheafの像 `J_x,q` とgluingのexceptional対象 `bar e` は
-`RHom(bar e,J_x,q)=0`, `RHom(J_x,q,bar e)=RΓ(E,q)` を満たす。
-非自明な次数0線束qでは両側直交し、自明なqでだけ次数0と1に各1次元のExtを持つ。
-主論文の `prop:duval-ideal-boundary-gluing` に証明がある。
-非自明qにおけるqgr標的の同定とは区別する。
+主論文 `four_hearts_duval_singularity.tex` に以下を証明：
+相異なるDu Val点のideal間の`RHom`は`k[-1]`。
+`RHom(ebar,J_x)=0`、`RHom(J_x,ebar)=RΓ(E,q)`で、
+非自明qなら指定生成対象の部分圏は`Perf(k)⊕thick{J_x}`に分かれる。
+さらに`I_x,q=barPhi(J_x,q)∈qgr R_q`は非零のcoherent対象で、
+反標準切断加群`M_n=d n(n+1)/2`、`H_R−H_M=1/(1-t)`。
+中心元`g`はM上正則で、境界`M/gM`は楕円曲線の`q^{-1}`を回復する。
+非自明qでは`Hom_grR(M,R)=0`であり、通常のideal埋込みは存在しない。
+一方`Hom_qgr(pi M,pi R)`および全高次Ext・導来同値は未同定である。
+重要な全比較の必要条件は`cor:duval-target-hom-obstruction`。
 
 ## orbit-perfect coreの新結果
 
@@ -47,6 +52,6 @@ bash scripts/check.sh all
 bash scripts/check.sh tex
 ```
 
-texは2原稿を組版する。生成PDF・Synctex・ログはbuild/に置き、Git追跡しない。以前の確認は改稿4節の20ページ抜粋の組版と画像点検。今回のhearts-v33では主論文のネストした全inputを含む静的参照検査のみを追加し、全文・第2論文の組版と既存21検算の再実行は未実施。[検証状態](research/two_papers_validation.json) を参照する。
+texは2原稿を組版する。生成PDF・Synctex・ログはbuild/に置き、Git追跡しない。以前の確認は改稿4節の20ページ抜粋の組版と画像点検。現行版では主論文・補完論文の静的参照検査を実施し、全文・第2論文の組版と既存21検算の再実行は未実施。[検証状態](research/two_papers_validation.json) を参照する。
 
 [Cloud Codex手順](docs/CLOUD_CODEX.md)。mainへの通常保存、PR・GitHub Actions・force push不使用を基本とし、GitHub mainを正本とし、研究区切りごとにLibraryへも現行checkpointを保存する。個別の成果物の保存状態は検証記録と照合する。研究の有効な内容を削除して軽量化しない。

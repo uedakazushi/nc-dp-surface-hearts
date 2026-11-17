@@ -71,6 +71,81 @@ $q=\OO_E$なら両者が一次元となる．
 他の対象へのgluingを決定できないことによる．
 \end{proof}
 
+\begin{proposition}[相異なるDu Val点のExtの全次数計算]
+\label{prop:duval-offdiagonal-ext}
+$\overline S$の相異なるDu Val点$x_i\ne x_j$について，
+前命題と同じ$J_{i,q},J_{j,q}$を取る．
+任意の$q\in\Pic^0(E)$に対してdg複体のquasi-isomorphism
+\[
+ \boxed{\RHom_{\overline{\cD}_q}(J_{i,q},J_{j,q})
+  \simeq k[-1]}
+\]
+が成立する．特に
+\[
+ \dim_k\Ext^n_{\overline{\cD}_q}(J_{i,q},J_{j,q})
+ =\begin{cases}1&n=1,\\0&n\ne1.\end{cases}
+\]
+したがって異なる特異点のidealは高次数では直交するが，
+その間に一次元の$\Ext^1$が常に残る．
+\end{proposition}
+\begin{proof}
+$\overline S$は有理特異点を持つ有理射影曲面であり，
+$R\Gamma(\overline S,I_{x_j})=0$である．
+$0\to I_{x_i}\to\OO_{\overline S}\to k(x_i)\to0$に
+$\RHom_{\overline S}(-,I_{x_j})$を施すと
+\[
+ \RHom_{\overline S}(I_{x_i},I_{x_j})
+ \simeq \RHom_{\overline S}(k(x_i),I_{x_j})[1]
+\]
+を得る．$x_i\ne x_j$なので$I_{x_j}$は$x_i$の近傍で
+$\OO_{\overline S}$に等しい．Du Val点$x_i$の局所環は
+二次元Gorenstein局所環であり，局所双対性から
+\[
+ \RHom_{\overline S}(k(x_i),I_{x_j})
+ \simeq \RHom_{\mathcal O_{\overline S,x_i}}
+       (k(x_i),\mathcal O_{\overline S,x_i})
+ \simeq k[-2].
+\]
+$\overline{\cB}$の$\overline{\cD}_q$への完全忠実な包含により
+すべての$q$でこの計算が保たれる．
+ここでのquasi-isomorphismは自然な標準基底を指定しない．
+\end{proof}
+
+\begin{corollary}[非自明パラメータでの有限生成部分圏の分離]
+\label{cor:duval-local-splitting}
+$\overline S$が少なくとも一つのDu Val点を持つとし，
+$\mathcal J_q=\thick_{\overline{\cD}_q}
+ \{J_{1,q},\ldots,J_{r,q}\}$と置く．
+$q\not\simeq\OO_E$なら$\mathcal J_q$と
+$\thick\{\bar e\}\simeq\Perf(k)$は互いに両側直交し，
+\[
+ \boxed{\thick_{\overline{\cD}_q}
+  \{\bar e,J_{1,q},\ldots,J_{r,q}\}
+ \simeq \Perf(k)\oplus\mathcal J_q.}
+\]
+この同値は指定された生成対象を保つdg同値として得られる．
+$q=\OO_E$では$\RHom(J_{i,q},\bar e)\simeq
+R\Gamma(E,\OO_E)$が非零なので，
+指定した二部分圏の間にはこの直交分解がない．
+なお$r\ge2$なら前命題により$\mathcal J_q$の異なる生成対象の間には
+$\Ext^1=k$が残る．
+この直和は明示した\emph{有限個の生成対象が作る部分圏だけ}の分解であり，
+$\overline{\cD}_q$全体の分解でも，反標準orbit全体との直交性でもない．
+\end{corollary}
+\begin{proof}
+命題\ref{prop:duval-ideal-boundary-gluing}により，
+非自明な次数零線束$q$に対して，
+$\RHom(\bar e,J_{i,q})$と$\RHom(J_{i,q},\bar e)$は
+全$i$で零である．この両側直交性は
+shift，cone，有限直和，直和因子を取っても保たれるので，
+$\thick\{\bar e\}$と$\mathcal J_q$の間でも成立する．
+互いに直交する二つのthick部分圏のpretriangulated hullでは
+全ての二成分を結ぶconeが分裂し，冪等完備化も直和を保つ．
+$\bar e$のexceptionalityから第一成分は$\Perf(k)$である．
+自明な$q$での非直交性と相異なるideal間の$\Ext^1$は
+それぞれ前命題と命題\ref{prop:duval-offdiagonal-ext}による．
+\end{proof}
+
 \begin{theorem}[Du Val点の高次Extの一様性]\label{thm:duval-high-ext}
 $\overline S$の相異なる特異点を$x_1,\ldots,x_r$とし，
 各$x_i$のideal sheafを$I_i=I_{x_i}$と書く．

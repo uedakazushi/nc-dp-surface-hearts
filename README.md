@@ -49,4 +49,4 @@ bash scripts/check.sh tex
 
 texは2原稿を組版する。生成PDF・Synctex・ログはbuild/に置き、Git追跡しない。以前の確認は改稿4節の20ページ抜粋の組版と画像点検。今回のhearts-v33では主論文のネストした全inputを含む静的参照検査のみを追加し、全文・第2論文の組版と既存21検算の再実行は未実施。[検証状態](research/two_papers_validation.json) を参照する。
 
-[Cloud Codex手順](docs/CLOUD_CODEX.md)。mainへの通常保存、PR・GitHub Actions・force push不使用を基本とし、GitHub保存失敗時のみLibraryへ緊急保存する。研究の有効な内容を削除して軽量化しない。
+[Cloud Codex手順](docs/CLOUD_CODEX.md)。mainへの通常保存、PR・GitHub Actions・force push不使用を基本とし、GitHub mainを正本とし、研究区切りごとにLibraryへも現行checkpointを保存する。個別の成果物の保存状態は検証記録と照合する。研究の有効な内容を削除して軽量化しない。

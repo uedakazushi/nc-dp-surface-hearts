@@ -90,6 +90,25 @@ ordinary Extの低次数までLaurent代数だという主張ではない。
 Buchweitz, *Maximal Cohen–Macaulay Modules and Tate Cohomology*, AMS Mathematical Surveys and Monographs 262; Orlov, arXiv:math/0302304v2。
 コード `computations/verify_a1_stable_model.py` はB²、Hilbert–Burchの恒等式とPoincaré級数を検査し、MCM性・Exactnessや安定圏同値の証明は置き換えない。
 
+## 特異点idealに対する境界gluingの跳び
+
+Du Val点xは滑らかな反標準楕円境界Eから離れている。
+従ってI_xの導来restrictionはO_Eであり、I_xはRΓ(I_x)=0から
+Bbar=O_Sbar^perpに属する。Dbar_qにおける像J_x,qと付加した
+exceptional対象ebarについて、指定gluingの定義そのものから
+RHom(ebar,J_x,q)=0、RHom(J_x,q,ebar)=RΓ(E,q) が成り立つ。
+非自明な次数0線束qでは H^0=H^1=0、自明線束では H^0=H^1=k。
+ゆえに非自明qでこの二対象は両側直交し、古典点でだけExtが跳ぶ。
+本文の証明は `prop:duval-ideal-boundary-gluing` にある。
+
+これはqによらない同じJ_xの自己Extとは異なる、exceptional側に
+結び付くgluingの情報である。I_x一対象に対する両側直交から
+Dbar_qの直積分解、全てのBbarに対するgluingの消滅、
+非自明qでのDb(qgr R_q)同値を推論してはならない。
+先行する一般gluing理論の再適用であり新規性の網羅的確認は未了。
+次はA1壁で他のBbar生成対象も含めてこのgluing bimoduleを
+調べ、qgr側の像と積を比較する。
+
 ## 残課題
 
 一般qのDbar_q→Db(qgrR_q)の完全忠実性・本質的全射性。まずA1壁のI_xと生成対象の間の全Extと積を比較する。coherent有限性は解決したので、それを次の課題として反復しない。指定heartでのK_C,qの位置、壁上AS比較、局所・完成代数、複数壁、曲面族の相対化は別問題として残る。
@@ -102,4 +121,4 @@ Buchweitz, *Maximal Cohen–Macaulay Modules and Tate Cohomology*, AMS Mathemati
 - Dolgachev, *Classical Algebraic Geometry II*, author draft 2025-08-10, Theorem8.3.2と§8.3.2；Drinfeld math/0210114v7, §§1.2–1.3,1.6；Seidel–Thomas math/0001043v2, Propositions2.10,2.12–2.13。既存の零壁入力。
 - Donovan–Wemyss, *Noncommutative enhancements of contractions*, Adv.Math.344(2019),99–136。与えられた幾何学的収縮を出発点とする点を区別する。
 
-今回の新しい証明は内部点検済み。一次資料の関連定理・証明を読んだが、PDF screenshotはCache missで失敗したものがあり、全引用ページの画像確認とはしない。網羅的新規性、独立査読、形式化は未実施。改稿4節を20ページ抜粋としてLuaLaTeX組版し全ページのレイアウトを確認した。全文組版・既存21計算の再実行は今回未実施。再開時の全文検証は `bash scripts/check.sh all` と `bash scripts/check.sh tex`。
+今回追加した特異点idealとexceptional対象のgluingは定義からの直接計算として本文に証明を記載し内部点検した。以前の新しい証明も内部点検済み。一次資料の関連定理・証明を読んだが、PDF screenshotはCache missで失敗したものがあり、全引用ページの画像確認とはしない。網羅的新規性、独立査読、形式化は未実施。改稿4節を20ページ抜粋としてLuaLaTeX組版し全ページのレイアウトを確認した。全文組版・既存21計算の再実行は今回未実施。再開時の全文検証は `bash scripts/check.sh all` と `bash scripts/check.sh tex`。

@@ -146,6 +146,103 @@ $\bar e$のexceptionalityから第一成分は$\Perf(k)$である．
 それぞれ前命題と命題\ref{prop:duval-offdiagonal-ext}による．
 \end{proof}
 
+\begin{theorem}[特異点idealの反標準切断とpoint-ideal Hilbert関数]
+\label{thm:duval-point-hilbert}
+$S$，$E$，$q$を標準弱楕円gluingの仮定のもとに置き，
+$d=(-K_S)^2>0$とする．
+$\overline S$のDu Val点$x$に対して
+$J_{x,q}\in\overline{\cD}_q\simeq
+ (\cD_q/\mathcal N_q)^\natural$を上記のidealの像とする．
+誘導されたcoherent反標準関手の像
+\[
+ \mathcal I_{x,q}:=\overline\Phi_q(J_{x,q})
+\]
+は$\Db(\qgr R_q)$の標準heart $\qgr R_q$に属する非零対象である．
+また指定された反標準切断の次数付き右$R_q$加群を
+\[
+ M_{x,q}:=\bigoplus_{n\ge0}
+  \Hom_{\mathcal Q_q}(\bar e,\bar s_q^{\,n}J_{x,q})
+\]
+とすれば，$H^j\overline\Phi_q(J_{x,q})=
+ \pi N^j(J_{x,q})$の計算に用いる加群は
+$N^0=M_{x,q}$，$N^j=0$ $(j\ne0)$であり，
+\[
+ \boxed{\dim_k(M_{x,q})_n=\frac d2n(n+1)\qquad(n\ge0).}
+\]
+したがって
+\[
+ H_{M_{x,q}}(t)=\frac{dt}{(1-t)^3},\qquad
+ H_{R_q}(t)-H_{M_{x,q}}(t)=\frac1{1-t}.
+\]
+$q=\OO_E$では$\mathcal I_{x,q}\simeq I_x$である．
+非自明な$q$では，上のHilbert関数の一致だけから
+$M_{x,q}\subset R_q$という埋込みや
+$qgr$でのpoint-object商の存在を結論しない．
+\end{theorem}
+\begin{proof}
+定理\ref{thm:singular-gluing-target}で用いた
+$Rf_*:\cB/\mathcal N_f\overset{\sim}\longrightarrow
+\overline{\cB}$から，
+$G\in\cB$で$Rf_*G\simeq I_x$となるものを取る．
+$X=\iota_qG$を$J_{x,q}$のliftとする．
+$\RHom(e,X)=0$であり，$f$は$E$の近傍で同型，
+$x\notin E$なので
+\[
+ F_qX\simeq Li^*G\otimes q^{-1}\simeq q^{-1}.
+\]
+境界triangleを$s_q^nX$に適用して
+$\RHom(e,-)$を取ると，各$n\ge1$で
+\[
+ \RHom(e,s_q^{n-1}X)\longrightarrow
+ \RHom(e,s_q^nX)\longrightarrow
+ R\Gamma(E,\Psi_q^nq^{-1})\longrightarrow
+\]
+を得る．$\Psi_q^nq^{-1}$は次数$nd>0$の線束であるから，
+$H^1(E,\Psi_q^nq^{-1})=0$，
+$h^0(E,\Psi_q^nq^{-1})=nd$である．
+$n=0$の全Ext消滅を初期値に帰納すると，
+$n\ge0$で$\Ext^j(e,s_q^nX)=0$ $(j\ne0)$，
+$\dim\Hom(e,s_q^nX)=\sum_{m=1}^n md$となる．
+
+命題\ref{prop:zero-dg-quotient}によって
+反標準orbitと$\mathcal N_q$は両側直交するので，
+この計算は$J_{x,q}$のliftの選択に依存せず
+$\mathcal Q_q$での上の$M_{x,q}$を与える．
+定理\ref{thm:weak-coherent-sections}のcoherent関手と
+そのcohomology公式から$\mathcal I_{x,q}\in\qgr R_q$である．
+$M_{x,q}$は有限生成で，次元が二次的に増大するので
+$\pi M_{x,q}\ne0$である．
+
+一方，同じ境界triangleを$e$に適用すると
+$\dim(R_q)_n=1+\sum_{m=1}^n md$が得られ，
+表示したHilbert級数が従う．
+$q=\OO_E$での最後の同定は
+$\overline\Phi_q$が古典的な反標準収縮後の
+$\Db(\coh\overline S)$との同値となることによる．
+\end{proof}
+
+\begin{corollary}[非自明$q$における全比較の必要条件]
+\label{cor:duval-target-hom-obstruction}
+$q\not\simeq\OO_E$で
+$\overline\Phi_q:\overline{\cD}_q\to\Db(\qgr R_q)$
+が完全忠実なら，任意のDu Val点$x$について
+\[
+ \boxed{\RHom_{\Db(\qgr R_q)}
+   (\mathcal I_{x,q},\pi R_q)\simeq0.}
+\]
+従って$\Hom_{\qgr R_q}(\mathcal I_{x,q},\pi R_q)\ne0$
+となる例を一つ構成すれば，その$q$について
+$\overline\Phi_q$の完全忠実性は否定される．
+これは必要条件であって十分条件ではない．
+\end{corollary}
+\begin{proof}
+命題\ref{prop:duval-ideal-boundary-gluing}により
+$\RHom_{\overline{\cD}_q}(J_{x,q},\bar e)=
+R\Gamma(E,q)=0$である．
+$\overline\Phi_q(\bar e)=\pi R_q$なので，
+完全忠実ならこのHom複体の零性が標的へ移る．
+\end{proof}
+
 \begin{theorem}[Du Val点の高次Extの一様性]\label{thm:duval-high-ext}
 $\overline S$の相異なる特異点を$x_1,\ldots,x_r$とし，
 各$x_i$のideal sheafを$I_i=I_{x_i}$と書く．

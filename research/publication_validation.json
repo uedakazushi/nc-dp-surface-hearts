@@ -1,11 +1,11 @@
 {
   "date_JST": "2026-11-17",
   "main": "papers/dp-hearts.tex",
-  "main_version": "hearts-v34",
+  "main_version": "hearts-v35",
   "companion": "papers/dp-hearts2.tex",
   "companion_version": "hearts2-v1",
   "current_validation": "research/two_papers_validation.json",
-  "publication_status": "Research draft with proved coherent qgr ideal image/Hilbert and no-graded-inclusion results; not independently peer reviewed nor submitted.",
-  "current_typesetting_scope": "Standalone v34 Du Val ideal proof excerpt: 4 pages compiled with LuaLaTeX/latexmk and all pages layout inspected. Full main and companion builds NOT RUN. Recursive static references passed; see two_papers_validation.json.",
+  "publication_status": "Publication-oriented research draft: qgr Hom for singular-point ideal images now proved in all tails; positive Ext and whole comparison still open. Not independently refereed or submitted.",
+  "current_typesetting_scope": "Standalone v35 Du Val ideal proof excerpt 4 pages LuaLaTeX compiled, all 4 rendered pages inspected. Complete main and companion NOT compiled. Full recursive static label/reference and bibliography checks passed for both drivers; see two_papers_validation.json.",
   "instruction": "Use current_validation for actual checks and limits; do not transfer earlier three-driver build results to the current two-driver manuscripts."
 }

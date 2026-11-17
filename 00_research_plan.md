@@ -42,7 +42,7 @@ dim Hom(J_{i,q},J_{j,q}[n])=4δ_ij (n≥3) を満たす（`thm:duval-high-ext`�
 証明は評価triangle、局所Gorenstein双対性とTateの既知のhypersurface最小解消に基づく。
 
 これは構成した特異gluingの共通部分商・高次Extの結果であり、一般qのDb(qgr R_q)を同定する結果ではない。
-次の価値ある課題は、A1壁でこの高次ExtのYoneda積・2周期構造と、反標準qgr側の像を比較することである。次元だけではADE型を区別できない。
+反標準qgr側のcoherent対象の実在・Hilbert・境界は確定した。次の価値ある課題は、A1壁でその標的Hom・Yoneda積と古典側の2周期構造を比較することである。次元だけではADE型を区別できない。
 
 ## 反標準orbitの完全部分圏と残余特異性
 

@@ -1,6 +1,6 @@
 # Codex指示：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v11。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v33）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
+2026-11-17 / hearts-strategy-v12。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v34）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
 
 ## 現在の数学的状態
 
@@ -38,6 +38,21 @@ Dbar_qの全分解やDb(qgr R_q)への同値には延長しない。
 これはq不変な局所安定自己Ext代数とは別の情報。
 A1壁の残余比較でこの跳びを優先して利用する。
 
+## qgrに生き残る非perfect idealと最初の検証対象
+
+`four_hearts_duval_singularity.tex` に
+`prop:duval-offdiagonal-ext`（相異なるidealのRHom=k[-1]）、
+`cor:duval-local-splitting`（非自明qでの**生成部分圏のみ**の分解）、
+`thm:duval-point-hilbert`（`I_x,q=barPhi(J_x,q)∈qgr R`、
+`M_n=d n(n+1)/2`、`H_R−H_M=1/(1-t)`、g正則、
+境界`M/gM=q^-1`）、
+`prop:duval-no-graded-inclusion`（非自明qで`Hom_grR(M,R)=0`）、
+`cor:duval-target-hom-obstruction`（完全忠実なら
+`RHom_qgr(pi M,pi R)=0`）が証明付きである。
+**まだ** `Hom_qgr(pi M,pi R)` を決定したわけではない。
+次は具体的A1壁でMの生成元・関係、saturationおよび
+高次Yoneda積を計算する。Mを通常の右idealと仮定しない。
+
 ## 優先順位
 
 P0は公表に向けた新証明の独立点検、全文組版と参照検査。有限生成証明の正次数部分への単射、degree0補正、下有界graded Nakayama、dg moduleの構成を確認する。P1は一壁の非perfect対象の比較。P2は壁上AS実現とheart内の位置。P3は複数壁・相対化。
@@ -50,4 +65,4 @@ P0は公表に向けた新証明の独立点検、全文組版と参照検査。
 
 `bash scripts/check.sh tex` は2本を組版し、`bash scripts/check.sh all` は全verifyコードを実行する。以前の確認は改稿4節の20ページ抜粋。今回v33ではネストinputを含む静的ラベル検査を追加したのみ。主論文全文と第2論文の組版、既存21検算は今回未実施であり、以前の検証を今回の成功としない。詳しくは `research/two_papers_validation.json`。
 
-約15分または数学的区切りでcheckpointを作る。共有mainを確認し安全に統合して通常のfast-forwardで直接保存する。PR・GitHub Actions・force pushを使わない。PDF・ZIP・中間物・cacheは追跡しない。GitHub保存成功時はLibraryへ重複保存せず、失敗時のみ許可済みの緊急保存を使う。既存Library資料を無断削除しない。生成・保存・remote確認は別々に報告し、背景での自動継続を約束しない。
+約15分または数学的区切りでcheckpointを作る。共有mainを確認し安全に統合して通常のfast-forwardで直接保存する。PR・GitHub Actions・force pushを使わない。PDF・ZIP・中間物・cacheは追跡しない。GitHub mainを正本とし、研究区切りごとに現行の研究継続用bundleをLibraryへも保存する。保存実行と読み戻しの状態を正確に記録する。既存Library資料を無断削除しない。生成・保存・remote確認は別々に報告し、背景での自動継続を約束しない。

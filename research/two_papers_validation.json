@@ -55,7 +55,7 @@
     "scope": "Current v34 full main-paper and companion were not compiled in this pass; static analysis only. Environment has lualatex/latexmk but private GitHub checkout is unavailable from the sandbox.",
     "engine": "LuaLaTeX / LuaTeX-ja",
     "pages": null,
-    "status": "NOT RUN for v34",
+    "status": "Standalone v34 proof audit excerpt PASS (4 pages); current full main and companion builds NOT RUN",
     "pdf_sha256": null,
     "all_pages_layout_images_inspected": false,
     "undefined_internal_refs_or_citations": false,
@@ -63,7 +63,17 @@
     "missing_glyphs": false,
     "external_references": "References to results outside the excerpt are printed as * and explicitly explained, not assigned invented main-paper numbers.",
     "main_full_compile": "NOT RUN",
-    "companion_full_compile": "NOT RUN"
+    "companion_full_compile": "NOT RUN",
+    "standalone_v34": {
+      "document": "A locally authored standalone proof audit excerpt for v34 Du Val ideal results, not a byte-for-byte full-paper source checkout",
+      "engine": "LuaLaTeX via latexmk",
+      "status": "PASS",
+      "pages": 4,
+      "pdf_sha256": "92df8d93471a64d6f9d16c350f2d3d731e25e566a5148e4ffc26830eafff6e1f",
+      "inspected_layout": "All 4 pages inspected as rendered images; no clipping or overlap found",
+      "unresolved_refs_or_citations": false,
+      "overfull_or_underfull": false
+    }
   },
   "static_checks": {
     "modified_section_label_count": 36,
@@ -139,13 +149,14 @@
       ],
       "limitations": "Polynomial identities only; not a categorical or exactness proof."
     },
-    "new_hilbert_sanity_check": "Sympy checked H_R-H_M=1/(1-t) and d*n*(n+1)/2 coefficients for d=1,2,3,4,9. These arithmetic checks do not substitute for the boundary-triangle proof."
+    "new_hilbert_sanity_check": "Exact stdlib Python verify_hilbert.py: PASS for d=1,...,9 and n=0,...,15; algebraic Hilbert arithmetic only, not categorical proof."
   },
   "limitations": [
     "Existing ADE, AS, and finite-quotient proofs and all earlier bibliography were not exhaustively independently re-audited in this pass.",
     "No submission, public release, repository visibility change, or authorship decision was made.",
     "Full v34 main and companion LuaLaTeX builds and all-script reruns were not performed; current GitHub private sources accessible to the connector but not checked out inside the compilation container.",
-    "All AVdB primary bibliographic details were verified, but original theorem text was not independently page-checked in this pass."
+    "All AVdB primary bibliographic details were verified, but original theorem text was not independently page-checked in this pass.",
+    "The standalone 4-page proof excerpt reproduces the new argument but is not an exact copy of the complete main TeX file; successful typesetting does not verify the current full manuscript."
   ],
   "reproduce_full_repository": [
     "bash scripts/cloud_setup.sh",

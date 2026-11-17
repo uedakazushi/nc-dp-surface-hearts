@@ -1,6 +1,6 @@
 # 現在の評価と公表準備
 
-2026-11-17 / hearts-v33。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
+2026-11-17 / hearts-v34。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
 
 ## 中心的な価値
 
@@ -36,19 +36,33 @@ q=O_EではこれがPerf(Sbar)とD_sg(Sbar)を回復する。
 普通の高次Extの次元列から積と周期性へ進んだが、いずれもqに共通な古典側の局所模型である。
 Tate、Eisenbud、Buchweitz–Orlovが既知入力であり、独立査読や全面的な新規性確認は未了。
 
-## 特異点idealとexceptional対象の間のgluingの跳び
+## 特異点idealのcoherent qgr実現と局所比較
 
-`prop:duval-ideal-boundary-gluing` では、滑らかな楕円境界EがDu Val点xを避けることから
-`L i^*I_x=O_E` を使い、`RHom(bar e,J_x,q)=0` と
-`RHom(J_x,q,bar e)=RΓ(E,q)` を直接計算した。
-非自明な次数0線束qでは両側のExtが消え、自明なqでは次数0,1に1次元ずつ残る。
-既存の自己Extのq不変性と、exceptional対象へのgluingのq依存性を分ける補強である。
-証明は本文に記載し内部点検した。局所gluingから全圏の分解や
-非自明qのqgr導来同値を結論していない。新規性の網羅調査・独立査読は未了。
+主論文 `four_hearts_duval_singularity.tex` に証明済み：
+相異なるDu Val点のidealのRHomは全次数で`k[-1]`。
+指定gluingにおいて`RHom(ebar,J_x,q)=0`、
+`RHom(J_x,q,ebar)=RΓ(E,q)`である。
+非自明qでは有限個の指定生成対象のthick圏は
+`Perf(k)⊕thick{J_i}`と分解するが、
+Dbar_q全体が分解するわけではない。
+
+`I_x,q=barPhi(J_x,q)`は`qgr R_q`内の非零coherent対象で、
+その切断加群MのHilbert関数は`d n(n+1)/2`。
+中心元gはM上正則、境界M/gMは`q^{-1}`の切断加群。
+`H_R−H_M=1/(1-t)`だが、非自明qでは
+`Hom_grR(M,R)=0`なので点idealをそのまま模倣できない。
+`Hom_qgr(pi M,pi R)`の消滅は現段階では未証明。
+これが完全忠実性の具体的な最初の必要条件となる
+（`cor:duval-target-hom-obstruction`）。
+
+証明は境界triangle、標準弱gluingのcoherent性、
+BKSによる古典的局所化、楕円THCRの`qgr`同定と
+二次元Gorenstein局所双対性から内部で確認した。
+標的全圏の導来同値、形式化、網羅的新規性調査・独立査読はない。
 
 ## 今残る核心
 
-一般qの特異gluing Dbar_q と Db(qgrR_q) の自然比較は未完成。coherent関手の存在と全核だけでは完全忠実性・本質的全射性は得られない。非perfect対象の高次Extを扱う必要があり、A1壁の特異点ideal I_xが具体的な着手対象である。q=Oでは古典的局所化に帰着する。
+一般qの特異gluing Dbar_q と Db(qgrR_q) の自然比較は未完成。coherent関手の存在と全核だけでは完全忠実性・本質的全射性は得られない。非perfect対象の像I_x,qとHilbert・境界は構成済みである。次にA1壁でHom_qgr(pi M,pi R)、高次Extと周期Yoneda積を検証する。q=Oでは古典的局所化に帰着する。
 
 非genuineなDbar_qは全qで無限高次自己Extを持ち、properではない。この事実に合わせて本文のproperness仮定を滑らかなsourceに限定した。商のnoetherian heart、指定Rains heart内の収縮対象、壁上AS比較、相対収縮は別に調べる。
 

@@ -1,6 +1,6 @@
 # 最大共鳴・零指数壁・coherent収縮
 
-2026-11-17 / hearts-v34。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
+2026-11-17 / hearts-v35。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
 
 ## 最大共鳴の現在の知識
 
@@ -127,14 +127,31 @@ Bはdomainなので有限次元のgraded部分加群を含まず、
 よって`Hom_grR(M,R)=0`、point-idealと同じHilbert差を
 持つことから右idealへの埋込みを結論してはいけない。
 
-**残る決定的テスト**：
-完全忠実な`Dbar_q→Db(qgr R_q)`があれば、
-非自明qで`RHom_qgr(pi M,pi R)=0`が必要である。
-`Hom_gr(M,R)=0`はこの条件の証明ではない。
-局所cohomologyとtail/saturationにより`Hom_qgr`を求め、
-次に高次Yoneda積（特にA1完備局所`eta`）を比較する。
-`qgr B`での境界restrictionが`q^{-1}`という同定を
-計算の整合性検査に使う。
+**qgr Homの跳び（定理 `thm:duval-qgr-hom-vanishing`）**：
+以前は`Hom_gr(M,R)=0`から`Hom_qgr(πM,πR)=0`を
+推論してはいけないと留保した。現行原稿では
+Serre商のtail公式を用いて、この不足を解消した。
+任意のa≥0で`M_≥a`は有限生成で、`M_≥a/gM_≥a`は
+有限次元の差を除いて境界のq^{-1}と同じ。
+右側`R(-r)`は中心正則gにより有限次元submoduleを持たないため、
+`Hom_qgr(πM,πR(-r))=colim_a Hom_gr(M_≥a,R(-r))`。
+q非自明・r≥0（あるいはr≥1で任意q）なら
+`Hom_E(q^{-1}, Ψ^{-r}O_E)=0`。
+任意のtailからの写像`f:M_≥a→R(-r)`をgで剰余すると、
+像は有限次元B加群になり、B=R/gRはdomainなので零。
+したがってfはgで割れ、rを増やして反復すると
+`f(M_≥a)⊂∩_{N≥0}g^NR=0`。
+これにより非自明qで`Hom_qgr(πM,πR(-r))=0`（r≥0）。
+自明qではr=0に限り`Hom(I_x,O_Sbar)=k`。
+この計算は全tailについて完結しており、飽和性を無根拠に仮定していない。
+
+**今残る決定的テスト**：
+非自明qに対し`Ext^j_qgr(πM,πR)`（j≥1）の計算。
+`RHom_Dbar(J_x,ebar)=RΓ(E,q)=0`と比較する。
+より高い負twistも含めたCartier境界の導来adjunction、
+`M`の高次数での関係式・局所cohomology、
+完成A1の周期射ηとの両立性を調べる。
+Homが零であることと、正次数Ext・全比較の同値を混同しない。
 
 主要な既知機構：Rainsの標準gluingと中心元、Artin–Van den Berghの
 twisted homogeneous coordinate ringの`qgr`同定、
@@ -145,7 +162,7 @@ BKSの導来局所化。これら一般結果自体は既知。
 
 ## 残課題
 
-一般qのDbar_q→Db(qgrR_q)の完全忠実性・本質的全射性。A1壁のI_xのqgr像とHilbert・境界情報は既に得たので、次はHom_qgr(pi M,pi R)の計算、全Extと積の比較。coherent有限性は解決したので、それを次の課題として反復しない。指定heartでのK_C,qの位置、壁上AS比較、局所・完成代数、複数壁、曲面族の相対化は別問題として残る。
+一般qのDbar_q→Db(qgrR_q)の完全忠実性・本質的全射性。A1壁のI_xのqgr像・Hilbert・境界・qgrの次数零Homは既に得たので、次は正次数Extと積の比較。coherent有限性は解決したので、それを次の課題として反復しない。指定heartでのK_C,qの位置、壁上AS比較、局所・完成代数、複数壁、曲面族の相対化は別問題として残る。
 
 ## 一次資料と検証範囲
 

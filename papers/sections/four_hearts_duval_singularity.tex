@@ -279,6 +279,91 @@ $R$は非負次数付きで$\deg g=1$なので
 $\bigcap_{r>0}g^rR=0$である．以上より$\varphi=0$．
 \end{proof}
 
+\begin{theorem}[$qgr$での特異点idealのHom消滅とその跳び]
+\label{thm:duval-qgr-hom-vanishing}
+定理\ref{thm:duval-point-hilbert}の仮定と記号を用い，
+$\mathcal I_{x,q}=\pi M_{x,q}\in\qgr R_q$とする．
+\begin{enumerate}
+\item $q\not\simeq\OO_E$なら，任意の整数$r\ge0$について
+\[
+ \boxed{\Hom_{\qgr R_q}(\mathcal I_{x,q},\pi R_q(-r))=0.}
+\]
+\item $q=\OO_E$でも，$r\ge1$について上記Homは零である．
+一方$r=0$では
+\[
+ \Hom_{\qgr R_{\OO_E}}(\mathcal I_{x,\OO_E},\pi R_{\OO_E})
+ \simeq k.
+\]
+\end{enumerate}
+従って，指定された構造対象$\pi R_q$への次数零のHomは
+$q=\OO_E$でだけ一次元となる．この定理は$\Ext^j$ $(j>0)$
+の消滅や$\overline\Phi_q$の完全忠実性を主張しない．
+\end{theorem}
+\begin{proof}
+$R=R_q$, $M=M_{x,q}$, $B=R/gR$とする．
+$R$は右noetherianで$M$は有限生成なので，
+任意の$n\ge0$で切断加群$M_{\ge n}$も有限生成である．
+Serre商の射の標準的な表示\cite{AZ}から，
+$R(-r)$が有限次元の次数付き部分加群を持たないことを使うと
+\[
+ \Hom_{\qgr R}(\pi M,\pi R(-r))
+ \simeq\varinjlim_n\Hom_{\gr R}(M_{\ge n},R(-r)).
+ \tag{*}\label{eq:duval-qgr-tail-hom}
+\]
+ここで$R$に有限次元の部分加群がないのは，
+中心正則元$g$の任意の正冪による乗法が単射だからである．
+
+$a\ge0$，$r\ge0$を固定し，次数零の射
+$\varphi:M_{\ge a}\to R(-r)$を取る．
+$M$における$g$の正則性から
+\[
+ (M_{\ge a}/gM_{\ge a})\longrightarrow M/gM
+\]
+は高い内部次数で同型となる．その核と余核は有限次元なので，
+$\qgr B\simeq\coh E$において左辺は$q^{-1}$に対応する．
+一方，$B(-r)$は$\Psi_q^{-r}\OO_E$に対応する．
+$r>0$なら後者は負次数の線束であり，
+$r=0$でも$q\not\simeq\OO_E$なら非自明な次数零線束なので
+\[
+ \Hom_E(q^{-1},\Psi_q^{-r}\OO_E)=0
+\]
+である．従って$\varphi$の$g$による剰余は
+$\qgr B$で零となる．剰余像は有限生成の有限次元$B$加群だが，
+$B$は整楕円曲線のtwisted homogeneous coordinate ringで
+domainであるため，$B(-r)$は非零の有限次元次数付き
+部分加群を持たない．よって剰余射自身が零で，
+$\varphi$は$gR(-r)$へ因子化する．
+
+$g$が中心正則なので，$g$で一回割ると
+$M_{\ge a}\to R(-r-1)$という次数零の右加群射を得る．
+同じ議論を$r+1,r+2,\ldots$に繰り返すと，
+$\varphi(M_{\ge a})$は任意の$N>0$について$g^NR$に含まれる．
+$R$は非負次数付きなので$\bigcap_{N\ge0}g^NR=0$であり，
+$\varphi=0$となる．式\eqref{eq:duval-qgr-tail-hom}から
+所望の消滅を得る．この論証では次数$0$成分の補正が
+有限次元であることを明示的に使っている．
+
+$q=\OO_E$で$r=0$なら，古典的同定により
+$\mathcal I_{x,q}\simeq I_x$，$\pi R_q\simeq\OO_{\overline S}$である．
+$0\to I_x\to\OO_{\overline S}\to k(x)\to0$，
+$\Ext^1_{\overline S}(k(x),\OO_{\overline S})=0$と
+$H^0(\overline S,\OO_{\overline S})=k$を使うと
+$\Hom_{\overline S}(I_x,\OO_{\overline S})=k$となる．
+\end{proof}
+
+\begin{remark}[degree zeroと全導来Homの分離]
+\label{rem:duval-qgr-hom-not-rhom}
+非自明$q$で
+$\Hom_{\qgr R_q}(\mathcal I_{x,q},\pi R_q)=0$が
+成立することは，系\ref{cor:duval-target-hom-obstruction}の
+必要条件のうち次数零が満たされたことを意味する．
+残る問題は$\Ext^j_{\qgr R_q}(\mathcal I_{x,q},\pi R_q)$
+$(j\ge1)$を決定することである．
+特に$\gr$での射の消滅だけで$qgr$の射の消滅を
+推論したのではなく，式\eqref{eq:duval-qgr-tail-hom}の
+全tailについて因子化の反復を証明した．
+\end{remark}
+
 \begin{corollary}[非自明$q$における全比較の必要条件]
 \label{cor:duval-target-hom-obstruction}
 $q\not\simeq\OO_E$で

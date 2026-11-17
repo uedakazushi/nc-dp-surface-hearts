@@ -1,6 +1,6 @@
 # 研究方針：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v12。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v34）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
+2026-11-17 / hearts-strategy-v13。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v35）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
 
 ## 恒常的な研究原則と保存許可
 
@@ -69,49 +69,43 @@ M₂(k[η,η^{-1}])、deg η=1、非標準同型。
 既知入力はEisenbudのmatrix factorizationとBuchweitz–Orlovの安定MCM同値。これらの既知理論自体は新規成果ではない。
 入力と積の区別は `research/resonance_walls.md` も参照。
 
-## Du Val idealのcoherent qgr像と比較の第一障害
+## Du Val idealのqgr像とHomの跳び
 
-第1論文 `papers/sections/four_hearts_duval_singularity.tex` の次の結果は、
-`S` が滑らかな有理弱del Pezzo、`E∈|-K_S|` が滑らかな楕円境界、
-`x_i` が反標準模型 `Sbar` のDu Val点、`q∈Pic0(E)` が任意という
-**指定標準gluing** にのみ適用する。
+対象：標準弱楕円gluing（Sは滑らかな有理弱del Pezzo、E∈|-K_S|は滑らか、
+xは反標準模型SbarのDu Val点、q∈Pic0(E)）。現行主論文の
+`papers/sections/four_hearts_duval_singularity.tex` に、次を証明付きで収める。
 
 - `prop:duval-ideal-boundary-gluing`：
   `RHom(ebar,J_x,q)=0`、`RHom(J_x,q,ebar)=RΓ(E,q)`。
-  非自明 `q` では両側直交、`q=O_E` でだけ次数0,1に各1次元。
 - `prop:duval-offdiagonal-ext`：
-  `i≠j` なら `RHom(J_i,q,J_j,q)=k[-1]`。高次数直交であっても
-  互いの `Ext1` は非零。局所Gorenstein双対性と `RΓ(I_j)=0` から証明。
-- `cor:duval-local-splitting`：
-  非自明 `q` で `thick{ebar,J_1,...,J_r}=Perf(k)⊕thick{J_i}`。
-  **この有限生成部分圏に限った分解**で、Dbar_q全体を分解しない。
+  異なるDu Val点の間の`RHom(J_i,q,J_j,q)=k[-1]`。
+  `cor:duval-local-splitting`は非自明qで指定有限生成部分圏のみの直和分解。
 - `thm:duval-point-hilbert`：
-  `I_{x,q}=barPhi_q(J_x,q)` は `qgr R_q` の実在する非零coherent対象。
-  `M_n=Hom_Q(ebar,sbar^nJ_x,q)` は有限生成で高次cohomologyを持たず、
-  `dim M_n=d n(n+1)/2`、`H_R-H_M=1/(1-t)`、`d=K_S²`。
-  中心元 `g` は `M` に正則で、
-  `(M/gM)_n=H0(E,Psi_q^n q^{-1})`（n≥1）。
-  `qgr B(E,Psi_q)≃coh E` で境界は `q^{-1}`。
-  `q=O_E` では像は古典的ideal `I_x`。
-- `prop:duval-no-graded-inclusion`：
-  非自明 `q` では `Hom_grR(M,R)=0`。境界線束間のHom消滅、
-  楕円THCR `B` のdomain性、反復 `g` 可除性で証明する。
-  Hilbert差がpoint moduleのHilbert級数と一致しても、
-  `M` を通常の次数0右idealとしては埋め込めない。
+  `I_x,q=barPhi_q(J_x,q)=πM_x,q` は非零のcoherent qgr対象。
+  `M_n=d n(n+1)/2`、`H_R-H_M=1/(1-t)`。
+  中心元gはMに正則で、M/gMは境界上の線束q^{-1}を表す。
+- `prop:duval-no-graded-inclusion`：q≠O_Eなら
+  `Hom_grR(M_x,q,R_q)=0`。
+- **`thm:duval-qgr-hom-vanishing`（現行の中心前進）**：
+  q≠O_Eなら任意のr≥0で
+  `Hom_qgrR(πM_x,q,πR_q(-r))=0`。q=O_Eでもr≥1で零、
+  r=0だけ`Hom(I_x,O_Sbar)=k`となる。
+  Serre商のtail公式`Hom_qgr(πM,πR(-r))=colim_a Hom_gr(M_≥a,R(-r))`
+  （右側のR(-r)にfinite-dimensional submoduleなし）を用い、
+  **全tail**の境界がq^{-1}に一致することと、
+  `B=R/gR`のdomain性から射を無限回gで割って消す。
+  qgr Homをgraded Homだけから推論していない。
 - `cor:duval-target-hom-obstruction`：
-  全比較 `barPhi_q` が完全忠実なら、非自明 `q` では
-  `RHom_Db(qgrR)(I_x,q,pi R)=0` が必要。**grでのHom消滅は
-  qgrでのHom消滅を無条件には意味しない。**
-  この標的Homを実際に計算することが現在の最優先の数学的判定問題。
+  一般qの全比較の完全忠実性が要求する
+  `RHom_qgr(I_x,q,πR)=0`のうち、非自明qの
+  次数0は証明済み。標準heartの負次数も消える。
+  **未解決は正次数Ext^j（j≥1）** である。
 
-主要な証明依存は境界triangleと `thm:weak-coherent-sections`、
-古典的特異gluingの同定 `thm:singular-gluing-target`、
-orbitの商への完全忠実性 `prop:zero-dg-quotient`、
-楕円曲線のRiemann--Roch、局所Gorenstein双対性、
-twisted homogeneous coordinate ringの既知の`qgr`同定である。
-本文に証明を書き、その論理を内部点検した状態。
-網羅的新規性確認・独立査読・形式化・現行原稿全文組版は未実施。
-上の古典的な機構自体を新規成果と呼ばず、指定gluingへの組合せを評価する。
+依存：既存coherent反標準関手・商同定・中心gと境界triangle、
+Artin--ZhangのSerre商のHom公式、Artin--Van den Berghの
+楕円THCR/整曲線domain性、楕円線束のRiemann--Roch、
+Du Val局所Gorenstein双対性。既知入力と本研究で組み合わせた帰結を区別する。
+本文の証明を内部で論理点検し、独立査読・形式化・網羅的新規性調査は未了。
 
 ## 未解決の核心
 
@@ -125,18 +119,19 @@ twisted homogeneous coordinate ringの既知の`qgr`同定である。
 
 新しい有限生成証明で、degree0補正、正次数中心元、内部次数の下有界性、R作用の自然性、dg orbitから通常環への移行を独立点検する。BKSの仮定（射影性、fiber次元≤1、Rf_*O=O）を全弱del Pezzo収縮で確認する。序論はgenuine比較と弱収縮を二つの定理群として整理済み。次は主論文全体の組版・全参照を実行し、既存のADE比較とAS入力を公表前に独立監査する。
 
-### P1：一つのA1壁でqgr側の非perfect比較を閉じる
+### P1：A1壁で正次数Extと周期構造を比較する
 
-明示的零壁 `ex:zero-elliptic-wall` を固定する。
-`I_x,q∈qgr R_q` の存在、Hilbert級数、境界restriction、
-`Hom_grR(M,R)=0` は既に証明したので再度未解決に戻さない。
-第一の着手は、有限生成graded `M` の生成元・関係と
-`qgr R` におけるsaturation/局所cohomologyを計算して
-`Hom_qgr(I_x,q,pi R)` とそれに続く高次`Ext`・Yoneda積を決定すること。
-もし非零なら完全忠実性の反例、零なら`RHom`全次数へ進む。
-`M/gM` が境界の `q^{-1}` であることは検算条件。
-`M`が点idealとしてRに埋まるとの推測を前提にしない。
-さらに局所周期元`eta`とorbit生成対象との全`RHom`を比較する。
+明示的零壁 `ex:zero-elliptic-wall` を固定。
+特異点idealのcoherent qgr像・Hilbert関数・境界線束・
+全tail Hom（非自明qで零）は解決済みなので再計算しない。
+第一に`Ext^1_qgr(I_x,q,πR)`の計算から始め、
+次数2以上とYoneda積へ進む。
+`R/gR=B(E,Ψ)`とg正則性を用いたCartier境界の導来adjunction、
+graded Mの高次数での自由表示、局所cohomologyのexact sequenceを
+照合する。基底変更・shift規約・derived restrictionに必要な仮定を明示し、
+単にdegree0 Homを消したことからhigher Extの零性を推論しない。
+正次数Extが非零と判明すれば全比較の完全忠実性の反例となる。
+消えた場合は`RHom(J_x,J_y)`および局所A1周期元ηの積の比較を優先する。
 
 ### P2：壁上のAS実現と指定heart
 

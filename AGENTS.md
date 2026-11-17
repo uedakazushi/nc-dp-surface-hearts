@@ -1,6 +1,6 @@
 # Codex指示：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v10。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v32）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
+2026-11-17 / hearts-strategy-v11。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v33）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
 
 ## 現在の数学的状態
 
@@ -27,6 +27,17 @@ D_sg(A)内でgraded stable End(m)≅M₂(k[η±1])、degη=1を得た。
 この積模型を非自明qのDb(qgrR_q)で確認したのではない。
 次は対応する標的対象・ηの像・gluingを調べる。
 
+## Du Val点のgluingの追加計算
+
+`four_hearts_duval_singularity.tex` に命題 `prop:duval-ideal-boundary-gluing` がある。
+Du Val点xのideal sheafの像J_x,qについて
+`RHom(ebar,J_x,q)=0`, `RHom(J_x,q,ebar)=RΓ(E,q)`。
+非自明qでは両側直交し、q=O_Eでのみ0,1次に各1次元のExt。
+指定gluingの定義とE∩{x}=∅から直接証明している。
+Dbar_qの全分解やDb(qgr R_q)への同値には延長しない。
+これはq不変な局所安定自己Ext代数とは別の情報。
+A1壁の残余比較でこの跳びを優先して利用する。
+
 ## 優先順位
 
 P0は公表に向けた新証明の独立点検、全文組版と参照検査。有限生成証明の正次数部分への単射、degree0補正、下有界graded Nakayama、dg moduleの構成を確認する。P1は一壁の非perfect対象の比較。P2は壁上AS実現とheart内の位置。P3は複数壁・相対化。
@@ -37,6 +48,6 @@ P0は公表に向けた新証明の独立点検、全文組版と参照検査。
 
 日本語LuaLaTeX。重要な既知入力を一次資料で照合し、一般理論そのものを新規と呼ばない。証明記載・内部点検・計算・組版・独立査読を区別する。今回新しい一般定理の独立査読・機械形式化は未実施。
 
-`bash scripts/check.sh tex` は2本を組版し、`bash scripts/check.sh all` は全verifyコードを実行する。今回の確認は改稿4節の20ページ抜粋のみ。主論文全文と第2論文の組版、既存21検算は今回未実施であり、以前の検証を今回の成功としない。詳しくは `research/two_papers_validation.json`。
+`bash scripts/check.sh tex` は2本を組版し、`bash scripts/check.sh all` は全verifyコードを実行する。以前の確認は改稿4節の20ページ抜粋。今回v33ではネストinputを含む静的ラベル検査を追加したのみ。主論文全文と第2論文の組版、既存21検算は今回未実施であり、以前の検証を今回の成功としない。詳しくは `research/two_papers_validation.json`。
 
 約15分または数学的区切りでcheckpointを作る。共有mainを確認し安全に統合して通常のfast-forwardで直接保存する。PR・GitHub Actions・force pushを使わない。PDF・ZIP・中間物・cacheは追跡しない。GitHub保存成功時はLibraryへ重複保存せず、失敗時のみ許可済みの緊急保存を使う。既存Library資料を無断削除しない。生成・保存・remote確認は別々に報告し、背景での自動継続を約束しない。

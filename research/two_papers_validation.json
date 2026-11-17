@@ -38,7 +38,7 @@
     "Identification of the 1-periodic local stable Ext algebra with an object and Yoneda product in Db(qgr R_q) for nontrivial q."
   ],
   "source_files_git_blobs": {
-    "papers/dp-hearts.tex": "__LATEST_GITHUB_BLOB_SHOULD_BE_VERIFIED__",
+    "papers/dp-hearts.tex": "d533ea5609fca510c1aaacb55e73c42582a25243",
     "papers/sections/four_hearts_foundations.tex": "3233b6c71d797a91fa69db04dc76c86a93aa4468",
     "papers/sections/four_hearts_zero_walls.tex": "5a48fe9866399c68e698a7f90e126817a59824f0",
     "papers/sections/four_hearts_coherent_contraction.tex": "ec75c9795d83c0085369825b10ac1727c8de6555",
@@ -93,7 +93,7 @@
     "companion_unresolved_citations": [],
     "new_gluing_proposition_label": "prop:duval-ideal-boundary-gluing",
     "test_method": "Regex-based TeX static checks over all recursively included source files fetched from current GitHub main; not a TeX compile.",
-    "last_check_scope": "Static audit predates latest abstract-only edit (no new ref/cite/label macros); rerun to confirm current state."
+    "last_check_scope": "Rechecked all 19 recursive main source files after abstract polishing: 180 labels, 250 refs, 34 bibliography keys, 109 citation uses; no missing/duplicate labels or unresolved citations."
   },
   "computations": {
     "new_numerical_proof_claims": false,

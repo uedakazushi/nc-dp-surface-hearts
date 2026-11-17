@@ -6,6 +6,6 @@
   "companion_version": "hearts2-v1",
   "current_validation": "research/two_papers_validation.json",
   "publication_status": "Research draft with proved coherent qgr ideal image/Hilbert and no-graded-inclusion results; not independently peer reviewed nor submitted.",
-  "current_typesetting_scope": "Current v34 main (19 files) and companion (12 files) passed recursive static label/reference/bibliography checks. Full current LuaLaTeX builds and 21 numerical check scripts not rerun; see two_papers_validation.json.",
+  "current_typesetting_scope": "Standalone v34 Du Val ideal proof excerpt: 4 pages compiled with LuaLaTeX/latexmk and all pages layout inspected. Full main and companion builds NOT RUN. Recursive static references passed; see two_papers_validation.json.",
   "instruction": "Use current_validation for actual checks and limits; do not transfer earlier three-driver build results to the current two-driver manuscripts."
 }

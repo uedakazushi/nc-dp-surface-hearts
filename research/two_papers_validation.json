@@ -1,11 +1,11 @@
 {
   "date_JST": "2026-11-17",
-  "main_version": "hearts-v32",
+  "main_version": "hearts-v33",
   "companion_version": "hearts2-v1 (unchanged)",
-  "strategy_version": "hearts-strategy-v10",
-  "base_commit": "006deb44035cfc3023f36844058c2b6f0c4f1805",
+  "strategy_version": "hearts-strategy-v11",
+  "base_commit": "a6671dc6ccfa141dc41831964035729ac2c30595",
   "canonical_branch": "main",
-  "proof_status": "A1 local model proof written and internally checked; previously retained results not re-audited in this pass. No external peer review or formal proof.",
+  "proof_status": "New boundary-gluing proposition for singular-point ideals directly proved from gluing definition and elliptic degree-zero cohomology, internally checked. Earlier results retained without comprehensive independent re-audit. Not peer-reviewed or formalized.",
   "new_results_within_specified_setup": [
     "All q, smooth rational weak del Pezzo S and smooth anticanonical E: R_q is left and right noetherian; graded Ext modules of every object are finitely generated and cohomologically bounded.",
     "Construction of the natural coherent dg functor Phi_q:D_q to Db(qgr R_q), with kernel equal to the complete anticanonical orbit-null category and iota_q ker Rf_*.",
@@ -16,15 +16,16 @@
     "Natural coherent anticanonical functor is dg fully faithful on the thick orbit-generated category T_q, and yields T_q equivalent to P_q in Db(qgr R_q), for all q in standard weak elliptic gluing.",
     "For non-genuine S, T_q is strictly smaller than the singular dg quotient Q_q, and residual S_q=(Q_q/T_q)^natural is nonzero; at q=O_E it recovers D_sg(Sbar)^natural.",
     "At an A1 wall, complete local ring A=k[[u,v,w]]/(uv-w²), odd invariant module N has 1-periodic matrix factorization B=[[-w,-v],[u,w]], stable End(N)=k, and Ω²_A k=N⊕N.",
-    "In the completed local singularity category, stable graded End(m) is noncanonically M2(k[η,η^-1]) with degree η=1. This is not ordinary Yoneda Ext in the noncommutative qgr target."
+    "In the completed local singularity category, stable graded End(m) is noncanonically M2(k[η,η^-1]) with degree η=1. This is not ordinary Yoneda Ext in the noncommutative qgr target.",
+    "In the singular gluing, for the image J_{x,q} of a Du Val point ideal I_x and the added exceptional object ebar: RHom(ebar,J_{x,q})=0 and RHom(J_{x,q},ebar)=RΓ(E,q). This vanishes for q nontrivial in Pic0(E) and has one-dimensional H0 and H1 at q=O_E. No splitting or qgr equivalence inferred."
   ],
   "primary_inputs_checked": {
     "Rains": "2107.13540v2 section 4 equations (4.4)-(4.7), Proposition 5.1 and equation (5.3).",
     "Keeler": "math/9912051v2 Theorem 1.2(1),(2); covers both finite- and infinite-order translations.",
-    "BKS": "1801.08286v1 Theorem 2.14 and section 2F; projective map, geometric fibres of dimension at most one, Rf_*O=O.",
+    "BKS": "Bondal–Kapranov–Schechtman 1801.08286v1 Theorem 2.14, source PDF content and page screenshot inspected in this work; requires projectivity, geometric fibres dimension <=1, and Rf_*O=O.",
     "Orlov": "arXiv:math/0302304v2, D_sg=Db(coh)/Perf.",
     "Tate": "John Tate, Illinois J. Math. 1 (1957), 14-27, minimal resolution of complete intersections; corroborated by Stacks Project Tag 09PF and algebraic series calculation.",
-    "Rains_orbit": "Rains 2107.13540v2, Corollary 3.8, target orbit Ext and trace duality. Screenshot via web failed Cache miss; PDF text read.",
+    "Rains_orbit": "Rains 2107.13540v2 Corollary 3.8 and trace pairing proof; source PDF content and page screenshot inspected in this work.",
     "Stacks_generator": "Stacks Project Tag 0BQQ: negative twists of an ample line bundle generate D_QCoh, whose compact objects are Perf.",
     "Eisenbud": "D. Eisenbud, Trans. AMS 260 (1980), 35–64, matrix factorizations and periodic resolutions.",
     "Buchweitz": "Buchweitz, Maximal Cohen–Macaulay Modules and Tate Cohomology, AMS MSM vol. 262, stable MCM / singularity-category equivalence."
@@ -37,17 +38,18 @@
     "Identification of the 1-periodic local stable Ext algebra with an object and Yoneda product in Db(qgr R_q) for nontrivial q."
   ],
   "source_files_git_blobs": {
-    "papers/dp-hearts.tex": "fe613c5fbb7664facb5b81fbaaa4678a89379a85",
-    "papers/sections/four_hearts_foundations.tex": "16e57bba9ccfb42b398846dea0553796fa891f2b",
+    "papers/dp-hearts.tex": "bcc2ead425643200d60f891b2bf90981074e7c4c",
+    "papers/sections/four_hearts_foundations.tex": "3233b6c71d797a91fa69db04dc76c86a93aa4468",
     "papers/sections/four_hearts_zero_walls.tex": "5a48fe9866399c68e698a7f90e126817a59824f0",
-    "papers/sections/four_hearts_coherent_contraction.tex": "d9dafa4afd8b62cf628a4cd24252649dc0127de5"
+    "papers/sections/four_hearts_coherent_contraction.tex": "ec75c9795d83c0085369825b10ac1727c8de6555",
+    "papers/sections/four_hearts_duval_singularity.tex": "2c6628e6e70b6cdc70b4499a6692fea7057a519c"
   },
-  "local_and_github_source_blobs_match": true,
+  "local_and_github_source_blobs_match": null,
   "typesetting": {
-    "scope": "No v32 full main-paper or excerpt LuaLaTeX compile completed; previous v30 20-page excerpt and v31 static checks do not establish v32 compile.",
+    "scope": "No LuaLaTeX compile for current v33 main or current companion in this pass; earlier excerpts are not evidence of a v33 build.",
     "engine": "LuaLaTeX / LuaTeX-ja",
     "pages": null,
-    "status": "NOT RUN for v32",
+    "status": "NOT RUN for v33",
     "pdf_sha256": null,
     "all_pages_layout_images_inspected": false,
     "undefined_internal_refs_or_citations": false,
@@ -62,14 +64,14 @@
     "duplicate_labels_in_modified_sections": [],
     "unresolved_citation_keys_in_modified_sections": [],
     "external_main_reference_count_in_modified_sections": 26,
-    "all_main_recursive_sources_rechecked": false,
+    "all_main_recursive_sources_rechecked": true,
     "all_original_main_top_level_inputs_retained": true,
-    "main_total_label_count": 175,
+    "main_total_label_count": 180,
     "main_duplicate_labels": [],
     "main_unresolved_references": [],
     "main_unresolved_citations": [],
     "main_inputs_resolved": true,
-    "checked_against_staged_v31": true,
+    "checked_against_staged_v31": false,
     "a1_section_added": true,
     "a1_new_labels": [
       "sec:A1-matrix",
@@ -78,7 +80,19 @@
       "cor:A1-local-q-invariant"
     ],
     "a1_references_and_citation_keys_resolved": true,
-    "new_section_repro_script": "computations/verify_a1_stable_model.py"
+    "new_section_repro_script": "computations/verify_a1_stable_model.py",
+    "main_recursive_input_files": 19,
+    "main_ref_count": 250,
+    "main_bibliography_keys": 34,
+    "main_citation_usages": 109,
+    "companion_recursive_input_files": 12,
+    "companion_total_label_count": 81,
+    "companion_ref_count": 72,
+    "companion_unresolved_refs": [],
+    "companion_duplicate_labels": [],
+    "companion_unresolved_citations": [],
+    "new_gluing_proposition_label": "prop:duval-ideal-boundary-gluing",
+    "test_method": "Regex-based TeX static checks over all recursively included source files fetched from current GitHub main; not a TeX compile."
   },
   "computations": {
     "new_numerical_proof_claims": false,
@@ -115,8 +129,8 @@
   "limitations": [
     "Full-main and companion builds and all-script reruns remain to be performed in the complete repository checkout.",
     "Existing ADE, AS, and finite-quotient proofs and all earlier bibliography were not exhaustively independently re-audited in this pass.",
-    "Several web PDF screenshot calls failed with Cache miss; primary text was checked but not all cited source pages were visually inspected.",
-    "No submission, public release, repository visibility change, or authorship decision was made."
+    "No submission, public release, repository visibility change, or authorship decision was made.",
+    "No complete current v33 checkout in the execution container: GitHub was accessible through the connected account only, so no full LuaLaTeX build or Python computation reruns were possible in this pass."
   ],
   "reproduce_full_repository": [
     "bash scripts/cloud_setup.sh",

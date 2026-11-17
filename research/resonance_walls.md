@@ -1,6 +1,6 @@
 # 最大共鳴・零指数壁・coherent収縮
 
-2026-11-17 / hearts-v31。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
+2026-11-17 / hearts-v32。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
 
 ## 最大共鳴の現在の知識
 
@@ -71,6 +71,24 @@ Nqはs不変でTqと左右直交なので、Tqは収縮商Qqにも完全忠実�
 q=O_EではQq=Db(coh Sbar)、Tq=Perf(Sbar)、Sq=D_sg(Sbar)^natural。
 これは全qでSqが同じだという定理ではない。また残余商の比較だけでDbar_qとDb(qgr Rq)の全同値が従うとも主張しない。
 残るのは非perfect対象とorbitとのgluingを含む、非自明qでの全自然比較。
+
+## A1完備局所環の積まで含む模型
+
+A=k[[u,v,w]]/(uv−w²)=k[[s,t]]^±、N=k[[s,t]]_odd を取る。
+B=[[-w,-v],[u,w]] は B²=(w²−uv)I で、coker B=N、ΩN=N。
+N≅(u,w)=I はrank-one reflexive、End_A I=A、I^{-1}=I/u、trace II^{-1}=m。
+従って underlineEnd_A N=k。
+Hilbert–Burchの二列 (-t,0,s),(0,-s,t) は S=k[[s,t]] 上の (s²,t²,st) のsyzygyを生成し、
+符号反転の不変部分を取れば Ω²_A k≅N⊕N。
+Buchweitz–Orlovにより D_sg(A) で m≅N²、shift1でNに戻る可逆ηを選べる。
+次数付き安定End代数は M₂(k[η,η^{-1}]) (degη=1)。
+この同型は非標準的だが次数付き積を与える。各n≥3の普通のExt次元4と矛盾せず、
+ordinary Extの低次数までLaurent代数だという主張ではない。
+非可換gluingの全qに共通する古典側の局所完備化を計算しただけで、qgr側の対象と周期射ηの像はまだ分からない。
+
+一次資料：Eisenbud, *Homological algebra on a complete intersection, with an application to group representations*, Trans. AMS 260 (1980), 35–64;
+Buchweitz, *Maximal Cohen–Macaulay Modules and Tate Cohomology*, AMS Mathematical Surveys and Monographs 262; Orlov, arXiv:math/0302304v2。
+コード `computations/verify_a1_stable_model.py` はB²、Hilbert–Burchの恒等式とPoincaré級数を検査し、MCM性・Exactnessや安定圏同値の証明は置き換えない。
 
 ## 残課題
 

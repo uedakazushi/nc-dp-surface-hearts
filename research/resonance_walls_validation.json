@@ -1,13 +1,14 @@
 {
   "date_JST": "2026-11-17",
-  "main_version": "hearts-v31",
+  "main_version": "hearts-v32",
   "current_validation": "research/two_papers_validation.json",
   "density_and_zero_wall_proofs": "Retained in the main paper.",
   "coherent_finiteness": "Proved for the specified standard weak elliptic gluing for every q; no extra finite-generation and boundedness assumptions remain in that setting.",
   "quotient_description": "Identified as the gluing over the classical singular anticanonical model using BKS Theorem 2.14.",
   "remaining_qgr_comparison": "Full faithfulness and essential surjectivity of the induced functor remain unproved for general nontrivial q.",
   "numerical_checks_this_pass": "Existing density/zero-wall scripts unchanged and not rerun.",
-  "proof_verification": "Text proof and static checks only for new v31 section; earlier 20-page v30 excerpt succeeded, not a v31 compile.",
+  "proof_verification": "New local proof internally audited, SymPy identities verified, no full LuaLaTeX compile this pass.",
   "high_ext_result": "Bbar/(Bbar∩Perf Sbar)≃D_sg(Sbar); for all q and n≥3 the images of ideal sheaves at Du Val points have Ext dimensions 4 delta_ij. Tate complete intersection resolution is known input.",
-  "orbit_core_result": "For all q, Phi_q on thick{s^n e} is a dg equivalence onto thick{πR_q(n)}; for non-genuine S the residual quotient is nonzero; at q=O_E it equals D_sg(Sbar)^natural."
+  "orbit_core_result": "For all q, Phi_q on thick{s^n e} is a dg equivalence onto thick{πR_q(n)}; for non-genuine S the residual quotient is nonzero; at q=O_E it equals D_sg(Sbar)^natural.",
+  "A1_stable_model": "Local A1 complete ring stable graded End of ideal m is noncanonically M2(k[η,η^-1]), |η|=1; exact syzygy and matrix factorization in new section. qgr target unverified."
 }

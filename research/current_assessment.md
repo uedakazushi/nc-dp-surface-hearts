@@ -1,6 +1,6 @@
 # 現在の評価と公表準備
 
-2026-11-17 / hearts-v31。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
+2026-11-17 / hearts-v32。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
 
 ## 中心的な価値
 
@@ -27,6 +27,14 @@ Rains 2022 Corollary 3.8のtarget Extと境界traceの自然性を既知入力�
 q=O_EではこれがPerf(Sbar)とD_sg(Sbar)を回復する。
 結論は非自明qの全Db(qgrR_q)同値ではなく、むしろ不明部分がorbitの外側に残ることを示す。
 本文の証明は追加済みで、全行の独立査読・網羅的新規性確認は未実施。
+
+## A1壁の新たな局所到達点
+
+`four_hearts_a1_stable_model.tex` で A1を符号反転不変環として表示し、
+一周期行列因子化、第二syzygyのN²分解、rank-one MCMの安定End=kを直接証明した。
+局所特異性圏での特異点idealのgraded stable EndはM₂(k[η±1]) (degη=1)。
+普通の高次Extの次元列から積と周期性へ進んだが、いずれもqに共通な古典側の局所模型である。
+Tate、Eisenbud、Buchweitz–Orlovが既知入力であり、独立査読や全面的な新規性確認は未了。
 
 ## 今残る核心
 

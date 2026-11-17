@@ -1,6 +1,6 @@
 # Codex指示：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v9。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v31）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
+2026-11-17 / hearts-strategy-v10。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v32）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
 
 ## 現在の数学的状態
 
@@ -18,6 +18,14 @@
 `thm:residual-singularity` は非genuineならTq⊊Qq、残余Sq≠0、q=O_EではSq=D_sg(Sbar)^naturalとする。
 非自明qについてQq≅Db(qgr Rq)は依然未解決。完全忠実性をorbit上で示したことと、全圏の同値は混同しない。
 次は残余商の像、局所高次Yoneda積、orbitとのgluingをA1壁で比較する。
+
+## 一つのA1壁で解決した局所模型
+
+`four_hearts_a1_stable_model.tex` の一周期matrix B=[[-w,-v],[u,w]]、Ω²_Ak≅N²、underlineEnd_A N=kから、
+D_sg(A)内でgraded stable End(m)≅M₂(k[η±1])、degη=1を得た。
+通常のExtと完備局所特異性圏への像の安定Endは別物である。
+この積模型を非自明qのDb(qgrR_q)で確認したのではない。
+次は対応する標的対象・ηの像・gluingを調べる。
 
 ## 優先順位
 

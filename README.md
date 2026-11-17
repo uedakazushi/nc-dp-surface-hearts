@@ -1,10 +1,10 @@
 # 非可換del Pezzo曲面の反標準heartと根圏
 
-2026-11-17 / hearts-strategy-v9。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
+2026-11-17 / hearts-strategy-v10。GitHub mainを正本とする。最初に [研究方針](00_research_plan.md) を読む。
 
 ## 現行の二論文
 
-**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v31）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
+**[dp-hearts.tex](papers/dp-hearts.tex)**（hearts-v32）は主論文。Rains/VdB/AS/反標準heartの指定比較、HRS/Euler選択、全ADE根圏と普遍アフィン有限商、theta係数と六点復元、最大共鳴稠密性を扱う。標準弱楕円gluingでは、零指数orbit核に加え、coherent反標準関手の有限生成性・有界性を証明し、dg商を古典的特異モデル上のgluingとして記述する。
 
 **[dp-hearts2.tex](papers/dp-hearts2.tex)**（hearts2-v1）は補完論文。符号別Ext・混合A2の精密計算・ADE zigzag形式変形、cubic cornerの十一条件、一様Hilbert関数、162次元平坦族と計算証明を保持する。
 
@@ -21,6 +21,13 @@
 `thick_{Dq}{s^ne} ≃ thick_{Db(qgr Rq)}{πRq(n)}`。
 ただし零指数壁ではその部分圏は収縮後の全圏を生成しない。
 残余商 `(Qq/thick orbit)^natural` は非零で、古典点q=O_EではOrlovの特異性圏に一致する。非自明qの全圏比較は未解決。
+
+## A1根壁の具体的局所模型
+
+主論文はさらに、A1完備局所環の一周期行列因子化を用いて
+`D_sg(k[[u,v,w]]/(uv−w²))` 内の特異点idealの安定自己準同型代数を
+`M₂(k[η,η⁻¹])`, `deg η=1` と同定する。
+前回の「高次Ext次元4」を積と周期性へ強めるもの。ただし非自明qの反標準qgr側の同定は未解決。
 
 ## 再開・再現
 

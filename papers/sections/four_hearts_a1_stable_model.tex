@@ -1,0 +1,143 @@
+\section{単一$A_1$根壁の行列因子化と安定化したExt積}\label{sec:A1-matrix}
+本節は前節までの標準弱楕円gluingのうち，反標準模型
+$\overline S$がちょうど一つの$A_1$特異点$x$を持つ場合を扱う．
+特異点を通らない滑らかな楕円境界$E$と$q\in\Pic^0(E)$は固定する．
+\emph{ここでは$\Db(\qgr R_q)$の局所環を構成するのではなく}，
+全$q$に共通な$\overline{\cB}\subset\overline{\cD}_q$の対象を
+古典的な特異点で完備化して計算する．
+
+\subsection{一周期的なrank-one加群}
+\begin{lemma}[明示的行列因子化]\label{lem:A1-periodic-module}
+$k=\mathbb C$，
+\[
+ A=k[[u,v,w]]/(uv-w^2)
+  \simeq k[[s,t]]^{\{\pm1\}},
+ \qquad u=s^2,\quad v=t^2,\quad w=st
+\]
+と置く．符号反転$s,t\mapsto-s,-t$に対する奇部分
+$N=k[[s,t]]_{\rm odd}=As+At$はrank-oneの非自由MCM $A$加群で，
+\[
+ B=\begin{pmatrix}-w&-v\\ u&w\end{pmatrix},
+ \qquad B^2=(w^2-uv)I_2
+\]
+に対して$N\simeq\operatorname{coker}(B:A^2\to A^2)$である．
+従って
+\[
+ \cdots\xrightarrow{B}A^2\xrightarrow{B}A^2
+ \xrightarrow{B}A^2\longrightarrow N\longrightarrow0
+\]
+は最小自由解消で，$\Omega_A N\simeq N$となる．
+さらに
+\[
+ \underline{\End}_A(N)
+ :=\End_A(N)/\{\text{自由加群を経由する写像}\}\simeq k.
+\]
+\end{lemma}
+\begin{proof}
+$k[[s,t]]$の偶部分と奇部分の分解から$N$は有限生成で，
+$N$は正則環$k[[s,t]]$の$A$-直和因子なので深さ2のMCM加群である．
+$A^2\to N$，$(a,b)\mapsto as+bt$の関係は
+$(-w,u)$と$(-v,w)$で生成される．
+実際$as+bt=0$なら，正則局所環$k[[s,t]]$上で
+$(a,b)=(th,-sh)$，$h$は奇部分に属し，
+$h=s\alpha+t\beta$（$\alpha,\beta\in A$）と書ける．
+これが表示行列$B$を与える．
+$B^2=(w^2-uv)I_2$は直接の行列積であり，
+hypersurface上のmatrix factorizationの完全性から
+表示した一周期的自由解消を得る\cite{EisenbudMF}．
+
+$N$に$s$を掛けると$A$のfractional ideal
+$I=(u,w)$に同型となる．$A$は正規なので，
+rank-one反射的idealの自己準同型環は$(I:I)=A$である．
+また
+$I^{-1}=(u,w)/u$なので，rank-one加群$N$から自由加群を経由する写像の
+$\End_A(N)=A$における像はtrace ideal
+\[
+ II^{-1}=(u,w)\,(u,w)/u=(u,v,w)=\mathfrak m_A.
+\]
+従って安定自己準同型環は$A/\mathfrak m_A=k$となる．
+\end{proof}
+
+\begin{proposition}[剰余体の第二syzygyと安定自己準同型代数]
+\label{prop:A1-stable-end}
+$k=A/\mathfrak m_A$に対して
+\[
+ \boxed{\Omega_A^2(k)\simeq N^{\oplus2}}
+\]
+が成り立つ．したがって$A$の特異性圏では
+$\mathfrak m_A\simeq N^{\oplus2}$（非標準的な同型）があり，
+$\eta\in\Hom_{D_{\rm sg}(A)}(N,N[1])$をshiftとの可逆同型から選ぶと
+\[
+\boxed{
+ \bigoplus_{n\in\mathbb Z}
+ \Hom_{D_{\rm sg}(A)}(\mathfrak m_A,\mathfrak m_A[n])
+ \ \simeq\ M_2\bigl(k[\eta,\eta^{-1}]\bigr),
+ \qquad\deg\eta=1
+}
+\]
+が次数付き代数として成り立つ（非標準的同型）．
+特に安定化した自己Extは全整数次数で4次元であり，
+積を含めた一周期性を持つ．
+\end{proposition}
+\begin{proof}
+$\Omega_A^2(k)$は$A^3\xrightarrow{(u,v,w)}A$のkernelである．
+$S=k[[s,t]]$上で$(s^2,t^2,st)$のHilbert--Burch表示を
+\[
+ 0\longrightarrow S^2
+ \xrightarrow{
+ \begin{pmatrix}-t&0\\0&-s\\s&t\end{pmatrix}}
+ S^3\xrightarrow{(s^2,t^2,st)} (s,t)^2
+ \longrightarrow0
+\]
+と書く．各列がsyzygyであり，$(s,t)^2$は高さ2の三生成idealなので，
+この二列が全syzygyを生成する（Hilbert--Burchの初等的な場合）．
+符号反転群の不変部分を取る操作は標数0でexactである．
+上の二列は奇なので，$S^3$中の不変syzygyを得るには
+係数が奇である必要がある．従って
+\[
+\ker(A^3\xrightarrow{(u,v,w)}A)
+ \simeq S_{\rm odd}^{\oplus2}=N^{\oplus2}.
+\]
+
+$D_{\rm sg}(A)=\Db(\operatorname{mod}_{\rm fg}A)/\Perf(A)$では
+自由加群が零なので，短完全列によるtriangleから
+$\Omega^2 k\simeq k[-2]$，$\mathfrak m_A=\Omega k\simeq k[-1]$である．
+補題\ref{lem:A1-periodic-module}より
+$\Omega N\simeq N$，すなわち$N[1]\simeq N$なので，
+$\mathfrak m_A\simeq N^{\oplus2}$となる．
+Gorenstein局所環上のBuchweitz--Orlovの同値により，
+$N$の特異性圏内の次数0自己準同型は
+前補題の安定自己準同型環$k$に一致する
+\cite{BuchweitzMCM,OrlovSingularity}．
+$N[1]\simeq N$の可逆射$\eta$を一つ選べば，
+全整数次数の自己準同型は$\eta^n$の一つのスカラー倍であり，
+合成はLaurent多項式の積になる．二つのコピーを取って主張を得る．
+\end{proof}
+
+\begin{corollary}[$q$に依存しない局所積模型]\label{cor:A1-local-q-invariant}
+$\overline{\cB}\subset\overline{\cD}_q$の特異点ideal sheaf
+$I_x$の像$J_{x,q}$を，局所完備化して
+$D_{\rm sg}(\widehat{\mathcal O}_{\overline S,x})$へ送ると，
+その像の次数付き安定自己準同型代数は
+\[
+ M_2\bigl(k[\eta,\eta^{-1}]\bigr),\qquad\deg\eta=1
+\]
+であり，$q$に依存しない．
+\end{corollary}
+\begin{proof}
+$I_x$の完備化は$\mathfrak m_A$であり，
+$\overline{\cB}$の完全忠実な包含は全$q$で共通である．
+前命題を適用すればよい．
+\end{proof}
+
+\begin{remark}[ordinary Ext，安定化，非可換標的の区別]
+定理\ref{thm:duval-high-ext}の
+$\Ext^n_{\overline{\cD}_q}(J_{x,q},J_{x,q})$は$n\ge3$で4次元である．
+本節のLaurent代数の計算は\emph{局所完備化後にperfect複体を零とした}
+$D_{\rm sg}(A)$の自己準同型の\emph{積}に関する計算であり，
+普通のExtの全低次数を含むYoneda代数がLaurent代数だという主張ではない．
+また$q\ne\OO_E$の$D^b(\qgr R_q)$に対応する対象や積を
+この計算だけから同定したことにはならない．
+非自明$q$の自然関手の完全忠実性・本質的全射性は依然として未解決であり，
+次は$A_1$局所模型の周期射$\eta$が標的$qgr$側にどのように実現されるかを調べる．
+\end{remark}

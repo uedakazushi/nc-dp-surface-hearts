@@ -1,11 +1,11 @@
 {
   "date_JST": "2026-11-17",
   "main": "papers/dp-hearts.tex",
-  "main_version": "hearts-v31",
+  "main_version": "hearts-v32",
   "companion": "papers/dp-hearts2.tex",
   "companion_version": "hearts2-v1",
   "current_validation": "research/two_papers_validation.json",
   "publication_status": "Research draft with orbit-core equivalence and residual singularity results; not yet independently peer reviewed or submitted.",
-  "current_typesetting_scope": "Prior 20-page v30 excerpt; new v31 orbit-core section and both full drivers not typeset.",
+  "current_typesetting_scope": "Not yet compiled in v32. No new PDF claimed. New local A1 section added with symbolic checks.",
   "instruction": "Use current_validation for actual checks and limits; do not transfer earlier three-driver build results to the current two-driver manuscripts."
 }

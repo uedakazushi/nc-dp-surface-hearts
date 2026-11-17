@@ -1,11 +1,11 @@
 {
   "date_JST": "2026-11-17",
-  "main_version": "hearts-v31",
+  "main_version": "hearts-v32",
   "companion_version": "hearts2-v1 (unchanged)",
-  "strategy_version": "hearts-strategy-v9",
-  "base_commit": "4d50f17396d5c9edcb39b85d83b6256adfa757ef",
+  "strategy_version": "hearts-strategy-v10",
+  "base_commit": "006deb44035cfc3023f36844058c2b6f0c4f1805",
   "canonical_branch": "main",
-  "proof_status": "New orbit-core restriction and residual-singularity proofs written, checked for logical dependencies; no independent peer-review or formal verification.",
+  "proof_status": "A1 local model proof written and internally checked; previously retained results not re-audited in this pass. No external peer review or formal proof.",
   "new_results_within_specified_setup": [
     "All q, smooth rational weak del Pezzo S and smooth anticanonical E: R_q is left and right noetherian; graded Ext modules of every object are finitely generated and cohomologically bounded.",
     "Construction of the natural coherent dg functor Phi_q:D_q to Db(qgr R_q), with kernel equal to the complete anticanonical orbit-null category and iota_q ker Rf_*.",
@@ -14,7 +14,9 @@
     "For all q, the common Bbar=O_(Sbar)^perp has quotient Bbar/(Bbar∩Perf Sbar) equivalent to Orlov's D_sg(Sbar), by the evaluation projection.",
     "For singular Du Val points xi, images Ji,q of ideal sheaves satisfy dim Hom(Ji,q,Jj,q[n]) = 4 delta_ij for n>=3, for every q.",
     "Natural coherent anticanonical functor is dg fully faithful on the thick orbit-generated category T_q, and yields T_q equivalent to P_q in Db(qgr R_q), for all q in standard weak elliptic gluing.",
-    "For non-genuine S, T_q is strictly smaller than the singular dg quotient Q_q, and residual S_q=(Q_q/T_q)^natural is nonzero; at q=O_E it recovers D_sg(Sbar)^natural."
+    "For non-genuine S, T_q is strictly smaller than the singular dg quotient Q_q, and residual S_q=(Q_q/T_q)^natural is nonzero; at q=O_E it recovers D_sg(Sbar)^natural.",
+    "At an A1 wall, complete local ring A=k[[u,v,w]]/(uv-w²), odd invariant module N has 1-periodic matrix factorization B=[[-w,-v],[u,w]], stable End(N)=k, and Ω²_A k=N⊕N.",
+    "In the completed local singularity category, stable graded End(m) is noncanonically M2(k[η,η^-1]) with degree η=1. This is not ordinary Yoneda Ext in the noncommutative qgr target."
   ],
   "primary_inputs_checked": {
     "Rains": "2107.13540v2 section 4 equations (4.4)-(4.7), Proposition 5.1 and equation (5.3).",
@@ -23,13 +25,16 @@
     "Orlov": "arXiv:math/0302304v2, D_sg=Db(coh)/Perf.",
     "Tate": "John Tate, Illinois J. Math. 1 (1957), 14-27, minimal resolution of complete intersections; corroborated by Stacks Project Tag 09PF and algebraic series calculation.",
     "Rains_orbit": "Rains 2107.13540v2, Corollary 3.8, target orbit Ext and trace duality. Screenshot via web failed Cache miss; PDF text read.",
-    "Stacks_generator": "Stacks Project Tag 0BQQ: negative twists of an ample line bundle generate D_QCoh, whose compact objects are Perf."
+    "Stacks_generator": "Stacks Project Tag 0BQQ: negative twists of an ample line bundle generate D_QCoh, whose compact objects are Perf.",
+    "Eisenbud": "D. Eisenbud, Trans. AMS 260 (1980), 35–64, matrix factorizations and periodic resolutions.",
+    "Buchweitz": "Buchweitz, Maximal Cohen–Macaulay Modules and Tate Cohomology, AMS MSM vol. 262, stable MCM / singularity-category equivalence."
   },
   "not_proved": [
     "For general nontrivial q, the induced singular-gluing functor to Db(qgr R_q) is fully faithful and essentially surjective.",
     "Wall AS comparison, placement of contraction objects in specified hearts, local completed algebra, and relative descent.",
     "The common-component singularity quotient does not imply an intrinsic singularity-category identification for the entire noncommutative gluing or any equivalence with Db(qgr R_q).",
-    "For nontrivial q, the residual comparison S_q to Db(qgr R_q)/P_q is an equivalence, or that equivalence of residuals suffices without gluing compatibilities."
+    "For nontrivial q, the residual comparison S_q to Db(qgr R_q)/P_q is an equivalence, or that equivalence of residuals suffices without gluing compatibilities.",
+    "Identification of the 1-periodic local stable Ext algebra with an object and Yoneda product in Db(qgr R_q) for nontrivial q."
   ],
   "source_files_git_blobs": {
     "papers/dp-hearts.tex": "fe613c5fbb7664facb5b81fbaaa4678a89379a85",
@@ -39,10 +44,10 @@
   },
   "local_and_github_source_blobs_match": true,
   "typesetting": {
-    "scope": "Previous 20-page v30 excerpt was typeset; newly added orbit-core section has not yet been typeset in this pass.",
+    "scope": "No v32 full main-paper or excerpt LuaLaTeX compile completed; previous v30 20-page excerpt and v31 static checks do not establish v32 compile.",
     "engine": "LuaLaTeX / LuaTeX-ja",
     "pages": null,
-    "status": "NOT RUN for v31",
+    "status": "NOT RUN for v32",
     "pdf_sha256": null,
     "all_pages_layout_images_inspected": false,
     "undefined_internal_refs_or_citations": false,
@@ -64,7 +69,16 @@
     "main_unresolved_references": [],
     "main_unresolved_citations": [],
     "main_inputs_resolved": true,
-    "checked_against_staged_v31": true
+    "checked_against_staged_v31": true,
+    "a1_section_added": true,
+    "a1_new_labels": [
+      "sec:A1-matrix",
+      "lem:A1-periodic-module",
+      "prop:A1-stable-end",
+      "cor:A1-local-q-invariant"
+    ],
+    "a1_references_and_citation_keys_resolved": true,
+    "new_section_repro_script": "computations/verify_a1_stable_model.py"
   },
   "computations": {
     "new_numerical_proof_claims": false,
@@ -80,7 +94,23 @@
       4,
       4,
       4
-    ]
+    ],
+    "a1_polynomial_check": {
+      "status": "PASS (local SymPy)",
+      "B_squared": "(w²−uv)I₂",
+      "Hilbert_Burch_syzygy": true,
+      "Tate_Poincare_coefficients": [
+        1,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "limitations": "Polynomial identities only; not a categorical or exactness proof."
+    }
   },
   "limitations": [
     "Full-main and companion builds and all-script reruns remain to be performed in the complete repository checkout.",

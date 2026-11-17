@@ -1,6 +1,6 @@
 # 研究方針：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v9。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v31）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
+2026-11-17 / hearts-strategy-v10。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v32）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
 
 ## 恒常的な研究原則と保存許可
 
@@ -57,6 +57,17 @@ TqはNqと両側直交するため、商Qq=(Dq/Nq)^naturalにも完全忠実に�
 q=O_Eでは Tq=Perf(Sbar)、Sq=D_sg(Sbar)^natural。
 自然関手は残余商から Db(qgrR_q)/Pq への比較を誘導するが、一般の非自明qでこの比較が同値という主張はしない。
 中心の未解決問題は、この残余部分とorbit部分のgluingを含む全自然比較の検証である。
+
+## 単一A1壁の局所行列因子化と安定自己Ext
+
+第1論文 `papers/sections/four_hearts_a1_stable_model.tex` に、A1完備局所環 A=k[[u,v,w]]/(uv−w²) の奇部分 N=k[[s,t]]_odd と一周期行列 B=[[-w,-v],[u,w]] を明示した。
+N≅coker B, B²=(w²−uv)I、Nの安定End環はk。
+不変部分を取ったHilbert–Burch表示から Ω²_A k≅N² を直接証明した。
+従って局所特異性圏で maximal ideal m≅N² となり、次数付き安定Endは
+M₂(k[η,η^{-1}])、deg η=1、非標準同型。
+これにより高次Ext次元4を積と一周期性へ精密化したが、これは古典的な完備局所特異性圏の計算であり、q≠O_Eの反標準qgr標的のExt積は未同定。
+既知入力はEisenbudのmatrix factorizationとBuchweitz–Orlovの安定MCM同値。これらの既知理論自体は新規成果ではない。
+入力と積の区別は `research/resonance_walls.md` も参照。
 
 ## 未解決の核心
 

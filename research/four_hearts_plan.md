@@ -1,6 +1,6 @@
 # 四heart比較とcoherent収縮の実施方針
 
-2026-11-17 / hearts-strategy-v9。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v31）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
+2026-11-17 / hearts-strategy-v10。全体の目標・恒常原則は `../00_research_plan.md`。主論文は `papers/dp-hearts.tex`（hearts-v32）、補完論文は `papers/dp-hearts2.tex`（hearts2-v1）。
 
 ## 現在の公表構成
 
@@ -22,6 +22,13 @@
 q=O_EではSq=D_sg(Sbar)^natural、非自明qの自然比較は残余Sq→Db(qgrRq)/Pqを誘導する。
 従って次の目標は、A1壁で特異点ideal sheafの像の高次Ext・Yoneda積と、orbitとの交叉作用をtargetで明示すること。
 残余商の同値だけで全圏の同値が自動的に従うとは仮定せず、gluingの比較も必要とする。
+
+## 局所積を用いた次の比較
+
+`four_hearts_a1_stable_model.tex` で単一A1壁の古典的局所安定End=M₂(k[η±1])を計算済み。
+このM₂代数の周期射ηに対応する自然な標的qgr上の作用と対象を構成し、
+残余関手のRHomの全高次積を比較する。完備局所特異性圏における計算だけから
+非自明qの全qgr同値、全gluingの同定を主張しない。
 
 ## 最優先の点検
 

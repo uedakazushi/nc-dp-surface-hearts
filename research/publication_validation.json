@@ -1,11 +1,11 @@
 {
   "date_JST": "2026-11-17",
   "main": "papers/dp-hearts.tex",
-  "main_version": "hearts-v33",
+  "main_version": "hearts-v34",
   "companion": "papers/dp-hearts2.tex",
   "companion_version": "hearts2-v1",
   "current_validation": "research/two_papers_validation.json",
-  "publication_status": "Research draft with new proof of singular-point ideal gluing jump; neither independently peer reviewed nor submitted.",
-  "current_typesetting_scope": "v33 has not been compiled as a full manuscript. Regex-based static reference audit of all 19 main and 12 companion recursive input files passed, with 0 missing/duplicate labels and 0 unresolved citation keys. No current full-build or computation rerun was made.",
+  "publication_status": "Research draft with proved coherent qgr ideal image/Hilbert and no-graded-inclusion results; not independently peer reviewed nor submitted.",
+  "current_typesetting_scope": "Current v34 main (19 files) and companion (12 files) passed recursive static label/reference/bibliography checks. Full current LuaLaTeX builds and 21 numerical check scripts not rerun; see two_papers_validation.json.",
   "instruction": "Use current_validation for actual checks and limits; do not transfer earlier three-driver build results to the current two-driver manuscripts."
 }

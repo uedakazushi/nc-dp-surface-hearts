@@ -1,6 +1,6 @@
 # 研究方針：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v10。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v32）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
+2026-11-17 / hearts-strategy-v11。再開時は本書を最初に読む。第1論文は `papers/dp-hearts.tex`（hearts-v33）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本である。零指数壁の現在の知識は `research/resonance_walls.md`、検証範囲は `research/two_papers_validation.json`。
 
 ## 恒常的な研究原則と保存許可
 
@@ -69,6 +69,28 @@ M₂(k[η,η^{-1}])、deg η=1、非標準同型。
 既知入力はEisenbudのmatrix factorizationとBuchweitz–Orlovの安定MCM同値。これらの既知理論自体は新規成果ではない。
 入力と積の区別は `research/resonance_walls.md` も参照。
 
+## 新たに確認した局所gluingの跳び
+
+主論文 `papers/sections/four_hearts_duval_singularity.tex` の
+`prop:duval-ideal-boundary-gluing` に、Du Val点 `x` のideal sheafの像
+`J_{x,q}` と付加したexceptional対象 `bar e` の間で
+`RHom(bar e,J)=0`, `RHom(J,bar e)=RΓ(E,q)` と計算した。
+仮定は滑らかな反標準楕円境界が特異点を通らず、指定された
+標準弱楕円gluingを用いることである。非自明な次数0の `q` では
+両側直交し、自明な `q` でだけ次数0,1のExtが各1次元となる。
+証明はgluingの定義と `L i^*I_x=O_E`、楕円曲線上の次数0線束の
+コホモロジーから従う。今回原稿へ証明を追加し内部で検査したが、
+独立査読・形式化を行ったものではない。新規性の完全調査も未了。
+この計算は全 `q` に共通なDu Val局所自己Extの計算を補うが、
+`qgr` 標的側の像・一般 `q` の全比較同値は未解決である。
+
+**この結果に基づく優先課題：** 非自明 `q` について、
+`J_{x,q}` と `bar e` は両側直交するのに対して
+`J_{x,q}` とその他の `Bbar` の対象とのRHomおよび
+orbitとの関係は残る。このgluing bimoduleを明示し、
+`Phi_q(J_{x,q})` の全RHomと比較して、完全忠実性の
+最初の非自明な検証点を作る。
+
 ## 未解決の核心
 
 一般の非自明qについて、誘導関手 Dbar_q→Db(qgr R_q) の完全忠実性・本質的全射性は未証明。核を除いたことやorbit上の完全忠実性だけから結論しない。q=Oは古典的局所化で解決するが、非自明qでは特異点に対応する非perfect対象の全高次Extを比較する必要がある。
@@ -83,7 +105,7 @@ M₂(k[η,η^{-1}])、deg η=1、非標準同型。
 
 ### P1：一つのA1壁の非perfect対象を比較する
 
-明示的零壁 `ex:zero-elliptic-wall` を固定し、Sbarの特異点のideal I_x∈O^perpの像をPhiで計算する。単に対象の非消失ではなく、I_xとそれを含む生成対象間の全RHomを比較する。次数付きExtの有限生成性を再び未解決に戻さない。完全忠実性の証明が不足する場合は、最初に一致しないExt次数・積・高次構造を特定する。
+明示的零壁 `ex:zero-elliptic-wall` を固定し、Sbarの特異点のideal I_x∈O^perpの像をPhiで計算する。単に対象の非消失ではなく、I_xとそれを含む生成対象間の全RHomを比較する。既知のRHom(J_{x,q},bar e)=RΓ(E,q)の跳びを起点にし、非自明qでの全RHomの像を求める。次数付きExtの有限生成性を再び未解決に戻さない。完全忠実性の証明が不足する場合は、最初に一致しないExt次数・積・高次構造を特定する。
 
 ### P2：壁上のAS実現と指定heart
 
@@ -101,4 +123,4 @@ bash scripts/check.sh all
 bash scripts/check.sh tex
 ```
 
-全文の組版対象はdp-hearts.texとdp-hearts2.texの2本。今回実施したのは改稿した序論・零壁・coherent収縮の抜粋（20ページ）のLuaLaTeX組版と全ページのレイアウト画像確認、抜粋内の参照・文献キー点検である。主論文全文・第2論文の組版と既存21検算の再実行は未実施。本文中の新しい一般定理は計算で証明したものではない。GitHub側のソース更新とローカル抜粋の検証を区別し、詳細は `research/two_papers_validation.json` を読む。
+全文の組版対象はdp-hearts.texとdp-hearts2.texの2本。前回までに実施したのは改稿した序論・零壁・coherent収縮の抜粋（20ページ）のLuaLaTeX組版と全ページのレイアウト画像確認である。今回の更新ではmain主論文の全てのネストしたinputを含む静的ラベル参照を照合し、180個のラベルに重複なし・249参照に欠落なしと確認した。静的検査はLuaLaTeX組版や全証明の再検証ではない。主論文全文・第2論文の組版と既存21検算の再実行は未実施。本文中の新しい一般定理は計算で証明したものではない。GitHub側のソース更新とローカル抜粋の検証を区別し、詳細は `research/two_papers_validation.json` を読む。

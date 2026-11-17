@@ -1,6 +1,6 @@
 # 最大共鳴・零指数壁・coherent収縮
 
-2026-11-17 / hearts-v32。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
+2026-11-17 / hearts-v34。研究方針を最初に読む。証明は主論文の `four_hearts_maximal_density.tex`、`four_hearts_zero_walls.tex`、`four_hearts_coherent_contraction.tex`。以下は再開に必要な依存関係と障害であり、本文の全証明を重複しない。
 
 ## 最大共鳴の現在の知識
 
@@ -90,28 +90,62 @@ ordinary Extの低次数までLaurent代数だという主張ではない。
 Buchweitz, *Maximal Cohen–Macaulay Modules and Tate Cohomology*, AMS Mathematical Surveys and Monographs 262; Orlov, arXiv:math/0302304v2。
 コード `computations/verify_a1_stable_model.py` はB²、Hilbert–Burchの恒等式とPoincaré級数を検査し、MCM性・Exactnessや安定圏同値の証明は置き換えない。
 
-## 特異点idealに対する境界gluingの跳び
+## 特異点idealから構成するqgr対象：計算と障害
 
-Du Val点xは滑らかな反標準楕円境界Eから離れている。
-従ってI_xの導来restrictionはO_Eであり、I_xはRΓ(I_x)=0から
-Bbar=O_Sbar^perpに属する。Dbar_qにおける像J_x,qと付加した
-exceptional対象ebarについて、指定gluingの定義そのものから
-RHom(ebar,J_x,q)=0、RHom(J_x,q,ebar)=RΓ(E,q) が成り立つ。
-非自明な次数0線束qでは H^0=H^1=0、自明線束では H^0=H^1=k。
-ゆえに非自明qでこの二対象は両側直交し、古典点でだけExtが跳ぶ。
-本文の証明は `prop:duval-ideal-boundary-gluing` にある。
+標準弱gluing、`E`滑らか、`x`が反標準収縮後`Sbar`のDu Val点で`x∉E`、
+`q∈Pic0(E)`任意とする。`J_x,q`は`I_x`の`Dbar_q`中の像。
+`RΓ(I_x)=0`、`L i_bar^*I_x=O_E`なので
+`RHom(ebar,J_x,q)=0`、`RHom(J_x,q,ebar)=RΓ(E,q)`。
+非自明qなら後者は零、自明qでH0=H1=k。
+異なるDu Val点`i≠j`なら、
+`RHom(I_i,I_j)=RHom(k_i,I_j)[1]=k[-1]`。
+最後の同型はI_jがx_i近傍でO、Du Val局所環が
+二次元Gorensteinであることによる。従ってすべてのqで
+`Ext1(J_i,J_j)=k`、その他の次数のoff-diagonal Extは零。
+非自明qの`thick{ebar,J_i}`は`Perf(k)⊕thick{J_i}`に分かれるが、
+Dbar_q全体の分解ではない（`cor:duval-local-splitting`）。
 
-これはqによらない同じJ_xの自己Extとは異なる、exceptional側に
-結び付くgluingの情報である。I_x一対象に対する両側直交から
-Dbar_qの直積分解、全てのBbarに対するgluingの消滅、
-非自明qでのDb(qgr R_q)同値を推論してはならない。
-先行する一般gluing理論の再適用であり新規性の網羅的確認は未了。
-次はA1壁で他のBbar生成対象も含めてこのgluing bimoduleを
-調べ、qgr側の像と積を比較する。
+`thm:duval-point-hilbert` の証明要点：
+`Rf_*G=I_x`となる`G∈B=O_S^perp`をBKS局所化から取る。
+`X=iota_qG`は`RHom(e,X)=0`、`F_qX=q^{-1}`。
+境界triangleと`Psi^n q^{-1}`の次数ndにより
+`Ext^j(e,s^nX)=0`（j≠0,n≥0）、
+`0→M_(n−1) --g→ M_n→H0(E,Psi^n q^{-1})→0`（n≥1）。
+従って`M_n=d n(n+1)/2`、`H_M=d t/(1-t)^3`、
+`H_R−H_M=1/(1-t)`。
+Mは有限生成で`g`は正則、`M/gM`のtailは`q^{-1}`の境界切断。
+`I_x,q=pi M∈qgr R`は非零coherent対象で、q=Oなら古典的I_x。
+この点は抽象的な特異gluing対象とは異なり、qgrでの実在が確定した。
+
+`prop:duval-no-graded-inclusion`：
+非自明qで次数0のgraded`M→R`をgで割ると、
+`qgr B≃coh E`の`q^{-1}→O_E`になるがHomは零。
+Bはdomainなので有限次元のgraded部分加群を含まず、
+剰余写像自体が零。gで除して次数−1、−2、…の写像を繰り返すと、
+境界標的の次数は負となって各段でHomが零。
+内部次数の下有界性により元の写像も零。
+よって`Hom_grR(M,R)=0`、point-idealと同じHilbert差を
+持つことから右idealへの埋込みを結論してはいけない。
+
+**残る決定的テスト**：
+完全忠実な`Dbar_q→Db(qgr R_q)`があれば、
+非自明qで`RHom_qgr(pi M,pi R)=0`が必要である。
+`Hom_gr(M,R)=0`はこの条件の証明ではない。
+局所cohomologyとtail/saturationにより`Hom_qgr`を求め、
+次に高次Yoneda積（特にA1完備局所`eta`）を比較する。
+`qgr B`での境界restrictionが`q^{-1}`という同定を
+計算の整合性検査に使う。
+
+主要な既知機構：Rainsの標準gluingと中心元、Artin–Van den Berghの
+twisted homogeneous coordinate ringの`qgr`同定、
+局所Gorenstein双対性、楕円曲線のRiemann–Roch、
+BKSの導来局所化。これら一般結果自体は既知。
+本文に追加した組合せの新規性は未網羅確認。
+証明は`papers/sections/four_hearts_duval_singularity.tex`を正本とする。
 
 ## 残課題
 
-一般qのDbar_q→Db(qgrR_q)の完全忠実性・本質的全射性。まずA1壁のI_xと生成対象の間の全Extと積を比較する。coherent有限性は解決したので、それを次の課題として反復しない。指定heartでのK_C,qの位置、壁上AS比較、局所・完成代数、複数壁、曲面族の相対化は別問題として残る。
+一般qのDbar_q→Db(qgrR_q)の完全忠実性・本質的全射性。A1壁のI_xのqgr像とHilbert・境界情報は既に得たので、次はHom_qgr(pi M,pi R)の計算、全Extと積の比較。coherent有限性は解決したので、それを次の課題として反復しない。指定heartでのK_C,qの位置、壁上AS比較、局所・完成代数、複数壁、曲面族の相対化は別問題として残る。
 
 ## 一次資料と検証範囲
 

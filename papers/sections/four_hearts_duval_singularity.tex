@@ -174,6 +174,15 @@ $N^0=M_{x,q}$，$N^j=0$ $(j\ne0)$であり，
  H_{M_{x,q}}(t)=\frac{dt}{(1-t)^3},\qquad
  H_{R_q}(t)-H_{M_{x,q}}(t)=\frac1{1-t}.
 \]
+さらに中心元$g\in(R_q)_1$は$M_{x,q}$上非零因子であり，
+\[
+ \boxed{(M_{x,q}/gM_{x,q})_n
+ \simeq H^0(E,\Psi_q^nq^{-1})\qquad(n\ge1).}
+\]
+この同型は境界環$B(E,\Psi_q)=R_q/gR_q$の右加群構造と両立する．
+従って$\qgr B(E,\Psi_q)\simeq\coh E$の標準的な同定では，
+$M_{x,q}/gM_{x,q}$に対応する境界上のcoherent sheafは$q^{-1}$である
+（次数$0$に限る有限次元の相違は$qgr$で消える）．
 $q=\OO_E$では$\mathcal I_{x,q}\simeq I_x$である．
 非自明な$q$では，上のHilbert関数の一致だけから
 $M_{x,q}\subset R_q$という埋込みや
@@ -201,8 +210,18 @@ $\RHom(e,-)$を取ると，各$n\ge1$で
 $H^1(E,\Psi_q^nq^{-1})=0$，
 $h^0(E,\Psi_q^nq^{-1})=nd$である．
 $n=0$の全Ext消滅を初期値に帰納すると，
-$n\ge0$で$\Ext^j(e,s_q^nX)=0$ $(j\ne0)$，
-$\dim\Hom(e,s_q^nX)=\sum_{m=1}^n md$となる．
+$n\ge0$で$\Ext^j(e,s_q^nX)=0$ $(j\ne0)$，かつ
+\[
+ 0\longrightarrow \Hom(e,s_q^{n-1}X)
+ \xrightarrow{\ g\ }\Hom(e,s_q^nX)
+ \longrightarrow H^0(E,\Psi_q^nq^{-1})
+ \longrightarrow0\qquad(n\ge1)
+\]
+が得られる．従って$\dim\Hom(e,s_q^nX)=\sum_{m=1}^n md$である．
+中央の単射は中心元$g$による作用であり，
+境界restrictionと積の自然性から商は$B(E,\Psi_q)$の
+右加群として$\bigoplus_{n\ge1}H^0(E,\Psi_q^nq^{-1})$に一致する．
+$q=\OO_E$のときだけ，通常の境界切断加群の次数$0$にある$k$を除いている．
 
 命題\ref{prop:zero-dg-quotient}によって
 反標準orbitと$\mathcal N_q$は両側直交するので，

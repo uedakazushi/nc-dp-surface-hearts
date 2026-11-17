@@ -364,26 +364,29 @@ $(j\ge1)$を決定することである．
 全tailについて因子化の反復を証明した．
 \end{remark}
 
-\begin{corollary}[非自明$q$における全比較の必要条件]
+\begin{corollary}[非自明$q$における残る高次Extの検証条件]
 \label{cor:duval-target-hom-obstruction}
-$q\not\simeq\OO_E$で
+$q\not\simeq\OO_E$に対し，
 $\overline\Phi_q:\overline{\cD}_q\to\Db(\qgr R_q)$
-が完全忠実なら，任意のDu Val点$x$について
+が完全忠実であるためには，各Du Val点$x$について
 \[
- \boxed{\RHom_{\Db(\qgr R_q)}
-   (\mathcal I_{x,q},\pi R_q)\simeq0.}
+ \boxed{\Ext^j_{\qgr R_q}(\mathcal I_{x,q},\pi R_q)=0
+ \quad(j\ge1)}
 \]
-従って$\Hom_{\qgr R_q}(\mathcal I_{x,q},\pi R_q)\ne0$
-となる例を一つ構成すれば，その$q$について
-$\overline\Phi_q$の完全忠実性は否定される．
-これは必要条件であって十分条件ではない．
+が必要である．次数$0$は定理\ref{thm:duval-qgr-hom-vanishing}で
+すでに消滅しており，二対象がともに標準heartにあるため
+負の次数も自動的に消滅する．
+従って全導来Hom比較で今なお検証が必要なのは正次数である．
+これらの必要条件は，全比較の完全忠実性の十分条件ではない．
 \end{corollary}
 \begin{proof}
 命題\ref{prop:duval-ideal-boundary-gluing}により
 $\RHom_{\overline{\cD}_q}(J_{x,q},\bar e)=
 R\Gamma(E,q)=0$である．
-$\overline\Phi_q(\bar e)=\pi R_q$なので，
-完全忠実ならこのHom複体の零性が標的へ移る．
+$\overline\Phi_q(J_{x,q})=\mathcal I_{x,q}$かつ
+$\overline\Phi_q(\bar e)=\pi R_q$なので，完全忠実なら
+標的の全導来Homが零となる．その次数零の成分は
+前定理で消滅し，負次数は標準heartの直交性により消える．
 \end{proof}
 
 \begin{theorem}[Du Val点の高次Extの一様性]\label{thm:duval-high-ext}

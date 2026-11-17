@@ -1,6 +1,6 @@
 # Codex指示：反標準heartとcoherent収縮
 
-2026-11-17 / hearts-strategy-v12。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v34）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
+2026-11-17 / hearts-strategy-v13。最初に `00_research_plan.md`、`research/resonance_walls.md` を読む。主論文は `papers/dp-hearts.tex`（hearts-v35）、第2論文は `papers/dp-hearts2.tex`（hearts2-v1）。GitHub mainが正本。
 
 ## 現在の数学的状態
 
@@ -49,9 +49,14 @@ A1壁の残余比較でこの跳びを優先して利用する。
 `prop:duval-no-graded-inclusion`（非自明qで`Hom_grR(M,R)=0`）、
 `cor:duval-target-hom-obstruction`（完全忠実なら
 `RHom_qgr(pi M,pi R)=0`）が証明付きである。
-**まだ** `Hom_qgr(pi M,pi R)` を決定したわけではない。
-次は具体的A1壁でMの生成元・関係、saturationおよび
-高次Yoneda積を計算する。Mを通常の右idealと仮定しない。
+**`thm:duval-qgr-hom-vanishing` が解決：**
+非自明qで全r≥0について `Hom_qgr(πM_x,πR(-r))=0`。
+自明qではr=0がk、負twistは零。
+`Hom_qgr=colim Hom_gr(M_≥a,R(-r))`を用いて
+すべてのtailのg反復除法を証明。graded Homの消滅のみから
+推論していない。`cor:duval-target-hom-obstruction`を改訂し、
+非自明qで **残る必要条件は正次数Ext^j（j≥1）の消滅** とした。
+次のA1壁の研究ではまずExt1を計算する。
 
 ## 優先順位
 

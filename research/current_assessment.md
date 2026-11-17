@@ -1,6 +1,6 @@
 # 現在の評価と公表準備
 
-2026-11-17 / hearts-v34。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
+2026-11-17 / hearts-v35。主論文 `papers/dp-hearts.tex` と補完論文 `papers/dp-hearts2.tex` の2本を維持する。研究方針は `00_research_plan.md`、零壁の証明依存は `resonance_walls.md`、実行した検証は `two_papers_validation.json` にある。
 
 ## 中心的な価値
 
@@ -51,8 +51,8 @@ Dbar_q全体が分解するわけではない。
 中心元gはM上正則、境界M/gMは`q^{-1}`の切断加群。
 `H_R−H_M=1/(1-t)`だが、非自明qでは
 `Hom_grR(M,R)=0`なので点idealをそのまま模倣できない。
-`Hom_qgr(pi M,pi R)`の消滅は現段階では未証明。
-これが完全忠実性の具体的な最初の必要条件となる
+`Hom_qgr(pi M,pi R(-r))`は、非自明qの全r≥0で消滅すると証明済み。
+残る具体的な必要条件は正次数Extの消滅となる
 （`cor:duval-target-hom-obstruction`）。
 
 証明は境界triangle、標準弱gluingのcoherent性、
@@ -60,9 +60,21 @@ BKSによる古典的局所化、楕円THCRの`qgr`同定と
 二次元Gorenstein局所双対性から内部で確認した。
 標的全圏の導来同値、形式化、網羅的新規性調査・独立査読はない。
 
+## 今回閉じた次数零Homの検証
+
+`thm:duval-qgr-hom-vanishing`：非自明qなら全r≥0で
+`Hom_qgr(πM,πR(-r))=0`。自明qではr=0に限ってk。
+既存のgraded Hom消滅を全tailへ拡張し、
+Serre商のHom公式、B=R/gRのdomain性、
+中心正則gの無限可除性排除により証明した。
+この結果は対応する非自明qのsource側の次数零Hom消滅と一致する。
+`Ext^j_qgr(πM,πR)`（j≥1）は未計算であり、
+全比較同値やRHom消滅を結論しない。
+独立査読・新規性の網羅調査は未了。
+
 ## 今残る核心
 
-一般qの特異gluing Dbar_q と Db(qgrR_q) の自然比較は未完成。coherent関手の存在と全核だけでは完全忠実性・本質的全射性は得られない。非perfect対象の像I_x,qとHilbert・境界は構成済みである。次にA1壁でHom_qgr(pi M,pi R)、高次Extと周期Yoneda積を検証する。q=Oでは古典的局所化に帰着する。
+一般qの特異gluing Dbar_q と Db(qgrR_q) の自然比較は未完成。coherent関手の存在と全核だけでは完全忠実性・本質的全射性は得られない。非perfect対象の像I_x,qとHilbert・境界は構成済みである。次にA1壁で正次数Extと周期Yoneda積を検証する。q=Oでは古典的局所化に帰着する。
 
 非genuineなDbar_qは全qで無限高次自己Extを持ち、properではない。この事実に合わせて本文のproperness仮定を滑らかなsourceに限定した。商のnoetherian heart、指定Rains heart内の収縮対象、壁上AS比較、相対収縮は別に調べる。
 

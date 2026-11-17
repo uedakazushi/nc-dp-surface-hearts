@@ -35,6 +35,42 @@ $\overline{\cD}_q$全体に固有のperfect部分圏や非可換特異性圏を�
 また特異性圏のADE型の分類そのものを新しい結果としていない．
 \end{remark}
 
+\begin{proposition}[特異点idealとexceptional対象のgluingの跳び]\label{prop:duval-ideal-boundary-gluing}
+$\overline S$の任意のDu Val特異点$x$について，
+$I_x$の$\overline{\cD}_q$での像を$J_{x,q}$とする．
+標準弱楕円gluingでは次の自然な同型がある：
+\[
+ \RHom_{\overline{\cD}_q}(\bar e,J_{x,q})=0,\qquad
+ \RHom_{\overline{\cD}_q}(J_{x,q},\bar e)
+       \simeq R\Gamma(E,q).
+\]
+特に$q\not\simeq\OO_E$なら$J_{x,q}$と$\bar e$は両側直交する．
+$q\simeq\OO_E$なら後者の複体のcohomologyは
+次数$0,1$でそれぞれ$k$，それ以外で零である．
+従って両者のgluingのExtは$q=\OO_E$で跳ぶが，
+このことだけから非自明$q$の$\overline{\cD}_q$全体の直積分解や
+反標準$qgr$との同値は従わない．
+\end{proposition}
+\begin{proof}
+例外曲線の収縮点$x$は滑らかな反標準境界$E$上にない．
+よって$E$の近傍では$I_x\simeq\OO_{\overline S}$であり，
+$L\bar i^*I_x\simeq\OO_E$となる．
+$\overline{\cB}=\OO_{\overline S}^{\perp}$への包含と
+第\ref{sec:coherent-contraction}節で定義したdg gluingより
+\[
+ \RHom(\bar e,J_{x,q})=0,\qquad
+ \RHom(J_{x,q},\bar e)
+ \simeq\RHom_E(L\bar i^*I_x,q)
+ \simeq R\Gamma(E,q).
+\]
+滑らかな種数$1$の曲線上の次数$0$のline bundleは，
+自明でなければ非零大域切断を持たない．Riemann--Rochと
+Serre双対性よりこの場合$H^0(E,q)=H^1(E,q)=0$であり，
+$q=\OO_E$なら両者が一次元となる．
+最後の留保は，$J_{x,q}$と$\bar e$の二対象間の計算から
+他の対象へのgluingを決定できないことによる．
+\end{proof}
+
 \begin{theorem}[Du Val点の高次Extの一様性]\label{thm:duval-high-ext}
 $\overline S$の相異なる特異点を$x_1,\ldots,x_r$とし，
 各$x_i$のideal sheafを$I_i=I_{x_i}$と書く．

@@ -240,6 +240,45 @@ $\overline\Phi_q$が古典的な反標準収縮後の
 $\Db(\coh\overline S)$との同値となることによる．
 \end{proof}
 
+\begin{proposition}[非自明$q$では次数零のideal埋込みが存在しない]
+\label{prop:duval-no-graded-inclusion}
+$q\not\simeq\OO_E$とする．前定理の有限生成右$R_q$加群
+$M_{x,q}$について，次数を保存する右加群準同型は
+\[
+ \boxed{\Hom_{\gr R_q}(M_{x,q},R_q)=0.}
+\]
+とくに，Hilbert級数が一点のideal加群と一致していても，
+$M_{x,q}$を$R_q$の次数付き右idealとして次数零で埋め込むことはできない．
+この主張は$\Hom_{\qgr R_q}(\pi M_{x,q},\pi R_q)=0$を
+無条件に証明するものではない．
+\end{proposition}
+\begin{proof}
+$M=M_{x,q}$，$R=R_q$，$B=R/gR$と略記する．
+$M$と$R$の両方で中心元$g$は正則であり，
+$\pi_B(M/gM)$は$q^{-1}$，$\pi_B B$は$\OO_E$に対応する．
+次数零の$\gr R$準同型$\varphi:M\to R$を取ると，
+$\varphi$の$g$による剰余が右$B$準同型
+\[
+ \bar\varphi:M/gM\longrightarrow B
+\]
+を誘導する．$\Hom_E(q^{-1},\OO_E)=H^0(E,q)=0$なので，
+$\pi_B(\bar\varphi)=0$である．従って$\bar\varphi$の像は
+有限次元次数付き$B$加群である．$B$は整楕円曲線上の
+正次数線束のtwisted homogeneous coordinate ringであり，
+非零の同次元は正次数元を繰り返し掛けて無限個の次数に
+非零元を与えるので，$B$内に非零の有限次元右部分加群はない．
+ゆえに$\bar\varphi=0$で，$\varphi(M)\subset gR$となる．
+
+$g$は中心正則だから，$\varphi=g\varphi_1$と一意に書け，
+$\varphi_1$は次数$-1$の右$R$準同型となる．
+同じ議論を次数$-r$の準同型$\varphi_r$に適用すると，
+剰余は$q^{-1}$から$\Psi_q^{-r}\OO_E$への射となる．
+$r\ge1$では後者の線束の次数は$-rd<0$なので，射は零である．
+従って帰納的に$\varphi(M)\subset g^rR$が任意の$r>0$で成立する．
+$R$は非負次数付きで$\deg g=1$なので
+$\bigcap_{r>0}g^rR=0$である．以上より$\varphi=0$．
+\end{proof}
+
 \begin{corollary}[非自明$q$における全比較の必要条件]
 \label{cor:duval-target-hom-obstruction}
 $q\not\simeq\OO_E$で

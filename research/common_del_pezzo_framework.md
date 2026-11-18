@@ -4,7 +4,7 @@
 
 ## 金沢型量子FermatとOUのAS surfaceの厳密な差
 
-**証明済み**：金沢型量子Fermat cubicのA=qgr B/(t³+x³+y³+z³)は、OU arXiv:2508.04986 Definition 1.1のAS surfaceではない。現行の完全証明は [量子FermatとAS surface](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/quantum_fermat_not_as_surface.tex) の定理3.1。H=(mu3)^2の非退化な2-cocycle αを使い、古典Fermat cubic Xに対し Db(A)≃Db(coh^α[X/H]) という明示的なgraded Morita同値を構成する。捩れ付きorbifold HKRと固定楕円曲線2本から HH_-1=2, HH_0=5, HH_1=2 を得る。有限群の全9元と指標は [量子Fermatの検算](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/computations/verify_quantum_fermat_ou_sectors.py) と証明書で検算。OU AS surfaceなら有限なvery strong helix、従って完全強例外列がありHH_i(i≠0)=0なので矛盾する。
+**証明済み**：金沢型量子Fermat cubicのA=qgr B/(t³+x³+y³+z³)は、OU arXiv:2508.04986 Definition 1.1のAS surfaceではない。現行の完全証明は [量子FermatとAS surface](https://github.com/uedakazushi/nc-cubic-classification/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/quantum_fermat_not_as_surface.tex) の定理3.1。H=(mu3)^2の非退化な2-cocycle αを使い、古典Fermat cubic Xに対し Db(A)≃Db(coh^α[X/H]) という明示的なgraded Morita同値を構成する。捩れ付きorbifold HKRと固定楕円曲線2本から HH_-1=2, HH_0=5, HH_1=2 を得る。有限群の全9元と指標は [量子Fermatの検算](https://github.com/uedakazushi/nc-cubic-classification/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/computations/verify_quantum_fermat_ou_sectors.py) と証明書で検算。OU AS surfaceなら有限なvery strong helix、従って完全強例外列がありHH_i(i≠0)=0なので矛盾する。
 
 **意味**：反Serre作用がheartを保ち、AZ ampleで、gd2・exceptional O・Hilbert関数を満たすintrinsic weak cubicはOU AS surfaceであるとは限らない。量子Fermatはその明示的な反例。次数3の全weak moduliがOU/AOUのmarked locusのW(E6)商だけからなるという全域分類は成立しない。一方、可換三次曲面を含むOU部分の大域化、R13支配部分のgeneric同定は別問題として保持する。全weakモジュライの代数性は未証明。
 
@@ -55,8 +55,8 @@ Gabriel–Krull rank-one torsion-freeとn≥0のHilbert数値により負次数�
 ## 各論文の役割
 
 - `papers/dp-hearts.tex`：全次数のheart比較問題とcubicにおけるHRS・orbit・corner判定。
-- [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)：d=3。標準正規境界の認識定理と量子Fermat反例。
-- [三次曲面のambientとモジュライ](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/cubic_surface_ambient_moduli.tex)：d=3。モジュライ成分・marked potentialとの比較。
+- [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-classification/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)：d=3。標準正規境界の認識定理と量子Fermat反例。
+- [三次曲面のambientとモジュライ](https://github.com/uedakazushi/nc-cubic-classification/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/cubic_surface_ambient_moduli.tex)：d=3。モジュライ成分・marked potentialとの比較。
 - [次数1の内在的構造とモジュライ](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/nc_del_pezzo_degree1_moduli.tex)：d=1。内在的rank、weighted sextic、pointed dg族、avatar。
 - [次数1反標準モデル](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/dp1_anticanonical_models.tex)：d=1。楕円領域の反標準qgrと共鳴、導来比較。
 - [非可換三次三様体](https://github.com/uedakazushi/nc-cubic-threefold-moduli/blob/cf880df5d0c53ff9a262ba8f4ba683d48adaf9d5/papers/nc_cubic_threefold_moduli.tex)：3-fold。別の中心課題であり、研究・論文は独立維持。
@@ -67,4 +67,4 @@ Gabriel–Krull rank-one torsion-freeとn≥0のHilbert数値により負次数�
 
 ## 量子Fermat ambientの所属成分
 
-量子Fermat BはPymのgraded Calabi–Yauのskew-polynomial成分 L(1,1,1,1) の3-torsion特殊点であり、L(1,1,2)の関係式中の二次補正項Qをu^2 Qにする平坦退化のu=0にもなる。従って少なくとも二成分の交点に属する。一方、既存の四頂点正規直線returnの閉incidenceによりR(1,3)の閉包外。その他の成分との交叉は未解決。式と証明は [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-moduli/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)。
+量子Fermat BはPymのgraded Calabi–Yauのskew-polynomial成分 L(1,1,1,1) の3-torsion特殊点であり、L(1,1,2)の関係式中の二次補正項Qをu^2 Qにする平坦退化のu=0にもなる。従って少なくとも二成分の交点に属する。一方、既存の四頂点正規直線returnの閉incidenceによりR(1,3)の閉包外。その他の成分との交叉は未解決。式と証明は [弱非可換三次曲面の公理](https://github.com/uedakazushi/nc-cubic-classification/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/weak_cubic_axioms.tex)。

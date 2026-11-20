@@ -59,7 +59,7 @@ Gabriel–Krull rank-one torsion-freeとn≥0のHilbert数値により負次数�
 - [三次曲面のambientとモジュライ](https://github.com/uedakazushi/nc-cubic-classification/blob/aed5e806087b40c8c0f8feb6a6e62ef2b63755d4/papers/cubic_surface_ambient_moduli.tex)：d=3。モジュライ成分・marked potentialとの比較。
 - [次数1の内在的構造とモジュライ](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/nc_del_pezzo_degree1_moduli.tex)：d=1。内在的rank、weighted sextic、pointed dg族、avatar。
 - [次数1反標準モデル](https://github.com/uedakazushi/nc-dp1-moduli/blob/174d64e65c0ed79ef5345b08ce81a31d3d32e236/papers/dp1_anticanonical_models.tex)：d=1。楕円領域の反標準qgrと共鳴、導来比較。
-- [非可換三次三様体](https://github.com/uedakazushi/nc-cubic-threefold-moduli/blob/cf880df5d0c53ff9a262ba8f4ba683d48adaf9d5/papers/nc_cubic_threefold_moduli.tex)：3-fold。別の中心課題であり、研究・論文は独立維持。
+- [非可換三次三様体](https://github.com/uedakazushi/nc-cubic-threefold/blob/main/papers/nc-cubic-threefold.tex)：3-fold。別の中心課題であり、研究・論文は独立維持。
 
 ## 論理的状態
 
